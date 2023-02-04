@@ -1400,6 +1400,7 @@ return list[Math.floor(list.length * Math.random())]
      if (smallinput=='Hi ') {
         reply (`hdf`)
     }
+    
 
     if (smallinput.includes('Guten Morgen ') || smallinput.includes('good morning')) {
       reply (`🌝was willst du jetzt 🌚`);
@@ -1510,6 +1511,18 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
                 Owner Name : ${global.OwnerName}
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}`)
         break
+
+case 'uptime': case 'online': case 'ut': case 'oz': case 'onlinezeit':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+            reply(` Up Time : ${runtime(process.uptime())} `)
+      break
+
+case 'iuser': case 'auser': case 'muser':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+            reply(` 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length} `)
+      break
 
 case 'limituser': case 'userlimit': case 'limit':
             if (isBan) return reply(mess.banned)	 			
