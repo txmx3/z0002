@@ -1500,7 +1500,7 @@ case 'reaction': case 'react': case 'reactions': case 'r':
             reply(` *━━━〈  📍 Reactions 📍  〉━━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
         break   
     
-case 'ping': case 'a2': case 'p': case 'a':
+case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1': case 'p1': case 'p2':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
             reply(` *「 System Info 」*\n
@@ -1525,7 +1525,7 @@ case 'limituser': case 'userlimit': case 'limit':
 		
 		
 
-case 'sup': case 'support': case 'frage': case '!':
+case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 'sa': 
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
             reply(` *support* \n, Hallo, *${pushname}* danke für deine Support Anfrage, derzeit ist es uns nicht möglich eine Weiterleitung an die Supportgruppe zu stellen, bitte schreibe deine Anfrage in dieser Gruppe erneut, 
@@ -1546,7 +1546,7 @@ case 'ringtone': {
 
 
 
-case 'film': case 'movie': case 'moviesearch':
+case 'film': case 'movie': case 'moviesearch': case 'filmsuche':
 if (isBan) return reply(mess.banned)
 	if (isBanChat) return reply(mess.bangc)
 	reply(mess.waiting)
@@ -1810,7 +1810,7 @@ await Miku.sendMessage(m.chat, { delete: key })
 
 
 
- case 'listpc': {
+ case 'listpc': case 'pmuser': case 'pruser': case 'pmus': case 'pmchats': case 'chats': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!isCreator) return replay(mess.botowner)
@@ -1823,7 +1823,7 @@ await Miku.sendMessage(m.chat, { delete: key })
  }
  break
 
- case 'listgc': {
+ case 'listgc': case 'gruppen': case 'groups': case 'gruppenchats': case 'grc': case 'grpc': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
@@ -1841,7 +1841,7 @@ await Miku.sendMessage(m.chat, { delete: key })
  }
  break
 
- case 'afk': {
+ case 'afk': case 'wvw': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  let user = global.db.users[m.sender]
@@ -2363,7 +2363,7 @@ case 'happymod': {
  }
  break
 
- case 'setname': case 'setsubject': {
+ case 'setname': case 'setsubject': case 'newname': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
@@ -2418,7 +2418,7 @@ if (isBanChat) return reply(mess.bangc)
  }
  break
 
- case 'tag': case 'tagall': case 'all': case 'Guten Morgen':{
+ case 'tag': case 'tagall': case 'all': case 'Guten Morgen': case 'everyone':{
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
@@ -2434,7 +2434,7 @@ if (isBanChat) return reply(mess.bangc)
  break
 
 
-case'admin': {
+case'admin': case 'tgad': case 'tad': case 'ta': case 'alladmin': case 'aat': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
@@ -2565,7 +2565,7 @@ let mentioned = participants.map(v => v.jid)
 
 
 
- case 'grouplink': case 'gclink': {
+ case 'grouplink': case 'gclink': case 'grlink': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
@@ -2635,7 +2635,7 @@ let mentioned = participants.map(v => v.jid)
      }
      break
 
-     case 'promote': {
+     case 'promote': case 'promoteuser': case 'puser': {
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
      if (!m.isGroup) return replay(mess.grouponly)
@@ -2646,7 +2646,7 @@ let mentioned = participants.map(v => v.jid)
      }
      break
 
-     case 'demote': {
+     case 'demote': case 'demoteuser': case 'duser': {
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
      if (!m.isGroup) return replay(mess.grouponly)
@@ -2657,7 +2657,7 @@ let mentioned = participants.map(v => v.jid)
      }
      break
 
-     case 'remove': case 'geh': case 'disrespectet': case 'tschüß': case 'hinfort': case 'flieg': case 'tschüss':{
+     case 'remove': case 'geh': case 'disrespectet': case 'tschüß': case 'hinfort': case 'flieg': case 'tschüss': case 'gehe': case 'fliege' :{
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
      if (!m.isGroup) return replay(mess.grouponly)
@@ -2679,7 +2679,7 @@ let mentioned = participants.map(v => v.jid)
      break
 
 
-     case 'join': {
+     case 'join': case 'ajoin': case 'mjoin': case 'ojoin': {
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
      if (!isCreator) return replay(mess.botowner)
@@ -2821,7 +2821,7 @@ reply(`\`\`\`「 _Calculator Tool_ 」\`\`\`\n\n*Input :* ${qsd}\n*Calculation R
 }
 break
 
-case 'public': {
+case 'public': case 'amode': case 'pmode': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!isCreator) return reply(mess.owner)
@@ -2831,7 +2831,7 @@ case 'public': {
  }
  break
  
- case 'self': {
+ case 'self': case 'omode': case 'smode': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!isCreator) return reply(mess.botowner)
@@ -2979,7 +2979,7 @@ Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
 break
 
 
-case 'google': case 'search': {
+case 'google': case 'search':case 'suche': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!args[0]) return reply(`Example: ${prefix + command} <query>\nUses : ${prefix + command} apa arti cinta`)
@@ -3328,7 +3328,7 @@ break
 
               
 
-case 'music': case 'play': case 'song': case 'ytplay': {
+case 'music': case 'play': case 'song': case 'ytplay': case 'spiele': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  const YT=require('./lib/ytdlcore')
@@ -3631,7 +3631,7 @@ const result2 = `*Title :* ${res2[0].judul}\n*Wiki :* ${res2[0].wiki}`
 Miku.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
 break
 
-case 'earthquake':
+case 'earthquake': case 'erdbeben':
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
 const tres = await Gempa()
@@ -4751,7 +4751,7 @@ teks = "\nDarkjokes"
 Miku.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
 break
 
-case 'leavegc': case 'leavegroup': case 'bye': case 'verlasse': {
+case 'leavegc': case 'leavegroup': case 'bye': case 'verlasse': case 'lgr': case 'lgrp': {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!m.isGroup) return replay(mess.grouponly)
@@ -4797,6 +4797,12 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe
  const helpmenu = `Konichiwa *${pushname}* Senpai,
 
 Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+
+Ich befinde mich derzeit in der Beta, zur Version 2, v2.
+
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
 
 🔰 Mein Präfix ist:  ${prefix}
 
@@ -5015,7 +5021,7 @@ const mikuarray= [
     break;
 
 
-		 case 'wetter':
+		 case 'wetter': case 'wt':
         if (isBan) return reply(mess.banned)
         if (!args[0]) return reply("Enter your location to search weather.")
          myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
