@@ -7,13 +7,13 @@ global.autoReadAll = false
 global.antitags = true
 
 
-global.Owner = ['436764242454']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.OwnerNumber = ['436764242454']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.ownertag = ['436764242454']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.BotName = "Miku-beta"
-global.packname = "Erstellt für mein Meister"
-global.author = "ich"
-global.OwnerName = "Sebastian"
+global.Owner = ['491777062822']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.OwnerNumber = ['491777062822']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.ownertag = ['491777062822']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.BotName = "Miku_v2-beta"
+global.packname = "Erstellt für User"
+global.author = "MkM Inc."
+global.OwnerName = "Kirito"
 global.BotSourceCode = "https://github.com/FantoX001/Miku-MD" // -- Please don't change -- //
 global.SupportGroupLink = "https://chat.whatsapp.com/JcBzjRIxM5UHfuJbt0KrWt"  // -- Please don't change -- //
 global.sessionName = "session"  // -- Don't change otherwise bot will not work -- //
@@ -28,7 +28,7 @@ global.reactmoji = "❤️"
 global.themeemoji = "💖"
 global.vidmenu = { url: 'https://c.tenor.com/YGuLegQWubwAAAPo/miku-nakano-gotoubun-no-hanayome.mp4' }
 global.websitex = "https://github.com/Kai0071"
-global.lolhuman = "Sebastian"
+global.lolhuman = "Kirito"
 
 
 global.BotLogo = fs.readFileSync("./Assets/pic1.jpg")
