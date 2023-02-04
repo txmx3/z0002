@@ -4796,7 +4796,7 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe
       
  const helpmenu = `Konichiwa *${pushname}* Senpai,
 
-Ich bin *Miku Nakano*, ein von *Sebastian* entwickelter Bot.
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
 
 🔰 Mein Präfix ist:  ${prefix}
 
@@ -4899,7 +4899,7 @@ reaction, truth, dare, couple, soulmate, handsomecheck, beautifulcheck, awesomec
 
 
  『  *${global.BotName}*  』
- Powered by: *Sebastian*
+ Powered by: *MkM Inc.*
 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
