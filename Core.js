@@ -1510,34 +1510,8 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
                 Bot Name : ${global.BotName}
                 Owner Name : ${global.OwnerName}
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}`)
-        break
-		
-case 'req': case 'request': {
-       	if (!text) throw `Example : ${prefix + command} Fitur Min`             
-	let ownernya = ownernomer + '@s.whatsapp.net'
-         let me = m.sender
-         let pjtxt = `Message From : @${me.split('@')[0]} \nFor : @${ownernya.split('@')[0]}\n\n${command} ${text}`
-         let ments = [ownernya, me]
-         let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '🙏THANKS' }, type: 1 }]         
-        await XeonBotInc.sendButtonText(ownernya, buttons, pjtxt, botname, m, {mentions: ments, quoted: fdoc})
-	let akhji = `*Request has been sent*\n*To Owner @${ownernya.split('@')[0]}*\n_Thank you🙏_`
-	await XeonBotInc.sendButtonText(m.chat, buttons, akhji, botname, m, {mentions: ments, quoted: fkontak})
-         }
-break
-		
-      case 'report': case 'bug': {
-        	if (!text) throw `Example : ${prefix + command} Report an error feature`              
-		let ownernya = ownernomer + '@s.whatsapp.net'
-               let me = m.sender
-               let pjtxt = `Message From : @${me.split('@')[0]} \nFor : @${ownernya.split('@')[0]}\n\n${text}`
-               let ments = [ownernya, me]
-               let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '🙏THANKS FOR THE REPORT' }, type: 1 }]
-            await XeonBotInc.sendButtonText(ownernya, buttons, pjtxt, botname, m, {mentions: ments})
-            let akhji = `Report Sent\nTo Owner @${ownernya.split('@')[0]}\n*Thank you for the report🙏*\n_Your number will be blocked_\n_If the Report is Only Created_`	    
-            await XeonBotInc.sendButtonText(m.chat, buttons, akhji, botname, m, {mentions: ments})
-            }
-break
-
+        break             
+	
 case 'uptime': case 'online': case 'ut': case 'oz': case 'onlinezeit':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
