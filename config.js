@@ -7,10 +7,10 @@ global.autoReadAll = false
 global.antitags = true
 
 
-global.Owner = ['4917662927731']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.OwnerNumber = ['4917662927731']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.ownertag = ['4917662927731']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.BotName = "Max Miku-MD_v2"
+global.Owner = ['493023180366','4917662927731']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.OwnerNumber =['493023180366','4917662927731']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.ownertag = ['493023180366','4917662927731'  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.BotName = "Max Miku-MD_v2.2"
 global.packname = "Erstellt für User"
 global.author = "MkM Inc."
 global.OwnerName = "Max"
@@ -27,7 +27,7 @@ global.location = "West-Berlin"
 global.reactmoji = "❤️"
 global.themeemoji = "💖"
 global.vidmenu = { url: 'https://c.tenor.com/YGuLegQWubwAAAPo/miku-nakano-gotoubun-no-hanayome.mp4' }
-global.websitex = "https://github.com/Kai0071"
+global.websitex = "https://github.com/a"
 global.lolhuman = "Max"
 
 
