@@ -1653,6 +1653,9 @@ case 'limituser': case 'userlimit': case 'limit':
                 reply(txt)       
               }
              break
+	
+case 'kontakt': case 'contact';
+bumpee.co/adv8w9mnho
 		
 		
 
