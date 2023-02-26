@@ -1533,7 +1533,7 @@ break
 break 
 		
 case 'og': case 'ow':
-const response = 'Unsere Ownergruppen:\n\n
+reply (ˋ 'Unsere Ownergruppen:\n\n
 
 1 Mk&A Ankündigsgruppe:\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\n
 2 Mk&A Chatgruppe:\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\n
@@ -1544,7 +1544,7 @@ const response = 'Unsere Ownergruppen:\n\n
 7 Mk&A Test Nr1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\n
 8 Mk&A Test Nr2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\n
 9 Anime Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\n
-*${global.BotName}*
+*${global.BotName}* ´)
 
 break
 		
