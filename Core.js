@@ -1566,6 +1566,14 @@ reply(` Hallo ${pushname} , unser 「 Manager  」ist derzeit +491788781873\n\n 
 
 break
 
+case 'mail': case 'email':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} , Vielen Dank für deine Anfrage.\nKontaktiere meinen Inhaber gerne unter der Email:\n\nmax.public.community@gmail.com\n\n
+Herzlichen Danke von ${global.OwnerName}
+
+break
+
 case 'dev': case 'devs': case 'developer': case 'developerin': case 'botdev': case 'botdeveloper':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
