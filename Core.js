@@ -1553,6 +1553,16 @@ case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 
                 Link: https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
         break
 
+case 'sup': case 'support': case 'frage': case '!':
+
+        if (isBan) return reply(mess.banned)	 			        
+	if (isBanChat) return reply(mess.bangc)
+
+        Miku.sendMessage(`120363043511491681@g.us`, {text:`*── 「 REPORT 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+
+        replay(`Ich habe deine Frage an meine Besitzer weitergegeben. Bitte warte bis sie deine Frage beantwortet haben, die Antwort siehst du hier :https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
+
+break
 
 case 'ringtone': {
     if (isBan) return reply(mess.banned)	 			
