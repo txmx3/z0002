@@ -1501,7 +1501,7 @@ case 'reaction': case 'react': case 'reactions': case 'r':
             reply(` *━━━〈  📍 Reactions 📍  〉━━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
         break   
     
-case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1': case 'p1': case 'p2':
+case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1': case 'p1': case 'p2': case 'p3':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
             reply(` *「 System Info 」*\n
@@ -1512,11 +1512,14 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}`)
         break             
 	
-case 'uptime': case 'online': case 'ut': case 'oz': case 'onlinezeit':
+case 'uptime': case 'ut': case 'oz': case 'onlinezeit':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
             reply(` Up Time : ${runtime(process.uptime())} `)
       break
+		
+case 'online':
+	
 
 case 'iuser': case 'auser': case 'muser':
         if (isBan) return reply(mess.banned)	 			
