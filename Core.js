@@ -1533,6 +1533,8 @@ break
 break 
 		
 case 'og': case 'ow':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
 reply (ˋ 'Unsere Ownergruppen:\n\n
 
 1 Mk&A Ankündigsgruppe:\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\n
