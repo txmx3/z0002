@@ -1506,7 +1506,7 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
         if (isBanChat) return reply(mess.bangc)
             reply(` *「 System Info 」*\n
                 Speed : ${latensie.toFixed(4)} 
-                mls Up Time : ${runtime(process.uptime())}
+                Up Time : ${runtime(process.uptime())}
                 Bot Name : ${global.BotName}
                 Owner Name : ${global.OwnerName}
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}`)
@@ -1526,6 +1526,12 @@ case 'online':
 		    ${runtime(process.uptime())} `)
 break 
 
+case 'bn': case 'botname': case 'botn': case 'bname'
+      if (isBan) return reply(mess.banned)
+      if (isBanChat) return reply(mess.bangc)
+           reply (` Hallo, ich mein Name ist ${global.BotName} `)
+break 
+		
 case 'iuser': case 'auser': case 'muser':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
