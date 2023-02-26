@@ -1543,7 +1543,8 @@ reply (ˋ 'Unsere Ownergruppen:\n\n
 6 Mk&A Bewerbungen:\nchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\n
 7 Mk&A Test Nr1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\n
 8 Mk&A Test Nr2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\n
-9 Anime Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\n´)
+9 Anime Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\n
+       ~26.02.2023´)
 
 break
 		
@@ -1553,14 +1554,26 @@ if (isBanChat) return reply(mess.bangc)
 	reply(ˋ Hallo ${pushname} , hier ist die Liste meiner 「 Inhaber 」:\n\n
 	1 +493023180366\n
 	2 +49177706282225\n
-	3 +436764242454 ´)
+	3 +436764242454\n\n
+        ~26.02.2023´)
 	
 break
 	
 case 'manager': case 'managerin': case 'abm': case 'botmanager': case 'botm': case 'botmg':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(` Hallo ${pushname} , unser 「 Manager  」ist derzeit +491788781873 `)
+reply(` Hallo ${pushname} , unser 「 Manager  」ist derzeit +491788781873\n\n ~26.02.2023 `)
+
+break
+
+case 'dev': case 'devs': case 'developer': case 'developerin': case 'botdev': case 'botdeveloper':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply (` Hallo ${pushname} , unsere 「 DeveloperIn 」, sind derzeit:\n\n
+1 +4915238056923\n
+2 +436641025411\n
+3 +491622661743\n\n
+~26.02.2023 `)
 
 break
 
@@ -1571,8 +1584,19 @@ reply(` Hallo ${pushname} , hier ist die Liste meiner「Stellvertretende Inhaber
 1  +4915212908434\n
 2  +491703540750\n
 3  +4917662927731\n
-4  +491777062822 `)
+4  +491777062822\n\n
+~26.02.2023 `)
 	
+break
+	
+case 'supporter': case 'supporterin': case 'botsup': case 'botsupport': case 'bsup':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hallo ${pushname} , hier ist die Liste meiner 「 SupporterIn 」:\n\n
+1 +436608292027\n
+2 +491632225167\n\n
+~26.02.2023 `)
+
 break
 
 case 'team': case 'teamlist': case 'tmlist': case 'tlist': case 'teaml': case 'teamlt':
@@ -1607,7 +1631,6 @@ reply(` Das Mk&A-Team:
 
 1  +436608292027\n
 2  +491632225167\n
-3  +4916093444217\n\n
 
 *stand: ~26.02.2023* `)
 
