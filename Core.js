@@ -1610,7 +1610,7 @@ break
 case 'team': case 'teamlist': case 'tmlist': case 'tlist': case 'teaml': case 'teamlt':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(` Das Mk&A-Team: 
+reply(` Das Mk-A-Team: 
 
 「 InhaberIn: 」\n\n
 
@@ -1662,9 +1662,11 @@ case 'limituser': case 'userlimit': case 'limit':
               }
              break
 	
-case 'kontakt': case 'contact';
-bumpee.co/adv8w9mnho
-		
+case 'kontakt': case 'contact':
+Die Kontakt-Website meines Inhabers ist:\n\nbumpee.co/adv8w9mnho\n\n
+Die Google-Website meines Inhabers ist:\n\nhttps://sites.google.com/view/max2-community-website\n\n
+Der Telegram Account meines Owners erreichst du mit diesem Link:\n\nhttps://t.me/Anonymeradmin\n\n
+
 		
 
 case 'asup': case 'asupport': case 'afrage': case '!': case 'asupportanfrage': case 'asa': 
