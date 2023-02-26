@@ -1547,6 +1547,11 @@ const response = 'Unsere Ownergruppen:\n\n
 
 break
 		
+case 'inhaberin': case 'Inhaber':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+     reply(`
+		
 case 'team': case 'teamlist': case 'tmlist': case 'tlist': case 'teaml': case 'teamlt':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
