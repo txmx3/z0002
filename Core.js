@@ -1515,7 +1515,7 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
 case 'uptime': case 'ut': case 'oz': case 'onlinezeit':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-            reply(` Up Time : ${runtime(process.uptime())} `)
+            reply(` Up Time : ${runtime(process.uptime())} \n\n*${global.BotName}* `)
       break
 		
 case 'online':
@@ -1523,7 +1523,7 @@ case 'online':
         if (isBanChat) return reply(mess.bangc)
             reply(` Hi *${pushname}* , ich bin derzeit online,
 	            Ich bin auch online seit:
-		    ${runtime(process.uptime())} `)
+		    ${runtime(process.uptime())} \n\n*${global.BotName}* `)
 break 
 
 case 'bn': case 'botname': case 'botn': case 'bname'
@@ -1543,50 +1543,56 @@ const response = 'Unsere Ownergruppen:\n\n
 6 Mk&A Bewerbungen:\nchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\n
 7 Mk&A Test Nr1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\n
 8 Mk&A Test Nr2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\n
-9 Anime Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n
+9 Anime Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\n
+*${global.BotName}*
 
 break
 		
 case 'inhaberin': case 'Inhaber':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-     reply(`
+     reply(`Hallo ${pushname}* , Meine InhaberIn sind:\n\n
+     1 +493023180366\n
+     2 +4917770628225\n
+     3 +436764242454\n\n
+     *${global.BotName}* ´)
+break
 		
 case 'team': case 'teamlist': case 'tmlist': case 'tlist': case 'teaml': case 'teamlt':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply( ` Das Mk&A-Team: 
 
-Inhaber/in:\n\n
+「 InhaberIn: 」\n\n
 
 1 +493023180366\n
 2 +4917770628225\n
 3 +436764242454\n\n
 
-Stlv. Inhaber/in:\n\n
+「 Stlv. InhaberIn: 」\n\n
 
 1  +4915212908434\n
 2  +491703540750\n
 3  +4917662927731\n
 4  +491777062822\n\n
 
-Manager/in:\n\n
+「 ManagerIn: 」\n\n
 
 1  +491788781873\n\n
 
-Developer/in:\n\n
+「 DeveloperIn: 」\n\n
 
 1   +4915238056923\n
 2   +436641025411\n
 3   +491622661743\n\n
 
-Supporter/in:\n\n
+「 SupporterIn 」:\n\n
 
 1  +436608292027\n
 2  +491632225167\n
 3  +4916093444217\n\n
 
-_stand: ~26.02.2023_ `)
+*stand: ~26.02.2023* `)
 
 break
 		
