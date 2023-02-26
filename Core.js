@@ -1523,13 +1523,13 @@ case 'online':
         if (isBanChat) return reply(mess.bangc)
             reply(` Hi *${pushname}* , ich bin derzeit online,
 	            Ich bin auch online seit:
-		    ${runtime(process.uptime())} \n\n*${global.BotName}* `)
+		    ${runtime(process.uptime())} `)
 break 
 
-case 'bn': case 'botname': case 'botn': case 'bname'
+	case 'bn': case 'botname': case 'botn': case 'bname':
       if (isBan) return reply(mess.banned)
       if (isBanChat) return reply(mess.bangc)
-           reply (` Hallo, ich mein Name ist ${global.BotName} `)
+           reply (` Hallo, ich mein Name ist Miku-Max_v2.5`)
 break 
 		
 case 'og': case 'ow':
@@ -1548,16 +1548,14 @@ const response = 'Unsere Ownergruppen:\n\n
 
 break
 		
-case 'inhaberin': case 'Inhaber':
+case "inhaber": case "inhaberin":
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-     reply(`Hallo ${pushname}* , Meine InhaberIn sind:\n\n
-     1 +493023180366\n
-     2 +4917770628225\n
-     3 +436764242454\n\n
-     *${global.BotName}* ´)
+	reply(ˋ Hallo ${pushname} , hier ist die Liste meiner Inhaber:\n\n
+	1 +493023180366\n
+	2 +49177706282225\n
+	3 +436764242454 ´)
 break
-		
 case 'team': case 'teamlist': case 'tmlist': case 'tlist': case 'teaml': case 'teamlt':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
