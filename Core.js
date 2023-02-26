@@ -1519,7 +1519,12 @@ case 'uptime': case 'ut': case 'oz': case 'onlinezeit':
       break
 		
 case 'online':
-	
+        if (isBan) return reply(mess.banned)
+        if (isBanChat) return reply(mess.bangc)
+            reply(` Hi @user , ich bin derzeit online,
+	            Ich bin schon online seit:
+		    ${runtime(process.uptime())} `)
+break 
 
 case 'iuser': case 'auser': case 'muser':
         if (isBan) return reply(mess.banned)	 			
