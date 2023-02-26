@@ -1550,17 +1550,28 @@ break
 case "inhaber": case "inhaberin":
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-	reply(ˋ Hallo ${pushname} , hier ist die Liste meiner Inhaber:\n\n
+	reply(ˋ Hallo ${pushname} , hier ist die Liste meiner 「 Inhaber 」:\n\n
 	1 +493023180366\n
 	2 +49177706282225\n
 	3 +436764242454 ´)
 	
 break
 
+case 'stellvertretendeinhaberin': case 'co-owner': case 'co-inhaberin': case 'cow': case 'stvtinhaberin': case 'co-inhaber': case 'stvtinhaber': case 'co-o':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hallo ${pushname} , hier ist die Liste meiner「Stellvertretende InhaberIn 」 :\n\n
+1  +4915212908434\n
+2  +491703540750\n
+3  +4917662927731\n
+4  +491777062822 `)
+	
+break
+
 case 'team': case 'teamlist': case 'tmlist': case 'tlist': case 'teaml': case 'teamlt':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply( ` Das Mk&A-Team: 
+reply(` Das Mk&A-Team: 
 
 「 InhaberIn: 」\n\n
 
@@ -1599,7 +1610,7 @@ case 'iuser': case 'auser': case 'muser':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
             reply(` 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length} `)
-      break
+break
 
 case 'limituser': case 'userlimit': case 'limit':
             if (isBan) return reply(mess.banned)	 			
