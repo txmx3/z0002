@@ -1552,7 +1552,7 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply( ` Das Mk&A-Team: 
 
-Inhaber/in:
+Inhaber/in:\n\n
 
 1 +493023180366\n
 2 +4917770628225\n
