@@ -1556,6 +1556,13 @@ if (isBanChat) return reply(mess.bangc)
 	3 +436764242454 ´)
 	
 break
+	
+case 'manager': case 'managerin': case 'abm': case 'botmanager': case 'botm': case 'botmg':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hallo ${pushname} , unser 「 Manager  」ist derzeit +491788781873 `)
+
+break
 
 case 'stellvertretendeinhaberin': case 'co-owner': case 'co-inhaberin': case 'cow': case 'stvtinhaberin': case 'co-inhaber': case 'stvtinhaber': case 'co-o':
 if (isBan) return reply(mess.banned)
