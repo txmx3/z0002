@@ -1543,8 +1543,7 @@ reply (ˋ 'Unsere Ownergruppen:\n\n
 6 Mk&A Bewerbungen:\nchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\n
 7 Mk&A Test Nr1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\n
 8 Mk&A Test Nr2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\n
-9 Anime Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\n
-*${global.BotName}* ´)
+9 Anime Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\n´)
 
 break
 		
@@ -1555,7 +1554,9 @@ if (isBanChat) return reply(mess.bangc)
 	1 +493023180366\n
 	2 +49177706282225\n
 	3 +436764242454 ´)
+	
 break
+
 case 'team': case 'teamlist': case 'tmlist': case 'tlist': case 'teaml': case 'teamlt':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
