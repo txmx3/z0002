@@ -1547,6 +1547,44 @@ const response = 'Unsere Ownergruppen:\n\n
 
 break
 		
+case 'team': case 'teamlist': case 'tmlist': case 'tlist': case 'teaml': case 'teamlt':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply( ` Das Mk&A-Team: 
+
+Inhaber/in:
+
+1 +493023180366\n
+2 +4917770628225\n
+3 +436764242454\n\n
+
+Stlv. Inhaber/in:\n\n
+
+1  +4915212908434\n
+2  +491703540750\n
+3  +4917662927731\n
+4  +491777062822\n\n
+
+Manager/in:\n\n
+
+1  +491788781873\n\n
+
+Developer/in:\n\n
+
+1   +4915238056923\n
+2   +436641025411\n
+3   +491622661743\n\n
+
+Supporter/in:\n\n
+
+1  +436608292027\n
+2  +491632225167\n
+3  +4916093444217\n\n
+
+_stand: ~26.02.2023_ `)
+
+break
+		
 case 'iuser': case 'auser': case 'muser':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
