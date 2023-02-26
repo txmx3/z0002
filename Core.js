@@ -1521,8 +1521,8 @@ case 'uptime': case 'ut': case 'oz': case 'onlinezeit':
 case 'online':
         if (isBan) return reply(mess.banned)
         if (isBanChat) return reply(mess.bangc)
-            reply(` Hi @user , ich bin derzeit online,
-	            Ich bin schon online seit:
+            reply(` Hi *${pushname}* , ich bin derzeit online,
+	            Ich bin auch online seit:
 		    ${runtime(process.uptime())} `)
 break 
 
@@ -1567,14 +1567,14 @@ case 'limituser': case 'userlimit': case 'limit':
 		
 		
 
-case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 'sa': 
+case 'asup': case 'asupport': case 'afrage': case '!': case 'asupportanfrage': case 'asa': 
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
             reply(` *support* \n, Hallo, *${pushname}* danke für deine Support Anfrage, derzeit ist es uns nicht möglich eine Weiterleitung an die Supportgruppe zu stellen, bitte schreibe deine Anfrage in dieser Gruppe erneut, 
                 Link: https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
         break
 
-case 'sup': case 'support': case 'frage': case '!':
+case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 'sa':
 
         if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
@@ -1584,6 +1584,33 @@ case 'sup': case 'support': case 'frage': case '!':
         replay(`Ich habe deine Frage an meine Besitzer weitergegeben. Bitte warte bis sie deine Frage beantwortet haben, die Antwort siehst du hier :https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
 
 break
+		
+case 'test': case 'ptest': case 'atest': case 'a4': case 'a5': case 'p4': case 'p5':
+const { WAConnection } = require('@adiwajshing/baileys');
+const coconst { WAConnection, MessageType } = require('@adiwajshing/baileys');
+const conn = new WAConnection();
+conn.connect();
+conn.on('chat-update', async (chatUpdate) => {
+  if (chatUpdate.messages) {
+    const message = chatUpdate.messages.all()[0];
+    const chatId = message.key.remoteJid;
+    const text = message.message.conversation;
+    if (text === 'ping') {
+      // Messen der Antwortzeit
+      const start = Date.now();
+      // Generierung der Antwort
+      const response = 'Pong!'\n\n Sessionid: ${global.BotName};
+      // Senden der Antwort
+      await conn.sendMessage(chatId, response, MessageType.text);
+      // Berechnen und Ausgeben der Antwortzeit
+      const end = Date.now();
+      const responseTime = end - start;
+      console.log(`Antwortzeit: ${responseTime} ms`);
+    }
+
+  }
+
+});
 
 case 'ringtone': {
     if (isBan) return reply(mess.banned)	 			
