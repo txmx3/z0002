@@ -1542,7 +1542,8 @@ const response = 'Unsere Ownergruppen:\n\n
 5 Mk&A ü13 NSFW-Gruppe:\nchat.whatsapp.com/FMDqCkfLfbkHA3oaxtuAc9\n\n
 6 Mk&A Bewerbungen:\nchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\n
 7 Mk&A Test Nr1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\n
-8 Mk&A Test Nr2:\chat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\n
+8 Mk&A Test Nr2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\n
+9 Anime Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n
 
 break
 		
