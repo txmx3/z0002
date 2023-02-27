@@ -1412,8 +1412,6 @@ return list[Math.floor(list.length * Math.random())]
         2  +491703540750\n
         3  +4917662927731\n
         4  +491777062822\n\n
-      Manager/in:\n\n
-        1  +491788781873\n\n
       Developer/in:\n\n
         1   +4915238056923\n
         2   +436641025411\n
@@ -1421,7 +1419,8 @@ return list[Math.floor(list.length * Math.random())]
       Supporter/in:\n\n
         1  +436608292027\n
         2  +491632225167\n
-        3  +4916093444217\n\n `)
+        3  +4916093444217\n\n
+        4 +491788781873 `)
 }
 	
 if (smallinput=='~Team ') {
@@ -1437,8 +1436,6 @@ if (smallinput=='~Team ') {
         2  +491703540750\n
         3  +4917662927731\n
         4  +491777062822\n\n
-      Manager/in:\n\n
-        1  +491788781873\n\n
       Developer/in:\n\n
         1   +4915238056923\n
         2   +436641025411\n
@@ -1446,7 +1443,8 @@ if (smallinput=='~Team ') {
       Supporter/in:\n\n
         1  +436608292027\n
         2  +491632225167\n
-        3  +4916093444217\n\n `)
+        3  +4916093444217\n
+        4 +491788781873 `)
 }
 
     if (smallinput.includes('Guten Morgen ') || smallinput.includes('good morning')) {
