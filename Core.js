@@ -1618,7 +1618,7 @@ case 'online':
 		    ${runtime(process.uptime())} `)
 break 
 		
-case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow':
+case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply (` Meine Ownergruppen:\n\nMkA Ankündigsgruppe:\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\nMkA Chatgruppe:\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nMkA Support-Chat:\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nMkA Werbegruppe:\nchat.whatsapp.com/GwvXFuOV3MqA5iYyyxZcyx\n\nMkA NSFW-Gruppe:\nchat.whatsapp.com/FMDqCkfLfbkHA3oaxtuAc9\n\nMkA Bewerbungen:\nnchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\nMkA Test-1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\nMkA Test-2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\nAnime-Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9 `)
