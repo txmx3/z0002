@@ -1454,6 +1454,25 @@ if (smallinput=='~Supporterin ') {
 reply (` Supporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
 }
 	
+if (smallinput=='~Mail ') {
+reply (` Die E-Mail meines Inhabers ist: max.public.community@gmail.com `)
+}
+	
+if (smallinput=='~EMail ') {
+reply (` Die E-Mail meines Inhabers ist: max.public.community@gmail.com `)
+}
+	
+if (smallinput=='~eMail ') {
+reply (` Die E-Mail meines Inhabers ist:\n\nMax.public.community@gmail.com `)
+}
+	
+if (smallinput=='~email ') {
+reply (` Die E-Mail meines Inhabers ist:\n\nMax.public.community@gmail.com `)
+}
+	
+if (smallinput=='~Bweb ') {
+reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho
+	
     if (smallinput.includes('Guten Morgen ') || smallinput.includes('good morning')) {
       reply (`🌝was willst du jetzt 🌚`);
     }
