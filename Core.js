@@ -1603,6 +1603,13 @@ case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 
 
 break
 		
+case 'kontakt': case 'contact': case 'kowner': case 'cowber':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Die Website meines Owners ist:\n\nbumpee.co/adv8w9mnho\n\nDie Google-Website meines Owners lautet:\n\nsites.google.com/view/max2-community-website\n\n `)
+
+break 
+		
 case 'test': case 'ptest': case 'atest': case 'a4': case 'a5': case 'p4': case 'p5':
 const { WAConnection } = require('@adiwajshing/baileys');
 const coconst { WAConnection, MessageType } = require('@adiwajshing/baileys');
