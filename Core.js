@@ -1549,108 +1549,7 @@ reply (ˋ 'Unsere Ownergruppen:\n\n
        ~26.02.2023´)
 
 break
-		
-case "inhaber": case "inhaberin":
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-	reply(ˋ Hallo ${pushname} , hier ist die Liste meiner 「 Inhaber 」:\n\n
-	1 +493023180366\n
-	2 +49177706282225\n
-	3 +436764242454\n\n
-        ~26.02.2023´)
 	
-break
-	
-case 'manager': case 'managerin': case 'abm': case 'botmanager': case 'botm': case 'botmg':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hallo ${pushname} , unser 「 Manager  」ist derzeit +491788781873\n\n ~26.02.2023 `)
-
-break
-
-case 'mail': case 'email':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hi ${pushname} , Vielen Dank für deine Anfrage.\nKontaktiere meinen Inhaber gerne unter der Email:\n\nmax.public.community@gmail.com\n\n
-Herzlichen Danke von ${global.OwnerName}
-
-break
-
-case 'dev': case 'devs': case 'developer': case 'developerin': case 'botdev': case 'botdeveloper':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply (` Hallo ${pushname} , unsere 「 DeveloperIn 」, sind derzeit:\n\n
-1 +4915238056923\n
-2 +436641025411\n
-3 +491622661743\n\n
-~26.02.2023 `)
-
-break
-
-case 'stellvertretendeinhaberin': case 'co-owner': case 'co-inhaberin': case 'cow': case 'stvtinhaberin': case 'co-inhaber': case 'stvtinhaber': case 'co-o':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hallo ${pushname} , hier ist die Liste meiner「Stellvertretende InhaberIn 」 :\n\n
-1  +4915212908434\n
-2  +491703540750\n
-3  +4917662927731\n
-4  +491777062822\n\n
-~26.02.2023 `)
-	
-break
-	
-case 'supporter': case 'supporterin': case 'botsup': case 'botsupport': case 'bsup':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hallo ${pushname} , hier ist die Liste meiner 「 SupporterIn 」:\n\n
-1 +436608292027\n
-2 +491632225167\n\n
-~26.02.2023 `)
-
-break
-
-case 'team': case 'teamlist': case 'tmlist': case 'tlist': case 'teaml': case 'teamlt':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Das Mk-A-Team: 
-
-「 InhaberIn: 」\n\n
-
-1 +493023180366\n
-2 +4917770628225\n
-3 +436764242454\n\n
-
-「 Stlv. InhaberIn: 」\n\n
-
-1  +4915212908434\n
-2  +491703540750\n
-3  +4917662927731\n
-4  +491777062822\n\n
-
-「 ManagerIn: 」\n\n
-
-1  +491788781873\n\n
-
-「 DeveloperIn: 」\n\n
-
-1   +4915238056923\n
-2   +436641025411\n
-3   +491622661743\n\n
-
-「 SupporterIn 」:\n\n
-
-1  +436608292027\n
-2  +491632225167\n
-
-*stand: ~26.02.2023* `)
-
-break
-		
-case 'iuser': case 'auser': case 'muser':
-        if (isBan) return reply(mess.banned)	 			
-        if (isBanChat) return reply(mess.bangc)
-            reply(` 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length} `)
-break
 
 case 'limituser': case 'userlimit': case 'limit':
             if (isBan) return reply(mess.banned)	 			
@@ -1664,19 +1563,6 @@ case 'limituser': case 'userlimit': case 'limit':
               }
              break
 	
-case 'kontakt': case 'contact':
-Die Kontakt-Website meines Inhabers ist:\n\nbumpee.co/adv8w9mnho\n\n
-Die Google-Website meines Inhabers ist:\n\nhttps://sites.google.com/view/max2-community-website\n\n
-Der Telegram Account meines Owners erreichst du mit diesem Link:\n\nhttps://t.me/Anonymeradmin\n\n
-
-		
-
-case 'asup': case 'asupport': case 'afrage': case '!': case 'asupportanfrage': case 'asa': 
-        if (isBan) return reply(mess.banned)	 			
-        if (isBanChat) return reply(mess.bangc)
-            reply(` *support* \n, Hallo, *${pushname}* danke für deine Support Anfrage, derzeit ist es uns nicht möglich eine Weiterleitung an die Supportgruppe zu stellen, bitte schreibe deine Anfrage in dieser Gruppe erneut, 
-                Link: https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
-        break
 
 case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 'sa':
 
