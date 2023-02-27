@@ -1532,23 +1532,6 @@ break
            reply (` Hallo, ich mein Name ist Miku-Max_v2.5`)
 break 
 		
-case 'og': case 'ow':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply (ˋ 'Unsere Ownergruppen:\n\n
-
-1 Mk&A Ankündigsgruppe:\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\n
-2 Mk&A Chatgruppe:\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\n
-3 Mk&A Support-Chat:\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\n
-4 Mk&A Werbegruppe:\nchat.whatsapp.com/GwvXFuOV3MqA5iYyyxZcyx
-5 Mk&A ü13 NSFW-Gruppe:\nchat.whatsapp.com/FMDqCkfLfbkHA3oaxtuAc9\n\n
-6 Mk&A Bewerbungen:\nchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\n
-7 Mk&A Test Nr1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\n
-8 Mk&A Test Nr2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\n
-9 Anime Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\n
-       ~26.02.2023´)
-
-break
 	
 
 case 'limituser': case 'userlimit': case 'limit':
