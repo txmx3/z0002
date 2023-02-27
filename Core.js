@@ -1427,26 +1427,53 @@ if (smallinput=='~Team ') {
 
         reply (`Das Mk&A-Team: 
 
-      Inhaber/in:
-        1 +493023180366\n
-        2 +4917770628225\n
-        3 +436764242454\n\n
-      Stlv. Inhaber/in:\n\n
-        1  +4915212908434\n
-        2  +491703540750\n
-        3  +4917662927731\n
-        4  +491777062822\n\n
-      Developer/in:\n\n
-        1   +4915238056923\n
-        2   +436641025411\n
-        3   +491622661743\n\n
-      Supporter/in:\n\n
-        1  +436608292027\n
-        2  +491632225167\n
-        3  +4916093444217\n
-        4 +491788781873 `)
+      Inhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+}
+	
+if (smallinput=='~Inhaber ') {
+reply (` Inhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\n `)
+}
+	
+if (smallinput=='~Inhaberin ') {
+reply (` Inhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\n `)
+}
+	
+if (smallinput=='~Stellvertretendeinhaberin ') {
+reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822 `)
+}
+	
+if (smallinput=='Stellvertretendeinhaber ') {
+reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822 `)
 }
 
+if (smallinput=='~Stellvertreterin ') {
+reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822 `)
+}
+
+if (smallinput=='~Stellvertretendeinhaber ') {
+reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822 `)
+}
+	
+if (smallinput=='~Developerin ') {
+reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
+}
+	
+if (smallinput=='~Developer ') {
+reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
+}
+	
+if (smallinput=='~Devs ') {
+reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
+}
+	
+if (smallinput=='~Supporter ') {
+reply (` Supporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+}
+	
+if (smallinput=='~Supporterin ') {
+reply (` Supporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+}
+	
     if (smallinput.includes('Guten Morgen ') || smallinput.includes('good morning')) {
       reply (`🌝was willst du jetzt 🌚`);
     }
