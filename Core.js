@@ -1471,7 +1471,28 @@ reply (` Die E-Mail meines Inhabers ist:\n\nMax.public.community@gmail.com `)
 }
 	
 if (smallinput=='~Bweb ') {
-reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho
+reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
+}
+	
+if (smallinput=='~Bwebsite ') {
+reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
+}
+	
+if (smallinput=='~BWeb ') {
+reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
+}
+	
+if (smallinput=='~BWebsite') {
+reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
+}
+	
+if (smallinput=='~Bws ') {
+reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
+}
+	
+if (smallinput=='~BWS ') {
+reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
+}
 	
     if (smallinput.includes('Guten Morgen ') || smallinput.includes('good morning')) {
       reply (`🌝was willst du jetzt 🌚`);
@@ -1635,6 +1656,25 @@ case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 
         replay(`Ich habe deine Frage an meine Besitzer weitergegeben. Bitte warte bis sie deine Frage beantwortet haben, die Antwort siehst du hier :https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
 
 break
+		
+case 'ankündigungen': case 'ankündigung':
+if (isBan) return reply(mess.banned)	 			        
+if (isBanChat) return reply(mess.bangc)
+reply (` Ankündigung(-en) werden hier rein gesendet:\n\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\nVielen Dank `)
+
+break 
+		
+case 'chat': case 'chatgruppe': case 'chatgroup': case 'cgr': case 'chatgr':
+if (isBan) return reply(mess.banned)	
+if (isBanChat) return reply(mess.bangc)
+reply (` Den Link zur Chatgruppe findest du hier:\n\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nVielen Dank `)
+}
+	
+case 'supchat': case 'chatgruppesup': case 'chatgruppesupport': case 'supch': case 'chatsup':
+if (isBan) return reply(mess.banned)	
+if (isBanChat) return reply(mess.bangc)
+reply (` Den Link zum Support-Chat findest du hier:\n\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nVielen Dank `)
+}
 		
 case 'kontakt': case 'contact': case 'kowner': case 'cowber':
 if (isBan) return reply(mess.banned)
