@@ -1667,19 +1667,6 @@ if (isBanChat) return reply(mess.bangc)
 reply(` Die Google-Website meines owners bzw. Inhabers ist:\n\nhttps://sites.google.com/view/max2-community-website `)
 }
 
-case 'limituser': case 'userlimit': case 'limit':
-            if (isBan) return reply(mess.banned)	 			
-            if (isBanChat) return reply(mess.bangc)
-            {      
-               let txt = `「 *All User Limit* 」\n\n`
-                 for (let i of _limit){
-                 txt += ` *User ID :* @${i.id.split("@")[0]}\n➸ *Limit* : ${i.limit}\n`
-                 }
-                reply(txt)       
-              }
-             break
-	
-
 case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 'sa':
 
         if (isBan) return reply(mess.banned)	 			        
