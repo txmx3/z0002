@@ -1663,7 +1663,7 @@ break
 
 case 'Gweb': case 'Gwebsite': case 'GWS': case 'oweb': case 'ownerwebsite': case 'owebsite':
 if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc
+if (isBanChat) return reply(mess.bangc)
 reply(` Die Google-Website meines owners bzw. Inhabers ist:\n\nhttps://sites.google.com/view/max2-community-website `)
 }
 
