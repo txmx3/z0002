@@ -1494,6 +1494,22 @@ if (smallinput=='~BWS ') {
 reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
 }
 	
+if(smallinput=='~Gweb ') {
+reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
+}
+	
+if(smallinput=='~gweb ') {
+reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
+}
+	
+if(smallinput=='~Gwebsite ') {
+reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
+}
+	
+if(smallinput=='~gwebsite ') {
+reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
+}
+	
     if (smallinput.includes('Guten Morgen ') || smallinput.includes('good morning')) {
       reply (`🌝was willst du jetzt 🌚`);
     }
@@ -1637,6 +1653,12 @@ if (isBanChat) return reply(mess.bangc)
 reply(` Die B-Website meines owners bzw. Inhabers ist:\n\nbumpee.co/adv8w9mnho `)
 
 break
+		
+case 'Gweb': case 'Gwebsite': case 'GWS': case 'oweb': case 'ownerwebsite': case 'owebsite':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc
+reply(` Die Google-Website meines owners bzw. Inhabers ist:\n\nhttps://sites.google.com/view/max2-community-website `)
+}
 
 case 'limituser': case 'userlimit': case 'limit':
             if (isBan) return reply(mess.banned)	 			
