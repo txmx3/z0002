@@ -1508,7 +1508,7 @@ reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/
 	
 if(smallinput=='~gwebsite ') {
 reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
-}
+} 
 	
     if (smallinput.includes('Guten Morgen ') || smallinput.includes('good morning')) {
       reply (`🌝was willst du jetzt 🌚`);
@@ -1654,6 +1654,13 @@ reply(` Die B-Website meines owners bzw. Inhabers ist:\n\nbumpee.co/adv8w9mnho `
 
 break
 		
+case 'session': case 'sessionid': case 'sitzung':
+if(isBan) return reply (mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Die Session-Id, des Bots ist: *${global.BotName}* `)
+
+break
+
 case 'Gweb': case 'Gwebsite': case 'GWS': case 'oweb': case 'ownerwebsite': case 'owebsite':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc
