@@ -1631,7 +1631,12 @@ break
            reply (` Hallo, ich mein Name ist Miku-Max_v2.5`)
 break 
 		
-	
+case 'Bweb': case 'Bwebsite': case 'BWS': case 'ownerweb': case 'oweb': case 'ownerwebsite': case 'owebsite':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Die B-Website meines owners bzw. Inhabers ist:\n\nbumpee.co/adv8w9mnho `)
+
+break
 
 case 'limituser': case 'userlimit': case 'limit':
             if (isBan) return reply(mess.banned)	 			
