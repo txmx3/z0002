@@ -1419,19 +1419,19 @@ reply (` Inhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\n `
 }
 	
 if (smallinput=='~Stellvertretendeinhaberin ') {
-reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822 `)
+reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
 }
 	
 if (smallinput=='Stellvertretendeinhaber ') {
-reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822 `)
+reply (` . Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
 }
 
 if (smallinput=='~Stellvertreterin ') {
-reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822 `)
+reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
 }
 
 if (smallinput=='~Stellvertretendeinhaber ') {
-reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822 `)
+reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
 }
 	
 if (smallinput=='~Developerin ') {
@@ -1657,6 +1657,24 @@ case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 
 
 break
 		
+case 'supporter': case 'supporterin': case 'tsup': case 'supt': case 'supteam': case 'supportteam': case 'lsup': case 'listsup': case 'suplist':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply (` Supporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+
+break 
+		
+case 'developer': case 'developerin': case 'devs': case 'tdev': case 'ldev': case 'devteam': case 'developerteam': case 'listdev': case 'devlist':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
+
+break
+		
+case 'Stellvertretendeinhaber'
+		
 case 'ankündigungen': case 'ankündigung':
 if (isBan) return reply(mess.banned)	 			        
 if (isBanChat) return reply(mess.bangc)
@@ -1679,11 +1697,14 @@ reply (` Den Link zum Support-Chat findest du hier:\n\nchat.whatsapp.com/DOnXPAR
 case 'kontakt': case 'contact': case 'kowner': case 'cowber':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
 reply(` Die Website meines Owners ist:\n\nbumpee.co/adv8w9mnho\n\nDie Google-Website meines Owners lautet:\n\nsites.google.com/view/max2-community-website\n\n `)
 
 break 
 		
 case 'test': case 'ptest': case 'atest': case 'a4': case 'a5': case 'p4': case 'p5':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
 const { WAConnection } = require('@adiwajshing/baileys');
 const coconst { WAConnection, MessageType } = require('@adiwajshing/baileys');
 const conn = new WAConnection();
