@@ -1657,7 +1657,7 @@ break
 case 'session': case 'sessionid': case 'sitzung':
 if(isBan) return reply (mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(` Die Session-Id, des Bots ist: *${global.BotName}* `)
+reply(` Die Session-Id, des Bots ist: ${global.BotName} `)
 
 break
 
@@ -1665,7 +1665,6 @@ case 'Gweb': case 'Gwebsite': case 'GWS': case 'oweb': case 'ownerwebsite': case
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Die Google-Website meines owners bzw. Inhabers ist:\n\nhttps://sites.google.com/view/max2-community-website `)
-}
 	
 break
 
@@ -1734,13 +1733,11 @@ case 'chat': case 'chatgruppe': case 'chatgroup': case 'cgr': case 'chatgr':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
 reply (` Den Link zur Chatgruppe findest du hier:\n\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nVielen Dank `)
-}
 	
 case 'supchat': case 'chatgruppesup': case 'chatgruppesupport': case 'supch': case 'chatsup':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
 reply (` Den Link zum Support-Chat findest du hier:\n\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nVielen Dank `)
-}
 		
 case 'kontakt': case 'contact': case 'kowner': case 'cowber':
 if (isBan) return reply(mess.banned)
@@ -1778,6 +1775,8 @@ conn.on('chat-update', async (chatUpdate) => {
   }
 
 });
+
+break
 
 case 'ringtone': {
     if (isBan) return reply(mess.banned)	 			
