@@ -1410,103 +1410,103 @@ if (smallinput=='~Team ') {
         reply (`Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
 }
 	
-if (smallinput=='~Inhaber ') {
+if (smallinput=='.inhaber ') {
 reply (` Inhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\n `)
 }
 	
-if (smallinput=='~Inhaberin ') {
+if (smallinput=='.inhaberin ') {
 reply (` Inhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\n `)
 }
 	
-if (smallinput=='~Stellvertretendeinhaberin ') {
+if (smallinput=='.stellvertretendeinhaberin ') {
 reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
 }
 	
-if (smallinput=='Stellvertretendeinhaber ') {
+if (smallinput=='.stellvertretendeinhaber ') {
 reply (` . Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
 }
 
-if (smallinput=='~Stellvertreterin ') {
+if (smallinput=='.stellvertreterin ') {
 reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
 }
 
-if (smallinput=='~Stellvertretendeinhaber ') {
+if (smallinput=='.stellvertretendeinhaber ') {
 reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
 }
 	
-if (smallinput=='~Developerin ') {
+if (smallinput=='.developerin ') {
 reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
 }
 	
-if (smallinput=='~Developer ') {
+if (smallinput=='.developer ') {
 reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
 }
 	
-if (smallinput=='~Devs ') {
+if (smallinput=='.devs ') {
 reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
 }
 	
-if (smallinput=='~Supporter ') {
+if (smallinput=='.supporter ') {
 reply (` Supporter/in:\n\n1  +436608292027\n\n2  +4916093444217\n3  +491788781873 `)
 }
 	
-if (smallinput=='~Supporterin ') {
+if (smallinput==' .supporterin ') {
 reply (` Supporter/in:\n\n1  +436608292027\n\n2  +4916093444217\n3  +491788781873 `)
 }
 	
-if (smallinput=='~Mail ') {
+if (smallinput==' .mail ') {
 reply (` Die E-Mail meines Inhabers ist: max.public.community@gmail.com `)
 }
 	
-if (smallinput=='~EMail ') {
+if (smallinput=='.EMail ') {
 reply (` Die E-Mail meines Inhabers ist: max.public.community@gmail.com `)
 }
 	
-if (smallinput=='~eMail ') {
+if (smallinput=='.eMail ') {
 reply (` Die E-Mail meines Inhabers ist:\n\nMax.public.community@gmail.com `)
 }
 	
-if (smallinput=='~email ') {
+if (smallinput=='.email ') {
 reply (` Die E-Mail meines Inhabers ist:\n\nMax.public.community@gmail.com `)
 }
 	
-if (smallinput=='~Bweb ') {
+if (smallinput=='.Bweb ') {
 reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
 }
 	
-if (smallinput=='~Bwebsite ') {
+if (smallinput=='.Bwebsite ') {
 reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
 }
 	
-if (smallinput=='~BWeb ') {
+if (smallinput=='.BWeb ') {
 reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
 }
 	
-if (smallinput=='~BWebsite') {
+if (smallinput=='.BWebsite') {
 reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
 }
 	
-if (smallinput=='~Bws ') {
+if (smallinput=='.Bws ') {
 reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
 }
 	
-if (smallinput=='~BWS ') {
+if (smallinput=='.BWS ') {
 reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
 }
 	
-if(smallinput=='~Gweb ') {
+if(smallinput=='.Gweb ') {
 reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
 }
 	
-if(smallinput=='~gweb ') {
+if(smallinput=='.gweb ') {
 reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
 }
 	
-if(smallinput=='~Gwebsite ') {
+if(smallinput=='.Gwebsite ') {
 reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
 }
 	
-if(smallinput=='~gwebsite ') {
+if(smallinput=='.gwebsite ') {
 reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
 } 
 	
