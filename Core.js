@@ -1690,6 +1690,17 @@ case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 
         replay(`Ich habe deine Frage an meine Besitzer weitergegeben. Bitte warte bis sie deine Frage beantwortet haben, die Antwort siehst du hier :https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
 
 break
+	
+case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 'sa':
+
+        if (isBan) return reply(mess.banned)	 			        
+	if (isBanChat) return reply(mess.bangc)
+
+        Miku.sendMessage(`120363049068403227@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+
+        replay(` )
+
+break
 		
 case 'supporter': case 'supporterin': case 'tsup': case 'supt': case 'supteam': case 'supportteam': case 'lsup': case 'listsup': case 'suplist':
 if (isBan) return reply(mess.banned)
