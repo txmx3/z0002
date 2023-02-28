@@ -1747,37 +1747,6 @@ reply(` Die Website meines Owners ist:\n\nbumpee.co/adv8w9mnho\n\nDie Google-Web
 
 break 
 		
-case 'test': case 'ptest': case 'atest': case 'a4': case 'a5': case 'p4': case 'p5':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-const { WAConnection } = require('@adiwajshing/baileys');
-const coconst { WAConnection, MessageType } = require('@adiwajshing/baileys');
-const conn = new WAConnection();
-conn.connect();
-conn.on('chat-update', async (chatUpdate) => {
-  if (chatUpdate.messages) {
-    const message = chatUpdate.messages.all()[0];
-    const chatId = message.key.remoteJid;
-    const text = message.message.conversation;
-    if (text === 'ping') {
-      // Messen der Antwortzeit
-      const start = Date.now();
-      // Generierung der Antwort
-      const response = 'Pong!'\n\n Sessionid: ${global.BotName};
-      // Senden der Antwort
-      await conn.sendMessage(chatId, response, MessageType.text);
-      // Berechnen und Ausgeben der Antwortzeit
-      const end = Date.now();
-      const responseTime = end - start;
-      console.log(`Antwortzeit: ${responseTime} ms`);
-    }
-
-  }
-
-});
-
-break
-
 case 'ringtone': {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.banned)
