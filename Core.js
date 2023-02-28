@@ -1666,6 +1666,8 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Die Google-Website meines owners bzw. Inhabers ist:\n\nhttps://sites.google.com/view/max2-community-website `)
 }
+	
+break
 
 case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 'sa':
 
@@ -1720,8 +1722,6 @@ if (!isCreator) return replay(mess.botowner)
 reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
 
 break
-		
-case 'Stellvertretendeinhaber'
 		
 case 'ankündigungen': case 'ankündigung':
 if (isBan) return reply(mess.banned)	 			        
