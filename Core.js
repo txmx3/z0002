@@ -1402,12 +1402,12 @@ return list[Math.floor(list.length * Math.random())]
     }
     
     if (smallinput=='~Teamlist ') {
-        reply (`Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +49178878187 `)
+        reply (`Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n4  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +49178878187 `)
 }
 	
 if (smallinput=='~Team ') {
 
-        reply (`Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +491703540750\n3  +4917662927731\n4  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+        reply (`Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
 }
 	
 if (smallinput=='~Inhaber ') {
@@ -1447,11 +1447,11 @@ reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +4916226617
 }
 	
 if (smallinput=='~Supporter ') {
-reply (` Supporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+reply (` Supporter/in:\n\n1  +436608292027\n\n2  +4916093444217\n3  +491788781873 `)
 }
 	
 if (smallinput=='~Supporterin ') {
-reply (` Supporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+reply (` Supporter/in:\n\n1  +436608292027\n\n2  +4916093444217\n3  +491788781873 `)
 }
 	
 if (smallinput=='~Mail ') {
@@ -1691,17 +1691,33 @@ case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 
 
 break
 	
-case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 'sa':
+case 'asup': case 'asupport': case 'afrage': case 'a!': case 'asupportanfrage': case 'asa':
 
         if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
 
         Miku.sendMessage(`120363049068403227@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
 
-        replay(` )
+        replay(`*Message* `)
 
 break
-		
+	
+case 'team':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+
+break
+
+case 'manager': case 'managerin': case 'tmanage': case 'manageteam': case 'maanaget':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Der Manager des MkA-Teams ist derzeit:\n\n+491632225167 `)
+
+	
+break 
 case 'supporter': case 'supporterin': case 'tsup': case 'supt': case 'supteam': case 'supportteam': case 'lsup': case 'listsup': case 'suplist':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
