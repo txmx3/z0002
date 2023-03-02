@@ -1617,7 +1617,8 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
                 Up Time : ${runtime(process.uptime())}
                 Bot Name : ${global.BotName}
                 Owner Name : ${global.OwnerName}
-		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}`)
+		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
+                Session ID: *${global.BotName}* `)
         break             
 	
 case 'uptime': case 'ut': case 'oz': case 'onlinezeit':
@@ -1633,6 +1634,14 @@ case 'online':
 	            Ich bin auch online seit:
 		    ${runtime(process.uptime())} `)
 break 
+		
+case 'skript': case 'script': case 'sc': case 'sk':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` https://github.com/txmx4/m_m006 `)
+		
+break
 		
 case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
 if (isBan) return reply(mess.banned)
@@ -5048,11 +5057,11 @@ play, ytmp3, ytmp4, yts, lyrics, google, gimage, pinterest, image, weather, movi
 sup,support,frage,sa,supportanfrage
 
  *━━━〈  Own/New(Beta)  〉━━━*
- a,a2,a3,p,p1,p2,p3,online,ping,aping\nsession,sessionid,sitzung,uptime,oz,onlinezeit
+ a,a2,a3,p,p1,p2,p3,online,ping,aping\nsession,sessionid,sitzung,uptime,oz,onlinezeit,ut
  
  ownergruppen,og,ow,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,chatgruppesup,supch,chatgruppesupport
  
- Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite
+ Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite\nscript,Skript,sc,sk
  
  Team,Teamlist\n\n\nsupporter/in,tsup,supt,supteam,supportteam,listsup,suplist\n\ndeveloper/in,devs,tdev,devt,ldev\ndevteam,listdev,developerteam,devlist
  
