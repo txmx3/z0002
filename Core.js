@@ -1644,7 +1644,7 @@ break
 	case 'bn': case 'botname': case 'botn': case 'bname':
       if (isBan) return reply(mess.banned)
       if (isBanChat) return reply(mess.bangc)
-           reply (` Hallo, ich mein Name ist Miku-Max_v2.5`)
+           reply (` Hallo, ich mein Name ist *${global.BotName}* `)
 break 
 		
 case 'Bweb': case 'Bwebsite': case 'BWS': case 'ownerweb': case 'oweb': case 'ownerwebsite': case 'owebsite':
@@ -1657,7 +1657,7 @@ break
 case 'session': case 'sessionid': case 'sitzung':
 if(isBan) return reply (mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(` Die Session-Id, des Bots ist: ${global.BotName} `)
+reply(` Die Session-Id, des Bots ist: *${global.BotName}* `)
 
 break
 
@@ -1686,15 +1686,15 @@ case 'asup': case 'asupport': case 'afrage': case 'a!': case 'asupportanfrage': 
 
         Miku.sendMessage(`120363049068403227@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
 
-        replay(`*Message* `)
-
+        replay(` Antwort erfolgreich gesendet! `)
+		
 break
 	
 case 'team':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+reply(` Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +436764242454\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
 
 break
 
@@ -1729,7 +1729,7 @@ reply (` Ankündigung(-en) werden hier rein gesendet:\n\nchat.whatsapp.com/G0nG2
 
 break 
 		
-case 'chat': case 'chatgruppe': case 'chatgroup': case 'cgr': case 'chatgr':
+case 'chatgruppe': case 'chatgroup': case 'cgr': case 'chatgr':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
 reply (` Den Link zur Chatgruppe findest du hier:\n\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nVielen Dank `)
@@ -1743,7 +1743,7 @@ case 'kontakt': case 'contact': case 'kowner': case 'cowber':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Die Website meines Owners ist:\n\nbumpee.co/adv8w9mnho\n\nDie Google-Website meines Owners lautet:\n\nsites.google.com/view/max2-community-website\n\n `)
+reply(` Die Website meines Owners ist:\n\nbumpee.co/adv8w9mnho\n\nDie Google-Website meines Owners lautet:\n\nsites.google.com/view/max2-community-website\n\nDer Telegram Account meines Inhabers lautet:\nhttps://t.me/Anonymeradmin\n\nDer Tiktok Account meines Owners ist:\nhttps://www.tiktok.com/@T_x_m_x_2\n\n\nDie E-Mail meines Owners ist:\nMax.public.community@gmail.com\n\nVielen Dank für deine Anfrage :) `)
 
 break 
 		
@@ -5044,10 +5044,20 @@ antilinkgc, antilinktg, antilinktt, antilinkytch, antilinkytvid, antilinkig, ant
 
 play, ytmp3, ytmp4, yts, lyrics, google, gimage, pinterest, image, weather, movie, wallpaper, searchgc, happymod, wikimedia, ringtone, anime, animestory, manga, ringtone  
 
- *━━━〈   support   〉━━━*
-sup,support,frage
+ *━━━〈   Support   〉━━━*
+sup,support,frage,sa,supportanfrage
 
- *━━━〈  🔰 Convert 🔰  〉━━━*
+ *━━━〈  Own/New(Beta)  〉━━━*
+ a,a2,a3,p,p1,p2,p3,online,ping,aping\nsession,sessionid,sitzung,uptime,oz,onlinezeit
+ 
+ ownergruppen,og,ow,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,chatgruppesup,supch,chatgruppesupport
+ 
+ Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite
+ 
+ Team,Teamlist\n\n\nsupporter/in,tsup,supt,supteam,supportteam,listsup,suplist\n\ndeveloper/in,devs,tdev,devt,ldev\ndevteam,listdev,developerteam,devlist
+ 
+ 
+*━━━〈  🔰 Convert 🔰  〉━━━*
 
 sticker, toimg, tovideo, togif , steal, stickermeme, emojimix, tourl, tomp3, toaudio
 
