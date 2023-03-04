@@ -5070,12 +5070,12 @@ antilinkgc, antilinktg, antilinktt, antilinkytch, antilinkytvid, antilinkig, ant
 play, ytmp3, ytmp4, yts, lyrics, google, gimage, pinterest, image, weather, movie, wallpaper, searchgc, happymod, wikimedia, ringtone, anime, animestory, manga, ringtone  
 
  *━━━〈   Support   〉━━━*
-sup,support,frage,sa,supportanfrage
+sup,support,frage,sa,supportanfrage\n\nbug,bgr,bugreport
 
  *━━━〈  Own/New(Beta)  〉━━━*
  a,a2,a3,p,p1,p2,p3,online,ping,aping\nsession,sessionid,sitzung,uptime,oz,onlinezeit,ut
  
- ownergruppen,og,ow,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,chatgruppesup,supch,chatgruppesupport
+ ownergruppen,og,ow,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,supch,chatgruppesupport
  
  Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite\nscript,Skript,sc,sk
  
@@ -5129,7 +5129,7 @@ reaction, truth, dare, couple, soulmate, handsomecheck, beautifulcheck, awesomec
     
     Speed : ${latensie.toFixed(4)} miliseconds
     Up Time : ${runtime(process.uptime())}
-    Bot Name : ${global.BotName}
+    Bot Name : Miku-Max_v2.5-ed_2
     Owner Name : ${global.OwnerName}
     𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
     𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
