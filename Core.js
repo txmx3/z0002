@@ -5029,7 +5029,7 @@ replay('Sendung gesendet !')
 break    
 
 
-case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe':{
+case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe': case 'mu'{
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
       
@@ -5037,7 +5037,7 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe
 
 Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
 
-Ich befinde mich derzeit in der Beta, zur Version 2, v2.
+Ich befinde mich derzeit in der Version 2.5 Edition 2.
 
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
