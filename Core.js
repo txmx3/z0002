@@ -1615,7 +1615,7 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
             reply(` *「 System Info 」*\n
                 Speed : ${latensie.toFixed(4)} 
                 Up Time : ${runtime(process.uptime())}
-                Bot Name : ${global.BotName}
+                Bot Name : Miku-Max_v2.5-ed_2
                 Owner Name : ${global.OwnerName}
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
                 Session ID: *${global.BotName}* `)
@@ -1624,7 +1624,7 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
 case 'uptime': case 'ut': case 'oz': case 'onlinezeit':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-            reply(` Up Time : ${runtime(process.uptime())} `)
+            reply(` Online : ${runtime(process.uptime())} `)
 break
 		
 case 'online':
@@ -1639,21 +1639,21 @@ case 'skript': case 'script': case 'sc': case 'sk':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` https://github.com/txmx4/m_m006 `)
+reply(` https://github.com/txmx4/m_m007 `)
 		
 break
 		
 case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply (` Meine Ownergruppen:\n\nMkA Ankündigsgruppe:\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\nMkA Chatgruppe:\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nMkA Support-Chat:\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nMkA Werbegruppe:\nchat.whatsapp.com/GwvXFuOV3MqA5iYyyxZcyx\n\nMkA NSFW-Gruppe:\nchat.whatsapp.com/FMDqCkfLfbkHA3oaxtuAc9\n\nMkA Bewerbungen:\nnchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\nMkA Test-1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\nMkA Test-2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\nAnime-Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9 `)
+reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\nMkM Chatgruppe:\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nMkM Support-Chat:\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nMkM Werbegruppe:\nchat.whatsapp.com/GwvXFuOV3MqA5iYyyxZcyx\n\nMkM NSFW-Gruppe:\nchat.whatsapp.com/FMDqCkfLfbkHA3oaxtuAc9\n\nMkM Bewerbungen:\nnchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\nMkM Test-1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\nMkM Test-2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\nAnime-Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\nOwnergruppe vom Owner-2:\nchat.whatsapp.com/Hey2MwLXOPDOA8I5KNGsvj `)
 
 break 
 
 	case 'bn': case 'botname': case 'botn': case 'bname':
       if (isBan) return reply(mess.banned)
       if (isBanChat) return reply(mess.bangc)
-           reply (` Hallo, ich mein Name ist *${global.BotName}* `)
+           reply (` Hallo, ich mein Name ist\n\n*Miku-Max_v2.5-ed_2*\n\nNote:\n"ed" bedeutet Edition. `)
 break 
 		
 case 'Bweb': case 'Bwebsite': case 'BWS': case 'ownerweb': case 'oweb': case 'ownerwebsite': case 'owebsite':
@@ -1703,7 +1703,7 @@ case 'team':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +436764242454\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+reply(` Das MkM-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nManager/in:\n\n1 +491632225167\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
 
 break
 
@@ -1711,7 +1711,7 @@ case 'manager': case 'managerin': case 'tmanage': case 'manageteam': case 'maana
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Der Manager des MkA-Teams ist derzeit:\n\n+491632225167 `)
+reply(` Der Manager des MkM-Teams ist derzeit:\n\n+491632225167 `)
 
 	
 break 
