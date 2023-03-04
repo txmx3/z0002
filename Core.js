@@ -1684,7 +1684,7 @@ case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 
 
         Miku.sendMessage(`120363043511491681@g.us`, {text:`*── 「 REPORT 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
 
-        replay(`Ich habe deine Frage an meine Besitzer weitergegeben. Bitte warte bis sie deine Frage beantwortet haben, die Antwort siehst du hier :https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
+        replay(`Ich habe deine Frage an meine Inhaber weitergegeben. Bitte warte bis sie deine Frage beantwortet haben, die Antwort siehst du hier :https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
 
 break
 	
@@ -1697,6 +1697,15 @@ case 'asup': case 'asupport': case 'afrage': case 'a!': case 'asupportanfrage': 
 
         replay(` Antwort erfolgreich gesendet! `)
 		
+break
+		
+case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
+
+        if (isBan) return reply(mess.banned)	 			        	
+	if (isBanChat) return reply(mess.bangc)
+        Miku.sendMessage(`120363043511491681@g.us`, {text:`*── 「 Bug-Report 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+        replay(`Ich habe deine Fehlermeldung an die Gruppe der Bestzer weitergeleitet. Das Team bedankt sich für deine Fehlermeldung `)
+
 break
 	
 case 'team':
@@ -1743,7 +1752,7 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply (` Den Link zur Chatgruppe findest du hier:\n\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nVielen Dank `)
 	
-case 'supchat': case 'chatgruppesup': case 'chatgruppesupport': case 'supch': case 'chatsup':
+case 'supchat': case 'chatgruppesupport': case 'supch': case 'chatsup':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
 reply (` Den Link zum Support-Chat findest du hier:\n\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nVielen Dank `)
@@ -1753,6 +1762,13 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Die Website meines Owners ist:\n\nbumpee.co/adv8w9mnho\n\nDie Google-Website meines Owners lautet:\n\nsites.google.com/view/max2-community-website\n\nDer Telegram Account meines Inhabers lautet:\nhttps://t.me/Anonymeradmin\n\nDer Tiktok Account meines Owners ist:\nhttps://www.tiktok.com/@T_x_m_x_2\n\n\nDie E-Mail meines Owners ist:\nMax.public.community@gmail.com\n\nVielen Dank für deine Anfrage :) `)
+
+break 
+		
+case 'welcome':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hey ${pushname} , ich bin Miku-Max_v2.5-ed_2 `)
 
 break 
 		
