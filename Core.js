@@ -1625,31 +1625,6 @@ case 'reaction': case 'react': case 'reactions': case 'r':
 @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
             let ments = [me, jodoh]
 break
-		    
-case 'addprem':
-if (!isCreator) throw mess.owner
-if (!q) return m.reply(`Enter the sample number\n\nExample: \n${prefix}${command} 916909137213`)
-if(isNaN(q)) return await m.reply('must be a number')
-  if (q.includes(`+`)) return m.reply('Do not use + direct number 9169****')
-prmi = args.join(" ")
-premium.push(`${prmi}@s.whatsapp.net`)
-fs.writeFileSync('./database/premiumuser.json', JSON.stringify(premium))
-m.reply(`* PREMIUM ADDED *\n\n${themeemoji} *ID*: ${prmi}`)
-
-break
-		    
-case 'delprem':
- case 'dellprem':
-if (!isCreator) throw mess.owner
-  if (!q) return m.reply(`Enter the Number\n\nExample: \n${prefix}${command} 916909137213`)
-  if(isNaN(q)) return await m.reply('must be a number')
-  if (q.includes(`+`)) return m.reply('Do not use + direct number 9169****')
-  prmin = `${q}@s.whatsapp.net`
-anul = banned.indexOf(prmin)
-premium.splice(anul, 1)
-fs.writeFileSync('./database/premiumuser.json', JSON.stringify(premium))
-m.reply(`Success deleting premium ${prmi}`)
-break
     
 case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1': case 'p1': case 'p2': case 'p3':
         if (isBan) return reply(mess.banned)	 			
@@ -1681,7 +1656,7 @@ case 'skript': case 'script': case 'sc': case 'sk':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` https://github.com/txmx4/m_m007-2 `)
+reply(` https://github.com/txmx4/m_m007-4 `)
 		
 break
 		
