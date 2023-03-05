@@ -2065,6 +2065,7 @@ await Miku.sendMessage(m.chat, { delete: key })
  case 'listgc': case 'gruppen': case 'groups': case 'gruppenchats': case 'grc': case 'grpc': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
+ if (!isCreator) return replay(mess.botowner)
  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
  let teks = ` 「  Miku's group user list  」\n\nTotal ${anu.length} users are using bot in Groups.`
  for (let i of anu) {
@@ -2080,13 +2081,13 @@ await Miku.sendMessage(m.chat, { delete: key })
  }
  break
 
- case 'afk': case 'wvw': {
+ case 'afk': case 'wvw': case 'bye': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  let user = global.db.users[m.sender]
  user.afkTime = + new Date
  user.afkReason = args.join(" ")
- replay(`${m.pushName} ist jetzt weg von whatsApp.\nAFK Reason : ${args.join(" ") ? args.join(" ") : ''}`)
+ replay(`${m.pushName} ist jetzt weg von WhatsApp.\nAFK Reason : ${args.join(" ") ? args.join(" ") : ''}`)
  }
  break
 
@@ -2462,7 +2463,7 @@ await Miku.sendMessage(m.chat, { delete: key })
    break
 
 
-   case 'nsfw': {
+   case 'nsfw': case 'u18': case 'u13': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
@@ -2657,7 +2658,7 @@ if (isBanChat) return reply(mess.bangc)
  }
  break
 
- case 'tag': case 'tagall': case 'all': case 'Guten Morgen': case 'everyone':{
+ case 'tag': case 'tagall': case 'all': case 'evyo': case 'everyone':{
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
@@ -2698,7 +2699,6 @@ case'admin': case 'tgad': case 'tad': case 'ta': case 'alladmin': case 'aat': {
  }
  break
 
-/*
      case 'purge':{
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
@@ -2716,8 +2716,6 @@ case'admin': case 'tgad': case 'tad': case 'ta': case 'alladmin': case 'aat': {
         }
     }
      break
-
-*/
 
 case 'purge':{mess
     if (isBan) return reply(mess.banned)	 			
@@ -4188,22 +4186,23 @@ break
 
 
 case 'ahegao' : case 'ass' : case 'bdsm' :  case 'cuckold' :  case 'cum' : case 'ero' :
-    case 'femdom' : case 'gangbang' : case 'foot' : case 'glasses':  case 'hentai': 
-     case 'masturbation': case 'neko': case 'orgy': case 'panties': 
-    case 'pussy': case 'tentacles': case 'things': case 'yuri': 
+    casecase'ass' : case 'tree' :  case 'food' :  case 'cum' : case 'genshin' :
+    case 'horns' : case 'nude' : case 'bed' : case 'glasses':  case 'dress': 
+     case 'schooluniform': case 'loli': case 'orgy': case 'sex': 
+    case 'pussy': case 'twogirls': case 'foxgirl': case 'yuri': 
 {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!m.isGroup) return replay(mess.grouponly)
     if (!AntiNsfw) return reply(mess.nonsfw)
-    
+
     reply(mess.waiting)
-     waifudhgd = await getBuffer(`https://api-reysekha.herokuapp.com/api/nsfw/${command}?apikey=APIKEY`)     
+     waifudhgd = await axios.get(`https://fantox-apis.vercel.app/${command}`)     
      let nsfwapireply = [
-        {buttonId: `${prefix}${command}`, buttonText: {displayText: `>>`}, type: 1},
+        {buttonId: `${prefix}${command}`, buttonText: {displayText: `>>`}, type: 1}
         ]
       let nsfwapimess = {
-       image: waifudhgd,
+       image: {url:waifudhgd.data.url},
        caption:  `Here it is...`,
       buttons: nsfwapireply,
       headerType: 1
