@@ -5029,7 +5029,7 @@ replay('Sendung gesendet !')
 break    
 
 
-case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe': case 'mu'{
+case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe': case 'mu':{
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
       
