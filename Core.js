@@ -1639,7 +1639,7 @@ case 'skript': case 'script': case 'sc': case 'sk':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` https://github.com/txmx4/m_m007 `)
+reply(` https://github.com/txmx4/m_m007-2 `)
 		
 break
 		
