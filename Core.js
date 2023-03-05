@@ -2090,6 +2090,43 @@ maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
     `${q}`,])
   .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
+		    
+   break
+		    
+case 'bear':
+
+if(!q) throw `Use ${prefix + command} text`
+m.reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => Miku.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+		    
+   break
+
+case 'wolf':
+
+if(!q) throw `Use ${prefix + command} text`
+m.reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => Miku.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+		    
+   break
+
+case 'joker':
+if(!q) throw `Use ${prefix + command} text`
+m.reply(mess.wait)
+maker.textpro("https://textpro.me/create-logo-joker-online-934.html", [
+    `${q}`,])
+  .then((data) => Miku.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+		    
    break
 
 		
