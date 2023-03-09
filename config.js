@@ -17,8 +17,7 @@ global.OwnerName = "Max"
 global.BotSourceCode = "https://github.com/FantoX001/Miku-MD" // -- Please don't change -- //
 global.SupportGroupLink = "https://chat.whatsapp.com/JcBzjRIxM5UHfuJbt0KrWt"  // -- Please don't change -- //
 global.sessionName = "session"  // -- Don't change otherwise bot will not work -- //
-
-
+global.sitzung = "Miku-Max_v3-ed_1"
 
 global.prefa = ['!'] // Prefix ---  change it to anythong you want except '@' //
 
