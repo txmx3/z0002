@@ -1618,7 +1618,7 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
                 Bot Name : Miku-Max_v2.5-ed_2
                 Owner Name : ${global.OwnerName}
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
-                Session ID: *${global.BotName}* `)
+                Session ID: *${global.sitzung}* `)
         break             
 	
 case 'uptime': case 'ut': case 'oz': case 'onlinezeit':
@@ -1712,7 +1712,7 @@ break
 case 'session': case 'sessionid': case 'sitzung':
 if(isBan) return reply (mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(` Die Session-Id, des Bots ist: *${global.BotName}* `)
+reply(` Die Session-Id, des Bots ist: *${global.sitzung}* `)
 
 break
 
