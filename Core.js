@@ -1754,7 +1754,7 @@ case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
 
 break
 	
-case 'team':
+case 'team': case 'listt': case 'tlist': case 'teamlist':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
@@ -5110,6 +5110,8 @@ Eigene Befehle(v3):
  userinfo , useri
  iuser , user 
  userinfos , userb
+ Level,  lvl , l
+ bn , botname
  
  *━━━〈  😎 Bot 😎 〉━━━*
 
@@ -5130,8 +5132,10 @@ Eigene Befehle(v3):
  GWS , BWS
  ownerwebsite
  
- team,teamlist
- supporter/in,tsup,supt
+ team , teamlist
+ listt , tlist
+ supporter/in
+ tsup , supt
  supteam , supportteam
  listsup , suplist
  developer/in , devs
@@ -5141,6 +5145,9 @@ Eigene Befehle(v3):
  script , skript
  sc , sk
  
+ groups , pmuser
+ gruppenchats
+ listgc , listpc
  
  idee , idea , ia
  ideeanfrage , ir
@@ -5164,45 +5171,99 @@ Eigene Befehle(v3):
  supportanfrage
  bug , bgr
  bugreport
-  
-  
-
+ 
  
  *━━━〈  🎆 Core 🎆  〉━━━*
 
- afk, speak, miku, stalk, profile, help, delete, deleteall, listgc, listpc, welcome, admin 
+ afk , speak
+ miku, stalk
+ profile , help
+ delete , deleteall
+ welcome , admin
  
  *━━━〈  🎀 Owner 🎀  〉━━━*
 
- self,public,ban,bangroup\nverlasse,join,block\nunblock,broadcast
+ self , public
+ ban , bangroup
+ verlasse , join
+ block , unblock
+ broadcast(...)
 
  *━━━〈  ⭕ Group ⭕  〉━━━*
  
- promote, demote, revoke, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw,remove 
+ promote , demote, 
+ revoke , remove
+ tagall , hidetag
+ groupsetting, tag
+ grouplink , geh
+ setgcpp , setname
+ setdesc , group
+ nsfw , remove 
+ 
 
  *━━━〈  ➰ Anti Link ➰  〉━━━*
  
- antilinkgc, antilinktg, antilinktt, antilinkytch, antilinkytvid, antilinkig, antilinkfb, antilinktwit, antilinkall, antiwame
+ antilinkgc , antilinktg
+ antilinktt , antilinkytch
+ antilinkytvid , antilinkig
+ antilinkfb , antilinktwit
+ antilinkall , antiwame
 
  *━━━〈  🔍 Search 🔍  〉━━━*
 
- play\nytmp3\nytmp4\nyts\nlyrics\ngoogle\ngimage\npinterest\nimage\nweather\nmovie\nwallpaper\nsearchgc\nhappymod\nwikimedia\nringtone\nanime\nanimestory\nmanga\nringtone 
+ play , ytmp3
+ tmp4 , yts
+ lyrics , google
+ gimage , pinterest
+ image , weather , wt
+ movie , wallpaper 
+ searchgc , happymod
+ wikimedia , ringtone
+ anime , animestory
+ manga , ringtone 
  
  *━━━〈  🔰 Convert 🔰  〉━━━*
 
-sticker, toimg, tovideo, togif , steal, stickermeme, emojimix, tourl, tomp3, toaudio
+sticker , toimg
+tovideo , togif
+steal , stickermeme 
+emojimix , tourl
+tomp3 , toaudio
 
  *━━━〈  🔉 Audio 🔉  〉━━━*
 
-bass, tempo, blown, deep, earrape, fast, fat, nightcore, reverse, robot, slow, squirrel
+bass , tempo
+blown , deep
+earrape , fast
+fat , nightcore 
+reverse , robot
+slow , squirrel
 
  *━━━〈  📍 Reactions 📍  〉━━━*
 
-bonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe
+bonk , cry
+bully , cuddle
+hug , kiss
+lick , pat
+smug , yeet
+blush , smile
+wave , highfive
+handhold , nom 
+glomp , bite
+slap , kill
+happy , wink
+poke , dance
+cringe
 
  *━━━〈  🌌 Downloader 🌌  〉━━━*
 
-play, ytmp3, ytmp4, ytvideo, mediafire, instagram, igtv, facebook, fbmp3, twitter, twittermp3, tiktok, tiktokaudio, tiktoknowm, mediafire  
+play , ytmp3
+ytmp4 , ytvideo
+instagram , igtv
+facebook , fbmp3
+twitter , twittermp3
+tiktok , tiktokaudio 
+tiktoknowm , mediafire
 
  *━━━〈  🈴 Weeb 🈴  〉━━━*
 
