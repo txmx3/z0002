@@ -5206,19 +5206,39 @@ play, ytmp3, ytmp4, ytvideo, mediafire, instagram, igtv, facebook, fbmp3, twitte
 
  *━━━〈  🈴 Weeb 🈴  〉━━━*
 
-crosplay\nwaifu\nloli\nneko\nppcouple\nfeed\nfoxgirl\nfeed\nmeow\ntickle\nwallpaper\ncoffee\nanimenom\nwaifu3\nneko2\nfeed\nmeow\ntickle\nmigumin\nawoo\nanimewallpaper2\nanime\nmanga
+crosplay , waifu
+loli , neko , ppcouple
+feed , foxgirl , feed
+meow , tickle , wallpaper
+coffee , animenom , waifu3
+neko2 , feed , meow
+tickle , migumin , awoo
+animewallpaper2 , anime 
+manga
 
  *━━━〈  ♨️ Informative ♨️  〉━━━*
 
-animequote\nquote\ncovid\nearthquake\nwiki
+animequote , quote
+covid , earthquake
+wiki
 
  *━━━〈  🎗 Others 🎗  〉━━━*
 
-stickermeme\nquotes\ndarkjoke 
+quotes
+stickermeme
+darkjoke 
 
  *━━━〈  🎐 Fun 🎐  〉━━━*
 
-reaction\ntruth\ndare\ncouple\nsoulmate\nhandsomecheck\nbeautifulcheck\nawesomecheck\ngreatcheck\ngaycheck\ncutecheck\nlesbiancheck\nhornycheck\nprettycheck\nlovelycheck\nuglycheck\ncharactercheck
+reaction , truth
+dare , couple
+soulmate , handsomecheck
+beautifulcheck , awesomecheck 
+greatcheck , gaycheck 
+cutecheck , lesbiancheck
+hornycheck , prettycheck 
+lovelycheck , uglycheck
+charactercheck
 
  *━━━〈  🪁 Essentials 🪁  〉━━━*
 
