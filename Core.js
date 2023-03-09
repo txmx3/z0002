@@ -1649,6 +1649,52 @@ if (isBanChat) return reply(mess.bangc)
 reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\nMkM Chatgruppe:\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nMkM Support-Chat:\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nMkM Werbegruppe:\nchat.whatsapp.com/GwvXFuOV3MqA5iYyyxZcyx\n\nMkM NSFW-Gruppe:\nchat.whatsapp.com/FMDqCkfLfbkHA3oaxtuAc9\n\nMkM Bewerbungen:\nnchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\nMkM Test-1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\nMkM Test-2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\nAnime-Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\nOwnergruppe vom Owner-2:\nchat.whatsapp.com/Hey2MwLXOPDOA8I5KNGsvj `)
 
 break 
+		
+case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
+        if (isBan) return reply(mess.banned)	 			        			
+	if (isBanChat) return reply(mess.bangc)
+        Miku.sendMessage(` 120363079632648987@g.us`, {text:`*── 「 Neue Miku-Idee 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+        replay(`Ich habe deine Idee/Anfrage an die Gruppe der Bestzer weitergeleitet. Das Team bedankt sich für deine Neue Idee `)
+
+break
+
+case'xp':
+        if (isBan) return reply(mess.banned)	 			      
+	if (isBanChat) return reply(mess.bangc)
+            reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
+
+break
+
+case 'userbank': case 'userb': case 'buser': case 'bankuser':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply(` 「 User Bank 」
+
+    User Balance : ${uangku}
+    Iron : ${getBesi(m.sender)}
+    Gold : ${getEmas(m.sender)}
+    Emarald : ${getEmerald(m.sender)}
+    Potion : ${getPotion(m.sender)} `)
+
+break
+		
+case 'userinfo': case 'useri': case 'infouser': case 'iuser': case 'userinfos':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply(` 「 User Info 」
+
+    User Level: ${levelMenu}
+    User XP : ${xpMenu} \ ${reqXp}
+    User Role : ${role} `)
+
+break
+
+case'l': case 'lvl': case 'level':
+        if (isBan) return reply(mess.banned)	 			       	
+	if (isBanChat) return reply(mess.bangc)
+            reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
+
+        break
 
 	case 'bn': case 'botname': case 'botn': case 'bname':
       if (isBan) return reply(mess.banned)
@@ -1736,7 +1782,7 @@ case 'developer': case 'developerin': case 'devs': case 'tdev': case 'ldev': cas
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
+reply (` Developer/in:\n\nDerzeit keine `)
 
 break
 		
