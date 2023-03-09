@@ -1364,7 +1364,7 @@ const ftroli = {
     
     Type *-menu* or press any button below to start using *${global.BotName}*
     
-    ©️ *${global.BotName}* All Rights Reserved by: *MkM Bot Inc.*
+    ©️ *${global.BotName}* All Rights Reserved by: *Sebastian*
     `
         const qtod = m.quoted? "true":"false"
         
@@ -1615,7 +1615,7 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
             reply(` *「 System Info 」*\n
                 Speed : ${latensie.toFixed(4)} 
                 Up Time : ${runtime(process.uptime())}
-                Bot Name : Miku-Max_v2.5-ed_3
+                Bot Name : Miku-Max_v2.5-ed_2
                 Owner Name : ${global.OwnerName}
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
                 Session ID: *${global.BotName}* `)
@@ -1639,7 +1639,7 @@ case 'skript': case 'script': case 'sc': case 'sk':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` https://github.com/txmx4/m_m007-4 `)
+reply(` https://github.com/txmx4/m_m008 `)
 		
 break
 		
@@ -1653,7 +1653,7 @@ break
 	case 'bn': case 'botname': case 'botn': case 'bname':
       if (isBan) return reply(mess.banned)
       if (isBanChat) return reply(mess.bangc)
-           reply (` Hallo, ich mein Name ist\n\n*Miku-Max_v2.5-ed_3*\n\nNote:\n"ed" bedeutet Edition. `)
+           reply (` Hallo, ich mein Name ist\n\n*Miku-Max_v3-ed_1*\n\nNote:\n"ed" bedeutet Edition. `)
 break 
 		
 case 'Bweb': case 'Bwebsite': case 'BWS': case 'ownerweb': case 'oweb': case 'ownerwebsite': case 'owebsite':
@@ -1707,51 +1707,8 @@ case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
         replay(`Ich habe deine Fehlermeldung an die Gruppe der Bestzer weitergeleitet. Das Team bedankt sich für deine Fehlermeldung `)
 
 break
-		
-case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
-        if (isBan) return reply(mess.banned)	 			        		
-	if (isBanChat) return reply(mess.bangc)
-        Miku.sendMessage(` 120363079632648987@g.us`, {text:`*── 「 Neue Miku-Idee 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
-        replay(`Ich habe deine Idee/Anfrage an die Gruppe der Bestzer weitergeleitet. Das Team bedankt sich für deine Neue Idee `)
-break
-		
-case'xp':
-        if (isBan) return reply(mess.banned)	 			      
-	if (isBanChat) return reply(mess.bangc)
-            reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
-break
-		
-case 'userbank': case 'userb': case 'buser': case 'bankuser':
-if(isBan) return reply(mess.banned)
-if(isBanChat) return reply(mess.bangc)
-reply(` 「 User Bank 」
-
-    User Balance : ${uangku}
-    Iron : ${getBesi(m.sender)}
-    Gold : ${getEmas(m.sender)}
-    Emarald : ${getEmerald(m.sender)}
-    Potion : ${getPotion(m.sender)} `)
 	
-break 
-	
-case 'userinfo': case 'useri': case 'infouser': case 'iuser': case 'userinfos':
-if(isBan) return reply(mess.banned)
-if(isBanChat) return reply(mess.bangc)
-reply(` 「 User Info 」
-
-    User Level: ${levelMenu}
-    User XP : ${xpMenu} \ ${reqXp}
-    User Role : ${role} `)
-
-break
-	
-case'l': case 'lvl': case 'level':
-        if (isBan) return reply(mess.banned)	 			       
-	if (isBanChat) return reply(mess.bangc)
-            reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
-        break
-	
-case 'team': case 'teamlist': case 'tlist': case 'listt':
+case 'team':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
@@ -1771,7 +1728,7 @@ case 'supporter': case 'supporterin': case 'tsup': case 'supt': case 'supteam': 
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (` Supporter/in:\n\n1  +491632225167\n2  +4916093444217\n3 +491788781873 `)
+reply (` Supporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
 
 break 
 		
@@ -1779,7 +1736,7 @@ case 'developer': case 'developerin': case 'devs': case 'tdev': case 'ldev': cas
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (`Das MkM Bot Inc-Team besitzt derzeit keine Developer :( `)
+reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
 
 break
 		
@@ -1788,7 +1745,16 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply (` Ankündigung(-en) werden hier rein gesendet:\n\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\nVielen Dank `)
 
-break 
+break
+		
+case'lul': case 'chatowner': case 'ochat': case 'chatt': case 'chatrq': case 'chatrequest': case 'crq': case 'chatanfrage': case 'ca':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+
+        Miku.sendMessage(`493023180366@s.whatsapp.net`, {text:`── 「 Chat-Anfrage 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}\n *Antwort* :`})
+        replay(`ich habe diese nachricht an mein owner weitergeleitet`)
+		
+        break
 		
 case 'chatgruppe': case 'chatgroup': case 'cgr': case 'chatgr':
 if (isBan) return reply(mess.banned)	
@@ -1811,7 +1777,7 @@ break
 case 'welcome':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(` Hey ${pushname} , ich bin Miku-Max_v2.5-ed_3 `)
+reply(` Hey ${pushname} , ich bin Miku-Max_v2.5-ed_2 `)
 
 break 
 		
@@ -5079,7 +5045,7 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe
 
 Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
 
-Ich befinde mich derzeit in der Version 2.5 Edition 2.
+Ich befinde mich derzeit in der Version 3, Edition 1.
 
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
@@ -5099,7 +5065,11 @@ Afk, speak, miku, stalk, profile, help, delete, deleteall, listgc, listpc, welco
 
 self, public, ban, bangroup, verlasse, join, block, unblock, broadcast 
 
- *━━━〈  ⭕ Group ⭕  〉━━━*
+*━━━〈  Inhaber  〉━━━*
+
+team,teamlist\n\n\nsupporter/in,tsup,supt,supteam\nsupportteam,listsup,suplist\n\ndeveloper/in,devs,tdev\ndevt,ldevdevteam,listdev\ndeveloperteam,devlist\nscript,skript,sc,sk
+
+*━━━〈  ⭕ Group ⭕  〉━━━*
  
 promote, demote, revoke, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw,remove 
 
@@ -5109,19 +5079,17 @@ antilinkgc, antilinktg, antilinktt, antilinkytch, antilinkytvid, antilinkig, ant
 
  *━━━〈  🔍 Search 🔍  〉━━━*
 
-play, ytmp3, ytmp4, yts, lyrics, google, gimage, pinterest, image, weather, movie, wallpaper, searchgc, happymod, wikimedia, ringtone, anime, animestory, manga, ringtone  
+play\nytmp3\nytmp4\nyts\nlyrics\ngoogle\ngimage\npinterest\nimage\nweather\nmovie\nwallpaper\nsearchgc\nhappymod\nwikimedia\nringtone\nanime\nanimestory\nmanga\nringtone 
 
  *━━━〈   Support   〉━━━*
-sup,support,frage,sa,supportanfrage\n\nbug,bgr,bugreport
+sup\nsupport\nfrage\nsa\nsupportanfrage\n\nbug\nbgr\nbugreport
 
  *━━━〈  Own/New(Beta)  〉━━━*
- a,a2,a3,p,p1,p2,p3,online,ping,aping\nsession,sessionid,sitzung,uptime,oz,onlinezeit,ut
+ a,a2,a3,p,p1,p2,p3\nonline,ping,aping\nsession,sessionid,sitzung\nuptime,oz,onlinezeit,ut
  
- ownergruppen,og,ow,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,supch,chatgruppesupport
+ ownergruppen,og\now,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,supch,chatgruppesupport
  
- Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite\nscript,Skript,sc,sk
- 
- Team,Teamlist\n\n\nsupporter/in,tsup,supt,supteam,supportteam,listsup,suplist\n\ndeveloper/in,devs,tdev,devt,ldev\ndevteam,listdev,developerteam,devlist
+ Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite
  
  
 *━━━〈  🔰 Convert 🔰  〉━━━*
@@ -5171,7 +5139,7 @@ reaction, truth, dare, couple, soulmate, handsomecheck, beautifulcheck, awesomec
     
     Speed : ${latensie.toFixed(4)} miliseconds
     Up Time : ${runtime(process.uptime())}
-    Bot Name : Miku-Max_v2.5-ed_2
+    Bot Name : Miku-Max_v3-ed_1
     Owner Name : ${global.OwnerName}
     𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
     𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
