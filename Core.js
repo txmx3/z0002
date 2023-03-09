@@ -5101,47 +5101,56 @@ dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 
 Hier ist die Liste meiner Befehle.
 
+Eigene Befehle(v3):
+
+*━━━〈  Own/New(Beta)  〉━━━*
+
+ xp,userbank,userb\nbuser,bankuser\n\nuserinfo,useri,iuser\niuser,userinfos
  
+ *━━━〈  😎 Bot 😎 〉━━━*
+
+  a,a2,a3,p,p1,p2,p3\nonline,ping,aping\nsession,sessionid,sitzung\nuptime,oz,onlinezeit,ut
+  
+  ━━━〈  Inhaber  〉━━━*
+
+ Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite\n\nidee,idea,ia\nideeanfrage,ir,idearequest
+ 
+ supportteam,listsup,suplist\n\ndeveloper/in,devs,tdev\ndevt,ldevdevteam,listdev\ndeveloperteam,devlist\nscript,skript,sc,sk
+
+  
+  
+  
+  
  
  *━━━〈  🎆 Core 🎆  〉━━━*
 
-Afk, speak, miku, stalk, profile, help, delete, deleteall, listgc, listpc, welcome, admin 
+ afk, speak, miku, stalk, profile, help, delete, deleteall, listgc, listpc, welcome, admin 
  
  *━━━〈  🎀 Owner 🎀  〉━━━*
 
-self, public, ban, bangroup, verlasse, join, block, unblock, broadcast 
+ self,public,ban,bangroup\nverlasse,join,block\nunblock,broadcast
 
-*━━━〈  Inhaber  〉━━━*
-
-team,teamlist\n\n\nsupporter/in,tsup,supt,supteam\nsupportteam,listsup,suplist\n\ndeveloper/in,devs,tdev\ndevt,ldevdevteam,listdev\ndeveloperteam,devlist\nscript,skript,sc,sk
-
-*━━━〈  ⭕ Group ⭕  〉━━━*
+ *━━━〈  ⭕ Group ⭕  〉━━━*
  
-promote, demote, revoke, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw,remove 
+ promote, demote, revoke, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw,remove 
+
+ *━━━〈 👥️ Gruppen👥️  〉━━━*
+
+ ownergruppen,og\now,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,supch\nchatgruppesupport
 
  *━━━〈  ➰ Anti Link ➰  〉━━━*
  
-antilinkgc, antilinktg, antilinktt, antilinkytch, antilinkytvid, antilinkig, antilinkfb, antilinktwit, antilinkall, antiwame
+ antilinkgc, antilinktg, antilinktt, antilinkytch, antilinkytvid, antilinkig, antilinkfb, antilinktwit, antilinkall, antiwame
 
  *━━━〈  🔍 Search 🔍  〉━━━*
 
-play\nytmp3\nytmp4\nyts\nlyrics\ngoogle\ngimage\npinterest\nimage\nweather\nmovie\nwallpaper\nsearchgc\nhappymod\nwikimedia\nringtone\nanime\nanimestory\nmanga\nringtone 
+ play\nytmp3\nytmp4\nyts\nlyrics\ngoogle\ngimage\npinterest\nimage\nweather\nmovie\nwallpaper\nsearchgc\nhappymod\nwikimedia\nringtone\nanime\nanimestory\nmanga\nringtone 
 
- *━━━〈   Support   〉━━━*
-sup\nsupport\nfrage\nsa\nsupportanfrage\n\nbug\nbgr\nbugreport
-
- *━━━〈  Own/New(Beta)  〉━━━*
- a,a2,a3,p,p1,p2,p3\nonline,ping,aping\nsession,sessionid,sitzung\nuptime,oz,onlinezeit,ut
+ *━━━〈  ❓️ Support ❓️  〉━━━*
  
- ownergruppen,og\now,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,supch,chatgruppesupport
+ sup\nsupport\nfrage\nsa\nsupportanfrage\n\nbug\nbgr\nbugreport
  
- Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite\n\nidee,idea,ia\nideeanfrage,ir,idearequest
- 
- xp,userbank,userb\nbuser,bankuser\n\nuserinfo,useri,iuser\niuser,userinfos
- 
-lol,chatowner,ochat\nchatt,chatrq,chatrequest\ncgr,chatanfrage,ca 
- 
-*━━━〈  🔰 Convert 🔰  〉━━━*
+ *━━━〈  🔰 Convert 🔰  〉━━━*
 
 sticker, toimg, tovideo, togif , steal, stickermeme, emojimix, tourl, tomp3, toaudio
 
@@ -5159,23 +5168,23 @@ play, ytmp3, ytmp4, ytvideo, mediafire, instagram, igtv, facebook, fbmp3, twitte
 
  *━━━〈  🈴 Weeb 🈴  〉━━━*
 
-crosplay, waifu, loli, neko, ppcouple, feed, foxgirl, feed, meow, tickle, wallpaper, coffee, animenom, waifu3, neko2, feed, meow, tickle, migumin, awoo, animewallpaper2, anime, manga
+crosplay\nwaifu\nloli\nneko\nppcouple\nfeed\nfoxgirl\nfeed\nmeow\ntickle\nwallpaper\ncoffee\nanimenom\nwaifu3\nneko2\nfeed\nmeow\ntickle\nmigumin\nawoo\nanimewallpaper2\nanime\nmanga
 
  *━━━〈  ♨️ Informative ♨️  〉━━━*
 
-animequote, quote, covid, earthquake, wiki
+animequote\nquote\ncovid\nearthquake\nwiki
 
  *━━━〈  🎗 Others 🎗  〉━━━*
 
-stickermeme, quotes, darkjoke 
+stickermeme\nquotes\ndarkjoke 
 
  *━━━〈  🎐 Fun 🎐  〉━━━*
 
-reaction, truth, dare, couple, soulmate, handsomecheck, beautifulcheck, awesomecheck, greatcheck, gaycheck, cutecheck, lesbiancheck, hornycheck, prettycheck, lovelycheck, uglycheck, charactercheck
+reaction\ntruth\ndare\ncouple\nsoulmate\nhandsomecheck\nbeautifulcheck\nawesomecheck\ngreatcheck\ngaycheck\ncutecheck\nlesbiancheck\nhornycheck\nprettycheck\nlovelycheck\nuglycheck\ncharactercheck
 
  *━━━〈  🪁 Essentials 🪁  〉━━━*
 
- say, translate, fliptext, toletter, Wetter
+ say\ntranslate\nfliptext\ntoletter\nwetter\wt
 
  *━━━〈  💥 NSFW 💥  〉━━━*
 
