@@ -5089,8 +5089,11 @@ sup\nsupport\nfrage\nsa\nsupportanfrage\n\nbug\nbgr\nbugreport
  
  ownergruppen,og\now,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,supch,chatgruppesupport
  
- Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite
+ Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite\n\nidee,idea,ia\nideeanfrage,ir,idearequest
  
+ xp,userbank,userb\nbuser,bankuser\n\nuserinfo,useri,iuser\niuser,userinfos
+ 
+lol,chatowner,ochat\nchatt,chatrq,chatrequest\ncgr,chatanfrage,ca 
  
 *━━━〈  🔰 Convert 🔰  〉━━━*
 
