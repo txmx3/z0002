@@ -1364,7 +1364,7 @@ const ftroli = {
     
     Type *-menu* or press any button below to start using *${global.BotName}*
     
-    ©️ *${global.BotName}* All Rights Reserved by: *Sebastian*
+    ©️ *${global.BotName}* All Rights Reserved by: *MkM Bot Inc.*
     `
         const qtod = m.quoted? "true":"false"
         
@@ -1615,7 +1615,7 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
             reply(` *「 System Info 」*\n
                 Speed : ${latensie.toFixed(4)} 
                 Up Time : ${runtime(process.uptime())}
-                Bot Name : Miku-Max_v2.5-ed_2
+                Bot Name : Miku-Max_v2.5-ed_3
                 Owner Name : ${global.OwnerName}
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
                 Session ID: *${global.BotName}* `)
@@ -1653,7 +1653,7 @@ break
 	case 'bn': case 'botname': case 'botn': case 'bname':
       if (isBan) return reply(mess.banned)
       if (isBanChat) return reply(mess.bangc)
-           reply (` Hallo, ich mein Name ist\n\n*Miku-Max_v2.5-ed_2*\n\nNote:\n"ed" bedeutet Edition. `)
+           reply (` Hallo, ich mein Name ist\n\n*Miku-Max_v2.5-ed_3*\n\nNote:\n"ed" bedeutet Edition. `)
 break 
 		
 case 'Bweb': case 'Bwebsite': case 'BWS': case 'ownerweb': case 'oweb': case 'ownerwebsite': case 'owebsite':
@@ -1707,8 +1707,51 @@ case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
         replay(`Ich habe deine Fehlermeldung an die Gruppe der Bestzer weitergeleitet. Das Team bedankt sich für deine Fehlermeldung `)
 
 break
+		
+case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
+        if (isBan) return reply(mess.banned)	 			        		
+	if (isBanChat) return reply(mess.bangc)
+        Miku.sendMessage(` 120363079632648987@g.us`, {text:`*── 「 Neue Miku-Idee 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+        replay(`Ich habe deine Idee/Anfrage an die Gruppe der Bestzer weitergeleitet. Das Team bedankt sich für deine Neue Idee `)
+break
+		
+case'xp':
+        if (isBan) return reply(mess.banned)	 			      
+	if (isBanChat) return reply(mess.bangc)
+            reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
+break
+		
+case 'userbank': case 'userb': case 'buser': case 'bankuser':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply(` 「 User Bank 」
+
+    User Balance : ${uangku}
+    Iron : ${getBesi(m.sender)}
+    Gold : ${getEmas(m.sender)}
+    Emarald : ${getEmerald(m.sender)}
+    Potion : ${getPotion(m.sender)} `)
 	
-case 'team':
+break 
+	
+case 'userinfo': case 'useri': case 'infouser': case 'iuser': case 'userinfos':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply(` 「 User Info 」
+
+    User Level: ${levelMenu}
+    User XP : ${xpMenu} \ ${reqXp}
+    User Role : ${role} `)
+
+break
+	
+case'l': case 'lvl': case 'level':
+        if (isBan) return reply(mess.banned)	 			       
+	if (isBanChat) return reply(mess.bangc)
+            reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
+        break
+	
+case 'team': case 'teamlist': case 'tlist': case 'listt':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
@@ -1728,7 +1771,7 @@ case 'supporter': case 'supporterin': case 'tsup': case 'supt': case 'supteam': 
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (` Supporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+reply (` Supporter/in:\n\n1  +491632225167\n2  +4916093444217\n3 +491788781873 `)
 
 break 
 		
@@ -1736,7 +1779,7 @@ case 'developer': case 'developerin': case 'devs': case 'tdev': case 'ldev': cas
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
+reply (`Das MkM Bot Inc-Team besitzt derzeit keine Developer :( `)
 
 break
 		
@@ -1768,7 +1811,7 @@ break
 case 'welcome':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(` Hey ${pushname} , ich bin Miku-Max_v2.5-ed_2 `)
+reply(` Hey ${pushname} , ich bin Miku-Max_v2.5-ed_3 `)
 
 break 
 		
