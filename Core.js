@@ -5105,22 +5105,68 @@ Eigene Befehle(v3):
 
 *━━━〈  Own/New(Beta)  〉━━━*
 
- xp,userbank,userb\nbuser,bankuser\n\nuserinfo,useri,iuser\niuser,userinfos
+ xp , userbank
+ buser , bankuser 
+ userinfo , useri
+ iuser , user 
+ userinfos , userb
  
  *━━━〈  😎 Bot 😎 〉━━━*
 
-  a,a2,a3,p,p1,p2,p3\nonline,ping,aping\nsession,sessionid,sitzung\nuptime,oz,onlinezeit,ut
+  a , a2 , a3
+  p , p1
+  p2 , p3
+  online , uptime
+  ping , aping
+  session , sessionid
+  sitzung , oz
+  onlinezeit , ut
   
   ━━━〈  Inhaber  〉━━━*
 
- Gweb,Gwebsite,GWS\nBweb,Bwebsite,BWS\noweb,ownerwebsite,owebsite\n\nidee,idea,ia\nideeanfrage,ir,idearequest
+ Gweb , Gwebsite
+ Bweb , Bwebsite
+ oweb , owebsite 
+ GWS , BWS
+ ownerwebsite
  
- supportteam,listsup,suplist\n\ndeveloper/in,devs,tdev\ndevt,ldevdevteam,listdev\ndeveloperteam,devlist\nscript,skript,sc,sk
+ team,teamlist
+ supporter/in,tsup,supt
+ supteam , supportteam
+ listsup , suplist
+ developer/in , devs
+ tdev ,  devt
+ ldevdevteam , listdev
+ developerteam , devlist
+ script , skript
+ sc , sk
+ 
+ 
+ idee , idea , ia
+ ideeanfrage , ir
+ idearequest
 
+*━━━ 〈 👥️ Gruppen👥️  〉━━━*
+
+ ownergruppen , og
+ ow , teamgruppen
+ ankündigung , ankündigungen
+ chatgruppe , chatgroup
+ cgr , chatgr
+ supchat , supch
+ chatgruppesupport
+ 
+ 
+ *━━━〈  ❓️ Support ❓️  〉━━━*
+ 
+ sup , support
+ frage ,sa
+ supportanfrage
+ bug , bgr
+ bugreport
   
   
-  
-  
+
  
  *━━━〈  🎆 Core 🎆  〉━━━*
 
@@ -5134,10 +5180,6 @@ Eigene Befehle(v3):
  
  promote, demote, revoke, remove, tagall, hidetag, groupsetting, grouplink, setgcpp, setname, setdesc, group, nsfw,remove 
 
- *━━━〈 👥️ Gruppen👥️  〉━━━*
-
- ownergruppen,og\now,teamgruppen\nankündigung,ankündigungen\nchatgruppe,chatgroup,cgr,chatgr\n,supchat,supch\nchatgruppesupport
-
  *━━━〈  ➰ Anti Link ➰  〉━━━*
  
  antilinkgc, antilinktg, antilinktt, antilinkytch, antilinkytvid, antilinkig, antilinkfb, antilinktwit, antilinkall, antiwame
@@ -5145,10 +5187,6 @@ Eigene Befehle(v3):
  *━━━〈  🔍 Search 🔍  〉━━━*
 
  play\nytmp3\nytmp4\nyts\nlyrics\ngoogle\ngimage\npinterest\nimage\nweather\nmovie\nwallpaper\nsearchgc\nhappymod\nwikimedia\nringtone\nanime\nanimestory\nmanga\nringtone 
-
- *━━━〈  ❓️ Support ❓️  〉━━━*
- 
- sup\nsupport\nfrage\nsa\nsupportanfrage\n\nbug\nbgr\nbugreport
  
  *━━━〈  🔰 Convert 🔰  〉━━━*
 
