@@ -1665,7 +1665,7 @@ case'xp':
 
 break
 		
-case 'group': case 'gruppe':
+case 'groupp': case 'gruppe': case 'ggroup': case 'grp':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
@@ -1686,6 +1686,41 @@ reply(` 「 User Bank 」
     Gold : ${getEmas(m.sender)}
     Emarald : ${getEmerald(m.sender)}
     Potion : ${getPotion(m.sender)} `)
+
+break
+		
+case 'userbalance': case 'userba': case 'ubalance':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply (` User Balance: ${uangku} `)
+		
+break 
+		
+case 'uiron': case 'useriron': case 'ironuser': case 'iuser':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply (` User Iron: ${getBesi(m.sender)} `)
+		
+break 
+	
+case 'ugold': case 'usergold': case 'golduser': case 'guser':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply(` User Gold: ${getEmas(m.sender)} `)
+		
+break
+		
+case 'uemarald': case 'useremarald':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply(` `)
+		
+break
+		
+case 'upotion': case 'userpotion':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply(` `)
 
 break
 		
