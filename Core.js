@@ -4257,9 +4257,9 @@ reply(mess.waiting)
 break
 
 
-case 'ahegao' : case 'ass' : case 'bdsm' :  case 'cuckold' :  case 'cum' : case 'ero' :
-    casecase'ass' : case 'tree' :  case 'food' :  case 'cum' : case 'genshin' :
-    case 'horns' : case 'nude' : case 'bed' : case 'glasses':  case 'dress': 
+case 'ahegao': case 'ass': case 'bdsm': case 'cuckold': case 'cum': case 'ero':
+    case 'ass': case 'tree': case 'food': case 'cum': case 'genshin':
+    case 'horns': case 'nude': case 'bed': case 'glasses':  case 'dress': 
      case 'schooluniform': case 'loli': case 'orgy': case 'sex': 
     case 'pussy': case 'twogirls': case 'foxgirl': case 'yuri': 
 {
