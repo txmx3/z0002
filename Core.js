@@ -1665,7 +1665,7 @@ case'xp':
 
 break
 		
-case 'groupp': case 'gruppe': case 'ggroup': case 'grp':
+case 'groupp': case 'gruppe': case 'ggroup': case 'grpp': case 'ggrp':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
@@ -1696,32 +1696,39 @@ reply (` User Balance: ${uangku} `)
 		
 break 
 		
-case 'uiron': case 'useriron': case 'ironuser': case 'iuser':
+case 'uiron': case 'useriron': case 'ironuser': case 'inuser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
 reply (` User Iron: ${getBesi(m.sender)} `)
 		
 break 
 	
-case 'ugold': case 'usergold': case 'golduser': case 'guser':
+case 'ugold': case 'usergold': case 'golduser': case 'gduser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
 reply(` User Gold: ${getEmas(m.sender)} `)
 		
 break
 		
-case 'uemarald': case 'useremarald':
+case 'uemarald': case 'useremarald': case 'emaralduser': case 'emuser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply(` `)
+reply(` User Emarald: ${getEmerald(m.sender)} `)
 		
 break
 		
-case 'upotion': case 'userpotion':
+case 'upotion': case 'userpotion': case 'potionuser': case 'ptuser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply(` `)
+reply(` User Potion: ${getPotion(m.sender)} `)
 
+break
+		
+case 'userl': case 'userlvl': case 'userlevel': case 'luser': case 'lvluser': case 'leveluser':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply (` User Level: ${levelMenu} `)
+		
 break
 		
 case 'userinfo': case 'useri': case 'infouser': case 'iuser': case 'userinfos':
