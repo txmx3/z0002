@@ -1612,13 +1612,20 @@ case 'reaction': case 'react': case 'reactions': case 'r':
 case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1': case 'p1': case 'p2': case 'p3':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-            reply(` *「 System Info 」*\n
-                Speed : ${latensie.toFixed(4)} 
+            reply(` *「 System Info 」*
+	    
+                Speed : ${latensie.toFixed(4)}
+		
                 Up Time : ${runtime(process.uptime())}
-                Bot Name : Miku-Max_v2.5-ed_2
+		
+                Bot Name : ${global.BotName}
+		
                 Owner Name : ${global.OwnerName}
+		
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
+		
                 Session ID: *${global.sitzung}* `)
+		
         break             
 	
 case 'uptime': case 'ut': case 'oz': case 'onlinezeit':
@@ -1639,7 +1646,7 @@ case 'skript': case 'script': case 'sc': case 'sk':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` https://github.com/txmx4/m_m008 `)
+reply(` https://github.com/txmx4/m_m009-1`)
 		
 break
 		
