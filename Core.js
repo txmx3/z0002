@@ -1773,7 +1773,7 @@ case'l': case 'lvl': case 'level':
 	case 'bn': case 'botname': case 'botn': case 'bname':
       if (isBan) return reply(mess.banned)
       if (isBanChat) return reply(mess.bangc)
-           reply (` Hallo, ich mein Name ist\n\n*Miku-Max_v3-ed_1*\n\nNote:\n"ed" bedeutet Edition. `)
+           reply (` Hallo, ich mein Name ist\n\n*${global.BotName}*\n\nNote:\n"ed" bedeutet Edition. `)
 break 
 		
 case 'Bweb': case 'Bwebsite': case 'BWS': case 'ownerweb': case 'oweb': case 'ownerwebsite': case 'owebsite':
