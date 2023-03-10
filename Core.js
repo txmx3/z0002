@@ -1731,6 +1731,20 @@ reply (` User Level: ${levelMenu} `)
 		
 break
 		
+case 'userxp': case 'uxp': case 'xpu': case 'xpuser':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply(` User XP: ${xpMenu} \ ${reqXp} `)
+		
+break 
+
+case 'userrole': case 'urole': case 'roleuser': case 'ruser':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+reply(` User-Role: ${role} `)
+		
+break
+
 case 'userinfo': case 'useri': case 'infouser': case 'iuser': case 'userinfos':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
