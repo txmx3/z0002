@@ -1664,6 +1664,17 @@ case'xp':
             reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
 
 break
+		
+case 'group': case 'gruppe':
+if(isBan) return reply(mess.banned)
+if(isBanChat) return reply(mess.bangc)
+if (!m.isGroup) return replay(mess.grouponly)
+reply(` 「 Group 」
+name: ${metadata.subject}
+
+beschreibung: ${metadata.desc} `)
+		
+break 
 
 case 'userbank': case 'userb': case 'buser': case 'bankuser':
 if(isBan) return reply(mess.banned)
@@ -1829,7 +1840,7 @@ break
 case 'welcome':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(` Hey ${pushname} , ich bin Miku-Max_v2.5-ed_2 `)
+reply(` Hey ${pushname} , ich bin ${global.sitzung}  `)
 
 break 
 		
@@ -5154,6 +5165,8 @@ Eigene Befehle(v3):
  groups , pmuser
  gruppenchats
  listgc , listpc
+ pruser , pmus
+ pmchats , chats
  
  idee , idea , ia
  ideeanfrage , ir
@@ -5168,6 +5181,9 @@ Eigene Befehle(v3):
  cgr , chatgr
  supchat , supch
  chatgruppesupport
+ gruppenchats
+ grc , grpc
+ gruppe , group
  
  
  *━━━〈  ❓️ Support ❓️  〉━━━*
