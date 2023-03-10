@@ -1758,7 +1758,7 @@ case 'team': case 'listt': case 'tlist': case 'teamlist':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Das MkM-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nManager/in:\n\n1 +491632225167\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+reply(` Das MkM-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nManager/in:\n\n1 +491632225167\n\nSupporter/in:\n\n1  +49 4916093444217\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
 
 break
 
@@ -1767,6 +1767,8 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Der Manager des MkM-Teams ist derzeit:\n\n+491632225167 `)
+	
+break
 
 	
 break 
@@ -1806,11 +1808,15 @@ case 'chatgruppe': case 'chatgroup': case 'cgr': case 'chatgr':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
 reply (` Den Link zur Chatgruppe findest du hier:\n\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nVielen Dank `)
+
+break 
 	
 case 'supchat': case 'chatgruppesupport': case 'supch': case 'chatsup':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
 reply (` Den Link zum Support-Chat findest du hier:\n\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nVielen Dank `)
+		
+break
 		
 case 'kontakt': case 'contact': case 'kowner': case 'cowber':
 if (isBan) return reply(mess.banned)
