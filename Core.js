@@ -5183,8 +5183,40 @@ Eigene Befehle(v3):
  userinfo , useri
  iuser , user 
  userinfos , userb
- Level,  lvl , l
+ level,  lvl , l
  bn , botname
+ 
+ *━━━〈  U*ser*  〉━━━*
+ 
+ _Userbank:_
+ userbank
+ buser , bankuser
+ 
+ uiron , useriron
+ ironuser , inuser
+ ugold , gduser
+ golduser , usergold
+ emaralduser , emuser
+ 
+ upotion , userpotion
+ potionuser  , ptuser
+ 
+ userbalance
+ userba , ubalance
+ 
+ _Level:_
+ userxp , uxp
+ xpu , xpuser
+ userl , userlvl
+ userlevel , luser
+ lvluser , leveluser
+ 
+ _Benutzer:_
+ userinfo , useri
+ iuser , user
+ userinfos
+ userrole , urole
+ roleuser , ruser
  
  *━━━〈  😎 Bot 😎 〉━━━*
 
@@ -5239,7 +5271,9 @@ Eigene Befehle(v3):
  chatgruppesupport
  gruppenchats
  grc , grpc
- gruppe , group
+ gruppe , groupp
+ ggroup , ggrp
+ grpp
  
  
  *━━━〈  ❓️ Support ❓️  〉━━━*
