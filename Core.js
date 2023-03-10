@@ -5185,12 +5185,6 @@ Eigene Befehle(v3):
 
 *━━━〈  Own/New(Beta)  〉━━━*
 
- xp , userbank
- buser , bankuser 
- userinfo , useri
- iuser , user 
- userinfos , userb
- level,  lvl , l
  bn , botname
  
  *━━━〈  U*ser*  〉━━━*
@@ -5217,6 +5211,7 @@ Eigene Befehle(v3):
  userl , userlvl
  userlevel , luser
  lvluser , leveluser
+ lvl , l , xp , level
  
  _Benutzer:_
  userinfo , useri
@@ -5459,7 +5454,7 @@ charactercheck
 
 
 
- 『  *${global.BotName}*  』
+ 『  *${global.sitzung}*  』
  Powered by: *MkM Inc.*
 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
