@@ -1658,10 +1658,13 @@ reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\nchat.whatsapp.com/G0nG2wu
 break 
 		
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
-        if (isBan) return reply(mess.banned)	 			        			
+		
+        if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
-        Miku.sendMessage(`120363079632648987@g.us`, {text:`*── 「 Neue Miku-Idee 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
-        replay(`Ich habe deine Idee/Anfrage an die Gruppe der Bestzer weitergeleitet. Das Team bedankt sich für deine Neue Idee `)
+
+        Miku.sendMessage(`120363079632648987@g.us`, {text:`*── 「 Idee 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+
+        replay(`Ich habe deine Idee Weitergeleitet . Das MkM Bot-Team bedankt sich für deine Anfrage `)
 
 break
 
