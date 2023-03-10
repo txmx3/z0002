@@ -34,7 +34,7 @@ console.log(color('\nYou can follow me on GitHub: Sebi127391','aqua'))
     const Miku = MikuConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['Miku by: Sebastian','Safari','1.0.0'],
+        browser: ['Miku by: MkM Bot','Safari','1.0.0'],
         auth: state,
         version
     })
@@ -150,11 +150,11 @@ Miku.ev.on('group-participants.update', async (anu) => {
                 if (anu.action == 'add') {
                 let WAuserName = num
                 mikutext = `
-Hello @${WAuserName.split("@")[0]},
+Hallo @${WAuserName.split("@")[0]},
 
-I am *Miku Nakano*, Welcome to ${metadata.subject}.
+Ich bin *Miku Nakano*, Willkommen zu ${metadata.subject}.
 
-*Group Description:*
+*Gruppen Beschreibung:*
 ${metadata.desc}
 `
 
@@ -169,7 +169,7 @@ Miku.sendMessage(anu.id, buttonMessage)
                 } else if (anu.action == 'remove') {
                 	let WAuserName = num
                     mikutext = `
-Sayonara 👋, @${WAuserName.split("@")[0]},
+Bye! 👋, @${WAuserName.split("@")[0]},
 
 Ich hoffe, Sie kommen bald wieder, aber wir werden Sie trotzdem nicht vermissen!
 `
