@@ -21,10 +21,27 @@ global.sitzung = "Miku-Max_v3-ed_1"
 global.owner1 = "Max_2 | +493023180366"
 global.owner3 = "Max_2 |+4917662927731"
 global.owner2 = "Kirito | +491777062822"
+global.manage = "Pablo | +491632225167"
+global.support1 = "Jabee1 | +49 4916093444217"
+global.support2 = "Kevin | +491777108553"
+global.support3 = "Mario | +491788781873"
+global.support4 = "Jabee2 | +4916093444217"
+global.host1 = "Kevin | +491777108553"
+
+global.supporter1 = "Jaybee1 | +49 4916093444217"
+global.supporterin1 = "Jaybee1 | +49 4916093444217"
+global.supporter2 = "Kevin | +491777108553"
+global.supporterin2 = "Kevin | +491777108553"
+global.supporter3 = "Mario | +491788781873
+global.supporterin3 = "Mario | +491788781873"
+global.supporter4 = "Jaybee2 | +4916093444217"
+global.supporterin4 = "Jaybee2 | +4916093444217"
+global.hoster1 = "Kevin | +491777108553"
+global.hosterin1 = "Kevin | +491777108553"
 global.manager = "Pablo | +491632225167"
 global.managerin = "Pablo | +491632225167"
-global.supporter1 = "Jaybee1 | +49 4916093444217"
-global.supporterin1 = "Jaybee1 | +49 491 6093444217"
+
+
 
 global.prefa = ['!'] // Prefix ---  change it to anythong you want except '@' //
 
