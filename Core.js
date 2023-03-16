@@ -1600,7 +1600,7 @@ case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!AntiNsfw) return reply(mess.nonsfw)
-        reply(` *━━━〈  📛 NSFW Menu 📛  〉━━━*\n\nahegao	(leider def.), ass (leider def.), bdsm (leider def.), cuckold (leider def.), cum (leider def.), ero (leider def.), femdom (leider def.), gangbang (leider def.), foot (leider def.), glasses (leider def.), hentai (leider def.), masturbation (leider def.), orgy (leider def.), panties (leider def.) , pussy (leider def.), tentacles (leider def.), things (leider def.), yuri (leider def.),nsfwloli (leider def.), blowjobgif, hentaivideo, trap, hneko, hwaifu, versuche den befehl mal mit (!gig (befehl) )`)
+        reply(` *━━━〈  📛 NSFW Menu 📛  〉━━━*\n\nahegao , ass , bdsm ,  cuckold , ero , femdom , gangbang , foot , glasses , hentai , masturbation , orgy , panties , pussy , tentacles , things , yuri , nsfwloli , blowjobgif, hentaivideo, trap, hneko, hwaifu, versuche den befehl mal mit (!gig (befehl) )`)
     break
 
 case 'reaction': case 'react': case 'reactions': case 'r':
@@ -1646,7 +1646,7 @@ case 'skript': case 'script': case 'sc': case 'sk':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` https://github.com/txmx4/m_m009-1`)
+reply(` Den Skript des Bots findest du hier:\n${global.skript} `)
 		
 break
 		
@@ -1861,7 +1861,7 @@ case 'developer': case 'developerin': case 'devs': case 'tdev': case 'ldev': cas
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (` Developer/in:\n\nDerzeit keine `)
+reply (` Developer/in:\n\n${global.dev} `)
 
 break
 		
@@ -5184,7 +5184,7 @@ dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 
 Hier ist die Liste meiner Befehle.
 
-Eigene Befehle(v3):
+Eigene Befehle(v4):
 
 *━━━〈  Own/New(Beta)  〉━━━*
 
