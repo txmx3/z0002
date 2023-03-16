@@ -33,7 +33,6 @@ global.supporterin1 = "Jaybee1 | +49 4916093444217"
 global.supporter2 = "Kevin | +491777108553"
 global.supporterin2 = "Kevin | +491777108553"
 global.supporter3 = "Mario | +491788781873
-global.supporterin3 = "Mario | +491788781873"
 global.supporter4 = "Jaybee2 | +4916093444217"
 global.supporterin4 = "Jaybee2 | +4916093444217"
 global.hoster1 = "Kevin | +491777108553"
