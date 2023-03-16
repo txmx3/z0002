@@ -1386,7 +1386,7 @@ return list[Math.floor(list.length * Math.random())]
     }
    
     if (smallinput=='!') {
-      reply (`Hello *${pushname}*, I am *${BotName}*, a WhatsApp bot made by *Sebastian* and curbarently being hosted by *${OwnerName}*.  type  *${prefix}help* to get my full command list.`);
+      reply (`Hello *${pushname}*, I am *${BotName}*, a WhatsApp bot made by *MkM Bot Inc*. And curbarently being hosted by *${OwnerName}*.  type  *${prefix}help* to get my full command list.`);
     }
 
     if (smallinput=='lol') {
@@ -1400,115 +1400,6 @@ return list[Math.floor(list.length * Math.random())]
      if (smallinput=='Hi ') {
         reply (`hdf`)
     }
-    
-    if (smallinput=='~Teamlist ') {
-        reply (`Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n4  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +49178878187 `)
-}
-	
-if (smallinput=='~Team ') {
-
-        reply (`Das Mk&A-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nStlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822\n\nDeveloper/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743\n\nSupporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
-}
-	
-if (smallinput=='.inhaber ') {
-reply (` Inhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\n `)
-}
-	
-if (smallinput=='.inhaberin ') {
-reply (` Inhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\n `)
-}
-	
-if (smallinput=='.stellvertretendeinhaberin ') {
-reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
-}
-	
-if (smallinput=='.stellvertretendeinhaber ') {
-reply (` . Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
-}
-
-if (smallinput=='.stellvertreterin ') {
-reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
-}
-
-if (smallinput=='.stellvertretendeinhaber ') {
-reply (` Stlv. Inhaber/in:\n\n1  +4915212908434\n2  +4917662927731\n3  +491777062822 `)
-}
-	
-if (smallinput=='.developerin ') {
-reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
-}
-	
-if (smallinput=='.developer ') {
-reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
-}
-	
-if (smallinput=='.devs ') {
-reply (` Developer/in:\n\n1   +4915238056923\n2   +436641025411\n3   +491622661743 `)
-}
-	
-if (smallinput=='.supporter ') {
-reply (` Supporter/in:\n\n1  +436608292027\n\n2  +4916093444217\n3  +491788781873 `)
-}
-	
-if (smallinput==' .supporterin ') {
-reply (` Supporter/in:\n\n1  +436608292027\n\n2  +4916093444217\n3  +491788781873 `)
-}
-	
-if (smallinput==' .mail ') {
-reply (` Die E-Mail meines Inhabers ist: max.public.community@gmail.com `)
-}
-	
-if (smallinput=='.EMail ') {
-reply (` Die E-Mail meines Inhabers ist: max.public.community@gmail.com `)
-}
-	
-if (smallinput=='.eMail ') {
-reply (` Die E-Mail meines Inhabers ist:\n\nMax.public.community@gmail.com `)
-}
-	
-if (smallinput=='.email ') {
-reply (` Die E-Mail meines Inhabers ist:\n\nMax.public.community@gmail.com `)
-}
-	
-if (smallinput=='.Bweb ') {
-reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
-}
-	
-if (smallinput=='.Bwebsite ') {
-reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
-}
-	
-if (smallinput=='.BWeb ') {
-reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
-}
-	
-if (smallinput=='.BWebsite') {
-reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
-}
-	
-if (smallinput=='.Bws ') {
-reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
-}
-	
-if (smallinput=='.BWS ') {
-reply (` Die B-Website meines Inhabers lautet:\n\nbumpee.co/adv8w9mnho `)
-}
-	
-if(smallinput=='.Gweb ') {
-reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
-}
-	
-if(smallinput=='.gweb ') {
-reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
-}
-	
-if(smallinput=='.Gwebsite ') {
-reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
-}
-	
-if(smallinput=='.gwebsite ') {
-reply (` Die Google-Website meines Inhabers lautet:\n\nhttps://sites.google.com/view/max2-community-website `)
-} 
 	
     if (smallinput.includes('Guten Morgen ') || smallinput.includes('good morning')) {
       reply (`🌝was willst du jetzt 🌚`);
@@ -1653,7 +1544,8 @@ break
 case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\nMkM Chatgruppe:\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nMkM Support-Chat:\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nMkM Werbegruppe:\nchat.whatsapp.com/GwvXFuOV3MqA5iYyyxZcyx\n\nMkM NSFW-Gruppe:\nchat.whatsapp.com/FMDqCkfLfbkHA3oaxtuAc9\n\nMkM Bewerbungen:\nnchat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY\n\nMkM Test-1:\nchat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf\n\nMkM Test-2:\nchat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7\n\nAnime-Family:\nchat.whatsapp.com/JKiPrY3gQG7IxHomwo6Ca9\n\n\nOwnergruppe vom Owner-2:\nchat.whatsapp.com/Hey2MwLXOPDOA8I5KNGsvj `)
+if (!isCreator) return replay(mess.botowner)
+reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.support}MkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbung}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2} `)
 
 break 
 		
@@ -1884,14 +1776,14 @@ case'lul': case 'chatowner': case 'ochat': case 'chatt': case 'chatrq': case 'ch
 case 'chatgruppe': case 'chatgroup': case 'cgr': case 'chatgr':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
-reply (` Den Link zur Chatgruppe findest du hier:\n\nchat.whatsapp.com/H6ZzrPjmUD3E9Ja5Q9fSvv\n\nVielen Dank `)
+reply (` Den Link zur Chatgruppe findest du hier:\n\n${global.chatgr}\n\nVielen Dank `)
 
 break 
 	
 case 'supchat': case 'chatgruppesupport': case 'supch': case 'chatsup':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
-reply (` Den Link zum Support-Chat findest du hier:\n\nchat.whatsapp.com/DOnXPARAhdg3qptwUlPuye\n\nVielen Dank `)
+reply (` Den Link zum Support-Chat findest du hier:\n\n${global.support}\n\nVielen Dank `)
 		
 break
 		
