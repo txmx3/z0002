@@ -1805,7 +1805,7 @@ case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 
         if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
 
-        Miku.sendMessage(`120363043511491681@g.us`, {text:`*── 「 REPORT 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+        Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 REPORT 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
 
         replay(`Ich habe deine Frage an meine Inhaber weitergegeben. Bitte warte bis sie deine Frage beantwortet haben, die Antwort siehst du hier :https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
 
@@ -1816,7 +1816,7 @@ case 'asup': case 'asupport': case 'afrage': case 'a!': case 'asupportanfrage': 
         if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
 
-        Miku.sendMessage(`120363049068403227@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+        Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
 
         replay(` Antwort erfolgreich gesendet! `)
 		
@@ -1826,7 +1826,7 @@ case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
 
         if (isBan) return reply(mess.banned)	 			        	
 	if (isBanChat) return reply(mess.bangc)
-        Miku.sendMessage(`120363043511491681@g.us`, {text:`*── 「 Bug-Report 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+        Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 Bug-Report 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
         replay(`Ich habe deine Fehlermeldung an die Gruppe der Bestzer weitergeleitet. Das Team bedankt sich für deine Fehlermeldung `)
 
 break
@@ -1835,7 +1835,7 @@ case 'team': case 'listt': case 'tlist': case 'teamlist':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Das MkM-Team:\n\n\nInhaber/in:\n\n1 +493023180366\n2 +4917770628225\n3 +436764242454\n\nManager/in:\n\n1 +491632225167\n\nSupporter/in:\n\n1  +49 4916093444217\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+reply(` Das MkM-Team:\n\n\n Inhaber:\n\n1. ${global.owner1}\n2. ${global.owner2}\n3. ${global.owner3}\n\nManage:\n\n1. ${gloal.manage}\n\nSupport:\n\n1. ${global.support1}\n2. ${global.support2}\n3. ${global.support3}\n4. ${global.support4}\n\nHost:\n\n1. ${global.host1}`)
 
 break
 
@@ -1843,7 +1843,7 @@ case 'manager': case 'managerin': case 'tmanage': case 'manageteam': case 'maana
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Der Manager des MkM-Teams ist derzeit:\n\n+491632225167 `)
+reply(` Der Manager des MkM-Teams ist derzeit:\n\n ${global.manage} `)
 	
 break
 
@@ -1853,7 +1853,7 @@ case 'supporter': case 'supporterin': case 'tsup': case 'supt': case 'supteam': 
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (` Supporter/in:\n\n1  +436608292027\n2  +491632225167\n3  +4916093444217\n4  +491788781873 `)
+reply (` Supporter/in:\n\n1. ${global.support1}\n2. ${global.support2}\n3. ${global.support3}\n4. ${global.support4} `)
 
 break 
 		
