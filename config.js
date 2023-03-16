@@ -23,8 +23,8 @@ global.owner3 = "Max_2 |+4917662927731"
 global.owner2 = "Kirito | +491777062822"
 global.manager = "Pablo | +491632225167"
 global.managerin = "Pablo | +491632225167"
-
-
+global.supporter1 = "Jaybee1 | +49 4916093444217"
+global.supporterin1 = "Jaybee1 | +49 491 6093444217"
 
 global.prefa = ['!'] // Prefix ---  change it to anythong you want except '@' //
 
