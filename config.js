@@ -49,6 +49,25 @@ global.hosterin1 = "Kevin | +491777108553"
 global.manager = "Pablo | +491632225167"
 global.managerin = "Pablo | +491632225167"
 
+global.chatgr = "https://chat.whatsapp.com/LPH7g7UTSZO0RH9ZRqBm7D"
+global.ankundigung = "https://chat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt"
+global.werbunggr = "https://chat.whatsapp.com/GwvXFuOV3MqA5iYyyxZcyx"
+global.nsfwgr = "https://chat.whatsapp.com/FMDqCkfLfbkHA3oaxtuAc9"
+global.broadcastgr = "https://chat.whatsapp.com/DqMT7TbY07BFEiYUbwuzk8"
+global.support = "https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye"
+global.bewerbung = "https://chat.whatsapp.com/LS47HKf5kDRDqS7htdGeBY"
+global.test1 = "https://chat.whatsapp.com/GDfOjcVqD3ZITvfe4FM5wf"
+global.test2 = "https://chat.whatsapp.com/EzjnDNuLtoo9px21tDvIi7"
+gglobal.betatest = "https://chat.whatsapp.com/D2RngbN5ZH33IjpnwXrGdD"
+global.mikuot = "https://chat.whatsapp.com/HZtUUYYXceDH9TfmTlwlLr"
+global.teamgr = "https://chat.whatsapp.com/LWHQvmX171MBHoRzlN9l35"
+global.botsgr = "https://chat.whatsapp.com/IGZ4LAuoNPtJzMaG5HDrkY"
+global.supportanfragengr = "https://chat.whatsapp.com/L4LIsHrA051B3PIIhcp4Ji"
+global.mikucommand = "https://chat.whatsapp.com/JFG3pKH5ct5BNxHwIJv34n"
+global.ownerchatgr = "https://chat.whatsapp.com/JjRfd8fIl8aJEZ6EQwANrx"
+global.ideen = "https://chat.whatsapp.com/FFPwoiP84xhDiKOCOZ04mv"
+
+
 
 
 global.prefa = ['!'] // Prefix ---  change it to anythong you want except '@' //
