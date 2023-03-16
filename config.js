@@ -10,14 +10,14 @@ global.antitags = true
 global.Owner = ['493023180366','4917662927731','491632225167']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
 global.OwnerNumber = ['493023180366','4917662927731','491632225167']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
 global.ownertag = ['493023180366','4917662927731']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.BotName = "Miku-Max_v3-Beta"
+global.BotName = "Miku-Max_v4-Beta"
 global.packname = "Erstellt für User"
 global.author = "MkM Bot Inc."
 global.OwnerName = "Max"
 global.BotSourceCode = "https://github.com/FantoX001/Miku-MD" // -- Please don't change -- //
 global.SupportGroupLink = "https://chat.whatsapp.com/JcBzjRIxM5UHfuJbt0KrWt"  // -- Please don't change -- //
 global.sessionName = "session"  // -- Don't change otherwise bot will not work -- //
-global.sitzung = "Miku-Max_v3-ed_1"
+global.sitzung = "Miku-Max_v4"
 global.script = "https://github.com/txmx4/m_m0001"
 global.skript = "https://github.com/txmx4/m_m0001"
 
