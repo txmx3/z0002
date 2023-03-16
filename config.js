@@ -30,6 +30,7 @@ global.support1 = "Jabee1 | +49 4916093444217"
 global.support2 = "Kevin | +491777108553"
 global.support3 = "Mario | +491788781873"
 global.support4 = "Jabee2 | +4916093444217"
+global.dev
 global.host1 = "Kevin | +491777108553"
 
 
