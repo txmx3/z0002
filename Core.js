@@ -1554,7 +1554,53 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Chatgruppe:\n${global.chatgr} `)
+		
 break
+		
+case 'supportgruppe': case 'supgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(`MkM,Miku Supportgruppe:\n${global.support} `)
+		
+break
+		
+case 'werbegruppe': case 'werbegrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(`MkM Werbegruppe:\n${global.werbunggr} `)
+
+break
+		
+case 'nsfwgruppe': case 'nsfwgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(`MkM NSFW-Gruppe:\n${global.nsfwgr} `)
+		
+break
+		
+case 'bewerbunggruppe': case 'bewerbegruppe': case 'bewerbunggrp': case 'teamanfragegrp': case 'teambewerbunggruppe': case 'teambewerbunggrp': case 'teamanfragegruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(`MkM Bewerbungen:\n${global.bewerbung} `)
+		
+break
+		
+case 'test1gruppe': case 'test1grp': case 'botest1grp': case 'bottest1gruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(`MkM Test-1:\n${global.test1} `)
+		
+break
+		
+case 'test2gruppe': case 'test2grp': case 'botest2grp': case 'bottest2gruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(`MkM Test-2:\n${global.test2} `)
+
+break
+
 		
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
 		
