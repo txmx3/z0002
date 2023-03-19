@@ -5195,9 +5195,15 @@ Eigene Befehle(v4):
 
 *━━━〈  Own/New(Beta)  〉━━━*
 
+ _Bot_:
  bn , botname
  
- *━━━〈  U*ser*  〉━━━*
+ _Idee_:
+ idee , idea , ia
+ ideeanfrage , ir
+ idearequest
+ 
+ *━━━〈  User  〉━━━*
  
  _Userbank:_
  userbank
@@ -5256,6 +5262,28 @@ Eigene Befehle(v4):
  ggroup , ggrp
  grpp
  
+ *━━━〈  Gruppenlinks 〉━━━*
+ 
+ _Support_:
+ supgrp
+ supportgruppe
+ 
+ _Werbegruppe_:
+ werbegruppe
+ werbegrp
+ 
+ _Teambewerbung_:
+ bewerbunggruppe
+ bewerbegruppe
+ bewerbunggrp
+ teamanfragegrp
+ teambewerbunggrp
+
+ _Bot-Test_:
+ test1gruppe
+ test1grp
+ bottest1grp
+ bottest1gruppe
  
  *━━━〈  ❓️ Support ❓️  〉━━━*
  
@@ -5274,14 +5302,6 @@ Eigene Befehle(v4):
  delete , deleteall
  welcome , admin
  
- *━━━〈  🎀 Owner 🎀  〉━━━*
-
- self , public
- ban , bangroup
- verlasse , join
- block , unblock
- broadcast(...)
-
  *━━━〈  ⭕ Group ⭕  〉━━━*
  
  promote , demote, 
@@ -5396,7 +5416,9 @@ charactercheck
 
  *━━━〈  🪁 Essentials 🪁  〉━━━*
 
- say\ntranslate\nfliptext\ntoletter\nwetter\wt
+ say , translate 
+ fliptext , toletter
+ wetter , wt
 
  *━━━〈  💥 NSFW 💥  〉━━━*
 
@@ -5464,13 +5486,32 @@ if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Hi ${pushname} ,
 Du bist im Ownermenu gelandet.
-Ich bin ein von *MkM Bot Inc.* entwickelter Bot.
 All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
 
 Hier ist die Liste der Owner Befehle:
 
+*━━━〈  🎀 Owner 🎀  〉━━━*
 
- *━━━〈  Inhaber  〉━━━* 
+ self , public
+ ban , bangroup
+ verlasse , join
+ block , unblock
+ broadcast(...)
+ 
+ _ban_:
+ ban add (hinzufügen)
+ ban del (entfernen)
+
+ *━━━〈  Inhaber  〉━━━*
+ 
+ _Websites_:
  Gweb , Gwebsite
  Bweb , Bwebsite
  oweb , owebsite 
@@ -5478,6 +5519,7 @@ Hier ist die Liste der Owner Befehle:
  GWS , BWS
  ownerwebsite
 
+ _Teamliste_:
  team , teamlist
  listt , tlist
  supporter/in
@@ -5488,42 +5530,74 @@ Hier ist die Liste der Owner Befehle:
  tdev ,  devt
  devteam , listdev
  developerteam , devlist
+ 
+ 
+ _Extras_:
  script , skript
  sc , sk
-
  groups , pmuser
  gruppenchats
  listgc , listpc
  pruser , pmuser
  pmchats , chats
-
- idee , idea , ia
- ideeanfrage , ir
- idearequest
  
- *━━━〈  Gruppen  〉━━━*
+ *━━━〈  👥️Gruppen👥️  〉━━━*
+ 
+ _Botgruppe_:
  botsgruppe , botsgrp
+ 
+ _Supportanfragengruppe_:
  suprqgrp , suprqgruppe
  supportanfragegruppe
  supportanfragegruppe
+ 
+ _Befehle - Miku_:
  commandgrp , cmgrp
  commandsgrp , mikucgrp
+ 
+ _Ownerchatgruppe_:
  ochatgrp , ownerchatgrp
  ownerchatgruppe
+ 
+ _Ideegruppe_:
  ideengrp , ideengruppe
  ideagrp
+ 
+ _Teamgruppe_:
  teamgruppe , teamgrp
+ 
+ _Miku on top_:
  mikuontop , mikuot
- botbetatest , bbt
- betatest , supgrp
- supportgruppe
- werbegruppe , werbegrp
- nsfwgruppe , nsfwgrp
- bewerbungsgrp
- teamanfragegrp
- teambewerbunggrp
- test1grp , bottest1grp
+ 
+ _Testgruppen_:
+ botbetatest
+ betatest , bbt
  test2grp , bottest2grp
+ 
+ _Supportgruppe_:
+ supgrp , supportgruppe
+ 
+ _Werbegruppe_:
+ werbegruppe , werbegrp
+ 
+ _NSFW-Gruppe_:
+ nsfwgruppe , nsfwgrp
+ 
+ _Chatgruppe_:
+ chatgruppe , chagrp
+ 
+ _Dieses Menu ist erst seit 
+ MkM-Miku Version 4 verfügbar_
+ 
+ 『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
  
 
 case '':
