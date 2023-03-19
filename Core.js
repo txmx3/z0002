@@ -1334,7 +1334,7 @@ const ftroli = {
 
 
     const menulist = `
-    Konichiwa ${pushname} hallo👋. Ich bin ${global.BotName}, ein Bot entwickelt von : Sebastian um Ihre WhatsApp-Nutzung auf die nächste Stufe zu bringen.
+    Konichiwa ${pushname} Hallo👋. Ich bin ${global.BotName}, ein Bot entwickelt von : Sebastian um Ihre WhatsApp-Nutzung auf die nächste Stufe zu bringen.
         
        「 System Info 」
     
@@ -1364,7 +1364,7 @@ const ftroli = {
     
     Type *-menu* or press any button below to start using *${global.BotName}*
     
-    ©️ *${global.BotName}* All Rights Reserved by: *Sebastian*
+    ©️ *${global.BotName}* All Rights Reserved by: *MkM Bot Inc.*
     `
         const qtod = m.quoted? "true":"false"
         
@@ -1622,6 +1622,46 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM,Miku_Beta-Testgruppe:\n${global.betatest} `)
+
+break
+		
+case 'botsgruppe': case 'botsgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-Botsgruppe:\n${global.botsgr} `)
+
+break
+
+case 'suprqgrp': case 'supportanfragegruppe': case 'supportrequestgruppe': case 'suprequestgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-Support_Anfragegruppe:\n${global.supportanfragegr} `)
+
+break
+		
+case 'commandgrp': case 'commandsgrp': case 'befehlgruppe': case 'mcgrp': case 'mikucgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-Commandgruppe:\n${global.mikucommand} `)
+
+break
+
+case 'ochatgrp': case 'ownerchatgrp': case 'ownerchatgruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-OwnerChatgruppe:\n${global.ownerchatgr} `)
+
+break
+		
+case 'ideengrp': case 'ideengruppe': case 'ideagrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-Ideen:\n${global.ideen} `)
 
 break
 
