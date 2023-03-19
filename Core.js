@@ -1600,8 +1600,31 @@ if (!isCreator) return replay(mess.botowner)
 reply(`MkM Test-2:\n${global.test2} `)
 
 break
-
 		
+case 'teamgruppe': case 'teamgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-Teamgruppe:\n${global.teamgr} `)
+
+break
+		
+case 'mikuontop': case 'mikuot':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Mikuontopgruppe:\n${global.mikuot} `)
+
+break
+		
+case 'betatest': case 'botbetatest': case 'bbt':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM,Miku_Beta-Testgruppe:\n${global.betatest} `)
+
+break
+
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
 		
         if (isBan) return reply(mess.banned)	 			        
