@@ -36,7 +36,6 @@ const { EmojiAPI } = require("emoji-api")
 const imgbbUploader = require('imgbb-uploader')
 const primbon = new Primbon()
 const { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./lib/limit.js');
-const emoji = new EmojiAPI()
 const { smsg, formatp, tanggal, GIFBufferToVideoBuffer, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 const { aiovideodl } = require('./lib/scraper.js')
 const cheerio = require ("cheerio");
