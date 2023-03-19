@@ -5181,7 +5181,7 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe
 
 Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
 
-Ich befinde mich derzeit in der Version 3, Edition 1.
+Ich befinde mich derzeit in der Version 4, Edition 1.
 
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
@@ -5240,37 +5240,6 @@ Eigene Befehle(v4):
   session , sessionid
   sitzung , oz
   onlinezeit , ut
-  
-  ━━━〈  Inhaber  〉━━━*
-
- Gweb , Gwebsite
- Bweb , Bwebsite
- oweb , owebsite 
- GWS , BWS
- ownerwebsite
- 
- team , teamlist
- listt , tlist
- supporter/in
- tsup , supt
- supteam , supportteam
- listsup , suplist
- developer/in , devs
- tdev ,  devt
- ldevdevteam , listdev
- developerteam , devlist
- script , skript
- sc , sk
- 
- groups , pmuser
- gruppenchats
- listgc , listpc
- pruser , pmus
- pmchats , chats
- 
- idee , idea , ia
- ideeanfrage , ir
- idearequest
 
 *━━━ 〈 👥️ Gruppen👥️  〉━━━*
 
@@ -5488,6 +5457,73 @@ charactercheck
             Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
                 }
 break
+		
+case 'h2': case 'menu2': case 'ownermenu':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Hi ${pushname} ,
+Du bist im Ownermenu gelandet.
+Ich bin ein von *MkM Bot Inc.* entwickelter Bot.
+All Rights Reserved by *MkM Bot Inc.*
+
+Hier ist die Liste der Owner Befehle:
+
+
+ *━━━〈  Inhaber  〉━━━* 
+ Gweb , Gwebsite
+ Bweb , Bwebsite
+ oweb , owebsite 
+
+ GWS , BWS
+ ownerwebsite
+
+ team , teamlist
+ listt , tlist
+ supporter/in
+ tsup , supt
+ supteam , supportteam
+ listsup , suplist
+ developer/in , devs
+ tdev ,  devt
+ devteam , listdev
+ developerteam , devlist
+ script , skript
+ sc , sk
+
+ groups , pmuser
+ gruppenchats
+ listgc , listpc
+ pruser , pmuser
+ pmchats , chats
+
+ idee , idea , ia
+ ideeanfrage , ir
+ idearequest
+ 
+ *━━━〈  Gruppen  〉━━━*
+ botsgruppe , botsgrp
+ suprqgrp , suprqgruppe
+ supportanfragegruppe
+ supportanfragegruppe
+ commandgrp , cmgrp
+ commandsgrp , mikucgrp
+ ochatgrp , ownerchatgrp
+ ownerchatgruppe
+ ideengrp , ideengruppe
+ ideagrp
+ teamgruppe , teamgrp
+ mikuontop , mikuot
+ botbetatest , bbt
+ betatest , supgrp
+ supportgruppe
+ werbegruppe , werbegrp
+ nsfwgruppe , nsfwgrp
+ bewerbungsgrp
+ teamanfragegrp
+ teambewerbunggrp
+ test1grp , bottest1grp
+ test2grp , bottest2grp
  
 
 case '':
