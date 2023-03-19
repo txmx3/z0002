@@ -1879,7 +1879,8 @@ case 'watercolor': case 'multicolor': case 'neondevil': case 'underwater': case 
 case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic': 
 case 'lava': case 'rockart': case 'bloodglas': case 'halloween': case 'darkgold': case 'joker': case 'wicker':
  case 'firework': case 'skeleton': case 'blackpinkart': case 'sand': case 'glue': case '1917': case 'leaves': case 'demon': 
-	case '3dneon': case '3dspace': case '3dstone': {
+case '3dneon': case '3dspace': case '3dstone': case 'bookeh': case 'carbon': case 'curcuit': case 'glitch2': case 'glitch3':
+case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case 'thunder': case 'thunder2': case 'wall' {
              if (!q) throw `Example : ${prefix + command} ${global.ownername}`
              m.reply(mess.wait)
              let link
@@ -1943,6 +1944,19 @@ case 'lava': case 'rockart': case 'bloodglas': case 'halloween': case 'darkgold'
 	        if (/3dneon/.test(command)) link = 'https://textpro.me/create-3d-neon-light-text-effect-online-1028.html'
 		if (/3dspace/.test(command)) link = 'https://textpro.me/create-space-3d-text-effect-online-985.html'
 		if (/3dstone/.test(command)) link = 'https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html'
+		if (/bookeh/.test(command)) link = 'https://textpro.me/bokeh-text-effect-876.html'
+		if (/carbon/.test(command)) link = 'https://textpro.me/carbon-text-effect-833.html'
+		if (/circuit/.test(command)) link = 'https://textpro.me/create-blue-circuit-style-text-effect-online-1043.html'
+		if (/glitch2/.test(command)) link = 'https://textpro.me/create-a-glitch-text-effect-online-free-1026.html'
+		if (/glitch3/.test(command)) link = 'https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html'
+		if (/lion/.test(command)) link = 'https://textpro.me/create-lion-logo-mascot-online-938.html'
+		if (/magma/.test(command)) link = 'https://textpro.me/create-a-magma-hot-text-effect-online-1030.html'
+		if (/matrix/.test(command)) link = 'https://textpro.me/matrix-style-text-effect-online-884.html'
+		if (/neongreen/.test(command)) link = 'https://textpro.me/green-neon-text-effect-874.html'
+		if (/scifi/.test(command)) link = 'https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html'
+		if (/thunder/.test(command)) link = 'https://textpro.me/online-thunder-text-effect-generator-1031.html'
+		if (/thunder2/.test(command)) link = 'https://textpro.me/create-thunder-text-effect-online-881.html'
+		if (/wall/.test(command)) link = 'mhttps://textpro.me/break-wall-text-effect-871.html'
              let anutexpro = await maker.textpro(link, q)
                 Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by ${global.botname}` }, { quoted: m })
              }
