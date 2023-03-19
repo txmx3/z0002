@@ -1545,9 +1545,16 @@ case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.support}MkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbung}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2} `)
+reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.support}\nMkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbung}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2} `)
 
-break 
+break
+		
+case 'chatgruppe': case 'chatgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Chatgruppe:\n${global.chatgr} `)
+break
 		
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
 		
@@ -1557,7 +1564,6 @@ case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'ideare
         Miku.sendMessage(`120363079632648987@g.us`, {text:`*── 「 Idee 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
 
         replay(`Ich habe deine Idee Weitergeleitet . Das MkM Bot-Team bedankt sich für deine Anfrage `)
-
 break
 
 case'xp':
