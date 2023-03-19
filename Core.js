@@ -5507,6 +5507,97 @@ charactercheck
                 }
 break
 		
+case 'h3': case 'menu3': case 'maker': case 'makermenu':
+case 'h2': case 'menu2': case 'ownermenu':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+candy
+christmas
+3dchristmas
+sparklechristmas
+deepsea
+scifi
+rainbow2
+waterpipe
+spooky
+pencil
+circuit
+discovery
+metalic
+fiction
+demon
+transformer
+berry
+thunder
+3dstone2
+neonlight
+glitch
+harrypotter
+brokenglass
+papercut
+watercolor
+multicolor
+neondevil
+underwater
+graffitibike
+snow
+cloud
+honey
+ice
+fruitjuice
+biscuit
+wood
+chocolate
+strawberry
+matrix
+blood
+dropwater
+toxic
+lava
+rockart
+bloodglas
+halloween
+darkgold
+joker
+wicker
+firework
+skeleton
+blackpinkart
+sand
+glue
+1917
+leves
+demon
+
+
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
 case 'h2': case 'menu2': case 'ownermenu':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
