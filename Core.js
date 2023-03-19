@@ -5230,6 +5230,9 @@ Eigene Befehle(v4):
  ideeanfrage , ir
  idearequest
  
+ h3 , m3
+ makermenu
+ 
  *━━━〈  User  〉━━━*
  
  _Userbank:_
@@ -5507,11 +5510,9 @@ charactercheck
                 }
 break
 		
-case 'h3': case 'menu3': case 'maker': case 'makermenu':
-case 'h2': case 'menu2': case 'ownermenu':
+case 'h3': case 'menu3': case 'makerm': case 'makermenu':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
 reply(` Hi ${pushname} ,
 Du bist im Maker-Menu gelandet.
 All Rights Reserved by *MkM Bot Inc.*
@@ -5598,7 +5599,7 @@ demon
 		
 break
 		
-case 'h2': case 'menu2': case 'ownermenu':
+case 'h2': case 'menu2': case 'ownermenu': case 'mu2':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
