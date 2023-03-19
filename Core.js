@@ -1515,8 +1515,7 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
 		
 		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
 		
-                Session ID: *${global.sitzung}* `)
-		
+                Session ID: *${global.sitzung}* `)	
         break             
 	
 case 'uptime': case 'ut': case 'oz': case 'onlinezeit':
@@ -1537,8 +1536,7 @@ case 'skript': case 'script': case 'sc': case 'sk':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Den Skript des Bots findest du hier:\n${global.skript} `)
-		
+reply(` Den Skript des Bots findest du hier:\n${global.skript} `)		
 break
 		
 case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
@@ -1546,51 +1544,44 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.support}\nMkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbung}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2} `)
-
 break
 		
 case 'chatgruppe': case 'chatgrp':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Chatgruppe:\n${global.chatgr} `)
-		
+reply(` Chatgruppe:\n${global.chatgr} `)		
 break
 		
 case 'supportgruppe': case 'supgrp':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(`MkM,Miku Supportgruppe:\n${global.support} `)
-		
+reply(`MkM,Miku Supportgruppe:\n${global.support} `)	
 break
 		
 case 'werbegruppe': case 'werbegrp':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(`MkM Werbegruppe:\n${global.werbunggr} `)
-
 break
 		
 case 'nsfwgruppe': case 'nsfwgrp':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(`MkM NSFW-Gruppe:\n${global.nsfwgr} `)
-		
+reply(`MkM NSFW-Gruppe:\n${global.nsfwgr} `)		
 break
 		
 case 'bewerbunggruppe': case 'bewerbegruppe': case 'bewerbunggrp': case 'teamanfragegrp': case 'teambewerbunggruppe': case 'teambewerbunggrp': case 'teamanfragegruppe':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(`MkM Bewerbungen:\n${global.bewerbung} `)
-		
+reply(`MkM Bewerbungen:\n${global.bewerbung} `)		
 break
 		
 case 'test1gruppe': case 'test1grp': case 'botest1grp': case 'bottest1gruppe':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-reply(`MkM Test-1:\n${global.test1} `)
-		
+reply(`MkM Test-1:\n${global.test1} `)		
 break
 		
 case 'test2gruppe': case 'test2grp': case 'botest2grp': case 'bottest2gruppe':
@@ -1598,7 +1589,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(`MkM Test-2:\n${global.test2} `)
-
 break
 		
 case 'teamgruppe': case 'teamgrp':
@@ -1606,7 +1596,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM-Teamgruppe:\n${global.teamgr} `)
-
 break
 		
 case 'mikuontop': case 'mikuot':
@@ -1614,7 +1603,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Mikuontopgruppe:\n${global.mikuot} `)
-
 break
 		
 case 'betatest': case 'botbetatest': case 'bbt':
@@ -1622,7 +1610,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM,Miku_Beta-Testgruppe:\n${global.betatest} `)
-
 break
 		
 case 'botsgruppe': case 'botsgrp':
@@ -1630,7 +1617,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM-Botsgruppe:\n${global.botsgr} `)
-
 break
 
 case 'suprqgrp': case 'supportanfragegruppe': case 'supportrequestgruppe': case 'suprequestgrp':
@@ -1638,7 +1624,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM-Support_Anfragegruppe:\n${global.supportanfragegr} `)
-
 break
 		
 case 'commandgrp': case 'commandsgrp': case 'befehlgruppe': case 'mcgrp': case 'mikucgrp':
@@ -1646,7 +1631,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM-Commandgruppe:\n${global.mikucommand} `)
-
 break
 
 case 'ochatgrp': case 'ownerchatgrp': case 'ownerchatgruppe':
@@ -1654,7 +1638,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM-OwnerChatgruppe:\n${global.ownerchatgr} `)
-
 break
 		
 case 'ideengrp': case 'ideengruppe': case 'ideagrp':
@@ -1662,7 +1645,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM-Ideen:\n${global.ideen} `)
-
 break
 
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
@@ -1679,7 +1661,6 @@ case'xp':
         if (isBan) return reply(mess.banned)	 			      
 	if (isBanChat) return reply(mess.bangc)
             reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
-
 break
 		
 case 'groupp': case 'gruppe': case 'ggroup': case 'grpp': case 'ggrp':
@@ -1689,8 +1670,7 @@ if (!m.isGroup) return replay(mess.grouponly)
 reply(` 「 Group 」
 name: ${metadata.subject}
 
-beschreibung: ${metadata.desc} `)
-		
+Beschreibung: ${metadata.desc} `)		
 break 
 
 case 'userbank': case 'userb': case 'buser': case 'bankuser':
@@ -1703,63 +1683,54 @@ reply(` 「 User Bank 」
     Gold : ${getEmas(m.sender)}
     Emarald : ${getEmerald(m.sender)}
     Potion : ${getPotion(m.sender)} `)
-
 break
 		
 case 'userbalance': case 'userba': case 'ubalance':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply (` User Balance: ${uangku} `)
-		
+reply (` User Balance: ${uangku} `)		
 break 
 		
 case 'uiron': case 'useriron': case 'ironuser': case 'inuser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply (` User Iron: ${getBesi(m.sender)} `)
-		
+reply (` User Iron: ${getBesi(m.sender)} `)		
 break 
 	
 case 'ugold': case 'usergold': case 'golduser': case 'gduser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply(` User Gold: ${getEmas(m.sender)} `)
-		
+reply(` User Gold: ${getEmas(m.sender)} `)		
 break
 		
 case 'uemarald': case 'useremarald': case 'emaralduser': case 'emuser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply(` User Emarald: ${getEmerald(m.sender)} `)
-		
+reply(` User Emarald: ${getEmerald(m.sender)} `)		
 break
 		
 case 'upotion': case 'userpotion': case 'potionuser': case 'ptuser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
 reply(` User Potion: ${getPotion(m.sender)} `)
-
 break
 		
 case 'userl': case 'userlvl': case 'userlevel': case 'luser': case 'lvluser': case 'leveluser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply (` User Level: ${levelMenu} `)
-		
+reply (` User Level: ${levelMenu} `)		
 break
 		
 case 'userxp': case 'uxp': case 'xpu': case 'xpuser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply(` User XP: ${xpMenu} \ ${reqXp} `)
-		
+reply(` User XP: ${xpMenu} \ ${reqXp} `)		
 break 
 
 case 'userrole': case 'urole': case 'roleuser': case 'ruser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply(` User-Role: ${role} `)
-		
+reply(` User-Role: ${role} `)	
 break
 
 case 'userinfo': case 'useri': case 'infouser': case 'iuser': case 'userinfos':
@@ -1770,7 +1741,6 @@ reply(` 「 User Info 」
     User Level: ${levelMenu}
     User XP : ${xpMenu} \ ${reqXp}
     User Role : ${role} `)
-
 break
 
 case'l': case 'lvl': case 'level':
@@ -1790,21 +1760,18 @@ case 'Bweb': case 'Bwebsite': case 'BWS': case 'ownerweb': case 'oweb': case 'ow
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Die B-Website meines owners bzw. Inhabers ist:\n\nbumpee.co/adv8w9mnho `)
-
 break
 		
 case 'session': case 'sessionid': case 'sitzung':
 if(isBan) return reply (mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Die Session-Id, des Bots ist: *${global.sitzung}* `)
-
 break
 
 case 'Gweb': case 'Gwebsite': case 'GWS': case 'oweb': case 'ownerwebsite': case 'owebsite':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Die Google-Website meines owners bzw. Inhabers ist:\n\nhttps://sites.google.com/view/max2-community-website `)
-	
 break
 
 case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 'sa':
@@ -1815,7 +1782,6 @@ case 'sup': case 'support': case 'frage': case '!': case 'supportanfrage': case 
         Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 REPORT 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
 
         replay(`Ich habe deine Frage an meine Inhaber weitergegeben. Bitte warte bis sie deine Frage beantwortet haben, die Antwort siehst du hier :https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
-
 break
 	
 case 'asup': case 'asupport': case 'afrage': case 'a!': case 'asupportanfrage': case 'asa':
@@ -1825,8 +1791,7 @@ case 'asup': case 'asupport': case 'afrage': case 'a!': case 'asupportanfrage': 
 
         Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
 
-        replay(` Antwort erfolgreich gesendet! `)
-		
+        replay(` Antwort erfolgreich gesendet! `)		
 break
 		
 case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
@@ -1835,7 +1800,6 @@ case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
 	if (isBanChat) return reply(mess.bangc)
         Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 Bug-Report 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
         replay(`Ich habe deine Fehlermeldung an die Gruppe der Bestzer weitergeleitet. Das Team bedankt sich für deine Fehlermeldung `)
-
 break
 	
 case 'team': case 'listt': case 'tlist': case 'teamlist':
@@ -1843,7 +1807,6 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Das MkM-Team:\n\n\n Inhaber:\n\n1. ${global.owner1}\n2. ${global.owner2}\n3. ${global.owner3}\n\nManage:\n\n1. ${gloal.manage}\n\nSupport:\n\n1. ${global.support1}\n2. ${global.support2}\n3. ${global.support3}\n4. ${global.support4}\n\nHost:\n\n1. ${global.host1}`)
-
 break
 
 case 'manager': case 'managerin': case 'tmanage': case 'manageteam': case 'maanaget':
@@ -1851,17 +1814,13 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Der Manager des MkM-Teams ist derzeit:\n\n ${global.manage} `)
-	
 break
 
-	
-break 
 case 'supporter': case 'supporterin': case 'tsup': case 'supt': case 'supteam': case 'supportteam': case 'lsup': case 'listsup': case 'suplist':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply (` Supporter/in:\n\n1. ${global.support1}\n2. ${global.support2}\n3. ${global.support3}\n4. ${global.support4} `)
-
 break 
 		
 case 'developer': case 'developerin': case 'devs': case 'tdev': case 'ldev': case 'devteam': case 'developerteam': case 'listdev': case 'devlist':
@@ -1869,14 +1828,12 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply (` Developer/in:\n\n${global.dev} `)
-
 break
 		
 case 'ankündigungen': case 'ankündigung':
 if (isBan) return reply(mess.banned)	 			        
 if (isBanChat) return reply(mess.bangc)
 reply (` Ankündigung(-en) werden hier rein gesendet:\n\nchat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt\n\nVielen Dank `)
-
 break
 		
 case'lul': case 'chatowner': case 'ochat': case 'chatt': case 'chatrq': case 'chatrequest': case 'crq': case 'chatanfrage': case 'ca':
@@ -1885,21 +1842,18 @@ case'lul': case 'chatowner': case 'ochat': case 'chatt': case 'chatrq': case 'ch
 
         Miku.sendMessage(`493023180366@s.whatsapp.net`, {text:`── 「 Chat-Anfrage 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}\n *Antwort* :`})
         replay(`ich habe diese nachricht an mein owner weitergeleitet`)
-		
         break
 		
 case 'chatgruppe': case 'chatgroup': case 'cgr': case 'chatgr':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
 reply (` Den Link zur Chatgruppe findest du hier:\n\n${global.chatgr}\n\nVielen Dank `)
-
 break 
 	
 case 'supchat': case 'chatgruppesupport': case 'supch': case 'chatsup':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
-reply (` Den Link zum Support-Chat findest du hier:\n\n${global.support}\n\nVielen Dank `)
-		
+reply (` Den Link zum Support-Chat findest du hier:\n\n${global.support}\n\nVielen Dank `)	
 break
 		
 case 'kontakt': case 'contact': case 'kowner': case 'cowber':
@@ -1907,15 +1861,88 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Die Website meines Owners ist:\n\nbumpee.co/adv8w9mnho\n\nDie Google-Website meines Owners lautet:\n\nsites.google.com/view/max2-community-website\n\nDer Telegram Account meines Inhabers lautet:\nhttps://t.me/Anonymeradmin\n\nDer Tiktok Account meines Owners ist:\nhttps://www.tiktok.com/@T_x_m_x_2\n\n\nDie E-Mail meines Owners ist:\nMax.public.community@gmail.com\n\nVielen Dank für deine Anfrage :) `)
-
 break 
 		
 case 'welcome':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hey ${pushname} , ich bin ${global.sitzung}  `)
-
-break 
+break
+		
+case 'candy': case 'christmas': case '3dchristmas': case 'sparklechristmas':
+case 'deepsea': case 'scifi': case 'rainbow2': case 'waterpipe': case 'spooky': 
+case 'pencil': case 'circuit': case 'discovery': case 'metalic': case 'fiction': case 'demon': 
+case 'transformer': case 'berry': case 'thunder': case '.': case '3dstone2': 
+case 'neonlight': case 'glitch': case 'harrypotter': case 'brokenglass': case 'papercut': 
+case 'watercolor': case 'multicolor': case 'neondevil': case 'underwater': case 'graffitibike':
+ case 'snow': case 'cloud': case 'honey': case 'ice': case 'fruitjuice': case 'biscuit': case 'wood': 
+case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic': 
+case 'lava': case 'rockart': case 'bloodglas': case 'halloween': case 'darkgold': case 'joker': case 'wicker':
+ case 'firework': case 'skeleton': case 'blackpinkart': case 'sand': case 'glue': case '1917': case 'leaves': case 'demon': {
+             if (!q) throw `Example : ${prefix + command} ${global.ownername}`
+             m.reply(mess.wait)
+             let link
+             if (/candy/.test(command)) link = 'https://textpro.me/create-christmas-candy-cane-text-effect-1056.html'
+             if (/christmas/.test(command)) link = 'https://textpro.me/christmas-tree-text-effect-online-free-1057.html'
+             if (/3dchristmas/.test(command)) link = 'https://textpro.me/3d-christmas-text-effect-by-name-1055.html'
+             if (/sparklechristmas/.test(command)) link = 'https://textpro.me/sparkles-merry-christmas-text-effect-1054.html'
+             if (/deepsea/.test(command)) link = 'https://textpro.me/create-3d-deep-sea-metal-text-effect-online-1053.html'
+             if (/scifi/.test(command)) link = 'https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html'
+             if (/rainbow/.test(command)) link = 'https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html'
+             if (/waterpipe/.test(command)) link = 'https://textpro.me/create-3d-water-pipe-text-effects-online-1048.html'
+             if (/spooky/.test(command)) link = 'https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html'
+             if (/pencil/.test(command)) link = 'https://textpro.me/create-a-sketch-text-effect-online-1044.html'
+             if (/circuit/.test(command)) link = 'https://textpro.me/create-blue-circuit-style-text-effect-online-1043.html'
+             if (/discovery/.test(command)) link = 'https://textpro.me/create-space-text-effects-online-free-1042.html'
+             if (/metalic/.test(command)) link = 'https://textpro.me/creat-glossy-metalic-text-effect-free-online-1040.html'
+             if (/fiction/.test(command)) link = 'https://textpro.me/create-science-fiction-text-effect-online-free-1038.html'
+             if (/demon/.test(command)) link = 'https://textpro.me/create-green-horror-style-text-effect-online-1036.html'
+             if (/transformer/.test(command)) link = 'https://textpro.me/create-a-transformer-text-effect-online-1035.html'
+             if (/berry/.test(command)) link = 'https://textpro.me/create-berry-text-effect-online-free-1033.html'
+             if (/thunder/.test(command)) link = 'https://textpro.me/online-thunder-text-effect-generator-1031.html'
+             if (/magma/.test(command)) link = 'https://textpro.me/create-a-magma-hot-text-effect-online-1030.html'
+             if (/3dstone2/.test(command)) link = 'https://textpro.me/create-a-3d-stone-text-effect-online-for-free-1073.html'
+             if (/neonlight/.test(command)) link = 'https://textpro.me/create-3d-neon-light-text-effect-online-1028.html'
+             if (/glitch/.test(command)) link = 'https://textpro.me/create-impressive-glitch-text-effects-online-1027.html'
+             if (/harrypotter/.test(command)) link = 'https://textpro.me/create-harry-potter-text-effect-online-1025.html'
+             if (/brokenglass/.test(command)) link = 'https://textpro.me/broken-glass-text-effect-free-online-1023.html'
+             if (/papercut/.test(command)) link = 'https://textpro.me/create-art-paper-cut-text-effect-online-1022.html'
+             if (/watercolor/.test(command)) link = 'https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html'
+             if (/multicolor/.test(command)) link = 'https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html'
+             if (/neondevil/.test(command)) link = 'https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html'
+             if (/underwater/.test(command)) link = 'https://textpro.me/3d-underwater-text-effect-generator-online-1013.html'
+             if (/graffitibike/.test(command)) link = 'https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html'
+             if (/snow/.test(command)) link = 'https://textpro.me/create-snow-text-effects-for-winter-holidays-1005.html'
+             if (/cloud/.test(command)) link = 'https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html'
+             if (/honey/.test(command)) link = 'https://textpro.me/honey-text-effect-868.html'
+             if (/ice/.test(command)) link = 'https://textpro.me/ice-cold-text-effect-862.html'
+             if (/fruitjuice/.test(command)) link = 'https://textpro.me/fruit-juice-text-effect-861.html'
+             if (/biscuit/.test(command)) link = 'https://textpro.me/biscuit-text-effect-858.html'
+             if (/wood/.test(command)) link = 'https://textpro.me/wood-text-effect-856.html'
+             if (/chocolate/.test(command)) link = 'https://textpro.me/chocolate-cake-text-effect-890.html'
+             if (/strawberry/.test(command)) link = 'https://textpro.me/strawberry-text-effect-online-889.html'
+             if (/matrix/.test(command)) link = 'https://textpro.me/matrix-style-text-effect-online-884.html'
+             if (/blood/.test(command)) link = 'https://textpro.me/horror-blood-text-effect-online-883.html'
+             if (/dropwater/.test(command)) link = 'https://textpro.me/dropwater-text-effect-872.html'
+             if (/toxic/.test(command)) link = 'https://textpro.me/toxic-text-effect-online-901.html'
+             if (/lava/.test(command)) link = 'https://textpro.me/lava-text-effect-online-914.html'
+             if (/rockart/.test(command)) link = 'https://textpro.me/rock-text-effect-online-915.html'
+             if (/bloodglas/.test(command)) link = 'https://textpro.me/blood-text-on-the-frosted-glass-941.html'
+             if (/halloween/.test(command)) link = 'https://textpro.me/halloween-fire-text-effect-940.html'
+             if (/darkgold/.test(command)) link = 'https://textpro.me/metal-dark-gold-text-effect-online-939.html'
+             if (/joker/.test(command)) link = 'https://textpro.me/create-logo-joker-online-934.html'
+             if (/wicker/.test(command)) link = 'https://textpro.me/wicker-text-effect-online-932.html'
+             if (/firework/.test(command)) link = 'https://textpro.me/firework-sparkle-text-effect-930.html'
+             if (/skeleton/.test(command)) link = 'https://textpro.me/skeleton-text-effect-online-929.html'
+             if (/blackpinkart/.test(command)) link = 'https://textpro.me/create-blackpink-logo-style-online-1001.html'
+             if (/sand/.test(command)) link = 'https://textpro.me/write-in-sand-summer-beach-free-online-991.html'
+             if (/glue/.test(command)) link = 'https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html'
+             if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
+                if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'           
+             let anutexpro = await maker.textpro(link, q)
+                Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by ${global.botname}` }, { quoted: m })
+             }
+             break
 		
 case 'ringtone': {
     if (isBan) return reply(mess.banned)	 			
