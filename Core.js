@@ -1353,7 +1353,7 @@ const ftroli = {
     User Role : ${role}
     
     
-       「 User Bank 」
+       「 User Bank 」v
     
     User Balance : ${uangku}
     Iron : ${getBesi(m.sender)}
@@ -2018,11 +2018,40 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 		if (/textmaker3/.test(command)) link = 'https://textpro.me/create-impressive-glitch-text-effects-online-1027.html'
 		if (/textmaker4/.test(command)) link = 'https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html'
 		if (/hooror2/.test(command)) link = 'https://textpro.me/horror-blood-text-effect-online-883.html'
-		
-		
-		
-		   
-		
+		if (/whitebear3/.test(command)) link = 'https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html'
+		if (/thunder4/.test(command)) link = 'https://textpro.me/create-thunder-text-effect-online-881.html'
+		if (/neon6/.test(command)) link = 'https://textpro.me/neon-light-text-effect-online-882.html'
+		if (/matrix4/.test(command)) link = 'https://textpro.me/matrix-style-text-effect-online-884.html'
+		if (/sky3/.test(command)) link = 'https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html'
+		if (/magma4/.test(command)) link = 'https://textpro.me/create-a-magma-hot-text-effect-online-1030.html'
+		if (/sand4/.test(command)) link = 'https://textpro.me/sand-writing-text-effect-online-990.html'
+		if (/pencil5/.test(command)) link = 'https://textpro.me/create-a-sketch-text-effect-online-1044.html'
+		if (/metallic3/.test(command)) link = 'https://textpro.me/create-a-metallic-text-effect-free-online-1041.html'
+		if (/graffititext5/.test(command)) link = 'https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html'
+		if (/steel3/.test(command)) link = 'https://textpro.me/steel-text-effect-online-921.html'
+		if (/harrypotter6/.test(command)) link = 'https://textpro.me/create-harry-potter-text-effect-online-1025.html'
+		if (/underwater4/.test(command)) link = 'https://textpro.me/3d-underwater-text-effect-generator-online-1013.html'
+		if (/luxury3/.test(command)) link = 'https://textpro.me/3d-luxury-gold-text-effect-online-1003.html'
+		if (/glue5/.test(command) link = 'https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html'
+		if (/fabric3/.test(command)) link = 'https://textpro.me/fabric-text-effect-online-964.html'
+		if (/neonlight7/.test(command link ='https://textpro.me/neon-light-glitch-text-generator-online-1063.html'
+		if (/lava5/.test(command)) link = 'https://textpro.me/lava-text-effect-online-914.html'
+		if (/toxic3/.test(command)) link = 'https://textpro.me/toxic-text-effect-online-901.html'
+		if (/ancient3/.test(command)) link = 'https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html'
+		if (/chrismas4/.test(command)) link = 'https://textpro.me/sparkles-merry-christmas-text-effect-1054.html'
+		if (/scifi4/.test(command)) link = 'https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html'
+		if (/rainbow4/.test(command)) link = 'https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html'
+		if (/classic3/.test(command)) link = 'https://textpro.me/video-game-classic-8-bit-text-effect-1037.html'
+		if (/watercolor5/.test(command)) link = 'https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html'
+		if (/halloween4/.test(command)) link = 'https://textpro.me/create-a-spooky-halloween-text-effect-online-1046.html'
+		if (/halloweenfire3/.test(command)) link = 'https://textpro.me/sand-writing-text-effect-online-990.html'
+		if (/foggy3/.test(command) link = 'https://textpro.me/write-text-on-foggy-window-online-free-1015.html'
+		if (/marvel6/.test(command)) link = 'https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html'
+		if (/skeleton4/.test(command)) link = 'https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html'
+		if (/sketch3/.test(command)) link = 'https://textpro.me/create-a-sketch-text-effect-online-1044.html'
+		if (/wonderful3/.test(command)) link = 'https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html'
+		if (/batman3/.test(command)) link = 'https://textpro.me/make-a-batman-logo-online-free-1066.html'
+		if (/juice4/.test(command)) link = 'https://textpro.me/fruit-juice-text-effect-861.html'
              let anutexpro = await maker.textpro(link, q)
                 Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by ${global.botname}` }, { quoted: m })
              }
