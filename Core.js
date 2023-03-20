@@ -5676,41 +5676,71 @@ Hier ist die Liste der Maker-Menu Befehle:
 23. neonlight  <text>
 24. glitch     <text>
 25. harrypotter  <text>
-brokenglass
-papercut
-watercolor
-multicolor
-neondevil
-underwater
-graffitibike
-snow
-cloud
-honey
-ice
-fruitjuice
-biscuit
-wood
-chocolate
-strawberry
-matrix
-blood
-dropwater
-toxic
-lava
-rockart
-bloodglas
-halloween
-darkgold
-joker
-wicker
-firework
-skeleton
-blackpinkart
-sand
-glue
-1917
-leves
-demon
+26. brokenglass <text>
+27. papercut    <text>
+28. watercolor  <text>
+29. multicolor  <text>
+30. neondevil   <text>
+
+
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'h4': case 'menu4': case 'makerm2': case 'makermenu2':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
+Hier ist die Liste der Maker-Menu_2 Befehle:
+
+31. underwater    <text>
+32. graffitibike  <text>
+33. snow          <text>
+34. cloud         <text>
+35. honey         <text>
+36. ice           <text>
+37. fruitjuice    <text>
+38. biscuit       <text>
+39. wood          <text>
+40. chocolate     <text>
+41. strawberry    <text>
+42. matrix        <text>
+43. blood         <text>
+44. dropwater     <text>
+45. toxic         <text>
+46. lava          <text>
+47. rockart       <text>
+48. bloodglas     <text>
+49. alloween      <text>
+50. darkgold      <text>
+51. joker         <text>
+52. wicker        <text>
+53. firework      <text>
+54. skeleton      <text>
+55. blackpinkart  <text>
+56. sand          <text>
+57. glue          <text>
+58. 1917          <text>
+59. leves         <text>
+60. demon         <text>
 
 
 『  *${global.sitzung}*  』
