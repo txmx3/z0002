@@ -1886,7 +1886,15 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 	case 'lightglow': case 'thor': case '3d_deepsea': case 'm_black': case 'graffititext':
 	case 'neonlightgalaxy': case '3dmarvel': case 'marvelstudiometal': case 'marvelstudio':
 	case 'roadwarning': case 'advancedglow': case 'brakewall': case 'glitch3': case '3dbox': case 'waterdrop':
-	case 'lion3': case 'papercut2': case 'transformer2': case 'harrypot2':
+	case 'lion3': case 'papercut2': case 'transformer2': case 'harrypot2': case 'window2': case 'blackpinkneon2':
+	case 'pornhub3': case 'blackpink4': case 'glitch4': case 'glitch5': case 'glitch6': case '3dspace2' case 'lion4':
+	case '3dneon3': case 'neon4': case 'holographic3': case 'bear3': case 'wolf3': case 'joker3': case 'dropwater3':
+	case 'summertime3': case 'neonlight5': case 'thewall3': case 'natural2': case 'carbon3': case 'pencil3': case 'textmaker3':
+	case 'textmaker4': case 'hooror2': case 'whitebear3': case 'thunder4': case 'neon6': case 'matrix4': case 'sky3': case 'magma4':
+	case 'sand4': case 'pencil5': case 'metallic3': case 'graffititext5': case 'steel3': case 'harrypotter6': case 'underwater4':
+	case 'luxury3': case 'glue5': case 'fabric3': case 'neonlight7': case 'lava5': case 'toxic3': case 'ancient3': case 'chrismas4':
+	case 'scifi4': case 'rainbow4': case 'classic3': case 'watercolor5': case 'halloween4': case 'halloweenfire3': case 'foggy3':
+	case 'marvel6': case 'skeleton4': case 'sketch3': case 'wonderful3': case 'batman3': case 'juice4':{
              if (!q) throw `Example : ${prefix + command} ${global.ownername}`
              m.reply(mess.wait)
              let link
@@ -1978,7 +1986,7 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 		if (/thor/.test(command)) link = 'https://textpro.me/create-thor-logo-style-text-effect-online-1064.html'
 		if (/3d_deepsea/.test(command)) link = 'https://textpro.me/create-3d-deep-sea-metal-text-effect-online-1053.html'
 		if (/m_black/.test(command)) link = 'https://textpro.me/create-a-metallic-text-effect-free-online-1041.html'
-		if (/graffititext/.test(command)) link = 'https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html
+		if (/graffititext/.test(command)) link = 'https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html'
 		if (/neonlightgalaxy/.test(command)) link = 'https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html'
 		if (/3dmarvel/.test(command)) link = 'https://textpro.me/create-3d-avengers-logo-online-974.html'
 		if (/marvelstudiometal/.test(command)) link = 'https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html'
@@ -5623,7 +5631,7 @@ charactercheck
                 }
 break
 		
-case 'h3': case 'menu3': case 'makerm': case 'makermenu':
+case 'h3': case 'menu3': case 'makerm1': case 'makermenu1':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
@@ -5643,31 +5651,31 @@ Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
 
-candy
-3dneon
-3dspace
-3dstone
-christmas
-3dchristmas
-sparklechristmas
-deepsea
-scifi
-rainbow2
-waterpipe
-spooky
-pencil
-circuit
-discovery
-metalic
-fiction
-demon
-transformer
-berry
-thunder
-3dstone2
-neonlight
-glitch
-harrypotter
+1. candy       <text>
+2. 3dneon      <text>
+3. 3dspace     <text>
+4. 3dstone     <text>
+5. christmas   <text>
+6. 3dchristmas <text>
+7. sparklechristmas <text>
+8. deepsea     <text>
+9. scifi       <text>
+10. rainbow2   <text>
+11 . waterpipe <text>
+12. spooky     <text>
+13. pencil     <text>
+14. circuit    <text>
+15. discovery  <text>
+16. metalic    <text>
+17. fiction    <text>
+18. demon      <text>
+19. transformer <text>
+20. berry      <text>
+21. thunder    <text>
+22. 3dstone2   <text>
+23. neonlight  <text>
+24. glitch     <text>
+25. harrypotter  <text>
 brokenglass
 papercut
 watercolor
