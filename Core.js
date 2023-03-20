@@ -1880,7 +1880,8 @@ case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwate
 case 'lava': case 'rockart': case 'bloodglas': case 'halloween': case 'darkgold': case 'joker': case 'wicker':
  case 'firework': case 'skeleton': case 'blackpinkart': case 'sand': case 'glue': case '1917': case 'leaves': case 'demon': 
 case '3dneon': case '3dspace': case '3dstone': case 'bookeh': case 'carbon': case 'curcuit': case 'glitch2': case 'glitch3':
-case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case 'thunder': case 'thunder2': case 'wall' {
+case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case 'thunder': case 'thunder2': case 'wall':
+case 'grunge': {
              if (!q) throw `Example : ${prefix + command} ${global.ownername}`
              m.reply(mess.wait)
              let link
