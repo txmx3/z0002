@@ -5631,7 +5631,7 @@ charactercheck
                 }
 break
 		
-case 'h3': case 'menu3': case 'makerm1': case 'makermenu1':
+case 'h2': case 'menu2': case 'makerm1': case 'makermenu1':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
@@ -5693,7 +5693,7 @@ Hier ist die Liste der Maker-Menu Befehle:
 		
 break
 		
-case 'h4': case 'menu4': case 'makerm2': case 'makermenu2':
+case 'h3': case 'menu3': case 'makerm2': case 'makermenu2':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
@@ -5752,8 +5752,103 @@ Hier ist die Liste der Maker-Menu_2 Befehle:
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
 		
 break
+
+case 'h4': case 'menu4': case 'makerm3': case 'makermenu3':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+61. 3dneon
+62. 3dspace
+63. 3dstone
+64. bookeh
+65. carbon
+66. curcuit
+67. glitch2
+68. glitch3
+69. lion
+70. magma
+71. matrix
+72. neongreen
+73. scifi
+74. thunder
+75. thunder2
+76. wall
+77. grunge
+78. 3dpaint
+79. pinggold
+80. liquid
+81. burger
+82. cage
+83. party
+84. comic
+85. topography
+86. orange
+87. valentine
+88. lightglow
+89. thor
+90. 3d_deepsea
+
+
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
 		
-case 'h2': case 'menu2': case 'ownermenu': case 'mu2':
+break
+
+case 'h5': case 'menu5': case 'makerm4': case 'makermenu4':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+91. m_black
+
+
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'oh': case 'omenu': case 'ownermenu': case 'omu':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
