@@ -1881,7 +1881,12 @@ case 'lava': case 'rockart': case 'bloodglas': case 'halloween': case 'darkgold'
  case 'firework': case 'skeleton': case 'blackpinkart': case 'sand': case 'glue': case '1917': case 'leaves': case 'demon': 
 case '3dneon': case '3dspace': case '3dstone': case 'bookeh': case 'carbon': case 'curcuit': case 'glitch2': case 'glitch3':
 case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case 'thunder': case 'thunder2': case 'wall':
-case 'grunge': {
+	case 'grunge': case '3dpaint': case 'pinggold': case 'liquid': case 'burger':
+	case 'cage': case 'party': case 'comic': case 'topography': case 'orange': case 'valentine':
+	case 'lightglow': case 'thor': case '3d_deepsea': case 'm_black': case 'graffititext':
+	case 'neonlightgalaxy': case '3dmarvel': case 'marvelstudiometal': case 'marvelstudio':
+	case 'roadwarning': case 'advancedglow': case 'brakewall': case 'glitch3': case '3dbox': case 'waterdrop':
+	case 'lion3': case 'papercut2': case 'transformer2': case 'harrypot2':
              if (!q) throw `Example : ${prefix + command} ${global.ownername}`
              m.reply(mess.wait)
              let link
@@ -1957,7 +1962,67 @@ case 'grunge': {
 		if (/scifi/.test(command)) link = 'https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html'
 		if (/thunder/.test(command)) link = 'https://textpro.me/online-thunder-text-effect-generator-1031.html'
 		if (/thunder2/.test(command)) link = 'https://textpro.me/create-thunder-text-effect-online-881.html'
-		if (/wall/.test(command)) link = 'mhttps://textpro.me/break-wall-text-effect-871.html'
+		if (/wall/.test(command)) link = 'https://textpro.me/break-wall-text-effect-871.html'
+		if (/grunge/.test(command)) link = 'https://textpro.me/grunge-metallic-3d-text-effect-online-1115.html'
+		if (/3dpaint/.test(command)) link = 'https://textpro.me/create-3d-multicolor-paint-text-effect-online-1114.html'
+		if (/pinkgold/.test(command)) link = 'https://textpro.me/create-pink-soft-gold-text-effect-online-1113.html'
+		if (/liquid/.test(command)) link = 'https://textpro.me/create-3d-liquid-metal-text-effect-1112.html'
+		if (/burger/.test(command)) link = 'https://textpro.me/create-burger-3d-text-effect-1111.html'
+		if (/cage/.test(command)) link = 'https://textpro.me/create-cage-text-effect-online-1110.html'
+		if (/party/.test(command)) link = 'https://textpro.me/party-text-effect-with-the-night-event-theme-1105.html'
+		if (/comic/.test(command)) link = 'https://textpro.me/create-3d-comic-text-effects-online-1091.html'
+		if (/topography/.test(command)) link = 'https://textpro.me/create-artistic-typography-online-1086.html'
+		if (/orange/.test(command)) link =  'https://textpro.me/create-a-3d-orange-juice-text-effect-online-1084.html'
+		if (/valentine/.test(command)) link = 'https://textpro.me/create-realistic-golden-text-effect-on-red-sparkles-online-1082.html'
+		if (/lightglow/.test(command)) link = 'https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html'
+		if (/thor/.test(command)) link = 'https://textpro.me/create-thor-logo-style-text-effect-online-1064.html'
+		if (/3d_deepsea/.test(command)) link = 'https://textpro.me/create-3d-deep-sea-metal-text-effect-online-1053.html'
+		if (/m_black/.test(command)) link = 'https://textpro.me/create-a-metallic-text-effect-free-online-1041.html'
+		if (/graffititext/.test(command)) link = 'https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html
+		if (/neonlightgalaxy/.test(command)) link = 'https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html'
+		if (/3dmarvel/.test(command)) link = 'https://textpro.me/create-3d-avengers-logo-online-974.html'
+		if (/marvelstudiometal/.test(command)) link = 'https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html'
+		if (/marvelstudio/.test(command)) link = 'https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html'
+		if (/roadwarning/.test(command)) link = 'https://textpro.me/road-warning-text-effect-878.html'
+		if (/advancedglow/.test(command)) link = 'https://textpro.me/free-advanced-glow-text-effect-873.html'
+		if (/brakewall/.test(command)) link = 'https://textpro.me/break-wall-text-effect-871.html'
+		if (/glitch3/.test(command)) link = 'https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html'
+		if (/3dbox/.test(command)) link = 'https://textpro.me/3d-box-text-effect-online-880.html'
+		if (/waterdrop/.test(command)) link = 'https://textpro.me/dropwater-text-effect-872.html'
+		if (/lion3/.test(command)) link = 'https://textpro.me/create-lion-logo-mascot-online-938.html'
+		if (/papercut2/.test(command)) link = 'https://textpro.me/create-art-paper-cut-text-effect-online-1022.html'
+		if (/tranformer2/.test(command)) link = 'https://textpro.me/create-a-transformer-text-effect-online-1035.html'
+		if (/harrypot2/.test(command)) link = 'https://textpro.me/create-harry-potter-text-effect-online-1025.html'
+		if (/window2/.test(command)) link = 'https://textpro.me/write-text-on-foggy-window-online-free-1015.html'
+		if (/blackpinkneon2/.test(command)) link = 'https://textpro.me/create-neon-light-blackpink-logo-text-effect-online-1081.html'
+		if (/pornhub3/.test(command)) link = 'https://textpro.me/pornhub-style-logo-online-generator-free-977.html'
+		if (/blackpink4/.test(command)) link = 'https://textpro.me/create-blackpink-logo-style-online-1001.html'
+		if (/glitch4/.test(command)) link = 'https://textpro.me/create-impressive-glitch-text-effects-online-1027.html'
+		if (/glitch5/.test(command)) link = 'https://textpro.me/create-a-glitch-text-effect-online-free-1026.html'
+		if (/glitch6/.test(command)) link = 'https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html'
+		if (/3dspace2/.test(command)) link = 'https://textpro.me/create-space-3d-text-effect-online-985.html'
+		if (/lion4/.test(command)) link = 'https://textpro.me/create-lion-logo-mascot-online-938.html'
+		if (/3dneon3/.test(command)) link = 'https://textpro.me/create-3d-neon-light-text-effect-online-1028.html'
+		if (/neon4/.test(command)) link = 'https://textpro.me/neon-text-effect-online-879.html'
+		if (/holographic3/.test(command)) link = 'https://textpro.me/holographic-3d-text-effect-975.html'
+		if (/bear3/.test(command)) link = 'https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html'
+		if (/wolf3/.test(command)) link = 'https://textpro.me/create-wolf-logo-galaxy-online-936.html'
+		if (/joker3/.test(command)) link = 'https://textpro.me/create-logo-joker-online-934.html'
+		if (/dropwater3/.test(command)) link = 'https://textpro.me/dropwater-text-effect-872.html'
+		if (/summertime3/.test(command)) link = 'https://textpro.me/create-a-summer-neon-light-text-effect-online-1076.html'
+		if (/neonlight5/.test(command)) link = 'https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html'
+		if (/thewall3/.test(command)) link = 'https://textpro.me/break-wall-text-effect-871.html'
+		if (/natural2/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
+		if (/carbon3/.test(command)) link = 'https://textpro.me/carbon-text-effect-833.html'
+		if (/pencil3/.test(command)) link = 'https://textpro.me/create-a-sketch-text-effect-online-1044.html'
+		if (/textmaker3/.test(command)) link = 'https://textpro.me/create-impressive-glitch-text-effects-online-1027.html'
+		if (/textmaker4/.test(command)) link = 'https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html'
+		if (/hooror2/.test(command)) link = 'https://textpro.me/horror-blood-text-effect-online-883.html'
+		
+		
+		
+		   
+		
              let anutexpro = await maker.textpro(link, q)
                 Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by ${global.botname}` }, { quoted: m })
              }
