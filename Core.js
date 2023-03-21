@@ -5351,8 +5351,10 @@ Eigene Befehle(v4):
  ideeanfrage , ir
  idearequest
  
- h3 , m3
- makermenu
+mm
+mmenu
+makerm
+makermenu
  
  *━━━〈  User  〉━━━*
  
@@ -5653,6 +5655,26 @@ Hier ist die Liste der Maker-Menu Befehle:
 
 Hier eine Lister der Miku:\Makermenu Befehle,\nbzw. Eine Liste der Befehle:
 
+1. ${prefix}mm1
+1. ${prefix}makermenu1
+
+2. ${prefix}mm2
+2. ${prefix}makermenu2
+
+3. ${prefix}mm3
+3. ${prefix}makermenu3
+
+4. ${prefix}mm4
+4. ${prefix}makermenu4
+
+5. ${prefix}mm5
+5. ${prefix}makermenu5
+
+6. ${prefix}mm6
+6. ${prefix}makermenu6
+
+7. ${prefix}mm7
+7. ${prefix}makermenu7
 
 『  *${global.sitzung}*  』
  Powered by: *MkM Inc.*
