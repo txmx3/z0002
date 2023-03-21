@@ -2066,7 +2066,7 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 		if (/batman3/.test(command)) link = 'https://textpro.me/make-a-batman-logo-online-free-1066.html'
 		if (/juice4/.test(command)) link = 'https://textpro.me/fruit-juice-text-effect-861.html'
              let anutexpro = await maker.textpro(link, q)
-                Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by ${global.botname}\nOfficial MkM Bot` }, { quoted: m })
+                Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by *${global.botname}*\n_Official MkM Bot Inc._` }, { quoted: m })
              }
              break
 		
