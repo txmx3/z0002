@@ -1659,7 +1659,7 @@ break
 case 'i': case 'selflink': case 'whatsapplink': case 'walink': case '@link':
  if (isBan) return reply(mess.banned)	 			        
 if (isBanChat) return reply(mess.bangc)
-reply(` 「 Links 」\n wa.me:\n\nwa-me${m.sender}\n\nmit"@"\n\n@m.sender} `)
+reply(` 「 Links 」\n wa.me:\n\nwa-me//${m.sender}\n\nmit"@"\n\n@{m.sender} `)
 break 
 
 case'xp':
@@ -5329,8 +5329,7 @@ break
 case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe': case 'mu':{
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
-      
- const helpmenu = `Konichiwa *${pushname}* Senpai,
+    reply (` Konichiwa *${pushname}* Senpai,
 
 Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
 
@@ -5626,7 +5625,7 @@ charactercheck
  " *${prefix}<Befehlsname>* ".
  
 
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
     
 
  let buttonshelpm = [
