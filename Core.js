@@ -5626,6 +5626,22 @@ charactercheck
  
 
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+	
+	
+
+let buttonshelpm = [
+    {buttonId: `${prefix}owner`, buttonText: {displayText: 'Bot Owner'}, type: 1}
+    ]
+                let buttonMessage = {
+                    video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:true,
+                    caption: helpmenu,
+                    footer: `${BotName}`,
+                    buttons: buttonshelpm,
+                    headerType: 4
+
+                }
+            Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                }
 break
 		
 case 'mm': case 'mmenu': case 'makerm': case 'makermenu':
