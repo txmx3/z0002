@@ -1648,14 +1648,19 @@ reply(` MkM-Ideen:\n${global.ideen} `)
 break
 
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
-		
-        if (isBan) return reply(mess.banned)	 			        
+	 if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
 
         Miku.sendMessage(`120363079632648987@g.us`, {text:`*── 「 Idee 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
 
         replay(`Ich habe deine Idee Weitergeleitet . Das MkM Bot-Team bedankt sich für deine Anfrage `)
 break
+		
+case 'i': case 'selflink': case 'whatsapplink': case 'walink': case '@link':
+ if (isBan) return reply(mess.banned)	 			        
+if (isBanChat) return reply(mess.bangc)
+reply(` 「 Links 」\n wa.me:\n\nwa-me${m.sender}\n\nmit"@"\n\n@m.sender} `)
+break 
 
 case'xp':
         if (isBan) return reply(mess.banned)	 			      
@@ -2061,7 +2066,7 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 		if (/batman3/.test(command)) link = 'https://textpro.me/make-a-batman-logo-online-free-1066.html'
 		if (/juice4/.test(command)) link = 'https://textpro.me/fruit-juice-text-effect-861.html'
              let anutexpro = await maker.textpro(link, q)
-                Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by ${global.botname}` }, { quoted: m })
+                Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by ${global.botname}\nOfficial MkM Bot` }, { quoted: m })
              }
              break
 		
@@ -5351,10 +5356,16 @@ Eigene Befehle(v4):
  ideeanfrage , ir
  idearequest
  
-mm
-mmenu
-makerm
-makermenu
+ mm
+ mmenu
+ makerm
+ makermenu
+ 
+ i
+ selflink
+ whatsapplink
+ walink
+ @link
  
  *━━━〈  User  〉━━━*
  
