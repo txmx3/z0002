@@ -5631,7 +5631,40 @@ charactercheck
                 }
 break
 		
-case 'h2': case 'menu2': case 'makerm1': case 'makermenu1':
+case 'mm': case 'mmenu': case 'makerm': case 'makermenu':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+Hier eine Lister der Miku:\Makermenu Befehle,\nbzw. Eine Liste der Befehle:
+
+
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'mm1': case 'mmenu1': case 'makerm1': case 'makermenu1':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
@@ -5693,7 +5726,7 @@ Hier ist die Liste der Maker-Menu Befehle:
 		
 break
 		
-case 'h3': case 'menu3': case 'makerm2': case 'makermenu2':
+case 'mm2': case 'mmenu2': case 'makerm2': case 'makermenu2':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
@@ -5753,7 +5786,7 @@ Hier ist die Liste der Maker-Menu_2 Befehle:
 		
 break
 
-case 'h4': case 'menu4': case 'makerm3': case 'makermenu3':
+case 'mm3': case 'mmenu3': case 'makerm3': case 'makermenu3':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
@@ -5773,36 +5806,36 @@ Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
 
-61. 3dneon
-62. 3dspace
-63. 3dstone
-64. bookeh
-65. carbon
-66. curcuit
-67. glitch2
-68. glitch3
-69. lion
-70. magma
-71. matrix
-72. neongreen
-73. scifi
-74. thunder
-75. thunder2
-76. wall
-77. grunge
-78. 3dpaint
-79. pinggold
-80. liquid
-81. burger
-82. cage
-83. party
-84. comic
-85. topography
-86. orange
-87. valentine
-88. lightglow
-89. thor
-90. 3d_deepsea
+61. 3dneon    <text>
+62. 3dspace   <text>
+63. 3dstone   <text>
+64. bookeh    <text>
+65. carbon    <text>
+66. curcuit   <text>
+67. glitch2   <text>
+68. glitch3   <text>
+69. lion      <text>
+70. magma     <text>
+71. matrix    <text>
+72. neongreen <text>
+73. scifi     <text>
+74. thunder   <text>
+75. thunder2  <text>
+76. wall      <text>
+77. grunge    <text>
+78. 3dpaint   <text>
+79. pinggold  <text>
+80. liquid    <text>
+81. burger    <text>
+82. cage      <text>
+83. party     <text>
+84. comic     <text>
+85. topography  <text>
+86. orange    <text>
+87. valentine <text>
+88. lightglow <text>
+89. thor      <text>
+90. 3d_deepsea  <text>
 
 
 『  *${global.sitzung}*  』
@@ -5815,7 +5848,7 @@ Hier ist die Liste der Maker-Menu Befehle:
 		
 break
 
-case 'h5': case 'menu5': case 'makerm4': case 'makermenu4':
+case 'mm4': case 'mmenu4': case 'makerm4': case 'makermenu4':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
@@ -5835,7 +5868,179 @@ Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
 
-91. m_black
+91.  m_black     <text>
+92.  graffititext    <text>
+93.  neonlightgalaxy <text>
+94.  3dmarvel    <text>
+95.  marvelstudiometal <text>
+96.  marvelstudio <text>
+97.  roadwarning  <text>
+98.  advancedglow <text>
+99.  brakewall    <text>
+100. glitch3      <text>
+101. 3dbox        <text>
+102. waterdrop    <text>
+103. lion3        <text>
+104. papercut2    <text>
+105. transformer2 <text>
+106. harrypot2    <text>
+107. window2      <text>
+108. blackpinkneon2   <text>
+109. (pornhub3)   <text>
+110. blackpink4   <text>
+
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'mm5': case 'mmenu5': case 'makerm5': case 'makermenu5':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+111. glitch4   <text>
+112. glitch5   <text>
+113. glitch6   <text>
+114. 3dspace2  <text>
+115. lion4     <text>
+116. 3dneon3   <text>
+117. neon4     <text>
+118. holographic3  <text>
+119. bear3     <text>
+120. wolf3     <text>
+121. joker3    <text>
+122. dropwater3    <text>
+123. summertime3   <text>
+124. neonlight5    <text>
+125. thewall3  <text>
+126. natural3  <text>
+127. carbon3   <text>
+128. pencil3   <text>
+129. textmaker3    <text>
+130. (textmaker4)  <text>
+
+
+
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'mm6': case 'mmenu6': case 'makerm6': case 'makermenu6':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+131. hooror2    <text>
+132. whitebear3 <text>
+133. thunder4   <text>
+134. neon6      <text>
+135. matrix4    <text>
+136. sky3       <text>
+137. magma4     <text>
+138. sand4      <text>
+139. pencil5    <text>
+140. metallic3  <text>
+141. graffititext5 <text>
+142. steel3     <text>
+143. harrypotter6  <text>
+144. underwater4   <text>
+145. luxury3    <text>
+146. glue5      <text>
+147. fabric3    <text>
+148. neonlight7 <text>
+149. lava5      <text>
+150. toxic3     <text>
+151. ancient3   <text>
+152. chrismas4  <text>
+153. scifi4     <text>
+154. rainbow4   <text>
+155. classic3   <text>
+156. watercolor5   <text>
+157. halloween4 <text>
+158. halloweenfire3 <text>
+159. foggy3     <text>
+
+
+
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'mm7': case 'mmenu7': case 'makerm7': case 'makermenu7':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+160. marvel6    <text>
+161. skeleton4  <text>
+162. sketch3    <text>
+163. wonderful3 <text>
+164. batman3    <text>
+165. juice4     <text>
+
 
 
 『  *${global.sitzung}*  』
