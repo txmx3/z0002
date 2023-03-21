@@ -1659,7 +1659,7 @@ break
 case 'i': case 'selflink': case 'whatsapplink': case 'walink': case '@link':
  if (isBan) return reply(mess.banned)	 			        
 if (isBanChat) return reply(mess.bangc)
-reply(` 「 Links 」\n wa.me:\n\nwa-me//${m.sender}\n\nmit"@"\n\n@${m.sender} `)
+reply(` 「 Links 」\n wa.me:\n\nwa.me//${m.sender}\n\nmit"@"\n\n@+${m.sender} `)
 break 
 
 case'xp':
