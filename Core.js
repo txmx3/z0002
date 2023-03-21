@@ -1887,7 +1887,7 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 	case 'neonlightgalaxy': case '3dmarvel': case 'marvelstudiometal': case 'marvelstudio':
 	case 'roadwarning': case 'advancedglow': case 'brakewall': case 'glitch3': case '3dbox': case 'waterdrop':
 	case 'lion3': case 'papercut2': case 'transformer2': case 'harrypot2': case 'window2': case 'blackpinkneon2':
-	case 'pornhub3': case 'blackpink4': case 'glitch4': case 'glitch5': case 'glitch6': case '3dspace2' case 'lion4':
+	case 'pornhub3': case 'blackpink4': case 'glitch4': case 'glitch5': case 'glitch6': case '3dspace2': case 'lion4':
 	case '3dneon3': case 'neon4': case 'holographic3': case 'bear3': case 'wolf3': case 'joker3': case 'dropwater3':
 	case 'summertime3': case 'neonlight5': case 'thewall3': case 'natural2': case 'carbon3': case 'pencil3': case 'textmaker3':
 	case 'textmaker4': case 'hooror2': case 'whitebear3': case 'thunder4': case 'neon6': case 'matrix4': case 'sky3': case 'magma4':
