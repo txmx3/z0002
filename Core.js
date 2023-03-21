@@ -1892,7 +1892,7 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 	case 'summertime3': case 'neonlight5': case 'thewall3': case 'natural2': case 'carbon3': case 'pencil3': case 'textmaker3':
 	case 'textmaker4': case 'hooror2': case 'whitebear3': case 'thunder4': case 'neon6': case 'matrix4': case 'sky3': case 'magma4':
 	case 'sand4': case 'pencil5': case 'metallic3': case 'graffititext5': case 'steel3': case 'harrypotter6': case 'underwater4':
-	case 'luxury3': case 'fabric3': case 'lava5': case 'toxic3': case 'ancient3': case 'chrismas4':
+	case 'luxury3': case 'glue5': case 'fabric3': case 'neonlight7': case 'lava5': case 'toxic3': case 'ancient3': case 'chrismas4':
 	case 'scifi4': case 'rainbow4': case 'classic3': case 'watercolor5': case 'halloween4': case 'halloweenfire3': case 'foggy3':
 	case 'marvel6': case 'skeleton4': case 'sketch3': case 'wonderful3': case 'batman3': case 'juice4':{
              if (!q) throw `Example : ${prefix + command} ${global.ownername}`
@@ -2040,7 +2040,9 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 		if (/harrypotter6/.test(command)) link = 'https://textpro.me/create-harry-potter-text-effect-online-1025.html'
 		if (/underwater4/.test(command)) link = 'https://textpro.me/3d-underwater-text-effect-generator-online-1013.html'
 		if (/luxury3/.test(command)) link = 'https://textpro.me/3d-luxury-gold-text-effect-online-1003.html'
+		if (/glue5/.test(command)) link = 'https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html'
 		if (/fabric3/.test(command)) link = 'https://textpro.me/fabric-text-effect-online-964.html'
+		if (/neonlight7/.test(command)) link ='https://textpro.me/neon-light-glitch-text-generator-online-1063.html'
 		if (/lava5/.test(command)) link = 'https://textpro.me/lava-text-effect-online-914.html'
 		if (/toxic3/.test(command)) link = 'https://textpro.me/toxic-text-effect-online-901.html'
 		if (/ancient3/.test(command)) link = 'https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html'
