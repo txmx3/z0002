@@ -20,6 +20,7 @@ global.sessionName = "session"  // -- Don't change otherwise bot will not work -
 global.sitzung = "Miku-Max_v4"
 global.script = "https://github.com/txmx4/m_m0001"
 global.skript = "https://github.com/txmx4/m_m0001"
+global.botname = "Miku-Max_v4-Beta"
 
 
 global.owner1 = "Max_2 | +493023180366"
