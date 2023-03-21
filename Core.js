@@ -1811,7 +1811,7 @@ case 'team': case 'listt': case 'tlist': case 'teamlist':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Das MkM-Team:\n\n\n Inhaber:\n\n1. ${global.owner1}\n2. ${global.owner2}\n3. ${global.owner3}\n\nManage:\n\n1. ${glboal.manage}\n\nSupport:\n\n1. ${global.support1}\n2. ${global.support2}\n3. ${global.support3}\n4. ${global.support4}\n\nHost:\n\n1. ${global.host1}`)
+reply(` Das MkM-Team:\n\n\n Inhaber:\n\n1. ${global.owner1}\n2. ${global.owner2}\n3. ${global.owner3}\n\nManage:\n\n1. ${global.manage}\n\nSupport:\n\n1. ${global.support1}\n2. ${global.support2}\n3. ${global.support3}\n4. ${global.support4}\n\nHost:\n\n1. ${global.host1}`)
 break
 
 case 'manager': case 'managerin': case 'tmanage': case 'manageteam': case 'maanaget':
