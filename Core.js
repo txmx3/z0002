@@ -1647,12 +1647,18 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Anime-Chatgruppe:\n\n${global.animefchatgrp} `)
 break
+		
+case 'Umfragegr': case 'Umfragegrp': case 'Umfrageruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` MkM-Umfragegruppe:\n\n${global.umfragengrp} `)
+break
 
 case 'allgrouplinks': case 'allgrplinks': case 'allgrpl': case 'agl':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` Alle Eingetragn Gruppenlinks:\n\nMkM-Chatgruppe:\n\n${global.chatgr}\n\nMkM-Ankündigung:\n\n${global.ankundigung}\n\nMkM-Werbegruppe:\n\n${global.werbunggr}\n\nsfw-gruppe:\n\n${global.nsfwgr}\n\nMkM-Broadcast:\n\n${global.broadcastgr}\n\nSupport-Gruppe:\n\n${global.supportgrp}\n\nMkM-Bewerbung:\n\n${global.bewerbunggrp}\n\nMkM-Test_1:\n\n${global.test1}\n\nMkM-Test_2:\n\n${global.test2}\n\nMkM-Beta_Test:\n\n${global.betatest}\n\nMkM-MikuOnTop:\n\n${global.mikuot}\n\nMkM-TeamGruppe:\n\n${global.teamgrp}\n\nMkM-BotsGruppe:\n\n${global.botsgrp}\n\nMkM-SupportAnfragen:\n\n$[global.supportanfragengrp}\n\nMkM-Miku_Command,Befehl:\n\n${global.mikucommand}\n\nMkM-OwnerChatGruppe:\n\n${global.ownerchatgrp}\n\nMkM-IdeenGruppe:\n\n${global.ideengrp}\n\nAnime-Gruppe:\n\n${global.animefchatgrp}\n\nMkM-Umfragen:\n\n${global.umfragengrp} `)
+reply(` Alle Eingetragn Gruppenlinks:\n\nMkM-Chatgruppe:\n\n${global.chatgrp}\n\nMkM-Ankündigung:\n\n${global.ankundigung}\n\nMkM-Werbegruppe:\n\n${global.werbunggrp}\n\nsfw-gruppe:\n\n${global.nsfwgrp}\n\nMkM-Broadcast:\n\n${global.broadcastgrp}\n\nSupport-Gruppe:\n\n${global.supportgrp}\n\nMkM-Bewerbung:\n\n${global.bewerbunggrp}\n\nMkM-Test_1:\n\n${global.test1}\n\nMkM-Test_2:\n\n${global.test2}\n\nMkM-Beta_Test:\n\n${global.betatest}\n\nMkM-MikuOnTop:\n\n${global.mikuot}\n\nMkM-TeamGruppe:\n\n${global.teamgrp}\n\nMkM-BotsGruppe:\n\n${global.botsgrp}\n\nMkM-SupportAnfragen:\n\n$[global.supportanfragengrp}\n\nMkM-Miku_Command,Befehl:\n\n${global.mikucommand}\n\nMkM-OwnerChatGruppe:\n\n${global.ownerchatgrp}\n\nMkM-IdeenGruppe:\n\n${global.ideengrp}\n\nAnime-Gruppe:\n\n${global.animefchatgrp}\n\nMkM-Umfragen:\n\n${global.umfragengrp} `)
 break
 
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
@@ -5419,20 +5425,23 @@ Eigene Befehle(v4):
 
 *━━━ 〈 👥️ Gruppen👥️  〉━━━*
 
- ownergruppen , og
- ow , teamgruppen
- ankündigung , ankündigungen
- chatgruppe , chatgroup
- cgr , chatgr
- supchat , supch
- chatgruppesupport
- gruppenchats
  grc , grpc
  gruppe , groupp
  ggroup , ggrp
  grpp
  
  *━━━〈  Gruppenlinks 〉━━━*
+ 
+ ownergruppen , og
+ ow , teamgruppen
+ 
+ ankündigung , ankündigungen
+ 
+ chatgruppe , chatgroup
+ cgr , chatgr
+ 
+ supchat , supch
+ chatgruppesupport
  
  _Support_:
  supgrp
@@ -5441,6 +5450,10 @@ Eigene Befehle(v4):
  _Werbegruppe_:
  werbegruppe
  werbegrp
+ 
+ Umfragegr
+ Umfragegrp
+ Umfrageruppe
  
  _Teambewerbung_:
  bewerbunggruppe
@@ -6130,6 +6143,8 @@ Hier ist die Liste der Owner Befehle:
  allgrouplinks
  allgrplinks
  allgrpl , agl
+ 
+ gruppenchats
 
  *━━━〈  Inhaber  〉━━━*
  
