@@ -1505,16 +1505,11 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
         if (isBanChat) return reply(mess.bangc)
             reply(` *「 System Info 」*
 	    
-                Speed : ${latensie.toFixed(4)}
-		
-                Up Time : ${runtime(process.uptime())}
-		
-                Bot Name : ${global.BotName}
-		
-                Owner Name : ${global.OwnerName}
-		
-		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
-		
+                Speed : ${latensie.toFixed(4)}		
+                Up Time : ${runtime(process.uptime())}		
+                Bot Name : ${global.BotName}		
+                Owner Name : ${global.OwnerName}		
+		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}		
                 Session ID: *${global.sitzung}* `)	
         break             
 	
@@ -1543,7 +1538,7 @@ case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.support}\nMkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbung}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2}\n\nAnime-Family:\n${global.animefchatgrp} `)
+reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.supportgrp}\nMkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbunggrp}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2}\n\nAnime-Family:\n${global.animefchatgrp} `)
 break
 		
 case 'chatgruppe': case 'chatgrp':
@@ -1651,6 +1646,13 @@ case 'animechatgrp': case 'animechat': case 'animechatgruppe':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Anime-Chatgruppe:\n\n${global.animefchatgrp} `)
+break
+
+case 'allgrouplinks': case 'allgrplinks': case 'allgrpl': case 'agl':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Alle Eingetragn Gruppenlinks:\n\nMkM-Chatgruppe:\n\n${global.chatgr}\n\nMkM-Ankündigung:\n\n${global.ankundigung}\n\nMkM-Werbegruppe:\n\n${global.werbunggr}\n\nsfw-gruppe:\n\n${global.nsfwgr}\n\nMkM-Broadcast:\n\n${global.broadcastgr}\n\nSupport-Gruppe:\n\n${global.supportgrp}\n\nMkM-Bewerbung:\n\n${global.bewerbunggrp}\n\nMkM-Test_1:\n\n${global.test1}\n\nMkM-Test_2:\n\n${global.test2}\n\nMkM-Beta_Test:\n\n${global.betatest}\n\nMkM-MikuOnTop:\n\n${global.mikuot}\n\nMkM-TeamGruppe:\n\n${global.teamgrp}\n\nMkM-BotsGruppe:\n\n${global.botsgrp}\n\nMkM-SupportAnfragen:\n\n$[global.supportanfragengrp}\n\nMkM-Miku_Command,Befehl:\n\n${global.mikucommand}\n\nMkM-OwnerChatGruppe:\n\n${global.ownerchatgrp}\n\nMkM-IdeenGruppe:\n\n${global.ideengrp}\n\nAnime-Gruppe:\n\n${global.animefchatgrp}\n\nMkM-Umfragen:\n\n${global.umfragengrp} `)
 break
 
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
@@ -1819,6 +1821,13 @@ if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Das MkM-Team:\n\n\n Inhaber:\n\n1. ${global.owner1}\n2. ${global.owner2}\n3. ${global.owner3}\n\nStlv.Inhaber/In:\n\n1. ${global.owner4}\n\nManage:\n\n1. ${global.manage}\n\nSupport:\n\n1. ${global.support1}\n2. ${global.support2}\n3. ${global.support3}\n4. ${global.support4}\n5. ${global.support5}\n6. ${global.support6}\n\nHost:\n\n1. ${global.host1}`)
 break
+
+case 'botowner': case 'botowners': case 'ownerlist': case 'listowner':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply (` Die MkM-Owner:\n\n1.  ${global.owner1}\n2. ${global.owner2}\n3. ${global.owner3}\n4. ${global.owner4} `)
+break 
 
 case 'manager': case 'managerin': case 'tmanage': case 'manageteam': case 'maanaget':
 if (isBan) return reply(mess.banned)
@@ -6112,6 +6121,15 @@ Hier ist die Liste der Owner Befehle:
  _ban_:
  ban add (hinzufügen)
  ban del (entfernen)
+ 
+ botowner
+ botowners
+ ownerlist
+ listowner
+ 
+ allgrouplinks
+ allgrplinks
+ allgrpl , agl
 
  *━━━〈  Inhaber  〉━━━*
  
