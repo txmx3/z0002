@@ -2086,19 +2086,6 @@ case 'bctext2': case 'broadcasttext2': case 'bc2':
                }
 break
 		
-case 'join': {
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!args[0]) return replay(`Where's the link?`)     
-vdd = args[0]     let vcc = vdd.split("https://chat.whatsapp.com/")[1]
-if (!vcc) return replay("Link invalid!")
-if (isCreator) {  await  Miku.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
-replay("Succes!")     } else 
-{      Miku.query({     tag: "iq",     attrs: {     type: "get",     xmlns: "w:g2",     to: "@g.us"     },   content: [{ tag: "invite", attrs: { code: vcc } }]     }).then(async(res) => {     sizny = res.content[0].attrs.size     if (sizny < 1) {     teks = `Tut mir leid, mun. 1 Mitglied ist in einer Gruppe erforderlich, um einen Bot hinzuzufügen!`     sendOrder(m.chat, teks, "667140254502463", fs.readFileSync('./Assets/pic7.jpg'), `${global.packname}`, `${global.BotName}`, "493023180366@s.whatsapp.net", "AR6NCY8euY5cbS8Ybg5Ca55R8HFSuLO3qZqrIYCT7hQp0g==", "99999999999999999999")     } 
-else if (sizny > 1) {     await  Miku.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)     replay("Joined !")     } else 
-{     replay("Error")     }     }).catch(_ => _)     }     }     
-break
-		
 case 'purge':{mess
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)     
