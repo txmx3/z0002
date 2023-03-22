@@ -71,6 +71,7 @@ global.supportanfragengr = "https://chat.whatsapp.com/L4LIsHrA051B3PIIhcp4Ji"
 global.mikucommand = "https://chat.whatsapp.com/JFG3pKH5ct5BNxHwIJv34n"
 global.ownerchatgr = "https://chat.whatsapp.com/JjRfd8fIl8aJEZ6EQwANrx"
 global.ideen = "https://chat.whatsapp.com/FFPwoiP84xhDiKOCOZ04mv"
+global.animefchatgrp = "https://chat.whatsapp.com/L8FwBr4LUrIJP4GBUOaLu6"
 
 
 global.prefa = ['!AA'] // Prefix ---  change it to anythong you want except '@' //
