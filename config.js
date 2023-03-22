@@ -74,7 +74,7 @@ global.ideen = "https://chat.whatsapp.com/FFPwoiP84xhDiKOCOZ04mv"
 global.animefchatgrp = "https://chat.whatsapp.com/L8FwBr4LUrIJP4GBUOaLu6"
 
 
-global.prefa = ['!AA'] // Prefix ---  change it to anythong you want except '@' //
+global.prefa = ['%'] // Prefix ---  change it to anythong you want except '@' //
 
 
 global.location = "West-Berlin"
