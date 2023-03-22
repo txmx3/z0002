@@ -2091,7 +2091,8 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)     
 if (!m.isGroup) return replay(mess.grouponly)     
 if (!isBotAdmins) return replay(mess.botadmin)     
-if (!isAdmins && !isCreator) return replay(mess.useradmin)const delay = time => new Promise(res=>setTimeout(res,time));let mentioned = participants.map(v => v.jid)
+if (!isAdmins && !isCreator) return replay(mess.useradmin)
+const delay = time => new Promise(res=>setTimeout(res,time));let mentioned = participants.map(v => v.jid)
 for (let member of mentioned) {           Miku.groupParticipantsUpdate(m.chat, [member], 'remove')      }    }
 break
 
