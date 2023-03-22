@@ -1543,7 +1543,7 @@ case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.support}\nMkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbung}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2} `)
+reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.support}\nMkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbung}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2}\n\nAnime-Family:\n${global.animefchatgrp} `)
 break
 		
 case 'chatgruppe': case 'chatgrp':
@@ -1623,7 +1623,7 @@ case 'suprqgrp': case 'supportanfragegruppe': case 'supportrequestgruppe': case 
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-reply(` MkM-Support_Anfragegruppe:\n${global.supportanfragegr} `)
+reply(` MkM-SupportAnfragegruppe:\n${global.supportanfragegr} `)
 break
 		
 case 'commandgrp': case 'commandsgrp': case 'befehlgruppe': case 'mcgrp': case 'mikucgrp':
@@ -1645,6 +1645,12 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM-Ideen:\n${global.ideen} `)
+break
+		
+case 'animechatgrp': case 'animechat': case 'animechatgruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Anime-Chatgruppe:\n\n${global.animefchatgrp} `)
 break
 
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
@@ -1794,7 +1800,7 @@ case 'asup': case 'asupport': case 'afrage': case 'a!': case 'asupportanfrage': 
         if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
 
-        Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+        Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Von*: ${pushname}\n\n*Message*: ${q}`})
 
         replay(` Antwort erfolgreich gesendet! `)		
 break
