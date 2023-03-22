@@ -2076,6 +2076,39 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
              }
              break
 		
+case 'bctext2': case 'broadcasttext2': case 'bc2':
+  if (!isCreator) throw mess.owner
+  if (!text) throw `Enter text`
+    var data = await store.chats.all()
+ for (let i of data) {
+  Miku.sendMessage(i.id, {text: `${global.OwnerName}'s Broadcast\n\nMessage : ${q}` })
+                               await sleep(1000)
+               }
+break
+		
+case 'join': {
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!args[0]) return replay(`Where's the link?`)     
+vdd = args[0]     let vcc = vdd.split("https://chat.whatsapp.com/")[1]
+if (!vcc) return replay("Link invalid!")
+if (isCreator) {  await  Miku.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
+replay("Succes!")     } else 
+{      Miku.query({     tag: "iq",     attrs: {     type: "get",     xmlns: "w:g2",     to: "@g.us"     },   content: [{ tag: "invite", attrs: { code: vcc } }]     }).then(async(res) => {     sizny = res.content[0].attrs.size     if (sizny < 1) {     teks = `Tut mir leid, mun. 1 Mitglied ist in einer Gruppe erforderlich, um einen Bot hinzuzufügen!`     sendOrder(m.chat, teks, "667140254502463", fs.readFileSync('./Assets/pic7.jpg'), `${global.packname}`, `${global.BotName}`, "493023180366@s.whatsapp.net", "AR6NCY8euY5cbS8Ybg5Ca55R8HFSuLO3qZqrIYCT7hQp0g==", "99999999999999999999")     } 
+else if (sizny > 1) {     await  Miku.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)     replay("Joined !")     } else 
+{     replay("Error")     }     }).catch(_ => _)     }     }     
+break
+		
+case 'purge':{mess
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)     
+if (!m.isGroup) return replay(mess.grouponly)     
+if (!isBotAdmins) return replay(mess.botadmin)     
+if (!isAdmins && !isCreator) return replay(mess.useradmin)const delay = time => new Promise(res=>setTimeout(res,time));let mentioned = participants.map(v => v.jid)
+for (let member of mentioned) {           Miku.groupParticipantsUpdate(m.chat, [member], 'remove')      }    }
+break
+
+		
 case 'ringtone': {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.banned)
