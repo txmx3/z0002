@@ -28,11 +28,13 @@ global.owner3 = "Max_2  | +4917662927731"
 global.owner2 = "Kirito | +491777062822"
 global.owner4 = "Magic  | +4915212908434"
 global.manage = "Pablo | +491632225167"
+global.chatsup = "Pablo | +491632225167"
 global.support1 = "Jabee1 | +49 4916093444217"
 global.support2 = "Kevin | +491777108553"
 global.support3 = "Mario | +491788781873"
-global.support5 = "Jabee2 | +4916093444217"
-global.support4 = "Yumi | +64 27 397 3777"
+global.support6 = "Jabee2 | +4916093444217"
+global.support4 = "Yumi | +64273973777"
+global.support5 = "Lisa | +4915205683981"
 global.dev = "*Undefined* | Error"
 global.devs = "*Undefined* | Error"
 global.host1 = "Kevin | +491777108553"
@@ -71,7 +73,7 @@ global.ownerchatgr = "https://chat.whatsapp.com/JjRfd8fIl8aJEZ6EQwANrx"
 global.ideen = "https://chat.whatsapp.com/FFPwoiP84xhDiKOCOZ04mv"
 
 
-global.prefa = ['!'] // Prefix ---  change it to anythong you want except '@' //
+global.prefa = ['!AA'] // Prefix ---  change it to anythong you want except '@' //
 
 
 global.location = "West-Berlin"
