@@ -4489,21 +4489,21 @@ reply(mess.waiting)
 break
 
 
-case 'ahegao': case 'ass': case 'bdsm': case 'cuckold': case 'cum': case 'ero':
-    case 'ass': case 'tree': case 'food': case 'cum': case 'genshin':
-    case 'horns': case 'nude': case 'bed': case 'glasses':  case 'dress': 
-     case 'schooluniform': case 'loli': case 'orgy': case 'sex': 
-    case 'pussy': case 'twogirls': case 'foxgirl': case 'yuri': 
+case 'blonde' : case 'ass' : case 'tree' :  case 'food' :  case 'cum' : case 'squirt' :
+    case 'horns' : case 'nude' : case 'bed' : case 'glasses':  case 'dress': 
+     case 'schooluniform': case 'loli': case 'orgy': case 'sex': case 'genshin' :
+    case 'pussy': case 'twogirls': case 'foxgirl': case 'yuri': case 'loli': 
+   case 'uncensored' : case 'nipples' : case 'sex3' : case 'sex2' : case 'spreadpussy' : case 'maid' :
 {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!m.isGroup) return replay(mess.grouponly)
     if (!AntiNsfw) return reply(mess.nonsfw)
-
+    
     reply(mess.waiting)
      waifudhgd = await axios.get(`https://fantox-apis.vercel.app/${command}`)     
      let nsfwapireply = [
-        {buttonId: `${prefix}${command}`, buttonText: {displayText: `>>`}, type: 1}
+        {buttonId: `${prefix}${command}`, buttonText: {displayText: `>>`}, type: 1},
         ]
       let nsfwapimess = {
        image: {url:waifudhgd.data.url},
@@ -4511,39 +4511,11 @@ case 'ahegao': case 'ass': case 'bdsm': case 'cuckold': case 'cum': case 'ero':
       buttons: nsfwapireply,
       headerType: 1
       }     
-                await Miku.sendMessage(m.chat, nsfwapimess, { quoted:m }).catch(err => {
+                await  Miku.sendMessage(m.chat, nsfwapimess, { quoted:m }).catch(err => {
                         return('Error!')
                     })
                 }
     break
-
-
-
-case 'blowjobgif': case 'bj' :
-    if (isBan) return reply(mess.banned)	 			
-    if (isBanChat) return reply(mess.bangc)
-    if (!m.isGroup) return replay(mess.grouponly)
-    if (!AntiNsfw) return reply(mess.nonsfw)
-reply(mess.waiting)
-bjd = await axios.get(`https://api.waifu.pics/nsfw/blowjob`)         
-  let bjf = await getBuffer(bjd.data.url)
-let bjif = await GIFBufferToVideoBuffer(bjf)   
-        await Miku.sendMessage(m.chat,{video: bjif, gifPlayback:true},{ quoted:m }).catch(err => {
-                    return reply('error..')
-                                    })
-break
-
-case 'hentaivid': case 'hentaivideo': case 'hv': {
-    if (isBan) return reply(mess.banned)	 			
-    if (isBanChat) return reply(mess.bangc)
-    if (!m.isGroup) return replay(mess.grouponly)
-    if (!AntiNsfw) return reply(mess.nonsfw)
-reply(mess.waiting)
-anu = await hentai()
-result912 = anu[Math.floor(Math.random(), anu.length)]
-Miku.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `Title : ${result912.title}\nCategory : ${result912.category}\n$Mimetype : ${result912.type}\nViews : ${result912.views_count}\nShares : ${result912.share_count}\nSource : ${result912.link}\nMedia Url : ${result912.video_1}` }, { quoted: m })
-}
-break
 
 case 'trap' :
     if (isBan) return reply(mess.banned)	 			
