@@ -75,7 +75,7 @@ global.animefchatgrp = "https://chat.whatsapp.com/L8FwBr4LUrIJP4GBUOaLu6"
 global.umfragengrp = "https://chat.whatsapp.com/JEmPVdx1ZXILPYk6S2NvCp"
 
 
-global.prefa = ['~'] // Prefix ---  change it to anythong you want except '@' //
+global.prefa = ['!'] // Prefix ---  change it to anythong you want except '@' //
 
 
 global.location = "West-Berlin"
