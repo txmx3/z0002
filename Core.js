@@ -50,6 +50,26 @@ const { hentai } = require('./lib/scraper2.js')
 let { msgFilter } = require('./lib/antispam')
 const { mediafireDl } = require('./lib/mediafire.js')
 
+const {
+getRegisteredRandomId,
+addRegisteredUser,
+createSerial,
+checkRegisteredUser
+} = require('./database/register.js')
+
+
+global.prem = require("./database/premium.json")
+/*const command = ${prefix}
+const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
+const tik = can[Math.floor(Math.random() * can.length)
+Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
+
+const cal = ['ja','vllt','nein']
+
+const tiik = cal[Math.floor(Math.random() * can.length)] 
+Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tiik}%*` }, { quoted: m }
+*/
+global.prem = require("./lib/premium.js")
 
 const _ = require('lodash')
 const yargs = require('yargs/yargs')
@@ -356,7 +376,7 @@ const addCooldown = (userId) => {
 }
 
 var levelRole = getLevelingLevel(m.sender)
-        var role = 'Copper V'
+        var role = 'User'
         if (levelRole <= 5) {
             role = 'Copper IV'
         } else if (levelRole <= 10) {
@@ -1455,6 +1475,178 @@ let buttonspro = [
         Miku.sendMessage(m.chat,buttonMessage,{quoted:m})
         	
             break
+		
+case 'register':
+                if (isRegistered) return reply('Du bist bereits registriert')
+                if (!q.includes('|')) return reply('Falsches Format!')
+                const namaUser = q.substring(0, q.indexOf('|') - 0)
+                const umurUser = q.substring(q.lastIndexOf('|') + 1)
+                const serialUser = createSerial(20)
+                if(isNaN(umurUser)) return reply('Das Alter muss eine Zahl sein!!')
+                if (namaUser.length >= 30) return m.reply(`Warum ist dein Name so lang, es ist ein Name oder ein Zug`)
+                if (umurUser > 100) return m.reply(`your age is too  old maximum 100 years`)
+                if (umurUser < 6) return m.reply(`your age is too young minimum 6 years`)
+				mzd = `Sie haben sich mit den folgenden Informationen registriert:\n\n⭔ Name : ${namaUser}\n⭔ Alter : ${umurUser}\n⭔ Nummer : wa.me/${m.sender.split("@")[0]}\n⭔ ? : ${barat}\n⭔ ID : ${serialUser}`
+               zharzx = fs.readFileSync('./media/image/reg.jpg')
+                veri = m.sender
+                if (!m.isGroup) {
+                    addRegisteredUser(m.sender, namaUser, umurUser, serialUser)
+                    Miku.sendMessage(m.chat, {image: zharzx, caption: mzd}, {quoted: m})
+                    
+                } else {
+                    addRegisteredUser(m.sender, namaUser, umurUser, serialUser)
+                    Miku.sendMessage(m.chat, {image: zharzx, caption: mzd}, {quoted: m})
+                    
+                }
+    reply(` Du wurdest erfolgreich Registert , Vielen Dank! `)
+break
+		
+case 'registercheck': case 'checkregister':
+  if (isBan) return reply(mess.banned )
+  if (isBanChat) return reply(mess.bangc)
+  reply(` *Deine Registrierten Daten sind:*\n\n_Name:_ ${namaUser}\n\n_Alter:_ ${umurUser}\n\n_Nummer:_ wa.me/${m.sender.split("@")[0]}\n\n_:?_ ${barat}\n\n_ID :_ ${serialUser}\n\n Das sind alle von dir eingetragenen Daten !`)
+break
+		
+    /*
+case 'addprem':
+				if (!isCreator) return m.reply(mess.owner)
+				{ q, args } {
+				if (args.length < 2)
+				return m.reply(
+				`Penggunaan :\n*#addprem* @tag waktu\n*${prefix}addprem* nomor waktu\n\nContoh : #addprem @tag 30d`
+				);
+				if (m.mentionedJid.length !== 0) {
+				for (let i = 0; i < m.mentionedJid.length; i++) {
+				prem.addPremiumUser(m.mentionedJid[0], args[1], isPremium);
+						}
+				Miku.sendMessage(m.chat, { text: "Sukses Premium" }, { quoted: fkontak });
+					} else {
+				prem.addPremiumUser(args[0] + "@s.whatsapp.net", args[1], premium);
+				Miku.sendMessage(m.chat, { text: "Sukses Via Nomor" }, { quoted: fkontak });
+						}
+					}
+break
+
+case 'delprem':
+				if (!isCreator) return m.reply(mess.owner)
+				{ q, args, arg } {
+				if (args.length < 1) return reply(`Penggunaan :\n*${prefix}delprem* @tag\n*#delprem* nomor`);
+				if (m.mentionedJid.length !== 0) {
+					for (let i = 0; i < m.mentionedJid.length; i++) {
+						premium.splice(prem.getPremiumPosition(m.mentionedJid[i], isPremium), 1);
+						fs.writeFileSync("./database/premium.json", JSON.stringify(premium));
+					}
+					Miku.sendMessage(m.chat, { text: "Sukses Delete" }, { quoted: fkontak });
+				} else {
+				premium.splice(prem.getPremiumPosition(args[0] + "@s.whatsapp.net", premium), 1);
+				fs.writeFileSync("./database/premium.json", JSON.stringify(premium));
+				Miku.sendMessage(m.chat, { text: "Sukses Via Nomer" }, { quoted: fkontak });
+				}
+				}
+break
+
+case 'listprem': {
+			if (!isCreator) return m.reply(mess.owner)
+			let data = require("./database/premium.json")
+			let txt = `*------「 LIST PREMIUM 」------*\n\n`
+                    for (let i of data) {
+                txt += `*Nomer : ${i.id}*\n*Expired : ${i.expired} Second*\n\n`
+                }
+            m.reply(txt)
+			}
+break
+
+    const mess1 = lose[Math.floor(Math.random() * lose.length)];
+    const mess2 = won[Math.floor(Math.random() * won.length)];
+    const mess3 = near[Math.floor(Math.random() * near.length)];
+    const mess4 = jack[Math.floor(Math.random() * jack.length)];
+    const mess5 = smallLose[Math.floor(Math.random() * smallLose.length)];
+    
+    if ((f1 !== f2) && f2 !== f3){
+       const deduct1 = await eco.deduct(user, cara, 50);
+              replay(`${mess1}\n\n*Big Lose -->* _💎50_`)
+    }
+    else if ((f1 == f2) && f2 == f3){
+       const give1 = await eco.give(user, cara, 100); 
+             replay(`${mess2}\n*_Big Win -->* _💎100_`)
+    }
+    else if ((f1 == f2) && f2 !== f3){
+       const give2 = await eco.give(user, cara, 20);
+             replay(`${mess3}\n*Small Win -->* _💎20_`)
+    }
+    else if ((f1 !== f2) && f1 == f3){
+       const deduct2 = await eco.deduct(user, cara, 20);
+             replay(`${mess5}\n\n*Small Lose -->* _💎20_`)
+    }
+    else if ((f1 !== f2) && f2 == f3){
+       const give4 = eco.give(user, cara, 20); 
+             replay(`${mess3}\n\n*Small Win -->* _💎20_`)
+    }
+    else if (((f1 == f2) && f2 == f3) && f3 == f4){
+       const give5 = eco.give(user, cara, 1000);
+            replay(`${mess4}\n\n_🎊 JackPot --> _💎1000_`)
+    }
+    else { 
+            replay(`Do you understand what you are doing?`)
+    }
+ }
+ else{
+        replay(`*You can only play this game during weekends*\n\n*🌿 Friday*\n*🎏 Saturday*\n*🎐 Sunday*`)
+ }
+}
+break
+*/
+/*
+case 'ttc': case 'ttt': case 'tictactoe': {
+    if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+    let TicTacToe = require("./lib/tictactoe")
+    this.game = this.game ? this.game : {}
+    if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replay(`You Are Still In The Game`)
+    let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
+    if (room) {
+    reply('Partner found!')
+    room.o = m.chat
+    room.game.playerO = m.sender
+    room.state = 'PLAYING'
+    let arr = room.game.render().map(v => {
+    return {
+    X: '❌',
+    O: '⭕',
+    1: '1️⃣',
+    2: '2️⃣',
+    3: '3️⃣',
+    4: '4️⃣',
+    5: '5️⃣',
+    6: '6️⃣',
+    7: '7️⃣',
+    8: '8️⃣',
+    9: '9️⃣',
+    }[v]
+    })
+    let str = `Room ID: ${room.id}
+${arr.slice(0, 3).join('')}
+${arr.slice(3, 6).join('')}
+${arr.slice(6).join('')}
+Waiting @${room.game.currentTurn.split('@')[0]}
+Type *surrender* to surrender and admit defeat`
+    if (room.x !== room.o) await Miku.sendText(room.x, str, m, { mentions: parseMention(str) } )
+    await  Miku.sendText(room.o, str, m, { mentions: parseMention(str) } )
+    } else {
+    room = {
+    id: 'tictactoe-' + (+new Date),
+    x: m.chat,
+    o: '',
+    game: new TicTacToe(m.sender, 'o'),
+    state: 'WAITING'
+    }
+    if (text) room.name = text
+    reply('Waiting For Partner' + (text ? ` Type The Command Below ${prefix}${command} ${text}` : ''))
+    this.game[room.id] = room
+    }
+    }
+    break	
+*/
 
 
 case 'banchat': case 'bangroup':{
@@ -1534,133 +1726,8 @@ if (!isCreator) return replay(mess.botowner)
 reply(` Den Skript des Bots findest du hier:\n${global.skript} `)		
 break
 		
-case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.supportgrp}\nMkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbunggrp}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2}\n\nAnime-Family:\n${global.animefchatgrp} `)
-break
-		
-case 'chatgruppe': case 'chatgrp':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` Chatgruppe:\n${global.chatgr} `)		
-break
-		
-case 'supportgruppe': case 'supgrp':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(`MkM,Miku Supportgruppe:\n${global.support} `)	
-break
-		
-case 'werbegruppe': case 'werbegrp':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(`MkM Werbegruppe:\n${global.werbunggr} `)
-break
-		
-case 'nsfwgruppe': case 'nsfwgrp':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(`MkM NSFW-Gruppe:\n${global.nsfwgr} `)		
-break
-		
-case 'bewerbunggruppe': case 'bewerbegruppe': case 'bewerbunggrp': case 'teamanfragegrp': case 'teambewerbunggruppe': case 'teambewerbunggrp': case 'teamanfragegruppe':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(`MkM Bewerbungen:\n${global.bewerbung} `)		
-break
-		
-case 'test1gruppe': case 'test1grp': case 'botest1grp': case 'bottest1gruppe':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(`MkM Test-1:\n${global.test1} `)		
-break
-		
-case 'test2gruppe': case 'test2grp': case 'botest2grp': case 'bottest2gruppe':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(`MkM Test-2:\n${global.test2} `)
-break
-		
-case 'teamgruppe': case 'teamgrp':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` MkM-Teamgruppe:\n${global.teamgr} `)
-break
-		
-case 'mikuontop': case 'mikuot':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` Mikuontopgruppe:\n${global.mikuot} `)
-break
-		
-case 'betatest': case 'botbetatest': case 'bbt':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` MkM,Miku_Beta-Testgruppe:\n${global.betatest} `)
-break
-		
-case 'botsgruppe': case 'botsgrp':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` MkM-Botsgruppe:\n${global.botsgr} `)
-break
 
-case 'suprqgrp': case 'supportanfragegruppe': case 'supportrequestgruppe': case 'suprequestgrp':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` MkM-SupportAnfragegruppe:\n${global.supportanfragegr} `)
-break
 		
-case 'commandgrp': case 'commandsgrp': case 'befehlgruppe': case 'mcgrp': case 'mikucgrp':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` MkM-Commandgruppe:\n${global.mikucommand} `)
-break
-
-case 'ochatgrp': case 'ownerchatgrp': case 'ownerchatgruppe':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` MkM-OwnerChatgruppe:\n${global.ownerchatgr} `)
-break
-		
-case 'ideengrp': case 'ideengruppe': case 'ideagrp':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` MkM-Ideen:\n${global.ideen} `)
-break
-		
-case 'animechatgrp': case 'animechat': case 'animechatgruppe':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Anime-Chatgruppe:\n\n${global.animefchatgrp} `)
-break
-		
-case 'Umfragegr': case 'Umfragegrp': case 'Umfrageruppe':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` MkM-Umfragegruppe:\n\n${global.umfragengrp} `)
-break
-
-case 'allgrouplinks': case 'allgrplinks': case 'allgrpl': case 'agl':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-reply(` Alle Eingetragn Gruppenlinks:\n\nMkM-Chatgruppe:\n\n${global.chatgrp}\n\nMkM-Ankündigung:\n\n${global.ankundigung}\n\nMkM-Werbegruppe:\n\n${global.werbunggrp}\n\nnsfw-gruppe:\n\n${global.nsfwgrp}\n\nMkM-Broadcast:\n\n${global.broadcastgrp}\n\n${global.supportgrp}\n\nMkM-Bewerbung:\n\n${global.bewerbunggrp}\n\nMkM-Test_1:\n\n${global.test1}\n\nMkM-Test_2:\n\n${global.test2}\n\nMkM-Beta_Test:\n\n${global.betatest}\n\nMkM-MikuOnTop:\n\n${global.mikuot}\n\nMkM-TeamGruppe:\n\n${global.teamgrp}\n\nMkM-BotsGruppe:\n\n${global.botsgrp}\n\nMkM-SupportAnfragen:\n\nMkM-Miku_Command,Befehl:\n\n${global.mikucommand}\n\nMkM-OwnerChatGruppe:\n\n${global.ownerchatgrp}\n\nMkM-IdeenGruppe:\n\n${global.ideengrp}\n\nAnime-Gruppe:\n\n${global.animefchatgrp}\n\nMkM-Umfragen:\n\n${global.umfragengrp} `)
-break
-
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
 	 if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
