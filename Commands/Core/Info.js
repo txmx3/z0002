@@ -1,6 +1,6 @@
 const { mku } = require('../../Database/dataschema2.js');
 const { sessionSchema } = require('../../Database/index2.js');
-const { runtime } = require('../../lib/myfunc2.js');
+const { runtime } = require('../../lib2/myfunc.js');
 
 module.exports = {
     name: 'stats',
