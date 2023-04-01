@@ -1,4 +1,4 @@
-const YT = require("../../lib2/ytdl-core.js");
+const YT = require("../../lib/ytdl-core.js");
 const yts = require("youtube-yts");
 const fs = require("fs");
 
