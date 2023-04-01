@@ -1,6 +1,6 @@
 const { exec } = require("child_process");
 const fs = require("fs");
-const { getRandom } = require("../../lib2/myfunc");
+const { getRandom } = require("../../lib/myfunc");
 
 module.exports = {
   name: "bass",
