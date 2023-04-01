@@ -1726,6 +1726,136 @@ if (!isCreator) return replay(mess.botowner)
 reply(` Den Skript des Bots findest du hier:\n${global.skript} `)		
 break
 		
+case 'ownergruppen': case 'teamgruppen': case 'og': case 'ow': case 'tgr':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply (` Meine Ownergruppen:\n\nMkM Ankündigsgruppe:\n${global.ankundigung}\n\nChatgruppe:\n${global.chatgr}\nSupport:\n${global.supportgrp}\nMkM Werbegruppe:\n${global.werbunggr}\n\nMkM NSFW-Gruppe:\n${global.nsfwgr}\n\nMkM Bewerbungen:\n${global.bewerbunggrp}\n\nMkM Test-1:\n${global.test1}\n\nMkM Test-2:\n${global.test2}\n\nAnime-Family:\n${global.animefchatgrp} `)
+break
+		
+case 'chatgruppe': case 'chatgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Chatgruppe:\n${global.chatgr} `)		
+break
+		
+case 'supportgruppe': case 'supgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(`MkM,Miku Supportgruppe:\n${global.support} `)	
+break
+		
+case 'werbegruppe': case 'werbegrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(`MkM Werbegruppe:\n${global.werbunggr} `)
+break
+		
+case 'nsfwgruppe': case 'nsfwgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+if (!isRegistered) return reply (global.register)
+reply(`MkM NSFW-Gruppe:\n${global.nsfwgr} `)		
+break
+		
+case 'bewerbunggruppe': case 'bewerbegruppe': case 'bewerbunggrp': case 'teamanfragegrp': case 'teambewerbunggruppe': case 'teambewerbunggrp': case 'teamanfragegruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(`MkM Bewerbungen:\n${global.bewerbung} `)		
+break
+		
+case 'test1gruppe': case 'test1grp': case 'botest1grp': case 'bottest1gruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(`MkM Test-1:\n${global.test1} `)		
+break
+		
+case 'test2gruppe': case 'test2grp': case 'botest2grp': case 'bottest2gruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(`MkM Test-2:\n${global.test2} `)
+break
+		
+case 'teamgruppe': case 'teamgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-Teamgruppe:\n${global.teamgr} `)
+break
+		
+case 'mikuontop': case 'mikuot':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Mikuontopgruppe:\n${global.mikuot} `)
+break
+		
+case 'betatest': case 'botbetatest': case 'bbt':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM,Miku_Beta-Testgruppe:\n${global.betatest} `)
+break
+		
+case 'botsgruppe': case 'botsgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-Botsgruppe:\n${global.botsgr} `)
+break
+
+case 'suprqgrp': case 'supportanfragegruppe': case 'supportrequestgruppe': case 'suprequestgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-SupportAnfragegruppe:\n${global.supportanfragegr} `)
+break
+		
+case 'commandgrp': case 'commandsgrp': case 'befehlgruppe': case 'mcgrp': case 'mikucgrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-Commandgruppe:\n${global.mikucommand} `)
+break
+
+case 'ochatgrp': case 'ownerchatgrp': case 'ownerchatgruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-OwnerChatgruppe:\n${global.ownerchatgr} `)
+break
+		
+case 'ideengrp': case 'ideengruppe': case 'ideagrp':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` MkM-Ideen:\n${global.ideen} `)
+break
+		
+case 'animechatgrp': case 'animechat': case 'animechatgruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Anime-Chatgruppe:\n\n${global.animefchatgrp} `)
+break
+		
+case 'Umfragegr': case 'Umfragegrp': case 'Umfrageruppe':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` MkM-Umfragegruppe:\n\n${global.umfragengrp} `)
+break
+
+case 'allgrouplinks': case 'allgrplinks': case 'allgrpl': case 'agl':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Alle Eingetragn Gruppenlinks:\n\nMkM-Chatgruppe:\n\n${global.chatgrp}\n\nMkM-Ankündigung:\n\n${global.ankundigung}\n\nMkM-Werbegruppe:\n\n${global.werbunggrp}\n\nsfw-gruppe:\n\n${global.nsfwgrp}\n\nMkM-Broadcast:\n\n${global.broadcastgrp}\n\nSupport-Gruppe:\n\n${global.supportgrp}\n\nMkM-Bewerbung:\n\n${global.bewerbunggrp}\n\nMkM-Test_1:\n\n${global.test1}\n\nMkM-Test_2:\n\n${global.test2}\n\nMkM-Beta_Test:\n\n${global.betatest}\n\nMkM-MikuOnTop:\n\n${global.mikuot}\n\nMkM-TeamGruppe:\n\n${global.teamgrp}\n\nMkM-BotsGruppe:\n\n${global.botsgrp}\n\nMkM-SupportAnfragen:\n\n$[global.supportanfragengrp}\n\nMkM-Miku_Command,Befehl:\n\n${global.mikucommand}\n\nMkM-OwnerChatGruppe:\n\n${global.ownerchatgrp}\n\nMkM-IdeenGruppe:\n\n${global.ideengrp}\n\nAnime-Gruppe:\n\n${global.animefchatgrp}\n\nMkM-Umfragen:\n\n${global.umfragengrp} `)
+break
+		
+
+		
 
 		
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
@@ -1741,7 +1871,7 @@ case 'i': case 'selflink': case 'whatsapplink': case 'walink': case '@link':
  if (isBan) return reply(mess.banned)	 			        
 if (isBanChat) return reply(mess.bangc)
 reply(` 「 Links 」\n wa.me:\n\nwa.me//${m.sender}\n\nmit"@"\n\n@+${m.sender} `)
-break 
+break
 
 case'xp':
         if (isBan) return reply(mess.banned)	 			      
@@ -1875,10 +2005,12 @@ case 'asup': case 'asupport': case 'afrage': case 'a!': case 'asupportanfrage': 
         if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
 
-        Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Von*: ${pushname}\n\n*Message*: ${q}`})
+        Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 REPORT Answer 」 ──*\n\n*Message*: ${q}\n\n\n*Eure/r*:\n${pushname}`})
 
         replay(` Antwort erfolgreich gesendet! `)		
 break
+		
+
 		
 case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
 
@@ -2168,6 +2300,28 @@ case 'bctext2': case 'broadcasttext2': case 'bc2':
                }
 break
 		
+case 'owners': case 'mods':
+if (isBan) return reply(mess.banned)	 			
+ if (isBanChat) return reply(mess.bangc)
+reply(`     🧣  *${global.BotName} Mods*  🧣
+
+
+〽️ ${global.owner1}
+
+〽️ ${global.owner2}
+
+〽️ ${global.owner3}
+
+〽️ ${global.owner4}
+
+
+📛 *Don't Spam them to avoid Blocking !*
+
+🎀 For any help, type *${prefix}support* and ask in group.
+
+*💫 Thanks for Using ${global.BotName}. 💫* `)
+break
+		
 case 'purge':{mess
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)     
@@ -2278,6 +2432,429 @@ case 'quotesanime': case 'quoteanime': case 'animequote': case 'animequotes':{
         Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
     }
     break
+		
+    /*
+  case 'write1':
+    const fs = require('fs')
+    Miku.sendMessage(m.chat, {
+    	react: {
+    		text: ${command},
+    		key: m.key
+    	}
+    })
+
+    reply(`
+┌〔 Liste schreiben 〕
+├ document
+├ text
+└────
+`).trim()
+    if (!args[0]) throw teks
+    if (args[0] === 'document') {
+        if(!args[1]) throw `Beispiel: ${prefix + command} document plugins/haruno.js`
+        let saveas = await m.text.replace(`${usedPrefix + command} document ${args[1]} `, '')
+        fs.writeFileSync(`./${args[1]}`, saveas)
+        Miku.sendButton(m.chat, `Erfolgreich gespeichert als ${args[1]}`, wm, 'Neustart', '.restart')
+    } else if (args[0] === 'text') {
+        if (!args[1]) throw `Geben Sie einen Dateinamen und ein Ziel ein.\n${usedPrefix + command} plugins/join.js`
+        require('fs').writeFileSync(`./${args[1]}`, m.text)
+        Miku.sendButton(m.chat, `Erfolgreich gespeichert als ${args[1]}.`, wm, 'Neustart', '.restart')
+    } else {
+        throw teks
+    }
+break
+
+
+
+
+/*case 'lul4': case 'lul3': case 'lul2': case 'lul':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+
+        Miku.sendMessage(`436764242454@s.whatsapp.net`, {text:`── 「 owner report 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}\n *Antwort* :`})
+        replay(`ich habe diese nachricht an mein owner weitergeleitet`)
+
+	 Miku.sendMessage(`491632225167@s.whatsapp.net`, {text:`── 「 owner report 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}\n *Antwort* :`})
+
+	Miku.sendMessage(`493023180366@s.whatsapp.net`, {text:`── 「 owner report 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}\n *Antwort* :`})
+ break
+
+case 'grr': case 'ka': case 'magic': case 'ma':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+        Miku.sendMessage(`120363048485755289@g.us`, {text:`── 「 magic 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}\n *Antwort* : \n `})
+        replay(`Ich habe deine nachricht in magics gruppe weitergeleitet `)
+        break
+	
+		
+case 'ide': case 'i': case 'idee': case 'ideee':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+        Miku.sendMessage(`120363079632648987@g.us`, {text:`── 「 Idee 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}\n *Antwort* : \n *geantwortet von* : `})
+        replay(`Ich habe deine Idee an meine Besitzer weitergegeben.`)
+        break
+        */
+  /*
+  case 'ow': case 'ownergruppen': case 'og': case 'gruppen':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+	if (!isBotAdmins) return replay(mess.botadmin)
+            reply(`*MkM Gruppen*
+		Chatt: https://chat.whatsapp.com/HaH0LDojg3MC5Lgz17BDSS 
+		Werbe: https://chat.whatsapp.com/JlO7hNBJcsX2qOhMjpKul8
+ 		Support: https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
+        break
+  */
+		
+
+            case 'bcgc': case 'bcgroup': {
+                if (!isCreator) return replay(`${mess.owner}`)
+                if (!text) return replay(`Where Is The Text?\n\nExample : ${prefix + command} Nexus Handsome`)
+                let getGroups = await Miku.groupFetchAllParticipating()
+                let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
+                let anu = groups.map(v => v.id)
+                reply(`Sent Broadcast To ${anu.length} Group Chat, Finish Time ${anu.length * 1.5} Seconds`)
+                for (let i of anu) {
+                    await sleep(1500)
+                      let txt = `「 GOJO-SATORU HERE🎉 」\n\n${text}`
+                      Miku.sendMessage(i, txt, Miku.user.name, global.thumb, btn)
+                    }
+                reply(`Successful Sending Broadcast To ${anu.length} Group(s)`)
+            }
+            break
+            */
+		
+case 'afk3': {
+                let user = global.db.data.users[m.sender]
+                user.afkTime = + new Date
+                user.afkReason = text
+                reply(`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
+            }
+break
+
+case 'shutdown':
+        if (!isCreator) return reply(mess.botowner);
+        reply(`Bye...`);
+        await sleep(3000);
+        process.exit();
+break
+
+ case 'bcgrup':
+        if (!isOwner) return reply(mess.owner);
+        if (!q) return reply(`Teks Nya Bang?`);
+        try {
+          anu = await store.chats.all().map((v) => v.id);
+          for (let yoi of anu) {
+            if (yoi.includes('@g.us')) {
+              das.sendMessage(yoi, {
+                text: `\n\n${q}`,
+              });
+            }
+          }
+          reply(`Succes`);
+        } catch (error) {
+          sendCreator(JSON.stringify(error.message, null, 2));
+          sendCreator(JSON.stringify(error, null, 2));
+        }
+        reply(`Succes`);
+        break
+		
+  case 'bcgrup':
+        if (!isOwner) return reply(mess.owner);
+        if (!q) return reply(`Teks Nya Bang?`);
+        try {
+          anu = await store.chats.all().map((v) => v.id);
+          for (let yoi of anu) {
+            if (yoi.includes('@g.us')) {
+              das.sendMessage(yoi, {
+                text: `\n\n${q}`,
+              });
+            }
+          }
+          reply(`Succes`);
+        } catch (error) {
+          sendCreator(JSON.stringify(error.message, null, 2));
+          sendCreator(JSON.stringify(error, null, 2));
+        }
+        reply(`Succes`);
+break
+
+case 'addmsg': case 'savemsg': {
+            	if (isBan) return reply(mess.ban)
+	            if (isBanChat) return reply(mess.bangc)
+                if (!m.quoted) return reply(`Reply Message You Want To Save In Database`)
+                if (!text) return reply(`Example : ${prefix + command} File Name`)
+                let msgs = global.db.data.database
+                if (text.toLowerCase() in msgs) return reply(`'${text}' Has Been Registered In The Message List`)
+                msgs[text.toLowerCase()] = quoted.fakeObj
+reply(`Successfully Added Message In Message List As '${text}'
+    
+Access With ${prefix}getmsg ${text}
+View List Of Messages With ${prefix}listmsg`)
+            } 
+break
+
+case 'getmsg': case 'getsave': {
+            	if (isBan) return reply(mess.banned)
+	if (isBanChat) return reply(mess.bangc)
+                if (!text) return reply(`Example : ${prefix + command} file name\n\nView Message List With ${prefix}listmsg`)
+                let msgs = global.db.data.database
+                if (!(text.toLowerCase() in msgs)) return reply(`'${text}' Not Listed In The Message List`)
+                Miku.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+            }
+break
+
+ case 'listmsg': case 'listsave': {
+            	if (isBan) return reply(mess.banned)
+	if (isBanChat) return reply(mess.bangc)
+                let msgs = JSON.parse(fs.readFileSync('./database/datenbank2/text1.json'))
+	        let seplit = Object.entries(global.db.data.database).map(([nama, isi]) => { return { nama, ...isi } })
+		let teks = '「 DATABASE LIST 」\n\n'
+		for (let i of seplit) {
+		    teks += `${themeemoji} *Name :* ${i.nama}\n${themeemoji} *Type :* ${getContentType(i.message).replace(/Message/i, '')}\n────────────────────────\n\n`
+	        }
+	        reply(teks)
+	    }
+break
+
+case 'delmsg': case 'deletemsg': {
+            	if (isBan) return reply(mess.banned)
+	if (isBanChat) return reply(mess.bangc)
+	        let msgs = global.db.data.database
+	        if (!(text.toLowerCase() in msgs)) return reply(`'${text}' Not Listed In The Message List`)
+		delete msgs[text.toLowerCase()]
+		reply(`Delete Successfully '${text}' From The Message list`)
+            }
+break
+
+case 'tagme': {
+	if (isBan) return reply(mess.banned)	 			
+if (isBanChat) return reply(mess.bangc)
+Miku.sendMessage(m.chat, {text:`@${m.sender.split("@")[0]}`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+}
+break
+		
+case 'bchatinfo': {
+   if (isBan) return reply(mess.banned)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.quoted) replay('Reply Message')
+let msg = await m.getQuotedObj()
+if (!m.quoted.isBaileys) return replay('The message was not sent by a bot!')
+let teks = ''
+for (let i of msg.userReceipt) {
+let read = i.readTimestamp
+let unread = i.receiptTimestamp
+let waktu = read ? read : unread
+teks += `${global.themeemoji} @${i.userJid.split('@')[0]}\n`
+teks += ` ┗━${global.themeemoji} *Time :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ${global.themeemoji} *Status :* ${read ? 'Read' : 'Sent'}\n\n`
+}
+Miku.sendTextWithMentions(m.chat, teks, m)
+}
+break
+
+case 'abcgc': case 'abcgroup': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return replay(mess.owner)
+if (!args.join(" ")) return replay(`Where is the text?\n\nExample : ${prefix + command} ${global.ownername}`)
+let getGroups = await Miku.groupFetchAllParticipating()
+let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
+let anu = groups.map(v => v.id)
+replay(`Send broadcast to ${anu.length} group chat, time's up ${anu.length * 1.5} second`)
+for (let i of anu) {
+await sleep(1500)
+let btn = [{
+urlButton: {
+displayText: 'YouTube 🍓',
+url: `${global.owner2}`
+}
+}, {
+urlButton: {
+displayText: 'Script 🍜',
+url: `${global.script}`
+}
+}, {
+quickReplyButton: {
+displayText: 'Bot Status 🚀',
+id: 'ping'
+}
+}, {
+quickReplyButton: {
+displayText: 'Menu 🐰',
+id: 'menu'
+}  
+}, {
+quickReplyButton: {
+displayText: 'Owner 😈',
+id: 'owner'
+}
+}]
+let txt = `*「 ${global.ownername}'s Broadcast」*\n\n${text}`
+Miku.send5ButImg(i, txt, `${global.botname}`, log0, btn, thum)
+}
+replay(`Successfully Sent Broadcast To ${anu.length} Group`)
+}
+break
+		
+case 'asetppbot': case 'asetbotpp': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return replay(mess.owner)
+if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+let media = await Miku.downloadAndSaveMediaMessage(quoted)
+await Miku.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
+reply("${mess.waiting}")
+}
+break
+
+case 'aautoblock': {
+    if (!isCreator) throw mess.owner
+    if (args[0] === "on") {
+    if (db.settings[botNumber].autoblock) return reply(`*Autoblock already on okay*`)
+    db.settings[botNumber].autoblock = true
+    reply(`*Autoblock on*`)
+    } else if (args[0] === "off") {
+    if (!db.settings[botNumber].autoblock) return reply(`*Autoblock Already off okay*`)
+    db.settings[botNumber].autoblock = false
+    reply(`*Autoblock off*`)
+    } else {
+     let drips = [
+    { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
+    { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
+      ]
+      await Miku.sendButtonText(m.chat, drips, `*▊▊ _AUTOBLOCK_ ▊▊*`, Miku.user.name, m)
+    }
+      } 
+  break
+
+case 'ablock': {
+        	if (isBan) return reply(mess.ban)	 			
+          if (isBanChat) return reply(mess.banChat)
+		if (!isCreator) return replay(`${mess.owner}`)
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await Miku.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+	}
+break
+
+ case 'aunblock': {
+        	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+		if (!isCreator) return replay(`${mess.owner}`)
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await Miku.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+	}
+break
+
+    /*
+ case 'speedtest': {
+            	   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+            reply('Testing Speed...')
+            let cp = require('child_process')
+            let { promisify } = require('util')
+            let exec = promisify(cp.exec).bind(cp)
+          let o
+          try {
+          o = await exec('python speed.py')
+          } catch (e) {
+          o = e
+         } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) reply(stdout)
+        if (stderr.trim()) reply(stderr)
+            }
+            }
+break
+*/
+		
+ case 'cbcgc': case 'cbcgroup': {
+if (!isCreator) throw mess.owner
+if (!text) throw `Text ?\n\nExample : ${prefix + command} Text`
+let getGroups = await Miku.groupFetchAllParticipating()
+let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
+let anu = groups.map(v => v.id)
+m.reply(`Sendet Broadcast in  ${anu.length} Group Chat, ~~~ ${anu.length * 1.5} detik`)
+for (let i of anu) {
+await sleep(1500)
+let txt = `「 Broadcast Bot 」\n\n${text}`
+let buttons = [{ buttonId: 'donasi', buttonText: { displayText: 'a' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: 'b' }, type: 1 }]
+await Miku.sendButtonText(i, buttons, txt, nyoutube, m, {quoted: fkontak})
+}
+m.reply(`Send Broadcast in ${anu.length} Group`)
+}
+break
+
+case 'hahaha': {
+                reactionMessage = {
+                    react: {
+                        text: '❤',
+                        key: m.key
+                    }
+                }
+                Miku.sendMessage(m.chat, reactionMessage)
+            }
+break
+
+case 'myip': {
+                if (!isCreator) throw mess.owner
+                var http = require('http')
+                http.get({
+                    'host': 'api.ipify.org',
+                    'port': 80,
+                    'path': '/'
+                }, function(resp) {
+                    resp.on('data', function(ip) {
+                      reply("🔎 My public IP address is: " + ip);
+                    })
+                })
+            }
+break
+
+case 'myip2': {
+                if (!isCreator) throw mess.owner
+                var http = require('http')
+                http.get({
+                    'host': 'api.ipify.org',
+                    'port': 80,
+                    'path': '/'
+                }, function(resp) {
+                    resp.on('data', function(ip) {
+                        reply("🔎 My public IP address is: " + ip);
+                    })
+                })
+            }
+break
+
+case 'tagme2': {
+            if (!m.isGroup) throw mess.group
+            let me = m.sender
+            let jawab = `*@${me.split('@')[0]}*`
+            let ments = [me]
+            let buttons = [{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
+            Miku.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
+            await Miku.sendButtonText(m.chat, buttons, jawab, nyoutube, m, {mentions: ments, quoted: fkontak})
+            }
+break
+
+case 'kick2': {
+		if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await Miku.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+	}
+break
+
+case 'add2': {
+		if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await Miku.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+	}
+break
 
 
 case 'animestory': { 
