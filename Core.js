@@ -2888,6 +2888,155 @@ case 'emojimix4': {
 	    }
 break
 
+/*
+case 'aspeedtest': {
+            reply('Testing Speed...')
+            let cp = require('child_process')
+            let { promisify } = require('util')
+            let exec = promisify(cp.exec).bind(cp)
+          let o
+          try {
+          o = await exec('python Speed1.py')
+          } catch (e) {
+          o = e
+         } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) reply(stdout)
+        if (stderr.trim()) reply(stderr)
+            }
+            }
+break
+
+case 'bspeedtest': {
+            reply('Testing Speed...')
+            let cp = require('child_process')
+            let { promisify } = require('util')
+            let exec = promisify(cp.exec).bind(cp)
+          let o
+          try {
+          o = await exec('python Speed2.py')
+          } catch (e) {
+          o = e
+         } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) reply(stdout)
+        if (stderr.trim()) reply(stderr)
+            }
+            }
+break
+
+case 'cspeedtest': {
+            reply('Testing Speed...')
+            let cp = require('child_process')
+            let { promisify } = require('util')
+            let exec = promisify(cp.exec).bind(cp)
+          let o
+          try {
+          o = await exec('python Speed3.py')
+          } catch (e) {
+          o = e
+         } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) reply(stdout)
+        if (stderr.trim()) reply(stderr)
+            }
+            }
+break
+
+
+case 'dspeedtest': {
+            reply('Testing Speed...')
+            let cp = require('child_process')
+            let { promisify } = require('util')
+            let exec = promisify(cp.exec).bind(cp)
+          let o
+          try {
+          o = await exec('python Speed4.py')
+          } catch (e) {
+          o = e
+         } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) reply(stdout)
+        if (stderr.trim()) reply(stderr)
+            }
+            }
+break
+
+
+case 'espeedtest': {
+            reply('Testing Speed...')
+            let cp = require('child_process')
+            let { promisify } = require('util')
+            let exec = promisify(cp.exec).bind(cp)
+          let o
+          try {
+          o = await exec('python Speed5.py')
+          } catch (e) {
+          o = e
+         } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) reply(stdout)
+        if (stderr.trim()) reply(stderr)
+            }
+            }
+break
+*/
+
+
+  /*
+  case 'addowner': case 'delowner': {
+
+    const json = JSON.parse(fs.readFileSync('./src/owner.json'))
+    let who
+    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : args[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+    else who = args[0] ? args[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
+    if (json.includes(who)) throw `${await Miku.getName(who)} ist noch kein owner!`
+    let index = json.findIndex(v => (v.replace(/[^0-9]/g, '') + '@s.whatsapp.net') === (who.replace(/[^0-9]/g, '') + '@s.whatsapp.net'))
+    json.splice(index, 1)
+    fs.writeFileSync('./src/owner.json', JSON.stringify(json))
+    m.reply(`${await Miku.getName(who)} ist kein owner mehr!`)
+
+    delete require.cache[require.resolve('../config')]
+    require('../config')
+
+}
+break
+*/
+
+/*
+case 'delete': case 'del':{
+    if (isBan) return reply(mess.banned)	 			
+ if (isBanChat) return reply(mess.bangc)
+ if (!m.quoted) return
+ let { chat, fromMe, id, isBaileys } = m.quoted
+ if (!isBaileys) return replay('How can i delete messages of other person? Baka!')
+ Miku.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
+ }
+ break
+*/
+
+ case 'deleteall': case 'delall': case 'delete': case 'del': case 'd': {
+ if (isBan) return reply(mess.banned)	 			
+ if (isBanChat) return reply(mess.bangc)
+ if (!isBotAdmins) return replay(mess.botadmin)
+ if (!isAdmins && !isCreator) return replay(mess.useradmin)
+ if (!m.quoted) return reply('Please mention a message baka!')
+ let { chat, fromMe, id} = m.quoted
+
+const key = {
+    remoteJid: m.chat,
+    fromMe: false,
+    id: m.quoted.id,
+    participant: m.quoted.sender
+}
+
+await Miku.sendMessage(m.chat, { delete: key })
+ }
+ break
+
+
+
+
 
 case 'animestory': { 
 	if (isBan) return reply(mess.banned)	 			
