@@ -1,5 +1,5 @@
 const canvacord=require('canvacord')
-const {fetchBuffer}=require("../../lib2/Function")
+const {fetchBuffer}=require("../../lib/Function")
 module.exports={
     name: "rank",
     alias: ["rank"],
