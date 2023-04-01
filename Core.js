@@ -2626,9 +2626,37 @@ case 'delmsg': case 'deletemsg': {
 		reply(`Delete Successfully '${text}' From The Message list`)
             }
 break
+		
+case 'listonline': case 'listaktif': case 'here':{
+    if (isBan) return reply(mess.banned)	 			
+ if (isBanChat) return reply(mess.bangc)
+ if (!m.isGroup) return replay(mess.grouponly)
+ let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
+ let online = [...Object.keys(store.presences[id]), botNumber]
+ let liston = 1
+ Miku.sendText(m.chat, '  「 *Online Members* 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+ }
+ break
+
+
+case'tagadmins': case 'admins': case 'admin': case 'tag': {
+   if (isBan) return reply(mess.banned)	 			
+ if (isBanChat) return reply(mess.bangc)
+ if (!m.isGroup) return replay(mess.grouponly) 
+ Miku.sendMessage(from, { react: { text: "🗿" , key: m.key }})
+ if (!text) return replay(`*Bitte schreiben sie eine nachricht für die admins.*`)
+ let teks = `*「 Tag Admins 」*
+  
+ *Message : ${text}*\n\n`
+ for (let mem of groupAdmins) {
+ teks += `🗿 @${mem.split('@')[0]}\n`
+ }
+ Miku.sendMessage(m.chat, { text: teks, mentions: groupAdmins}, { quoted: m })
+ }
+ break
 
 case 'tagme': {
-	if (isBan) return reply(mess.banned)	 			
+if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 Miku.sendMessage(m.chat, {text:`@${m.sender.split("@")[0]}`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 }
