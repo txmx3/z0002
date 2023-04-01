@@ -17,7 +17,7 @@ module.exports = {
           return m.reply("Please provide a valid Tiktok link!")
         }
 
-        require('../../lib/tiktokScrapper').Tiktok(args[0]).then( data => {
+        require('../../lib2/tiktokScrapper').Tiktok(args[0]).then( data => {
         Miku.sendMessage(m.from, { document: { url: data.audio },mimetype: "audio/mpeg",fileName: `Downloaded by ${botName}.mp3`,},{ quoted: m })
         })
         },
