@@ -1,4 +1,4 @@
-const { mediafireDl } = require('../../lib2/mediaFireScrapper');
+const { mediafireDl } = require('../../lib/mediaFireScrapper');
 
 module.exports = {
     name: "mediafire",
