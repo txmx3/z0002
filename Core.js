@@ -2855,6 +2855,38 @@ case 'add2': {
 		await Miku.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 break
+		
+cpu.total).toFixed(2)}%`).join('\n')}
+_CPU Core(s) Usage (${cpus.length} Core CPU)_
+${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
+                `.trim()
+                m.reply(respon)
+            }
+break
+
+ case 'emojimix3': {
+			 if (!isRegistered) return m.reply('Sie haben sich noch nicht registriert! Bitte registriere dich mit ${prefix}registriername|alter!')
+		let [emoji1, emoji2] = text.split`+`
+		if (!emoji1) throw `Example : ${prefix + command} 😅+🤔`
+		if (!emoji2) throw `Example : ${prefix + command} 😅+🤔`
+		let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
+		for (let res of anu.results) {
+		    let encmedia = await Miku.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+		    await fs.unlinkSync(encmedia)
+		}
+	    }
+break
+
+case 'emojimix4': {
+			if (!isRegistered) return m.reply('Sie haben sich noch nicht registriert! Bitte registriere dich mit ${prefix}registriername|alter!')
+	    if (!text) throw `Example : ${prefix + command} 😅`
+		let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(text)}`)
+		for (let res of anu.results) {
+		    let encmedia = await Miku.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+		    await fs.unlinkSync(encmedia)
+		}
+	    }
+break
 
 
 case 'animestory': { 
