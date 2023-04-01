@@ -1,5 +1,5 @@
-require("../config.js");
-const config = require('../config');
+require("../config2.js");
+const config = require('../config2');
 const mongoose = require("mongoose");
 
 const db1= mongoose.createConnection(config.mongodb);
