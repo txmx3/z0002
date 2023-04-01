@@ -2607,7 +2607,7 @@ break
  case 'listmsg': case 'listsave': {
             	if (isBan) return reply(mess.banned)
 	if (isBanChat) return reply(mess.bangc)
-                let msgs = JSON.parse(fs.readFileSync('./database/datenbank2/text1.json'))
+                let msgs = JSON.parse(fs.readFileSync('./database/saving.json'))
 	        let seplit = Object.entries(global.db.data.database).map(([nama, isi]) => { return { nama, ...isi } })
 		let teks = '「 DATABASE LIST 」\n\n'
 		for (let i of seplit) {
