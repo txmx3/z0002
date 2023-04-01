@@ -1,4 +1,4 @@
-const { getBuffer } = require("../../lib2/myfunc");
+const { getBuffer } = require("../../lib/myfunc");
 
 module.exports = {
     name: "screenshot",
