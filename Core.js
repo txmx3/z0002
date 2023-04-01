@@ -6209,9 +6209,16 @@ dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 
 Hier ist die Liste meiner Befehle.
 
-Eigene Befehle(v4):
+Eigene Befehle(v5):
 
 *━━━〈  Own/New(Beta)  〉━━━*
+
+ _Register_:
+ ee: ${prefix}register Name|Age
+ 
+ checkregister 
+ registercheck
+ 
 
  _Bot_:
  bn , botname
