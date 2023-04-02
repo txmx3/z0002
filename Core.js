@@ -55,7 +55,7 @@ getRegisteredRandomId,
 addRegisteredUser,
 createSerial,
 checkRegisteredUser
-} = require('./database/register.js')
+} = require('./register.js')
 
 
 global.prem = require("./database/premium.json")
