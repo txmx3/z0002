@@ -1,5 +1,5 @@
 const { Sticker, StickerTypes } = require('wa-sticker-formatter')
-let { TelegraPh } = require("../../lib/uploader");
+let { TelegraPh } = require("../../lib/uploader2");
 const fs = require("fs");
 
 module.exports = {
