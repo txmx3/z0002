@@ -49,27 +49,23 @@ const xfarrapi = require('xfarr-api')
 const { hentai } = require('./lib/scraper2.js')
 let { msgFilter } = require('./lib/antispam')
 const { mediafireDl } = require('./lib/mediafire.js')
-
 const {
 getRegisteredRandomId,
 addRegisteredUser,
 createSerial,
 checkRegisteredUser
-} = require('./register.js')
-
+} = require('./database/register.js')
 
 global.prem = require("./database/premium.json")
 /*const command = ${prefix}
 const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
-const tik = can[Math.floor(Math.random() * can.length)
-Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
+					const tik = can[Math.floor(Math.random() * can.length)]
+ Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
 
 const cal = ['ja','vllt','nein']
-
-const tiik = cal[Math.floor(Math.random() * can.length)] 
-Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tiik}%*` }, { quoted: m }
+					const tiik = cal[Math.floor(Math.random() * can.length)]
+ Miku.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tiik}%*` }, { quoted: m })
 */
-global.prem = require("./lib/premium.js")
 
 const _ = require('lodash')
 const yargs = require('yargs/yargs')
@@ -90,12 +86,12 @@ const {
 
 let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
 let banchat = JSON.parse(fs.readFileSync('./database/banChat.json'));
-let premium = JSON.parse(fs.readFileSync('./database/premiumuser.json'));
+
  let _limit = JSON.parse(fs.readFileSync('./storage/user/limit.json'));
  let _buruan = JSON.parse(fs.readFileSync('./storage/user/bounty.json'));
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/blood.json'))
 
-
+global.prem = require("./lib/premium.js")
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
@@ -163,7 +159,7 @@ global.db = JSON.parse(fs.readFileSync('./src/database.json'))
 let _sewa = require("./lib/sewa");
 const sewa = JSON.parse(fs.readFileSync('./database/sewa.json'))
 
-
+const isRegistered = checkRegisteredUser(m.sender)
 const time = moment.tz('Asia/Kolkata').format('DD/MM HH:mm:ss')
 const ucap = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('a')
 var buln = ['/01/', '/02/', '/03/', '/04/', '/05/', '/06/', '/07/', '/08/', '/09/', '/10/', '/11/', '/12/'];
@@ -208,6 +204,7 @@ const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
 const isUser = pendaftar.includes(m.sender)
 const isBan = banUser.includes(m.sender)
 const isBanChat = m.isGroup ? banchat.includes(from) : false
+const isPremium = isCreator || isCreator || prem.checkPremiumUser(m.sender, premium);
 const isRakyat = isCreator || global.rkyt.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
 const AntiLink = m.isGroup ? ntilink.includes(from) : false
 const AntiLinkYoutubeVid = m.isGroup ? ntilinkytvid.includes(from) : false
@@ -217,7 +214,7 @@ const AntiLinkFacebook = m.isGroup ? ntilinkfb.includes(from) : false
 const AntiLinkTiktok = m.isGroup ? ntilinktt.includes(from) : false
 const AntiLinkTelegram = m.isGroup ? ntilinktg.includes(from) : false
 const AntiLinkTwitter = m.isGroup ? ntilinktwt.includes(from) : false
-const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : true
+const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false
 const antiWame = m.isGroup ? ntwame.includes(from) : false
 const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
 const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
@@ -234,20 +231,16 @@ const isQuotedAudio = m.mtype === 'extendedTextMessage' && content.includes('aud
 
 const mongoose = require("mongoose");
 
-	
 
-
+/*
 /////////// -  DM chatbot (Delete this part to turn off DM Chat Bot) - //////////////////
-
 if (!isCmd && !m.isGroup){
     const botreply = await axios.get(`http://api.brainshop.ai/get?bid=168758&key=Ci7eNhtxpxxDB5FQ&uid=[uid]&msg=[${budy}]`)
     txt = `${botreply.data.cnt}`
     m.reply(txt)
     }
-
 //////////////////////////////////////////////////////////////////////////////////////
-
-
+*/
 _sewa.expiredCheck(Miku, sewa)
 
 const reply = (teks) => {
@@ -376,7 +369,7 @@ const addCooldown = (userId) => {
 }
 
 var levelRole = getLevelingLevel(m.sender)
-        var role = 'User'
+        var role = 'Copper V'
         if (levelRole <= 5) {
             role = 'Copper IV'
         } else if (levelRole <= 10) {
@@ -687,7 +680,13 @@ const isInventory = cekInventoryAdaAtauGak(m.sender)
 const isInventoriBuruan = cekDuluHasilBuruanNya(m.sender)
 const isInventoryLimit = cekDuluJoinAdaApaKagaLimitnyaDiJson(m.sender)
 const isInventoryMonay = cekDuluJoinAdaApaKagaMonaynyaDiJson(m.sender)
-const ikan = ['🐟','🐠','🐡']   
+const ikan = ['🐟','🐠','🐡']
+
+const hariini = moment.tz('Asia/Jakarta').format('dddd, DD MMMM YYYY')
+const hariiini = moment.tz('Asia/Jakarta').format('DD MMMM YYYY')
+const barat = moment.tz('Asia/Jakarta').format('HH:mm:ss')
+const tengah = moment.tz('Asia/Makassar').format('HH:mm:ss')
+const timur = moment.tz('Asia/Jayapura').format('HH:mm:ss')
    
  
 
@@ -919,8 +918,8 @@ if (m.mtype == 'viewOnceMessage') {
  teks = `「 *Anti ViewOnce Message* 」
 ${themeemoji} Name : ${m.pushName}
 ${themeemoji} User : @${m.sender.split("@")[0]}
-${themeemoji} Clock : ${moment.tz('Asia/Kolkata').format('HH:mm:ss')} 
-${themeemoji} Date : ${moment.tz('Asia/Kolkata').format('DD/MM/YYYY')}
+${themeemoji} Clock : ${moment.tz('Europe/Berlin').format('HH:mm:ss')} 
+${themeemoji} Date : ${moment.tz('Europe/Berlin').format('DD/MM/YYYY')}
 ${themeemoji} MessageType : ${m.mtype}`
 Miku.sendTextWithMentions(m.chat, teks, m)
 await sleep(500)
@@ -937,7 +936,7 @@ setInterval(() => {
 fs.writeFileSync('./src/database.json', JSON.stringify(global.db, null, 2))
 }, 60 * 1000)
 
-// reset limit every 24 hours
+//reset limit every 24 hours
 let cron = require('node-cron')
     cron.schedule('00 12 * * *', () => {
     let user = Object.keys(global.db.users)
@@ -946,7 +945,7 @@ let cron = require('node-cron')
     console.log('Reseted Limit')
     }, {
     scheduled: true,
-    timezone: "Asia/Kolkata"
+    timezone: "Europe/Berlin"
     })
 
     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -1075,7 +1074,7 @@ let cron = require('node-cron')
           let g = /scissors/i
           let b = /rock/i
           let k = /paper/i
-          let reg = /^(scissors|rock|paper)/i
+          let reg = /^(scisors|rok|peper)/i
           if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
           roof.pilih = reg.exec(m.text.toLowerCase())[0]
           roof.text = m.text
@@ -1354,7 +1353,7 @@ const ftroli = {
 
 
     const menulist = `
-    Konichiwa ${pushname} Hallo👋. Ich bin ${global.BotName}, ein Bot entwickelt von : Sebastian um Ihre WhatsApp-Nutzung auf die nächste Stufe zu bringen.
+    Konichiwa ${pushname} hallo👋. Ich bin ${global.BotName}, ein Bot entwickelt von : Sebastian um Ihre WhatsApp-Nutzung auf die nächste Stufe zu bringen.
         
        「 System Info 」
     
@@ -1362,7 +1361,7 @@ const ftroli = {
     Up Time : ${runtime(process.uptime())}
     Bot Name : ${global.BotName}
     Owner Name : ${global.OwnerName}
-    𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
+    𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : *
     𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
     
     
@@ -1373,7 +1372,7 @@ const ftroli = {
     User Role : ${role}
     
     
-       「 User Bank 」v
+       「 User Bank 」
     
     User Balance : ${uangku}
     Iron : ${getBesi(m.sender)}
@@ -1384,7 +1383,7 @@ const ftroli = {
     
     Type *-menu* or press any button below to start using *${global.BotName}*
     
-    ©️ *${global.BotName}* All Rights Reserved by: *MkM Bot Inc.*
+    ©️ *${global.BotName}* All Rights Reserved by: *Sebastian*
     `
         const qtod = m.quoted? "true":"false"
         
@@ -1393,50 +1392,65 @@ const ftroli = {
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
+/*
+let mikuaudio = JSON.parse(fs.readFileSync('/Assets/Audio'));
+	
+for (let anju of mikuaudio){
+				if (budy === anju){
+					result = fs.readFileSync(`./Assets/Audio/baka.mp3`)
+					Miku.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+					}
+			}
+        
+*/
 
+	
 //Some special chat replies
 	
  let smallinput = budy.toLowerCase()
-    if (smallinput.includes('hello')) {
-      reply (`Hello *${pushname}*, I am *${BotName}*. How can i help you?`);
+    if (smallinput.includes('¢')) {
+      reply (`Hello *${pushname}*, Ich bin *${BotName}*. Kann ich dir iirgendwie helfen ?`);
     } 
 
-    if( smallinput.includes('konichiwa') || smallinput.includes('konochiwa') || smallinput.includes('konichiba') || smallinput.includes('salute')){
-      reply (`Konichiwa *${pushname}*, I am *${BotName}*. How can i help you?`);
-    }
+    if( smallinput.includes('¢') || smallinput.includes('a2') || smallinput.includes('¢') || smallinput.includes('¢')){
+      reply (`PONG Speed : ${latensie.toFixed(3)} miliseconds.`);
+    } 
    
-    if (smallinput=='!') {
-      reply (`Hello *${pushname}*, I am *${BotName}*, a WhatsApp bot made by *MkM Bot Inc*. And curbarently being hosted by *${OwnerName}*.  type  *${prefix}help* to get my full command list.`);
+    if (smallinput=='¢') {
+      reply (`Hello *${pushname}*, I am *${BotName}*, a WhatsApp bot made by *Sebastian* and curbarently being hosted by *${OwnerName}*.  type  *${prefix}help* to get my full command list.`);
     }
 
     if (smallinput=='lol') {
         reply (`*XD*`)
     }
 
-    if (smallinput=='XD ') {
-        reply (`XD`)
+    if (smallinput=='user') {
+        reply (`Alle User von diesem bot 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}`)
     }
     
-     if (smallinput=='Hi ') {
-        reply (`hdf`)
+     if (smallinput=='test') {
+	Miku.sendMessage(from, { react: { text: "😊" , key: m.key }})
+        reply (`Ich arbeite schon !!`)
     }
-	
+
     if (smallinput.includes('Guten Morgen ') || smallinput.includes('good morning')) {
       reply (`🌝was willst du jetzt 🌚`);
     }
 
     if (smallinput.includes('gute nacht')) {
-      reply (`warum schon so früh 🥲 oder willst du noch etwas machen 😏 *${pushname}* 😇. Sleep well and sweet dreams.`);
+      reply (`gute nacht ;)`);
     }
 
-    if (smallinput.includes('Ohio ')|| smallinput.includes('Hi') || smallinput.includes('Moin')) {
+    if (smallinput.includes('¢')|| smallinput.includes('¢') || smallinput.includes('¥')) {
       reply (`Yai endlich wider da *${pushname}*`);
     }      
+  
+
 
 switch(command) {
 
 
-case 'me': case 'profile': case 'p': case 'xp':
+case 'me': case 'profile': case 'p': case 'm':
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
   if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
@@ -1475,7 +1489,7 @@ let buttonspro = [
         Miku.sendMessage(m.chat,buttonMessage,{quoted:m})
         	
             break
-		
+
 case 'register':
                 if (isRegistered) return reply('Du bist bereits registriert')
                 if (!q.includes('|')) return reply('Falsches Format!')
@@ -1500,13 +1514,13 @@ case 'register':
                 }
     reply(` Du wurdest erfolgreich Registert , Vielen Dank! `)
 break
-		
-case 'registercheck': case 'checkregister':
+
+  case 'registercheck': case 'checkregister':
   if (isBan) return reply(mess.banned )
   if (isBanChat) return reply(mess.bangc)
   reply(` *Deine Registrierten Daten sind:*\n\n_Name:_ ${namaUser}\n\n_Alter:_ ${umurUser}\n\n_Nummer:_ wa.me/${m.sender.split("@")[0]}\n\n_:?_ ${barat}\n\n_ID :_ ${serialUser}\n\n Das sind alle von dir eingetragenen Daten !`)
 break
-		
+
     /*
 case 'addprem':
 				if (!isCreator) return m.reply(mess.owner)
@@ -1555,7 +1569,34 @@ case 'listprem': {
             m.reply(txt)
 			}
 break
-
+  
+case'slot': case 'spin': {
+    if (isBan) return replay(mess.banned);
+    if (isBanChat) return replay(mess.bangc)
+    if (!m.isGroup) return replay(mess.grouponly)
+    var today = new Date();
+if (today.getDay() == 6 || today.getDay() == 5 || today.getDay() == 0){
+    if (text == 'help') return replay(`*1:* Use ${prefix}slot to play\n\n*2:* You must have 💎100 in your wallet\n\n*3:* If you don't have money in wallet then withdraw from your bank\n\n*4:* If you don't have money in your bank too then use economy features to gain money`)
+    if (text == 'money') return replay(`*1:* Small Win --> +💎20\n\n*2:* Small Lose --> -💎20\n\n*3:* Big Win --> +💎100\n\n*4:* Big Lose --> -💎50\n\n*5:* 🎉 JackPot --> +💎1000`)
+    const fruit1= ["🥥", "🍎", "🍇"]
+    const fruit2 = ["🍎", "🍇", "🥥"]  
+    const fruit3 = ["🍇", "🥥", "🍎"]         
+    const fruit4 = ["🍇", "🥥", "🍎"]
+    const lose = ['*You suck at playing this game*\n\n_--> 🍍-🥥-🍎_', '*Totally out of line*\n\n_--> 🥥-🍎-🍍_', '*Are you a newbie?*\n\n_--> 🍎-🍍-🥥_']
+    const smallLose = ['*You cannot harvest coconut 🥥 in a pineapple 🍍 farm*\n\n_--> 🍍>🥥<🍍_', '*Apples and Coconut are not best Combo*\n\n_--> 🍎>🥥<🍎_', '*Coconuts and Apple are not great deal*\n\n_--> 🥥>🍎<🥥_']
+    const won = ['*You harvested a basket of*\n\n_--> 🍎+🍎+🍎_', '*Impressive, You must be a specialist in plucking coconuts*\n\n_--> 🥥+🥥+🥥_', '*Amazing, you are going to be making pineapple juice for the family*\n\n_--> 🍍+🍍+🍍_']             
+    const near = ['*Wow, you were so close to winning pineapples*\n\n_--> 🍎-🍍+🍍_', '*Hmmm, you were so close to winning Apples*\n\n_--> 🍎+🍎-🍍_']          
+    const jack = ['*🥳 JackPot 🤑*\n\n_--> 🍇×🍇×🍇×🍇_', '*🎉 JaaackPooot!*\n\n_--> 🥥×🥥×🥥×🥥_', '*🎊 You Just hit a jackpot worth 💎1000*']
+    const user = m.sender
+    const cara = "cara"
+    const k = 100
+    const balance1  = await eco.balance(user, cara)
+    
+    if (k > balance1.wallet) return replay(`You are going to be spinning on your wallet, you need at least 💎100`);
+    const f1 = fruit1[Math.floor(Math.random() * fruit1.length)];
+    const f2 = fruit2[Math.floor(Math.random() * fruit2.length)];
+    const f3 = fruit3[Math.floor(Math.random() * fruit3.length)];
+    const f4 = fruit4[Math.floor(Math.random() * fruit4.length)];
     const mess1 = lose[Math.floor(Math.random() * lose.length)];
     const mess2 = won[Math.floor(Math.random() * won.length)];
     const mess3 = near[Math.floor(Math.random() * near.length)];
@@ -1646,8 +1687,8 @@ Type *surrender* to surrender and admit defeat`
     }
     }
     break	
-*/
-
+*/    
+		
 
 case 'banchat': case 'bangroup':{
 if (isBan) return reply(mess.banned)	 			
@@ -1679,19 +1720,53 @@ replay('This Group has been *unbanned* from using me!')
   break
 
 
+
+
 case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!AntiNsfw) return reply(mess.nonsfw)
-        reply(` *━━━〈  📛 NSFW Menu 📛  〉━━━*\n\nahegao , ass , bdsm ,  cuckold , ero , femdom , gangbang , foot , glasses , hentai , masturbation , orgy , panties , pussy , tentacles , things , yuri , nsfwloli , blowjobgif, hentaivideo, trap, hneko, hwaifu, versuche den befehl mal mit (!gig (befehl) )`)
+        reply(` *━━━〈  📛 NSFW Menu 📛  〉━━━*\n\n ${prefix}ass\n${prefix}cum\n${prefix}glasses\n${prefix}pussy\n${prefix}yuri\n${prefix}loli\n${prefix}blonde\n${prefix}tree\n${prefix}food\n${prefix}nude\n${prefix}sex\n${prefix}foxgirl\n${prefix}twogirls\n${prefix}genshin\n${prefix}bed\n${prefix}schooluniform\n${prefix}twogirls\n${prefix}dress\n${prefix}horns\n${prefix}blowjobgif\n${prefix}hentaivideo\n${prefix}trap\n${prefix}hneko\n${prefix}hwaifu\n\nversuche den befehl mal mit (${prefix}gig (befehl) )`)
     break
 
 case 'reaction': case 'react': case 'reactions': case 'r':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-            reply(` *━━━〈  📍 Reactions 📍  〉━━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
-        break
+            reply(` *━━━〈  📍 Reactions 📍  〉━━━*\n\n${prefix}bonk\n${prefix}cry\n${prefix}bully\n${prefix}cuddle\nhug\n${prefix}kiss\n${prefix}lick\n${prefix}pat\n${prefix}smug\n${prefix}yeet\n${prefix}blush\n${prefix}smile\n${prefix}wave\n${prefix}highfive\n${prefix}handhold\n${prefix}nom\n${prefix}glomp\n${prefix}bite\n${prefix}slap\n${prefix}kill\n${prefix}happy\n${prefix}wink\n${prefix}poke\n${prefix}dance\n${prefix}cringe`)
+        break   
     
+case 'p':
+case 'a':
+  if (isBan) {
+    return reply(mess.banned);
+  }	 			
+  if (isBanChat) {
+    return reply(mess.bangc);
+  }
+ Miku.sendMessage(from, { react: { text: "👥️" , key: m.key }})
+  reply(`*「 System Info 」*\n\nSpeed: ${latensie.toFixed(4)}ms
+            
+Uptime: ${runtime(process.uptime())}
+
+Bot Name: ${global.BotName}
+                
+Owner Name: ${global.OwnerName}
+		
+Total Users: ${Object.keys(global.db.users).length}`);
+  break;
+
+
+
+        break
+		
+		
+/*case 'schäm': case 'schem': case 'scham': case 'sch':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+            reply(`${pushname} geht in die ecke und schämt sich `)
+        break
+        */
+     
 case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1': case 'p1': case 'p2': case 'p3':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
@@ -1701,7 +1776,7 @@ case 'ping': case 'a2': case 'p': case 'a': case 'a3': case 'aping': case 'ping1
                 Up Time : ${runtime(process.uptime())}		
                 Bot Name : ${global.BotName}		
                 Owner Name : ${global.OwnerName}		
-		𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}		
+		            𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}		
                 Session ID: *${global.sitzung}* `)	
         break             
 	
@@ -1799,7 +1874,14 @@ if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` MkM,Miku_Beta-Testgruppe:\n${global.betatest} `)
 break
-		
+
+  case 'promoteme':
+  if (isBan) return reply(mess.banned)
+  if (isBanChat) return reply(mess.bangc)
+  if (!isCreator) return reply(mess.botowner)
+  reply(` ${prefix}promote ${wa.me.split('@')[0]} `)
+  break
+    
 case 'botsgruppe': case 'botsgrp':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
@@ -1853,11 +1935,7 @@ if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Alle Eingetragn Gruppenlinks:\n\nMkM-Chatgruppe:\n\n${global.chatgrp}\n\nMkM-Ankündigung:\n\n${global.ankundigung}\n\nMkM-Werbegruppe:\n\n${global.werbunggrp}\n\nsfw-gruppe:\n\n${global.nsfwgrp}\n\nMkM-Broadcast:\n\n${global.broadcastgrp}\n\nSupport-Gruppe:\n\n${global.supportgrp}\n\nMkM-Bewerbung:\n\n${global.bewerbunggrp}\n\nMkM-Test_1:\n\n${global.test1}\n\nMkM-Test_2:\n\n${global.test2}\n\nMkM-Beta_Test:\n\n${global.betatest}\n\nMkM-MikuOnTop:\n\n${global.mikuot}\n\nMkM-TeamGruppe:\n\n${global.teamgrp}\n\nMkM-BotsGruppe:\n\n${global.botsgrp}\n\nMkM-SupportAnfragen:\n\n$[global.supportanfragengrp}\n\nMkM-Miku_Command,Befehl:\n\n${global.mikucommand}\n\nMkM-OwnerChatGruppe:\n\n${global.ownerchatgrp}\n\nMkM-IdeenGruppe:\n\n${global.ideengrp}\n\nAnime-Gruppe:\n\n${global.animefchatgrp}\n\nMkM-Umfragen:\n\n${global.umfragengrp} `)
 break
-		
 
-		
-
-		
 case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'idearequest':
 	 if (isBan) return reply(mess.banned)	 			        
 	if (isBanChat) return reply(mess.bangc)
@@ -1866,12 +1944,12 @@ case 'idee': case 'idea': case 'ideeanfrage': case 'ia': case 'ir': case 'ideare
 
         replay(`Ich habe deine Idee Weitergeleitet . Das MkM Bot-Team bedankt sich für deine Anfrage `)
 break
-		
+
 case 'i': case 'selflink': case 'whatsapplink': case 'walink': case '@link':
  if (isBan) return reply(mess.banned)	 			        
 if (isBanChat) return reply(mess.bangc)
 reply(` 「 Links 」\n wa.me:\n\nwa.me//${m.sender}\n\nmit"@"\n\n@+${m.sender} `)
-break
+break 
 
 case'xp':
         if (isBan) return reply(mess.banned)	 			      
@@ -1885,7 +1963,6 @@ if(isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 reply(` 「 Group 」
 name: ${metadata.subject}
-
 Beschreibung: ${metadata.desc} `)		
 break 
 
@@ -1893,6 +1970,7 @@ case 'userbank': case 'userb': case 'buser': case 'bankuser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
 reply(` 「 User Bank 」
+
 
     User Balance : ${uangku}
     Iron : ${getBesi(m.sender)}
@@ -1940,7 +2018,7 @@ break
 case 'userxp': case 'uxp': case 'xpu': case 'xpuser':
 if(isBan) return reply(mess.banned)
 if(isBanChat) return reply(mess.bangc)
-reply(` User XP: ${xpMenu} \ ${reqXp} `)		
+reply(` User XP: ${xpMenu} \n ${reqXp} `)		
 break 
 
 case 'userrole': case 'urole': case 'roleuser': case 'ruser':
@@ -1959,14 +2037,7 @@ reply(` 「 User Info 」
     User Role : ${role} `)
 break
 
-case'l': case 'lvl': case 'level':
-        if (isBan) return reply(mess.banned)	 			       	
-	if (isBanChat) return reply(mess.bangc)
-            reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
-
-        break
-
-	case 'bn': case 'botname': case 'botn': case 'bname':
+case 'bn': case 'botname': case 'botn': case 'bname':
       if (isBan) return reply(mess.banned)
       if (isBanChat) return reply(mess.bangc)
            reply (` Hallo, ich mein Name ist\n\n*${global.BotName}*\n\nNote:\n"ed" bedeutet Edition. `)
@@ -2010,8 +2081,6 @@ case 'asup': case 'asupport': case 'afrage': case 'a!': case 'asupportanfrage': 
         replay(` Antwort erfolgreich gesendet! `)		
 break
 		
-
-		
 case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
 
         if (isBan) return reply(mess.banned)	 			        	
@@ -2019,7 +2088,7 @@ case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
         Miku.sendMessage(`120363076992082059@g.us`, {text:`*── 「 Bug-Report 」 ──*\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
         replay(`Ich habe deine Fehlermeldung an die Gruppe der Besitzer weitergeleitet. Das Team bedankt sich für deine Fehlermeldung `)
 break
-	
+
 case 'team': case 'listt': case 'tlist': case 'teamlist':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
@@ -2067,8 +2136,8 @@ case'lul': case 'chatowner': case 'ochat': case 'chatt': case 'chatrq': case 'ch
 
         Miku.sendMessage(`493023180366@s.whatsapp.net`, {text:`── 「 Chat-Anfrage 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}\n *Antwort* :`})
         replay(`ich habe diese nachricht an mein owner weitergeleitet`)
-        break
-		
+break
+
 case 'chatgruppe': case 'chatgroup': case 'cgr': case 'chatgr':
 if (isBan) return reply(mess.banned)	
 if (isBanChat) return reply(mess.bangc)
@@ -2087,13 +2156,7 @@ if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Die Website meines Owners ist:\n\nbumpee.co/adv8w9mnho\n\nDie Google-Website meines Owners lautet:\n\nsites.google.com/view/max2-community-website\n\nDer Telegram Account meines Inhabers lautet:\nhttps://t.me/Anonymeradmin\n\nDer Tiktok Account meines Owners ist:\nhttps://www.tiktok.com/@T_x_m_x_2\n\n\nDie E-Mail meines Owners ist:\nMax.public.community@gmail.com\n\nVielen Dank für deine Anfrage :) `)
 break 
-		
-case 'welcome':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hey ${pushname} , ich bin ${global.sitzung}  `)
-break
-		
+
 case 'candy': case 'christmas': case '3dchristmas': case 'sparklechristmas':
 case 'deepsea': case 'scifi': case 'rainbow2': case 'waterpipe': case 'spooky': 
 case 'pencil': case 'circuit': case 'discovery': case 'metalic': case 'fiction': case 'demon': 
@@ -2119,10 +2182,95 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 	case 'sand4': case 'pencil5': case 'metallic3': case 'graffititext5': case 'steel3': case 'harrypotter6': case 'underwater4':
 	case 'luxury3': case 'glue5': case 'fabric3': case 'neonlight7': case 'lava5': case 'toxic3': case 'ancient3': case 'chrismas4':
 	case 'scifi4': case 'rainbow4': case 'classic3': case 'watercolor5': case 'halloween4': case 'halloweenfire3': case 'foggy3':
-	case 'marvel6': case 'skeleton4': case 'sketch3': case 'wonderful3': case 'batman3': case 'juice4':{
-             if (!q) throw `Example : ${prefix + command} ${global.ownername}`
+	case 'marvel6': case 'skeleton4': case 'sketch3': case 'wonderful3': case 'batman3': case 'juice4':
+  /*
+  1
+  */
+    case 'business7': case 'thor7': case 'deepsea7': case 'batman7': case 'diamond7': case 'flag_3D-2': case 'american_3d_flag':
+case 'scifi_3D-2': case 'rainbow_3D-2': case 'pipe_3D-2': case 'halloween8': case 'spooky8': case 'horror8':
+/*
+2
+*/
+case 'sketch6': case 'bluecircuit5': case 'space5': case 'metallic5': case 'glossy7': case 'captain_america-2':
+case 'scifi9': case '8bit-2': case 'green_horror-2': case 'transformer4': case 'berry5': case 'layered4': case 'thunder9':
+/*
+3
+*/
+case 'magma8': case 'stone6': case 'neon8': case 'glitch8': case 'glitch9': case 'harry_potter-2': case 'embossed5': 
+case 'brokenglass5': case 'artpaper-2': case 'bw-2': case 'gradient-3': case '3D_glossy-2': case '3D_beach-2':
+/*
+4
+*/
+case 'watercolor5': case '3D-Multicolor': case 'foggy6': case 'neon_devil-2': case '3D-Underwater-2': case 'mascot-logo-2': 
+case 'graffiti8': case 'graffiti-wall-2': case 'graffiti9': case 'christmas7': case 'technology-neon-2': case 'snow6': case 'cloud5':
+/*
+5
+*/
+case '3D-luxury-2': case '3D-gradient-2': case 'blackpink5': case 'vintage6': case 'real-cloud-2': case 'cloud-sky-2': case 'sand-beach-2': 
+case 'sand-writing-2': case 'sand-engraved-2': case 'summery-sand-2': case 'birthday5': case '3D-glue-2':
+/*
+5
+*/
+case '3D-space-2': case 'metal-dark-2': case 'tiktok-style-2': case 'a-stone-2': case 'galaxy-style-2': case '1917style5': 
+case '80s-retro': case '3D-Minion3': case 'pornhub8': case 'dexposure': case '3D-holo-2': case 'avengers8': case 'metal-purple-2':
+/*
+6
+*/
+case 'marvel-metal-2': case 'deluxe-silver-2': case 'luxury_metal-2': case 'glossyblue4': case 'glossycarbon5': 
+case 'fabric7': case 'newyear6': case 'newyeargif3': case 'color-balloon-2': case '3D-metal-2':
+/*
+7
+*/
+case 'avatargold4': case '3D_metalsilver-2': case '3D_rosegold-2': case '3D_metalgold-2': case '3D_metalgalaxy-2': case '3D-Christmas-2': 
+case 'blood_text-2': case 'halloweenfire7': case 'metaldarkgold7': case 'wolf_logo-6': 
+case 'lion_logo-6': case 'wolf_logo-7': case 'wolf_logo_galaxy-2': case 'ninja7':
+/*
+8
+*/
+case 'joker7': case 'wicker7': case 'natural_leaves-2': case 'sparkle7': case 'skeleton7': case 'red_balloon-2': case 'purple_balloon-2': 
+case 'pink_balloon-2': case 'green_balloon-2': case 'cyan_balloon-2': case 'gold_balloon-2': case 'steel7':
+/*
+9
+*/
+case 'ultragloss4': case 'denim4': case 'decor_green-2': case 'peridot_stone-2': case 'rock5': case 'lava8': case 'yellow_glass-2': 
+case 'purple_glass-2': case 'orange_glass-2': case 'green_glass-2': case 'cyan_glass-2': case 'blue_glass-2':
+/*
+10
+*/
+case 'red_glass-2': case 'shinypurple_glass-2': case 'captain-america-2': case 'r2-d2_2': case 'rainbow_eq-2': case 'toxic7': case 'sparklepink_jewelery-2': 
+case 'sparkleblue_jewelery-2': case 'sparklegreen_jewelery-2': case 'sparklepurple_jewelery-2': case 'sparklegold_jewelery-2': case 'sparklered_jewelery-2': 
+/*
+11
+*/
+case 'sparklecyan_jewelery-2': case 'purple_glass-2': case 'decorative-glass-2': case 'chocolate_cake-2': case 'strawberry6': case 'koi_fish-2': 
+case 'bread6': case 'matrix_style-2': case 'horror_blood-2': case 'neonlight6': case 'thunder6': case '3d_box-2': case 'neon6':
+/*
+12
+*/
+case 'road_warning-2': case '3d_steel-2': case 'bokeh6': case 'green_neon-2': case 'free_advanced_glow-2': case 'break_wall-2': 
+case 'christmax_gift-2': case 'honey6': case 'plastic_bag_drug-2': case 'horror_gift-2': case 'marble_slabs-2': case 'marble6':
+/*
+13
+*/
+case 'ice_cold-2': case 'fruit_juice-2': case 'rusty_metal-2': case 'abstra_gold-2': case 'biscuit7': case 'bagel6': case 'wood7': 
+case 'sci--fi_2': case 'metal_rainbow-2': case 'purple_gem-2': case 'shiny_metal-2': case 'yellow_jewelery-2': case 'silver_jewelery-2':
+/*
+14
+*/
+case 'red_jewelery-2': case 'purple_jewelery-2': case 'orange_jewelery-2': case 'green_jewelery-2': case 'cyan_jewelery-2': case 'blue_jewelery-2': 
+case 'hot_metal-3': case 'hexa_golden-3': case 'blue_glitter-2': case 'purple_glitter-2': case 'pink_glitter-2': case 'green_glitter-2':
+/*
+15
+*/
+case 'silver_glitter-2': case 'gold_glitter-2': case 'bronze_glitter-2': case 'eroded_metal-2': case 'carbon9': case 'pink_candy-2': 
+case 'blue_metal-2': case 'blue_gem-2': case 'black_metal-2': case '3d_glowing_metal-2': case '3d_chrome-2':
+/*
+b
+*/
+	case 'marvel-01': case 'luxury_metal-2': case 'deluxe_gold-2': case 'neon01': case '3D_metal-3':
+	case '3D_metal-4': case '3D-metal-rose-2': case 'blue_balloon-2': case 'decor_purple-2': case 'dropwater8':{             if (!q) throw `Example : ${prefix + command} ${global.ownername}`
              reply( `${mess.waiting} `)
-             let link
+          let link
              if (/candy/.test(command)) link = 'https://textpro.me/create-christmas-candy-cane-text-effect-1056.html'
              if (/christmas/.test(command)) link = 'https://textpro.me/christmas-tree-text-effect-online-free-1057.html'
              if (/3dchristmas/.test(command)) link = 'https://textpro.me/3d-christmas-text-effect-by-name-1055.html'
@@ -2285,21 +2433,213 @@ case 'lion': case 'magma': case 'matrix': case 'neongreen': case 'scifi': case '
 		if (/wonderful3/.test(command)) link = 'https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html'
 		if (/batman3/.test(command)) link = 'https://textpro.me/make-a-batman-logo-online-free-1066.html'
 		if (/juice4/.test(command)) link = 'https://textpro.me/fruit-juice-text-effect-861.html'
-             let anutexpro = await maker.textpro(link, q)
+    if(/buisness7/.test(command)) link = "https://textpro.me/3d-business-sign-text-effect-1078.html"
+if(/thor7/.test(command)) link = "https://textpro.me/create-thor-logo-style-text-effect-online-1064.html"
+if(/deepsea7/.test(command)) link = "https://textpro.me/create-3d-deep-sea-metal-text-effect-online-1053.html"
+if(/batman7/.test(command)) link = "https://textpro.me/make-a-batman-logo-online-free-1066.html"
+if(/diamond7/.test(command)) link = "https://textpro.me/create-a-quick-sparkling-diamonds-text-effect-1077.html"
+if(/flag-3D-2/.test(command)) link = "https://textpro.me/free-online-country-flag-3d-text-effect-generator-1052.html"
+if(/american_3d_flag/.test(command)) link = "https://textpro.me/create-american-flag-3d-text-effect-online-1051.html"
+if(/scifi_3D-2/.test(command)) link = "https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html"
+if(/rainbow_3D-2/.test(command)) link = "https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html"
+if(/pipe_3D-2/.test(command)) link = "https://textpro.me/create-3d-water-pipe-text-effects-online-1048.html"
+if(/halloween8/.test(command)) link = "https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html"
+if(/spooky8/.test(command)) link = "https://textpro.me/create-a-spooky-halloween-text-effect-online-1046.html"
+if(/horror8/.test(command)) link = "https://textpro.me/create-a-cinematic-horror-text-effect-1045.html"
+ if(/sketch6/.test(command)) link = "https://textpro.me/create-a-sketch-text-effect-online-1044.html"
+ if(/bluecircuit5/.test(command)) link = "https://textpro.me/create-blue-circuit-style-text-effect-online-1043.html"
+ if(/space5/.test(command)) link = "https://textpro.me/create-space-text-effects-online-free-1042.html"
+ if(/metallic5/.test(command)) link = "https://textpro.me/create-a-metallic-text-effect-free-online-1041.html"
+ if(/glossy7/.test(command)) link = "https://textpro.me/creat-glossy-metalic-text-effect-free-online-1040.html"
+ if(/captain_america-2/.test(command)) link = "https://textpro.me/create-a-captain-america-text-effect-free-online-1039.html"
+ if(/scifi9/.test(command)) link = "https://textpro.me/create-science-fiction-text-effect-online-free-1038.html"
+ if(/8bit-2/.test(command)) link = "https://textpro.me/video-game-classic-8-bit-text-effect-1037.html"
+ if(/green_horror-2/.test(command)) link = "https://textpro.me/create-green-horror-style-text-effect-online-1036.html"
+ if(/transformer4/.test(command)) link = "https://textpro.me/create-a-transformer-text-effect-online-1035.html"
+ if(/berry5/.test(command)) link = "https://textpro.me/create-berry-text-effect-online-free-1033.html"
+ if(/layered4/.test(command)) link = "https://textpro.me/create-layered-text-effects-online-free-1032.html"
+ if(/thunder9/.test(command)) link = "https://textpro.me/online-thunder-text-effect-generator-1031.html"
+  if(/magma8/.test(command)) link = "https://textpro.me/create-a-magma-hot-text-effect-online-1030.html"
+  if(/stone6/.test(command)) link = "https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html"
+  if(/neon8/.test(command)) link = "https://textpro.me/create-3d-neon-light-text-effect-online-1028.html"
+  if(/glitch8/.test(command)) link = "https://textpro.me/create-impressive-glitch-text-effects-online-1027.html"
+  if(/glitch9/.test(command)) link = "https://textpro.me/create-a-glitch-text-effect-online-free-1026.html"
+  if(/harry_potter-2/.test(command)) link = "https://textpro.me/create-harry-potter-text-effect-online-1025.html"
+  if(/embossed5/.test(command)) link = "https://textpro.me/create-embossed-text-effect-on-cracked-surface-1024.html"
+  if(/brokenglass5/.test(command)) link = "https://textpro.me/broken-glass-text-effect-free-online-1023.html"
+  if(/artpaper-2/.test(command)) link = "https://textpro.me/create-art-paper-cut-text-effect-online-1022.html"
+  if(/bw-2/.test(command)) link = "https://textpro.me/create-artistic-black-and-white-status-and-quote-with-your-photos-1021.html"
+  if(/gradient-3/.test(command)) link = "https://textpro.me/online-3d-gradient-text-effect-generator-1020.html"
+  if(/3D_glossy-2/.test(command)) link = "https://textpro.me/create-a-3d-glossy-metal-text-effect-1019.html"
+  if(/3D_beach2/.test(command)) link = "https://textpro.me/create-3d-realistic-text-effect-on-the-beach-online-1018.html"
+   if(/watercolor5/.test(command)) link = "https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html"
+   if(/3D-Multicolor/.test(command)) link = "https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html"
+   if(/foggy6/.test(command)) link = "https://textpro.me/write-text-on-foggy-window-online-free-1015.html"
+   if(/neon_devil-2/.test(command)) link = "https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html"
+   if(/3D-Unterwater-2/.test(command)) link = "https://textpro.me/3d-underwater-text-effect-generator-online-1013.html"
+   if(/mascot-logo-2/.test(command)) link = "https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html"
+   if(/graffiti8/.test(command)) link = "https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html"
+   if(/graffiti-wall-2/.test(command)) link = "https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html"
+   if(/graffiti9/.test(command)) link = "https://textpro.me/create-cool-wall-graffiti-text-effect-online-1009.html"
+   if(/christmas7/.test(command)) link = "https://textpro.me/create-a-christmas-holiday-snow-text-effect-1007.html"
+   if(/technology-neon-2/.test(command)) link = "https://textpro.me/create-a-futuristic-technology-neon-light-text-effect-1006.html"
+   if(/snow6/.test(command)) link = "https://textpro.me/create-snow-text-effects-for-winter-holidays-1005.html"
+   if(/cloud5/.test(command)) link = "https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html"
+    if(/3D-luxury-2/.test(command)) link = "https://textpro.me/3d-luxury-gold-text-effect-online-1003.html"
+    if(/3D-gradient/.test(command)) link = "https://textpro.me/3d-gradient-text-effect-online-free-1002.html"
+    if(/blackpink5/.test(command)) link = "https://textpro.me/create-blackpink-logo-style-online-1001.html"
+    if(/vintage6/.test(command)) link = "https://textpro.me/create-realistic-vintage-style-light-bulb-1000.html"
+    if(/real-cloud-2/.test(command)) link = "https://textpro.me/create-realistic-cloud-text-effect-online-free-999.html"
+    if(/cloud-sky-2/.test(command)) link = "https://textpro.me/create-a-cloud-text-effect-in-the-sky-online-997.html"
+    if(/sand-beach-2/.test(command)) link = "https://textpro.me/write-in-sand-summer-beach-free-online-991.html"
+    if(/sand-writing-2/.test(command)) link = "https://textpro.me/sand-writing-text-effect-online-990.html"
+    if(/sand-engraved-2/.test(command)) link = "https://textpro.me/sand-engraved-3d-text-effect-989.html"
+    if(/summery-sand-2/.test(command)) link = "https://textpro.me/create-a-summery-sand-writing-text-effect-988.html"
+    if(/birthday5/.test(command)) link = "https://textpro.me/foil-balloon-text-effect-for-birthday-987.html"
+    if(/3D-glue-2/.test(command)) link = "https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html"
+     if(/3D-space-2/.test(command)) link = "https://textpro.me/create-space-3d-text-effect-online-985.html"
+     if(/metal-dark-2/.test(command)) link = "https://textpro.me/metal-dark-gold-text-effect-984.html"
+     if(/tiktok-style-2/.test(command)) link = "https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html"
+     if(/a-stone-2/.test(command)) link = "https://textpro.me/create-a-stone-text-effect-online-982.html"
+     if(/galaxy-style-2/.test(command)) link = "https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html"
+     if(/1917style5/.test(command)) link = "https://textpro.me/1917-style-text-effect-online-980.html"
+     if(/80s-retro/.test(command)) link = "https://textpro.me/80-s-retro-neon-text-effect-online-979.html"
+     if(/3D-Minion3/.test(command)) link = "https://textpro.me/minion-text-effect-3d-online-978.html"
+     if(/pornhub8/.test(command)) link = "https://textpro.me/pornhub-style-logo-online-generator-free-977.html"
+     if(/dexposure/.test(command)) link = "https://textpro.me/double-exposure-text-effect-black-white-976.html"
+     if(/3D-holo-2/.test(command)) link = "https://textpro.me/holographic-3d-text-effect-975.html"
+     if(/avengers8/.test(command)) link = "https://textpro.me/create-3d-avengers-logo-online-974.html"
+     if(/metal-purple-2/.test(command)) link = "https://textpro.me/metal-purple-dual-effect-973.html"
+      if(/marvel-metal-2/.test(command)) link = "https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html"
+      if(/marvel-01/.test(command)) link = "https://textpro.me/create-logo-style-marvel-studios-online-971.html"
+      if(/deluxe-silver-2/.test(command)) link = "https://textpro.me/deluxe-silver-text-effect-970.html"
+      if(/luxury_metal-2/.test(command)) link = "https://textpro.me/color-full-luxury-metal-text-effect-969.html"
+      if(/glossyblue4/.test(command)) link = "https://textpro.me/glossy-blue-metal-text-effect-967.html"
+      if(/deluxe_gold-2/.test(command)) link = "https://textpro.me/deluxe-gold-text-effect-966.html"
+      if(/glossycarbon5/.test(command)) link = "https://textpro.me/glossy-carbon-text-effect-965.html"
+      if(/fabric7/.test(command)) link = "https://textpro.me/fabric-text-effect-online-964.html"
+      if(/neon01/.test(command)) link = "https://textpro.me/neon-text-effect-online-963.html"
+      if(/newyear6/.test(command)) link = "https://textpro.me/new-year-cards-3d-by-name-960.html"
+      if(/newyeargif3/.test(command)) link = "https://textpro.me/happ-new-year-card-firework-gif-959.html"
+      if(/color-balloon-2/.test(command)) link = "https://textpro.me/fullcolor-balloon-text-effect-958.html"
+      if(/3D-metal-2/.test(command)) link = "https://textpro.me/create-text-logo-3d-metal-online-957.html"
+       if(/avatargold4/.test(command)) link = "https://textpro.me/create-avatar-gold-online-956.html"
+       if(/3D-metal-4/.test(command)) link = "https://textpro.me/text-logo-3d-metal-silver-946.html"
+       if(/3D-metal-rose_2/.test(command)) link = "https://textpro.me/text-logo-3d-metal-rose-gold-945.html"
+       if(/3D_metalgold-2/.test(command)) link = "https://textpro.me/text-logo-3d-metal-gold-944.html"
+       if(/3D_metalgalaxy-2/.test(command)) link = "https://textpro.me/text-logo-3d-metal-galaxy-943.html"
+       if(/3D-Christmas-2/.test(command)) link = "https://textpro.me/xmas-cards-3d-online-942.html"
+       if(/blood_text-2/.test(command)) link = "https://textpro.me/blood-text-on-the-frosted-glass-941.html"
+       if(/halloweenfire7/.test(command)) link = "https://textpro.me/halloween-fire-text-effect-940.html"
+       if(/metaldarkgold7/.test(command)) link = "https://textpro.me/metal-dark-gold-text-effect-online-939.html"
+       if(/lion_logo-6/.test(command)) link = "https://textpro.me/create-lion-logo-mascot-online-938.html"
+       if(/wolf_logo-6/.test(command)) link = "https://textpro.me/create-wolf-logo-black-white-937.html"
+       if(/wolf_logo_galaxy-2/.test(command)) link = "https://textpro.me/create-wolf-logo-galaxy-online-936.html"
+       if(/ninja7/.test(command)) link = "https://textpro.me/create-ninja-logo-online-935.html"
+	if(/joker7/.test(command)) link = "https://textpro.me/create-logo-joker-online-934.html"
+        if(/wicker7/.test(command)) link = "https://textpro.me/wicker-text-effect-online-932.html"
+        if(/natural_leaves-2/.test(command)) link = "https://textpro.me/natural-leaves-text-effect-931.html"
+        if(/sparkle7/.test(command)) link = "https://textpro.me/firework-sparkle-text-effect-930.html"
+        if(/skeleton7/.test(command)) link = "https://textpro.me/skeleton-text-effect-online-929.html"
+        if(/red_balloon-2/.test(command)) link = "https://textpro.me/red-foil-balloon-text-effect-928.html"
+        if(/purple_balloon_2/.test(command)) link = "https://textpro.me/purple-foil-balloon-text-effect-927.html"
+        if(/pink_balloon-2/.test(command)) link = "https://textpro.me/pink-foil-balloon-text-effect-926.html"
+        if(/green_balloon-2/.test(command)) link = "https://textpro.me/green-foil-balloon-text-effect-925.html"
+        if(/cyan_balloon-2/.test(command)) link = "https://textpro.me/cyan-foil-balloon-text-effect-924.html"
+        if(/blue_balloon-2/.test(command)) link = "https://textpro.me/blue-foil-balloon-text-effect-923.html"
+        if(/gold_balloon-2/.test(command)) link = "https://textpro.me/gold-foil-balloon-text-effect-922.html"
+        if(/steel7/.test(command)) link = "https://textpro.me/steel-text-effect-online-921.html"
+         if(/ultragloss4/.test(command)) link = "https://textpro.me/ultra-gloss-text-effect-online-920.html"
+         if(/denim4/.test(command)) link = "https://textpro.me/denim-text-effect-online-919.html"
+         if(/decor_green-2/.test(command)) link = "https://textpro.me/decorate-green-text-effect-918.html"
+         if(/decor_purple-2/.test(command)) link = "https://textpro.me/decorate-purple-text-effect-917.html"
+         if(/peridot_stone-2/.test(command)) link = "https://textpro.me/peridot-stone-text-effect-916.html"
+         if(/rock5/.test(command)) link = "https://textpro.me/rock-text-effect-online-915.html"
+         if(/lava8/.test(command)) link = "https://textpro.me/lava-text-effect-online-914.html"
+         if(/yellow_glass-2/.test(command)) link = "https://textpro.me/yellow-glass-text-effect-913.html"
+         if(/purple_glass-2/.test(command)) link = "https://textpro.me/purple-glass-text-effect-912.html"
+         if(/orange_glass-2/.test(command)) link = "https://textpro.me/orange-glass-text-effect-911.html"
+         if(/green_glass-2/.test(command)) link = "https://textpro.me/green-glass-text-effect-910.html"
+         if(/cyan_glass-2/.test(command)) link = "https://textpro.me/cyan-glass-text-effect-909.html"
+         if(/blue_glass-2/.test(command)) link = "https://textpro.me/blue-glass-text-effect-908.html"
+          if(/red_glass-2/.test(command)) link = "https://textpro.me/red-glass-text-effect-907.html"
+          if(/shinypurple_glass-2/.test(command)) link = "https://textpro.me/purple-shiny-glass-text-effect-906.html"
+          if(/captain-america-2/.test(command)) link = "https://textpro.me/captain-america-text-effect-905.html"
+          if(/r2-d2_2/.test(command)) link = "https://textpro.me/robot-r2-d2-text-effect-903.html"
+          if(/rainbow_eq-2/.test(command)) link = "https://textpro.me/rainbow-equalizer-text-effect-902.html"
+          if(/toxic7/.test(command)) link = "https://textpro.me/toxic-text-effect-online-901.html"
+          if(/sparklepink_jewelery-2/.test(command)) link = "https://textpro.me/pink-sparkling-jewelry-text-effect-899.html"
+          if(/sparkleblue_jewelery-2/.test(command)) link = "https://textpro.me/blue-sparkling-jewelry-text-effect-898.html"
+          if(/sparklegreen_jewelery-2/.test(command)) link = "https://textpro.me/green-sparkling-jewelry-text-effect-897.html"
+          if(/sparklepurple_jewelery-2/.test(command)) link = "https://textpro.me/purple-sparkling-jewelry-text-effect-896.html"
+          if(/sparkegold_jewelery-2/.test(command)) link = "https://textpro.me/gold-sparkling-jewelry-text-effect-895.html"
+          if(/sparklered_jewelery-2/.test(command)) link = "https://textpro.me/red-sparkling-jewelry-text-effect-894.html"
+           if(/sparklecyan_jewelery-2/.test(command)) link = "https://textpro.me/cyan-sparkling-jewelry-text-effect-893.html"
+           if(/purple_glass-2/.test(command)) link = "https://textpro.me/purple-glass-text-effect-online-892.html"
+           if(/decorative_glass-2/.test(command)) link = "https://textpro.me/decorative-glass-text-effect-891.html"
+           if(/chocolate_cake-2/.test(command)) link = "https://textpro.me/chocolate-cake-text-effect-890.html"
+           if(/strawberry6/.test(command)) link = "https://textpro.me/strawberry-text-effect-online-889.html"
+           if(/koi_fish-2/.test(command)) link = "https://textpro.me/koi-fish-text-effect-online-888.html"
+           if(/bread6/.test(command)) link = "https://textpro.me/bread-text-effect-online-887.html"
+           if(/matrix_style-2/.test(command)) link = "https://textpro.me/matrix-style-text-effect-online-884.html"
+           if(/horror_blood-2/.test(command)) link = "https://textpro.me/horror-blood-text-effect-online-883.html"
+           if(/neonlight6/.test(command)) link = "https://textpro.me/neon-light-text-effect-online-882.html"
+           if(/thunder6/.test(command)) link = "https://textpro.me/create-thunder-text-effect-online-881.html"
+           if(/3d_box-2/.test(command)) link = "https://textpro.me/3d-box-text-effect-online-880.html"
+           if(/neon6/.test(command)) link = "https://textpro.me/neon-text-effect-online-879.html"
+            if(/road_warning-2/.test(command)) link = "https://textpro.me/road-warning-text-effect-878.html"
+            if(/3d_steel-2/.test(command)) link = "https://textpro.me/3d-steel-text-effect-877.html"
+            if(/bokeh6/.test(command)) link = "https://textpro.me/bokeh-text-effect-876.html"
+            if(/free_advanced_glow-2/.test(command)) link = "https://textpro.me/free-advanced-glow-text-effect-873.html"
+            if(/dropwater8/.test(command)) link = "https://textpro.me/dropwater-text-effect-872.html"
+            if(/break_wall-2/.test(command)) link = "https://textpro.me/break-wall-text-effect-871.html"
+            if(/christmax_gift-2/.test(command)) link = "https://textpro.me/chrismast-gift-text-effect-869.html"
+            if(/honey6/.test(command)) link = "https://textpro.me/honey-text-effect-868.html"
+            if(/plastic_bag_drug-2/.test(command)) link = "https://textpro.me/plastic-bag-drug-text-effect-867.html"
+            if(/horror_gift-2/.test(command)) link = "https://textpro.me/horror-gift-text-effect-866.html"
+            if(/marble_slabs-2/.test(command)) link = "https://textpro.me/marble-slabs-text-effect-864.html"
+            if(/marble6/.test(command)) link = "https://textpro.me/marble-text-effect-863.html"
+             if(/ice_cold-2/.test(command)) link = "https://textpro.me/ice-cold-text-effect-862.html"
+             if(/fruit_juice-2/.test(command)) link = "https://textpro.me/fruit-juice-text-effect-861.html"
+             if(/rusty_metal-2/.test(command)) link = "https://textpro.me/rusty-metal-text-effect-860.html"
+             if(/abstra_gold-2/.test(command)) link = "https://textpro.me/abstra-gold-text-effect-859.html"
+             if(/biscuit7/.test(command)) link = "https://textpro.me/biscuit-text-effect-858.html"
+             if(/bagel6/.test(command)) link = "https://textpro.me/bagel-text-effect-857.html"
+             if(/wood7/.test(command)) link = "https://textpro.me/wood-text-effect-856.html"
+             if(/sci--fi_2/.test(command)) link = "https://textpro.me/sci-fi-text-effect-855.html"
+             if(/metal_rainbow-2/.test(command)) link = "https://textpro.me/metal-rainbow-text-effect-854.html"
+             if(/purple_gem-2/.test(command)) link = "https://textpro.me/purple-gem-text-effect-853.html"
+             if(/shiny_metal-2/.test(command)) link = "https://textpro.me/shiny-metal-text-effect-852.html"
+             if(/yellow_jewelery-2/.test(command)) link = "https://textpro.me/yellow-jewelry-text-effect-851.html"
+              if(/sliver_jewelery-2/.test(command)) link = "https://textpro.me/silver-jewelry-text-effect-850.html"
+              if(/red_jewelery-2/.test(command)) link = "https://textpro.me/red-jewelry-text-effect-849.html"
+              if(/purple_jewelery-2/.test(command)) link = "https://textpro.me/purple-jewelry-text-effect-848.html"
+              if(/orange_jewelery-2/.test(command)) link = "https://textpro.me/orange-jewelry-text-effect-847.html"
+              if(/green_jewelery-2/.test(command)) link = "https://textpro.me/green-jewelry-text-effect-846.html"
+              if(/cyan_jewlery-2/.test(command)) link = "https://textpro.me/cyan-jewelry-text-effect-845.html"
+              if(/blue_jewelery-2/.test(command)) link = "https://textpro.me/blue-jewelry-text-effect-844.html"
+              if(/hot_metal-3/.test(command)) link = "https://textpro.me/hot-metal-text-effect-843.html"
+              if(/hexa_golden-3/.test(command)) link = "https://textpro.me/hexa-golden-text-effect-842.html"
+              if(/blue_glitter-2/.test(command)) link = "https://textpro.me/blue-glitter-text-effect-841.html"
+              if(/purple_glitter-2/.test(command)) link = "https://textpro.me/purple-glitter-text-effect-840.html"
+              if(/pink_glitter-2/.test(command)) link = "https://textpro.me/pink-glitter-text-effect-839.html"
+              if(/green_glitter-2/.test(command)) link = "https://textpro.me/green-glitter-text-effect-838.html"
+               if(/silver_glitter-2/.test(command)) link = "https://textpro.me/silver-glitter-text-effect-837.html"
+               if(/gold_glitter-2/.test(command)) link = "https://textpro.me/gold-glitter-text-effect-836.html"
+               if(/bronze_glitter-2/.test(command)) link = "https://textpro.me/bronze-glitter-text-effect-835.html"
+               if(/eroded_metal-2/.test(command)) link = "https://textpro.me/eroded-metal-text-effect-834.html"
+               if(/carbon9/.test(command)) link = "https://textpro.me/carbon-text-effect-833.html"
+               if(/pink_candy-2/.test(command)) link = "https://textpro.me/pink-candy-text-effect-832.html"
+               if(/blue_metal-2/.test(command)) link = "https://textpro.me/blue-metal-text-effect-831.html"
+               if(/blue_gem-2/.test(command)) link = "https://textpro.me/blue-gem-text-effect-830.html"
+               if(/black_metal-2/.test(command)) link = "https://textpro.me/black-metal-text-effect-829.html"
+               if(/3d_glowing_metal-2/.test(command)) link = "https://textpro.me/3d-glowing-metal-text-effect-828.html"
+               if(/3d_chrome-2/.test(command)) link = "https://textpro.me/3d-chrome-text-effect-827.html"
+let anutexpro = await maker.textpro(link, q)
                 Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by *${global.botname}*\n_Official MkM Bot Inc._` }, { quoted: m })
              }
              break
-		
-case 'bctext2': case 'broadcasttext2': case 'bc2':
-  if (!isCreator) throw mess.owner
-  if (!text) throw `Enter text`
-    var data = await store.chats.all()
- for (let i of data) {
-  Miku.sendMessage(i.id, {text: `${global.OwnerName}'s Broadcast\n\nMessage : ${q}` })
-                               await sleep(1000)
-               }
-break
-		
+
 case 'owners': case 'mods':
 if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
@@ -2322,6 +2662,22 @@ reply(`     🧣  *${global.BotName} Mods*  🧣
 *💫 Thanks for Using ${global.BotName}. 💫* `)
 break
 		
+case 'welcome':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hey ${pushname} , ich bin ${global.sitzung}  `)
+break
+
+case 'bctext2': case 'broadcasttext2': case 'bc2':
+  if (!isCreator) throw mess.owner
+  if (!text) throw `Enter text`
+    var data = await store.chats.all()
+ for (let i of data) {
+  Miku.sendMessage(i.id, {text: `${global.OwnerName}'s Broadcast\n\nMessage : ${q}` })
+                               await sleep(1000)
+               }
+break
+		
 case 'purge':{mess
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)     
@@ -2331,108 +2687,37 @@ if (!isAdmins && !isCreator) return replay(mess.useradmin)
 const delay = time => new Promise(res=>setTimeout(res,time));let mentioned = participants.map(v => v.jid)
 for (let member of mentioned) {           Miku.groupParticipantsUpdate(m.chat, [member], 'remove')      }    }
 break
+    
+case 'limituser': case 'userlimit': case 'limit':
+            if (isBan) return reply(mess.banned)	 			
+            if (isBanChat) return reply(mess.bangc)
+            {      
+               let txt = `「 *All User Limit* 」\n\n`
+                 for (let i of _limit){
+                 txt += ` *User ID :* @${i.id.split("@")[0]}\n➸ *Limit* : ${i.limit}\n`
+                 }
+                reply(txt)       
+              }
+             break
 		
-case 'ringtone': {
-    if (isBan) return reply(mess.banned)	 			
-    if (isBanChat) return reply(mess.banned)
-            if (!args.join(" ")) return reply(`Example: ${prefix}ringtone black over`)
-        let { ringtone } = require('./lib/scraper')
-		let anu = await ringtone(text)
-		let result = anu[Math.floor(Math.random() * anu.length)]
-		Miku.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
-	    }
-	    break
+
+/*case 'hentaigroup': case 'hent': case 'sus': case 'LUL':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+            reply(`*Hentai gruppe*
+	          https://chat.whatsapp.com/FMDqCkfLfbkHA3oaxtuAc9`)
+        break
+        */
 
 
 
-case 'film': case 'movie': case 'moviesearch': case 'filmsuche':
-if (isBan) return reply(mess.banned)
-	if (isBanChat) return reply(mess.bangc)
-	reply(mess.waiting)
-if (!q) return reply(`Please enter a Movie search term...\nExample: ${prefix}movie Spiderman`)
-xfarrapi.Film(q)
-    .then(data => {console.log(data)
-    let krl = `*Search Term:* ${q}\n\n`
-			    for (let i of data) {
-                krl += (`-----------------------------------------------------------------------------\n\n\n*Movie Name:* ${i.judul}\n *Quality :* ${i.quality}\n *Type : ${i.type}*\n *Uploaded on :* ${i.upload}\n *Source URL :* ${i.link}\n\n\n`)
-                }
-               Miku.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
-});
+
+case 'lv': case 'l': case 'lvl': case 'level': case 'xp':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+            reply(`*「  LEVEL  」*\n\n*User Name* : ${pushname}\n*Level* : ${levelMenu}\n*Exp* : ${xpMenu} out of ${reqXp}\n`)
 break
 
-
-case 'wallpaper': case 'animewallpaper': case 'animewall': case 'wal': {
-if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-if (!args.join(" ")) return reply("Please enter a term to search!")
-const { AnimeWallpaper } =require("anime-wallpaper")
-const wall = new AnimeWallpaper();
-const pages = [1,2,3,4];
-const random=pages[Math.floor(Math.random() * pages.length)]
-        const wallpaper = await wall .getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
-        const i = Math.floor(Math.random() * wallpaper.length);
-		
-let buttons = [
-            {buttonId: `${prefix}wallpaper ${args.join(" ")}`, buttonText: {displayText: 'gib Mehr !!!'}, type: 1}
-        ]
-        let buttonMessage = {
-            image: {url:wallpaper[i].image},
-            caption: `*Search term:* ${q}`,
-            footer: `${BotName}`,
-            buttons: buttons,
-            headerType: 4
-        }
-        Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
-    }
-    break
-
-
-case 'wikimedia': case 'wikiimage': {
-	if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-                if (!args.join(" ")) return reply("What picture are you looking for??")
-		let { wikimedia } = require('./lib/scraper')
-        anu = await wikimedia(args)
-        hasil = anu[Math.floor(Math.random() * anu.length)]
-        let buttons = [
-            {buttonId: `${prefix}wikimedia ${args.join(" ")}`, buttonText: {displayText: 'Next Image'}, type: 1}
-        ]
-        let buttonMessage = {
-            image: { url: hasil.image },
-            caption: `Title : ${hasil.title}\nSource : ${hasil.source}\nMedia Url : ${hasil.image}`,
-            footer: `${BotName}`,
-            buttons: buttons,
-            headerType: 4
-        }
-        Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
-    }
-    break
-
-case 'quotesimagexxx': case 'qoutesimagexxx': case 'quoteimage':
-if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-				   let cok = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesimage?apikey=${lolkey}`)
-				   reply(mess.waiting)
-				  Miku.sendMessage(m.chat, { image: { url: cok }, caption: 'Here it is...' }, { quoted: m })
-				  break
-
-case 'quotesanime': case 'quoteanime': case 'animequote': case 'animequotes':{
-		let { quotesAnime } = require('./lib/scraper')
-        let anu = await quotesAnime()
-        hasil = anu[Math.floor(Math.random() * anu.length)]
-        let buttons = [
-            {buttonId: `${prefix}quotesanime`, buttonText: {displayText: 'NOCH EINS bitte'}, type: 1}
-        ]
-        let buttonMessage = {
-            text: `_${hasil.quotes}_\n\nBy '${hasil.karakter}', ${hasil.anime}\n\n- ${hasil.up_at}`,
-            footer: 'Miku',
-            buttons: buttons,
-            headerType: 2
-        }
-        Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
-    }
-    break
-		
     /*
   case 'write1':
     const fs = require('fs')
@@ -2479,6 +2764,9 @@ break
 	Miku.sendMessage(`493023180366@s.whatsapp.net`, {text:`── 「 owner report 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}\n *Antwort* :`})
  break
 
+
+
+
 case 'grr': case 'ka': case 'magic': case 'ma':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
@@ -2494,8 +2782,20 @@ case 'ide': case 'i': case 'idee': case 'ideee':
         replay(`Ich habe deine Idee an meine Besitzer weitergegeben.`)
         break
         */
-  /*
-  case 'ow': case 'ownergruppen': case 'og': case 'gruppen':
+
+
+		
+		
+case 'sup': case 'support': case 'frage': case '!':
+        if (isBan) return reply(mess.banned)	 			
+        if (isBanChat) return reply(mess.bangc)
+
+        Miku.sendMessage(`120363043511491681@g.us`, {text:`── 「 REPORT 」 ──\n\n*Von*: ${pushname}\n*nummer*:  wa.me//${m.sender}\n*Message*: ${q}`})
+        replay(`Ich habe deine Frage an meine Besitzer weitergegeben. Bitte warte bis sie deine Frage beantwortet haben, die Antwort siehst du hier :https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
+break
+		
+		
+  /*case 'ow': case 'ownergruppen': case 'og': case 'gruppen':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
 	if (!isBotAdmins) return replay(mess.botadmin)
@@ -2505,7 +2805,169 @@ case 'ide': case 'i': case 'idee': case 'ideee':
  		Support: https://chat.whatsapp.com/DOnXPARAhdg3qptwUlPuye`)
         break
   */
-		
+
+  case 'pmuser': case 'pruser': case 'pmus': case 'pmchats': case 'chats': {
+    if (isBan) return reply(mess.banned)	 			
+ if (isBanChat) return reply(mess.bangc)
+ if (!isCreator) return replay(mess.botowner)
+ let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
+ let teks = ` 「  Miku's pm user list  」\n\nTotal ${anu.length} users are using Miku in personal chat.`
+ for (let i of anu) {
+  teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
+ }
+ Miku.sendTextWithMentions(m.chat, teks, m)
+ }
+ break
+
+  case 'gruppen': case 'groups': case 'gruppenchats': case 'grc': case 'grpc': {
+    if (isBan) return reply(mess.banned)	 			
+ if (isBanChat) return reply(mess.bangc)
+ if (!isCreator) return replay(mess.botowner)
+ let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
+ let teks = ` 「  Miku's group user list  」\n\nTotal ${anu.length} users are using bot in Groups.`
+ for (let i of anu) {
+  let metadata = await Miku.groupMetadata(i)
+  if (metadata.owner === "undefined") {
+  loldd = false
+  } else {
+  loldd = metadata.owner
+  }
+  teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
+ }
+ Miku.sendTextWithMentions(m.chat, teks, m)
+ }
+break
+
+case 'react': {
+                if (!isCreator) throw mess.admin
+                reactionMessage = {
+                    react: {
+                        text: args[0],
+                        key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
+                    }
+                }
+                Miku.sendMessage(m.chat, reactionMessage)
+            }
+break
+
+/*case 'bping': case 'bbotstatus': case 'bstatusbot': case 'batst': {
+				
+
+                let buffimg = await (await fetch(`https://avatars.githubusercontent.com/u/64305844?v=4`)).buffer()
+                const used = process.memoryUsage()
+                let timestamp = speed()
+                let latensi = speed() - timestamp
+                
+                neww = performance.now()
+                oldd = performance.now()
+                respon = `ᴘɪɴɢ: ${latensi.toFixed(4)} sec`.trim()
+               
+Miku.sendMessage(m.chat, { text: respon, contextInfo:{"externalAdReply": {"title": `---${linkNAME}---`,"body": `𝙍𝙪𝙣𝙩𝙞𝙢𝙚 : ${runtime(process.uptime())} >>>ᴄʟɪᴄᴋ ʜᴇʀᴇ<<<`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": buffimg,"sourceUrl": `${linkmsgurl}`}}}, { quoted: m})
+
+            }
+            
+            break
+            
+                        case 'bping2': {
+				
+                const used = process.memoryUsage()
+                let buffimg = await (await fetch(`https://avatars.githubusercontent.com/u/64305844?v=4`)).buffer()
+
+                let timestamp = speed()
+                let latensi = speed() - timestamp
+                
+                neww = performance.now()
+                oldd = performance.now()
+                respon = `
+                
+>>>ʙᴏᴛ ᴀᴄᴛɪᴠᴇ
+ᴘɪɴɢ: ${latensi.toFixed(3)} sec
+Yeeee!! You Found it!!
+Here is a Bonous Command!!
+\nUse \`\`\`Cosplay\`\`\`\n
+`.trim()
+               
+m.reply(respon)
+            }
+break
+
+case 'addmsg': {
+                if (!m.quoted) m.reply(m.chat, 'Reply Message You Want To Save In Database', m)
+                if (!text) m.reply(m.chat, `Example : ${prefix + command} nama file`, m)
+                let msgs = global.global.global.db.ase
+                if (text.toLowerCase() in msgs) m.reply(m.chat, `'${text}'has been registered in the message list`, m)
+                msgs[text.toLowerCase()] = quoted.fakeObj
+m.reply(`Successfully added message in message list as '${text}'
+    
+Access with ${prefix}getmsg ${text}
+View list of Messages With ${prefix}listmsg`)
+            }
+break
+
+case 'getmsg': {
+                if (!text) m.reply(m.chat, `Example : ${prefix + command} file name\n\nView message list with ${prefix}listmsg`, m)
+                let msgs = global.global.global.db.ase
+                if (!(text.toLowerCase() in msgs)) m.reply(m.chat, `'${text}' not listed in the message list`, m)
+                alienalfa.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+            }
+break
+
+case 'listmsg': {
+                let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
+	        let seplit = Object.entries(global.global.global.db.ase).map(([nama, isi]) => { return { nama, ...isi } })
+		let teks = '「 LIST DATABASE 」\n\n'
+		for (let i of seplit) {
+		    teks += `⬡ Name : ${i.nama}\n⬡ Type : ${getContentType(i.message).replace(/Message/i, '')}\n────────────────────────\n\n`
+	        }
+	        m.reply(teks)
+	    }
+break
+
+case 'delmsg': case 'deletemsg': {
+	        let msgs = global.global.global.db.ase
+	        if (!(text.toLowerCase() in msgs))  throw `'${text}' not listed in the message list`
+		delete msgs[text.toLowerCase()]
+		m.reply(`Successfully removed '${text}' from message list`)
+            }
+break
+  */
+
+ case 'bchat': {
+                if (!isCreator) return replay(`${mess.owner}`)
+                if (!q) return replay(`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
+                if (args[0] === 'mute') {
+                    Miku.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'unmute') {
+                    Miku.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'archive') {
+                    Miku.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'unarchive') {
+                    Miku.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'read') {
+                    Miku.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'unread') {
+                    Miku.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'delete') {
+                    Miku.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                }
+            }
+break
+
+ /*case 'achatinfo': case 'ainfochat': {
+                if (!m.quoted) return reply(`Reply Message`)
+                let msg = await m.getQuotedObj()
+                if (!m.quoted.isBaileys) return replay(`The Message Was Not Sent By A Bot!`)
+                let teks = ''
+                for (let i of msg.userReceipt) {
+                    let read = i.readTimestamp
+                    let unread = i.receiptTimestamp
+                    let waktu = read ? read : unread
+                    teks += `🔮 @${i.userJid.split('@')[0]}\n`
+                    teks += ` ┗━🔮 *Time :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} 🔮 *Status :* ${read ? 'Read' : 'Sent'}\n\n`
+                }
+                Miku.sendTextWithMentions(m.chat, teks, m)
+            }
+break
 
             case 'bcgc': case 'bcgroup': {
                 if (!isCreator) return replay(`${mess.owner}`)
@@ -2523,7 +2985,7 @@ case 'ide': case 'i': case 'idee': case 'ideee':
             }
             break
             */
-		
+
 case 'afk3': {
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
@@ -2557,8 +3019,8 @@ break
           sendCreator(JSON.stringify(error, null, 2));
         }
         reply(`Succes`);
-        break
-		
+        break 
+  
   case 'bcgrup':
         if (!isOwner) return reply(mess.owner);
         if (!q) return reply(`Teks Nya Bang?`);
@@ -2607,7 +3069,7 @@ break
  case 'listmsg': case 'listsave': {
             	if (isBan) return reply(mess.banned)
 	if (isBanChat) return reply(mess.bangc)
-                let msgs = JSON.parse(fs.readFileSync('./database/saving.json'))
+                let msgs = JSON.parse(fs.readFileSync('./database/datenbank2/text1.json'))
 	        let seplit = Object.entries(global.db.data.database).map(([nama, isi]) => { return { nama, ...isi } })
 		let teks = '「 DATABASE LIST 」\n\n'
 		for (let i of seplit) {
@@ -2626,42 +3088,14 @@ case 'delmsg': case 'deletemsg': {
 		reply(`Delete Successfully '${text}' From The Message list`)
             }
 break
-		
-case 'listonline': case 'listaktif': case 'here':{
-    if (isBan) return reply(mess.banned)	 			
- if (isBanChat) return reply(mess.bangc)
- if (!m.isGroup) return replay(mess.grouponly)
- let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
- let online = [...Object.keys(store.presences[id]), botNumber]
- let liston = 1
- Miku.sendText(m.chat, '  「 *Online Members* 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
- }
- break
-
-
-case'tagadmins': case 'admins': case 'admin': case 'tag': {
-   if (isBan) return reply(mess.banned)	 			
- if (isBanChat) return reply(mess.bangc)
- if (!m.isGroup) return replay(mess.grouponly) 
- Miku.sendMessage(from, { react: { text: "🗿" , key: m.key }})
- if (!text) return replay(`*Bitte schreiben sie eine nachricht für die admins.*`)
- let teks = `*「 Tag Admins 」*
-  
- *Message : ${text}*\n\n`
- for (let mem of groupAdmins) {
- teks += `🗿 @${mem.split('@')[0]}\n`
- }
- Miku.sendMessage(m.chat, { text: teks, mentions: groupAdmins}, { quoted: m })
- }
- break
 
 case 'tagme': {
-if (isBan) return reply(mess.banned)	 			
+	if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 Miku.sendMessage(m.chat, {text:`@${m.sender.split("@")[0]}`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 }
 break
-		
+
 case 'bchatinfo': {
    if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -2694,12 +3128,12 @@ await sleep(1500)
 let btn = [{
 urlButton: {
 displayText: 'YouTube 🍓',
-url: `${global.owner2}`
+url: `${global.websitex}`
 }
 }, {
 urlButton: {
 displayText: 'Script 🍜',
-url: `${global.script}`
+url: `${global.botscript}`
 }
 }, {
 quickReplyButton: {
@@ -2723,7 +3157,18 @@ Miku.send5ButImg(i, txt, `${global.botname}`, log0, btn, thum)
 replay(`Successfully Sent Broadcast To ${anu.length} Group`)
 }
 break
-		
+
+case 'ringtone': {
+    if (isBan) return reply(mess.banned)	 			
+    if (isBanChat) return reply(mess.banned)
+            if (!args.join(" ")) return reply(`Example: ${prefix}ringtone black over`)
+        let { ringtone } = require('./lib/scraper')
+		let anu = await ringtone(text)
+		let result = anu[Math.floor(Math.random() * anu.length)]
+		Miku.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+	    }
+break
+
 case 'asetppbot': case 'asetbotpp': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -2795,8 +3240,9 @@ break
             }
             }
 break
-*/
-		
+    */
+
+
  case 'cbcgc': case 'cbcgroup': {
 if (!isCreator) throw mess.owner
 if (!text) throw `Text ?\n\nExample : ${prefix + command} Text`
@@ -2883,8 +3329,139 @@ case 'add2': {
 		await Miku.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 break
-		
-cpu.total).toFixed(2)}%`).join('\n')}
+
+case 'promote2': case 'addadmin2': {
+		if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await Miku.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+	}
+break
+
+case 'demote2': case 'deladmin2': {
+		if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await Miku.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+	}
+break
+
+ case 'block3': {
+		if (!isCreator) throw mess.owner
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await Miku.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+	}
+break
+
+case 'unblock3': {
+		if (!isCreator) throw mess.owner
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await Miku.u�pdateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+	}
+break
+
+case 'setname2': case 'setsubject2': {
+                if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+                if (!text) throw 'Text ?'
+                await Miku.groupUpdateSubject(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
+            }
+break
+
+case 'setdesc2': case 'setdesk2': {
+                if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+                if (!text) throw 'Text ?'
+                await Miku.groupUpdateDescription(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
+            }
+break
+
+case 'totag': {
+               if (!m.isGroup) throw mess.group
+               if (!isBotAdmins) throw mess.botAdmin
+               if (!isAdmins) throw mess.admin
+               if (!m.quoted) throw `Antwortnachricht mit Bildunterschrift ${prefix + command}`
+               Miku.sendMessage(m.chat, { forward: m.quoted.fakeObj, mentions: participants.map(a => a.id) })
+               }
+break
+
+ case 'listonline2': case 'liston2': {
+                    let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
+                    let online = [...Object.keys(store.presences[id]), botNumber]
+                    Miku.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+             }
+break
+
+case 'ebinary2': {
+            if (!text) throw `Example : ${prefix + command} text`
+            let { eBinary } = require('./lib/binary')
+            let eb = await eBinary(text)
+            m.reply(eb)
+        }
+break
+    
+case 'dbinary2': {
+            if (!text) throw `Example : ${prefix + command} text`
+            let { dBinary } = require('./lib/binary')
+            let db = await dBinary(text)
+            m.reply(db)
+        }
+break
+
+case 'anonymous': {
+                if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
+				this.anonymous = this.anonymous ? this.anonymous : {}
+				let buttons = [
+                    { buttonId: 'start', buttonText: { displayText: 'Start' }, type: 1 }
+                ]
+                Miku.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await Miku.getName(m.sender)} Welcome To Anonymous Chat\n\nKlik Button Dibawah Ini Untuk Mencari Partner\`\`\``, Miku.user.name, m)
+            }
+break
+
+
+
+case 'ping3': case 'botstatus': case 'statusbot': {
+                const used = process.memoryUsage()
+                const cpus = os.cpus().map(cpu => {
+                    cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
+			        return cpu
+                })
+                const cpu = cpus.reduce((last, cpu, _, { length }) => {
+                    last.total += cpu.total
+                    last.speed += cpu.speed / length
+                    last.times.user += cpu.times.user
+                    last.times.nice += cpu.times.nice
+                    last.times.sys += cpu.times.sys
+                    last.times.idle += cpu.times.idle
+                    last.times.irq += cpu.times.irq
+                    return last
+                }, {
+                    speed: 0,
+                    total: 0,
+                    times: {
+			            user: 0,
+			            nice: 0,
+			            sys: 0,
+			            idle: 0,
+			            irq: 0
+                }
+                })
+                let timestamp = speed()
+                let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
+                respon = `
+Reaktionsgeschwindigkeit ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+💻 Info Server
+RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
+_NodeJS Memory Usaage_
+${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
+${cpus[0] ? `_Total CPU Usage_
+${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
 _CPU Core(s) Usage (${cpus.length} Core CPU)_
 ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
                 `.trim()
@@ -2916,7 +3493,25 @@ case 'emojimix4': {
 	    }
 break
 
-/*
+    
+    
+
+case 'film': case 'movie': case 'moviesearch':
+if (isBan) return reply(mess.banned)
+	if (isBanChat) return reply(mess.bangc)
+	reply(mess.waiting)
+if (!q) return reply(`Please enter a Movie search term...\nExample: ${prefix}movie Spiderman`)
+xfarrapi.Film(q)
+    .then(data => {console.log(data)
+    let krl = `*Search Term:* ${q}\n\n`
+			    for (let i of data) {
+                krl += (`-----------------------------------------------------------------------------\n\n\n*Movie Name:* ${i.judul}\n *Quality :* ${i.quality}\n *Type : ${i.type}*\n *Uploaded on :* ${i.upload}\n *Source URL :* ${i.link}\n\n\n`)
+                }
+               Miku.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
+});
+break
+
+
 case 'aspeedtest': {
             reply('Testing Speed...')
             let cp = require('child_process')
@@ -2956,7 +3551,7 @@ break
 case 'cspeedtest': {
             reply('Testing Speed...')
             let cp = require('child_process')
-            let { promisify } = require('util')
+            let { promisi�fy } = require('util')
             let exec = promisify(cp.exec).bind(cp)
           let o
           try {
@@ -3008,8 +3603,6 @@ case 'espeedtest': {
             }
             }
 break
-*/
-
 
   /*
   case 'addowner': case 'delowner': {
@@ -3031,39 +3624,78 @@ break
 break
 */
 
-/*
-case 'delete': case 'del':{
-    if (isBan) return reply(mess.banned)	 			
- if (isBanChat) return reply(mess.bangc)
- if (!m.quoted) return
- let { chat, fromMe, id, isBaileys } = m.quoted
- if (!isBaileys) return replay('How can i delete messages of other person? Baka!')
- Miku.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
- }
- break
-*/
 
- case 'deleteall': case 'delall': case 'delete': case 'del': case 'd': {
- if (isBan) return reply(mess.banned)	 			
- if (isBanChat) return reply(mess.bangc)
- if (!isBotAdmins) return replay(mess.botadmin)
- if (!isAdmins && !isCreator) return replay(mess.useradmin)
- if (!m.quoted) return reply('Please mention a message baka!')
- let { chat, fromMe, id} = m.quoted
-
-const key = {
-    remoteJid: m.chat,
-    fromMe: false,
-    id: m.quoted.id,
-    participant: m.quoted.sender
-}
-
-await Miku.sendMessage(m.chat, { delete: key })
- }
- break
+case 'wallpaper': case 'animewallpaper': case 'animewall': case 'wal': {
+if (isBan) return reply(mess.banned)	 			
+if (isBanChat) return reply(mess.bangc)
+if (!args.join(" ")) return reply("Please enter a term to search!")
+const { AnimeWallpaper } =require("anime-wallpaper")
+const wall = new AnimeWallpaper();
+const pages = [1,2,3,4];
+const random=pages[Math.floor(Math.random() * pages.length)]
+        const wallpaper = await wall .getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
+        const i = Math.floor(Math.random() * wallpaper.length);
+		
+let buttons = [
+            {buttonId: `${prefix}wallpaper ${args.join(" ")}`, buttonText: {displayText: 'gib Mehr !!!'}, type: 1}
+        ]
+        let buttonMessage = {
+            image: {url:wallpaper[i].image},
+            caption: `*Search term:* ${q}`,
+            footer: `${BotName}`,
+            buttons: buttons,
+            headerType: 4
+        }
+        Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
+    }
+    break
 
 
+case 'wikimedia': case 'wikiimage': {
+	if (isBan) return reply(mess.banned)	 			
+if (isBanChat) return reply(mess.bangc)
+                if (!args.join(" ")) return reply("What picture are you looking for??")
+		let { wikimedia } = require('./lib/scraper')
+        anu = await wikimedia(args)
+        hasil = anu[Math.floor(Math.random() * anu.length)]
+        let buttons = [
+            {buttonId: `${prefix}wikimedia ${args.join(" ")}`, buttonText: {displayText: 'Next Image'}, type: 1}
+        ]
+        let buttonMessage = {
+            image: { url: hasil.image },
+            caption: `Title : ${hasil.title}\nSource : ${hasil.source}\nMedia Url : ${hasil.image}`,
+            footer: `${BotName}`,
+            buttons: buttons,
+            headerType: 4
+        }
+        Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
+    }
+    break
 
+case 'quotesimagexxx': case 'qoutesimagexxx': case 'quoteimage':
+if (isBan) return reply(mess.banned)	 			
+if (isBanChat) return reply(mess.bangc)
+				   let cok = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesimage?apikey=${lolkey}`)
+				   reply(mess.waiting)
+				  Miku.sendMessage(m.chat, { image: { url: cok }, caption: 'Here it is...' }, { quoted: m })
+				  break
+
+case 'quotesanime': case 'quoteanime': case 'animequote': case 'animequotes':{
+		let { quotesAnime } = require('./lib/scraper')
+        let anu = await quotesAnime()
+        hasil = anu[Math.floor(Math.random() * anu.length)]
+        let buttons = [
+            {buttonId: `${prefix}quotesanime`, buttonText: {displayText: 'NOCH EINS bitte'}, type: 1}
+        ]
+        let buttonMessage = {
+            text: `_${hasil.quotes}_\n\nBy '${hasil.karakter}', ${hasil.anime}\n\n- ${hasil.up_at}`,
+            footer: 'Miku',
+            buttons: buttons,
+            headerType: 2
+        }
+        Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
+    }
+    break
 
 
 case 'animestory': { 
@@ -3110,7 +3742,7 @@ if (isBanChat) return reply(mess.bangc)
             let comm = [`group close`,`leveling off`,`antilinkgc off`,`antilinktg off`,`antilinktt off`,`antilinkytch off`,`antilinkytvid off`,`antilinkig on`,`antilinkfb off`,`antilinktwit off`,`antilinkall off`,`antiwame off`]
             let listnya = [`Group open/close`,`Leveling on/off`,`Antilink Group on/off`,`Antilink Telegram on/off`,`Antilink Tiktok on/off`,`Antilink Youtube Channel on/off`,`Antilink Youtube Video on/off`,`Antilink Instagram on/off`,`Antilink Facebook on/off`,`Antilink Twitter on/off`,`Antilink All on/off`,`Anti Wame on/off`]
             let suruh = [`Enable`, `Disable`]
-            let fiturname = [`Group`,`Leveling`,`Auto Sticker`,`Antilink Group`,`Antilink Telegram`,`Antilink Tiktok`,`Antilink Youtube Channel`,`Antilink Youtube Video`,`Antilink Instagram`,`Antilink Facebook`,`Antilink Twitter`,`Antilink All`,`Anti Wame`,`Auto Revoke`]
+            let fiturname = [`Group`,`Leveling`,`Antilink Group`,`Antilink Telegram`,`Antilink Tiktok`,`Antilink Youtube Channel`,`Antilink Youtube Video`,`Antilink Instagram`,`Antilink Facebook`,`Antilink Twitter`,`Antilink All`,`Anti Wame`,`Auto Revoke`]
             let startnum = 0; let startnu = 0; let startn = 0;let start = 0
             let startnumm = 1
             for (let x of com) {
@@ -3142,16 +3774,16 @@ sections
 }
 break
 
-/*
+		
 case 'animesearchxxx': case 'anime':{
     await fetchJson(`https://api.jikan.moe/v4/anime/${q}`)
     .then((res) => {
-    let txt = `   _Anime Search Engine_ \n\n*Title:* *${res.data.title}*\n*English:* *${res.data.title_english}*\n*Japanese:* *${res.data.title_japanese}*\n*Anime Type:* *${res.data.type}*\n*Adaptation:* *${res.data.source}*\n*Total Episode:* *${res.data.episodes}*\n*Status:* *${res.data.status}*\n*Ongoing:* *${res.data.airing ? 'Yes' : 'No'}*\n*Aired:* *${res.data.aired.string}*\n*Duration:* *${res.data.duration}*\n*Rating:* *${res.data.rating}*\n*Score:* *${res.data.score}*\n*Rank:* *${res.data.rank}*\n*Main Producer:* *${res.data.producers.name}*\n*Studio:* *${res.data.studios[0].name}* `
+    let txt = `   _Anime Search Engine_ \n\n*Title:* *${res.data.title}*\n*English:* *${res.data.title_english}*\n*Japanese:* *${res.data.title_japanese}*\n�*Anime Type:* *${res.data.type}*\n*Adaptation:* *${res.data.source}*\n*Total Episode:* *${res.data.episodes}*\n*Status:* *${res.data.status}*\n*Ongoing:* *${res.data.airing ? 'Yes' : 'No'}*\n*Aired:* *${res.data.aired.string}*\n*Duration:* *${res.data.duration}*\n*Rating:* *${res.data.rating}*\n*Score:* *${res.data.score}*\n*Rank:* *${res.data.rank}*\n*Main Producer:* *${res.data.producers.name}*\n*Studio:* *${res.data.studios[0].name}* `
     Miku.sendMessage(from, { image : { url : res.data.images.jpg.image_url}, caption : txt}, {quoted :m }) 
     })
     }
     break
-*/
+		
 
 case 'coffee': case 'kopi': {
         if (isBan) return reply(mess.banned)	 			
@@ -3241,7 +3873,7 @@ await Miku.sendMessage(m.chat, { delete: key })
 
 
 
- case 'listpc': case 'pmuser': case 'pruser': case 'pmus': case 'pmchats': case 'chats': {
+ case 'listpc': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!isCreator) return replay(mess.botowner)
@@ -3254,10 +3886,9 @@ await Miku.sendMessage(m.chat, { delete: key })
  }
  break
 
- case 'listgc': case 'gruppen': case 'groups': case 'gruppenchats': case 'grc': case 'grpc': {
+ case 'listgc': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
- if (!isCreator) return replay(mess.botowner)
  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
  let teks = ` 「  Miku's group user list  」\n\nTotal ${anu.length} users are using bot in Groups.`
  for (let i of anu) {
@@ -3273,13 +3904,13 @@ await Miku.sendMessage(m.chat, { delete: key })
  }
  break
 
- case 'afk': case 'wvw': case 'bye': {
+ case 'afk': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  let user = global.db.users[m.sender]
  user.afkTime = + new Date
  user.afkReason = args.join(" ")
- replay(`${m.pushName} ist jetzt weg von WhatsApp.\nAFK Reason : ${args.join(" ") ? args.join(" ") : ''}`)
+ replay(`${m.pushName} ist jetzt weg von whatsApp.\nAFK Reason : ${args.join(" ") ? args.join(" ") : ''}`)
  }
  break
 
@@ -3353,7 +3984,7 @@ await Miku.sendMessage(m.chat, { delete: key })
    { buttonId: `${prefix}antilinkgc on`, buttonText: { displayText: 'On' }, type: 1 },
    { buttonId: `${prefix}antilinkgc off`, buttonText: { displayText: 'Off' }, type: 1 }
    ]
-   await Miku.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+   await Miku.se�ndButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
    }
    }
    break
@@ -3390,8 +4021,8 @@ await Miku.sendMessage(m.chat, { delete: key })
    }
    }
    break
-
-
+		
+		
 
      case 'antilinkyoutubech': case 'antilinkyoutubechannel': case 'antilinkytch': {
     if (isBan) return reply(mess.banned)	 			
@@ -3551,7 +4182,7 @@ await Miku.sendMessage(m.chat, { delete: key })
    { buttonId: `${prefix}antilinktiktok on`, buttonText: { displayText: 'On' }, type: 1 },
    { buttonId: `${prefix}antilinktiktok off`, buttonText: { displayText: 'Off' }, type: 1 }
    ]
-   await Miku.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
+   await Miku.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn �to enable\nOff to disable`, `${global.BotName}`, m)
    }
    }
    break
@@ -3655,7 +4286,7 @@ await Miku.sendMessage(m.chat, { delete: key })
    break
 
 
-   case 'nsfw': case 'u18': case 'u13': {
+   case 'nsfw': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
@@ -3692,7 +4323,7 @@ await Miku.sendMessage(m.chat, { delete: key })
     if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-if (!args[0]) return replay(`Wählen Sie „Hinzufügen“ oder „Entfernen“ (zum Sperren hinzufügen, zum Entsperren löschen). Zum Beispiel: Antworten Sie mit *${prefix}ban add* auf den Benutzer, den Sie sperren möchten.`)
+if (!args[0]) return replay(`Wählen Sie „add“ oder „del“ (zum Sperren hinzufügen, zum Entsperren löschen). Zum Beispiel: Antworten Sie mit *${prefix}ban add* auf den Benutzer, den Sie sperren möchten.`)
 if (args[1]) {
 orgnye = args[1] + "@s.whatsapp.net"
 } else if (m.quoted) {
@@ -3702,7 +4333,7 @@ const isBane = banUser.includes(orgnye)
 if (args[0] === "add") {
 if (isBane) return ads('Benutzer ist bereits gesperrt.')
 banUser.push(orgnye)
-replay(`Der Benutzer wurde erfolgreich gesperrt.`)
+replay(`Der Benutzer wurde erfolgreich gesperrt.\nReason:\n${text} `)
 } else if (args[0] === "del") {
 if (!isBane) return ads('Benutzer wurde bereits entbannt.')
 let delbans = banUser.indexOf(orgnye)
@@ -3726,31 +4357,23 @@ case 'listonline': case 'listaktif': case 'here':{
  }
  break
 
- case 'ban': {
+
+		case'tagadmins': case 'admins': case 'admin': case 'tag': {
     if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-if (!isCreator) return replay(mess.botowner)
-if (!args[0]) return replay(`Select add or del (add to ban, del to unban), For Example: Reply *${prefix}ban add* to the user you want to ban.`)
-if (args[1]) {
-orgnye = args[1] + "@s.whatsapp.net"
-} else if (m.quoted) {
-orgnye = m.quoted.sender
-}
-const isBane = banUser.includes(orgnye)
-if (args[0] === "add") {
-if (isBane) return ads('Benutzer wurde bereits gesperrt.')
-banUser.push(orgnye)
-replay(`Der Benutzer wurde erfolgreich gesperrt`)
-} else if (args[0] === "del") {
-if (!isBane) return ads('Benutzer wurde bereits entbannt.')
-let delbans = banUser.indexOf(orgnye)
-banUser.splice(delbans, 1)
-replay(`Der Benutzer wurde erfolgreich entbannt.`)
-} else {
-replay("Error")
-}
-}
-break
+ if (isBanChat) return reply(mess.bangc)
+ if (!m.isGroup) return replay(mess.grouponly) 
+ Miku.sendMessage(from, { react: { text: "🗿" , key: m.key }})
+ if (!text) return replay(`*Bitte schreiben sie eine nachricht für die admins.*`)
+ let teks = `*「 Tag Admins 」*
+  
+ *Message : ${text}*\n\n`
+ for (let mem of groupAdmins) {
+ teks += `🗿 @${mem.split('@')[0]}\n`
+ }
+ Miku.sendMessage(m.chat, { text: teks, mentions: groupAdmins}, { quoted: m })
+ }
+ break
+		
 
 
 case 'happymod': {
@@ -3783,7 +4406,7 @@ case 'happymod': {
  case 'yts': case 'ytsearch': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
- if (!args.join(" ")) return replay(`Example : -yts Heat waves`)
+ if (!args.join(" ")) return replay(`E�xample : -yts Heat waves`)
  let yts = require("yt-search")
  let search = await yts(args.join(" "))
  let teks = '```「 YouTube search Engine 」```\n\n Search Term: '+text+'\n\n'
@@ -3795,7 +4418,7 @@ case 'happymod': {
  }
  break
 
- case 'setname': case 'setsubject': case 'newname': {
+ case 'setname': case 'setsubject': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
@@ -3850,46 +4473,38 @@ if (isBanChat) return reply(mess.bangc)
  }
  break
 
- case 'tag': case 'tagall': case 'all': case 'evyo': case 'everyone':{
-    if (isBan) return reply(mess.banned)	 			
- if (isBanChat) return reply(mess.bangc)
- if (!m.isGroup) return replay(mess.grouponly)
- if (!isAdmins && !isCreator) return replay(mess.useradmin)
- let teks = `「 _Tag All_ 」
+ case 'tag':
+case 'tagall':
+case 'all':
+case 'gutenmorgen':
+{
+  if (isBan) return reply(mess.banned);	 			
+  if (isBanChat) return reply(mess.bangc);
+  if (!m.isGroup) return reply(mess.grouponly);
+  if (!isAdmins && !isCreator) return reply(mess.useradmin);
+  let teks = `「 _Tag All_ 」
   
- *Message : ${args.join(" ") ? args.join(" ") : 'no message'}*\n\n`
- for (let mem of participants) {
- teks += `» @${mem.id.split('@')[0]}\n`
- }
- Miku.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
- }
- break
+*Message : ${args.join(" ") ? args.join(" ") : 'no message'}*\n\n`;
+  for (let mem of participants) {
+    teks += `» @${mem.id.split('@')[0]}\n`;
+  }
+  Miku.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m });
+}
+break;
 
 
-case'admin': case 'tgad': case 'tad': case 'ta': case 'alladmin': case 'aat': {
-    if (isBan) return reply(mess.banned)	 			
- if (isBanChat) return reply(mess.bangc)
- if (!m.isGroup) return replay(mess.grouponly)
- if (!text) return replay(`*Please quote or write a meaningful message to tag admins to*`)
- let teks = `*「 Tag Admins 」*
-  
- *Message : ${text}*\n\n`
- for (let mem of groupAdmins) {
- teks += `🤴 @${mem.split('@')[0]}\n`
- }
- Miku.sendMessage(m.chat, { text: teks, mentions: groupAdmins}, { quoted: m })
- }
- break
-
+		
 
  case 'hidetag': {
-    if (isBan) return reply(mess.banned)	 			
- if (isBanChat) return reply(mess.bangc)
- if (!m.isGroup) return replay(mess.grouponly)
- if (!isAdmins && !isCreator) return replay(mess.useradmin)
- Miku.sendMessage(m.chat, { text : args.join(" ") ? args.join(" ") : '' , mentions: participants.map(a => a.id)}, { quoted: m })
- }
- break
+  if (isBan) return reply(mess.banned);
+  if (isBanChat) return reply(mess.bangc);
+  if (!m.isGroup) return reply(mess.grouponly);
+  if (!isAdmins && !isCreator) return reply(mess.useradmin);
+  Miku.sendMessage(m.chat, { text : args.join(" ") ? args.join(" ") : '' , mentions: participants.map(a => a.id)}, { quoted: m });
+  break;
+}
+
+		
 
      case 'purge':{
         if (isBan) return reply(mess.banned)	 			
@@ -3908,21 +4523,6 @@ case'admin': case 'tgad': case 'tad': case 'ta': case 'alladmin': case 'aat': {
         }
     }
      break
-
-case 'purge':{mess
-    if (isBan) return reply(mess.banned)	 			
-     if (isBanChat) return reply(mess.bangc)
-     if (!m.isGroup) return replay(mess.grouponly)
-     if (!isBotAdmins) return replay(mess.botadmin)
-     if (!isAdmins && !isCreator) return replay(mess.useradmin)
-const delay = time => new Promise(res=>setTimeout(res,time));
-let mentioned = participants.map(v => v.jid)
-      for (let member of mentioned) {     
-      Miku.groupParticipantsUpdate(m.chat, [member], 'remove')
-      }
-    }
-
-    break
 
 
 
@@ -3947,6 +4547,8 @@ let mentioned = participants.map(v => v.jid)
             randomxx = 100
         } else if (random_length == 3) {
             randomxx = 1000
+        } else if (random_length == 4) {
+            randomxx = 10000
         }
         var nomerny = `*『 Liste der WhatsApp-Nummern 』*\n\n`
         var nobio = `\n*Bio:* || \nHey there! I am using WhatsApp.\n`
@@ -3994,7 +4596,7 @@ let mentioned = participants.map(v => v.jid)
 
 
 
- case 'grouplink': case 'gclink': case 'grlink': {
+ case 'grouplink': case 'gclink': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
@@ -4004,7 +4606,7 @@ let mentioned = participants.map(v => v.jid)
  mimetype: "image/jpeg",
  text: `${global.OwnerName}`,
  "forwardingScore": 1000000000,
- isForwarded: true,
+ isForwar�ded: true,
  sendEphemeral: true,
  "externalAdReply": {
  "title": `${global.BotName}`,
@@ -4036,7 +4638,7 @@ let mentioned = participants.map(v => v.jid)
     break
 
 
-    case 'group': case 'grup': {
+    case 'group': case 'hzm': {
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
      if (!m.isGroup) return replay(mess.grouponly)
@@ -4064,7 +4666,7 @@ let mentioned = participants.map(v => v.jid)
      }
      break
 
-     case 'promote': case 'promoteuser': case 'puser': {
+     case 'promote': {
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
      if (!m.isGroup) return replay(mess.grouponly)
@@ -4075,7 +4677,7 @@ let mentioned = participants.map(v => v.jid)
      }
      break
 
-     case 'demote': case 'demoteuser': case 'duser': {
+     case 'demote': {
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
      if (!m.isGroup) return replay(mess.grouponly)
@@ -4086,7 +4688,7 @@ let mentioned = participants.map(v => v.jid)
      }
      break
 
-     case 'remove': case 'geh': case 'disrespectet': case 'tschüß': case 'hinfort': case 'flieg': case 'tschüss': case 'gehe': case 'fliege' :{
+     case 'remove': case 'geh': case 'disrespectet': case 'tschüß': case 'hinfort': case 'flieg': case 'tschüss':{
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
      if (!m.isGroup) return replay(mess.grouponly)
@@ -4108,10 +4710,9 @@ let mentioned = participants.map(v => v.jid)
      break
 
 
-     case 'join': case 'ajoin': case 'mjoin': case 'ojoin': {
+     case 'join': {
         if (isBan) return reply(mess.banned)	 			
      if (isBanChat) return reply(mess.bangc)
-     if (!isCreator) return replay(mess.botowner)
      if (!args[0]) return replay(`Where's the link?`)
      vdd = args[0]
      let vcc = vdd.split("https://chat.whatsapp.com/")[1]
@@ -4130,7 +4731,7 @@ let mentioned = participants.map(v => v.jid)
      content: [{ tag: "invite", attrs: { code: vcc } }]
      }).then(async(res) => {
      sizny = res.content[0].attrs.size
-     if (sizny < 20) {
+     if (sizny < 5) {
      teks = `Tut mir leid, munimun 20 Mitglieder sind in einer Gruppe erforderlich, um einen Bot hinzuzufügen!`
      sendOrder(m.chat, teks, "667140254502463", fs.readFileSync('./Assets/pic7.jpg'), `${global.packname}`, `${global.BotName}`, "4915212908434@s.whatsapp.net", "AR6NCY8euY5cbS8Ybg5Ca55R8HFSuLO3qZqrIYCT7hQp0g==", "99999999999999999999")
      } else if (sizny > 20) {
@@ -4207,7 +4808,7 @@ let mentioned = participants.map(v => v.jid)
         case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'tupai':
             try {
             let set
-            if (/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
+            if (/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:widt�h=2:g=20'
             if (/blown/.test(command)) set = '-af acrusher=.1:1:64:0:log'
             if (/deep/.test(command)) set = '-af atempo=4/4,asetrate=44500*2/3'
             if (/earrape/.test(command)) set = '-af volume=12'
@@ -4250,7 +4851,7 @@ reply(`\`\`\`「 _Calculator Tool_ 」\`\`\`\n\n*Input :* ${qsd}\n*Calculation R
 }
 break
 
-case 'public': case 'amode': case 'pmode': {
+case 'public': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!isCreator) return reply(mess.owner)
@@ -4260,7 +4861,7 @@ case 'public': case 'amode': case 'pmode': {
  }
  break
  
- case 'self': case 'omode': case 'smode': {
+ case 'self': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!isCreator) return reply(mess.botowner)
@@ -4372,7 +4973,7 @@ case 'togif': case 'getgif':{
 case 'translate': case 'trans': {
     if (isBan) return reply(mess.banned)
     if (!args.join(" ")) return replay("Pls enter any text to translate")
-    tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
+    tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=de&kata=${args.join(" ")}`)
     Infoo = tes.info
     Detek = tes.translate
     replay(`Input : ${Detek}\nTranslation Results : ${Infoo}`)
@@ -4408,7 +5009,7 @@ Miku.sendMessage(m.chat, buttonMessage, { quoted: m })
 break
 
 
-case 'google': case 'search':case 'suche': {
+case 'google': case 'search': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  if (!args[0]) return reply(`Example: ${prefix + command} <query>\nUses : ${prefix + command} apa arti cinta`)
@@ -4417,7 +5018,7 @@ case 'google': case 'search':case 'suche': {
  let teks = `「 *Google Search Engine* 」\n\n*Search term:* ${text}\n\n\n`
  for (let g of res) {
  teks += `*Title* : ${g.title}\n\n`
- teks += `*Description* : ${g.snippet}\n\n`
+ teks += `*Description�* : ${g.snippet}\n\n`
  teks += `*Link* : ${g.link}\n\n\n        -----------------------------------------------------------------------------\n\n`
  } 
  reply(teks)
@@ -4506,6 +5107,16 @@ if (isBanChat) return reply(mess.bangc)
  }
  }
  break
+	
+            case 'bctext2': case 'broadcasttext2': case 'bc2':
+			    if (!isCreator) throw mess.owner
+		            if (!text) throw `Enter text`
+		                            var data = await store.chats.all()
+                            for (let i of data) {
+                               XeonBotInc.sendMessage(i.id, {text: `${ownername}'s Broadcast\n\nMessage : ${q}` })
+                               await sleep(1000)
+                            }
+                            break
 
  case 'igtv': {	            
     if (isBan) return reply(mess.banned)	 			
@@ -4622,7 +5233,7 @@ case 'twddlxx': {
                      txt += `*Description:* ${data.description}\n`
                      txt += `*URL :* ${text}\n\n`
                  buf = await getBuffer(data.thumbnail)    
-                 Miku.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
+                 Miku.s�endMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
                  for (let i of data.result) {     
                  Miku.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*Quality :* ${i.quality}`}, { quoted: m })
                  }          
@@ -4757,7 +5368,7 @@ break
 
               
 
-case 'music': case 'play': case 'song': case 'ytplay': case 'spiele': {
+case 'music': case 'play': case 'song': case 'ytplay': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
  const YT=require('./lib/ytdlcore')
@@ -4806,8 +5417,8 @@ case 'music': case 'play': case 'song': case 'ytplay': case 'spiele': {
           return;
         }
         let infoYt = await ytdl.getInfo(urlYt);
-        //30 MIN
-        if (infoYt.videoDetails.lengthSeconds >= 1800) {
+        //100 MIN
+        if (infoYt.videoDetails.lengthSeconds >= 180000) {
           reply(`❌ Video too big!`);
           return;
         }
@@ -4872,7 +5483,7 @@ break
         }).pipe(fs.createWriteStream(`./${randomName}`));
         //22 - 1080p/720p and 18 - 360p
         console.log("Video downloading ->", urlYt);
-        // reply("Downloading.. This may take upto 5000 min!");
+        // re�ply("Downloading.. This may take upto 5000 min!");
         await new Promise((resolve, reject) => {
           stream.on("error", reject);
           stream.on("finish", resolve);
@@ -4939,7 +5550,7 @@ break
  const YT=require('./lib/ytdlcore')
     const ytmp4play2 = await YT.mp4(text)
     let vidduration =ytmp4play2.duration;
-    if (vidduration > 1800) return reply('Cant send videos longer than *300 min*')
+    if (vidduration > 50000) return reply('Cant send videos longer than *300 min*')
  Miku.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'Downloaded by *Miku MD*',}, {quoted:m})
  }
  break
@@ -4987,7 +5598,7 @@ case 'pinterest': case 'pin': {
 
 
 
-case 'swm': case 'take': case 'stickerwm': case 'steal': case 'Meins':{
+case 'swm': case 'take': case 'stickerwm': case 'steal': case 'meins':{
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
 if (!args.join(" ")) return reply(`Use command: -steal Miku|By: sebastian`)
@@ -5039,7 +5650,7 @@ case 'sgif': case 'sticker': case 's': {
  let encmedia = await Miku.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
  await fs.unlinkSync(encmedia)
  } else if (/video/.test(mime)) {
- if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
+ if ((quoted.msg || quoted).seconds > 100) return reply('Maximum 100 seconds!')
  let media = await quoted.download()
  let encmedia = await Miku.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
  await fs.unlinkSync(encmedia)
@@ -5060,7 +5671,7 @@ const result2 = `*Title :* ${res2[0].judul}\n*Wiki :* ${res2[0].wiki}`
 Miku.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
 break
 
-case 'earthquake': case 'erdbeben':
+case 'earthquake':
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
 const tres = await Gempa()
@@ -5100,7 +5711,7 @@ break
 case 'soulmate': case 'Seelenverwandte': {
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
-if (!m.isGroup) return replay(`${mess.grouponly}`)
+if (!m.isGroup) return replay(`${mess.groupon�ly}`)
 let member = participants.map(u => u.id)
 let me = m.sender
 let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -5220,7 +5831,7 @@ case 'charactercheck':
          "write i love you (random grup member name, who is online) in personal chat, (if u r boy write girl name/if girl write boy name) take a snap of the pic and send it here",
          "use any bollywood actor photo as ur pfp for 3 days",
          "put your crush photo on status with caption, this is my crush",
-         "change name to I AM GAY for 5 hours",
+         "change name to I AM� GAY for 5 hours",
          "chat to any contact in whatsapp and say i will be ur bf/gf for 5hours",
          "send voice note says i hv crush on you, want to be my girlfriend/boyfriend or not? to any random person from the grup(if u girl choose boy, if boy choose girl",
          "slap ur butt hardly send the sound of slap through voice note😂",
@@ -5344,7 +5955,7 @@ case 'truth':
                  "Whats the strangest dream you have ever had",
                  "do you play pubg, if you then send ur id number"
              ]
-                           const mikutruthww = truth[Math.floor(Math.random() * truth.length)]
+                           const mikutruthww = truth[Math.f�loor(Math.random() * truth.length)]
                            buffer = await getBuffer(`https://wallpapercave.com/wp/wp10524609.jpg`)
                            Miku.sendMessage(from, { image: buffer, caption: '*You have chosen Truth*\n'+ mikutruthww }, {quoted:m})
                            break
@@ -5353,19 +5964,17 @@ case 'truth':
 
 //let bjif = await GIFBufferToVideoBuffer(bjf) 
 
-case 'nsfwloli' :  {
+case 'loli2' :  {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
-    if (!m.isGroup) return replay(mess.grouponly)
-    if (!AntiNsfw) return reply(mess.nonsfw)
     
 reply(mess.waiting)
- waifudhgd = await getBuffer(`https://api-reysekha.herokuapp.com/api/wallpaper/${command}?apikey=APIKEY  `)     
+ waifudhgd = await getBuffer(`https://fantox-apis.vercel.app/loli  `)     
  let nsfwapireply = [
     {buttonId: `${prefix}${command}`, buttonText: {displayText: `>>`}, type: 1},
     ]
   let nsfwapimess = {
-   image: waifudhgd,
+   image: {url:waifudhgd.data.url},
    caption:  `Here it is...`,
   buttons: nsfwapireply,
   headerType: 1
@@ -5377,11 +5986,10 @@ reply(mess.waiting)
 break
 
 
-case 'blonde' : case 'ass' : case 'tree' :  case 'food' :  case 'cum' : case 'squirt' :
+case 'blonde' : case 'ass' : case 'tree' :  case 'food' :  case 'cum' : case 'genshin' :
     case 'horns' : case 'nude' : case 'bed' : case 'glasses':  case 'dress': 
-     case 'schooluniform': case 'loli': case 'orgy': case 'sex': case 'genshin' :
-    case 'pussy': case 'twogirls': case 'foxgirl': case 'yuri': case 'loli': 
-   case 'uncensored' : case 'nipples' : case 'sex3' : case 'sex2' : case 'spreadpussy' : case 'maid' :
+     case 'schooluniform': case 'loli': case 'orgy': case 'sex': 
+    case 'pussy': case 'twogirls': case 'foxgirl': case 'yuri': 
 {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
@@ -5399,11 +6007,39 @@ case 'blonde' : case 'ass' : case 'tree' :  case 'food' :  case 'cum' : case 'sq
       buttons: nsfwapireply,
       headerType: 1
       }     
-                await  Miku.sendMessage(m.chat, nsfwapimess, { quoted:m }).catch(err => {
+                await Miku.sendMessage(m.chat, nsfwapimess, { quoted:m }).catch(err => {
                         return('Error!')
                     })
                 }
     break
+
+
+
+case 'blowjobgif': case 'bj' :
+    if (isBan) return reply(mess.banned)	 			
+    if (isBanChat) return reply(mess.bangc)
+    if (!m.isGroup) return replay(mess.grouponly)
+    if (!AntiNsfw) return reply(mess.nonsfw)
+reply(mess.waiting)
+bjd = await axios.get(`https://api.waifu.pics/nsfw/blowjob`)         
+  let bjf = await getBuffer(bjd.data.url)
+let bjif = await GIFBufferToVideoBuffer(bjf)   
+        await Miku.sendMessage(m.chat,{video: bjif, gifPlayback:true},{ quoted:m }).catch(err => {
+                    return reply('error..')
+                                    })
+break
+
+case 'hentaivid': case 'hentaivideo': case 'hv': {
+    if (isBan) return reply(mess.banned)	 			
+    if (isBanChat) return reply(mess.bangc)
+    if (!m.isGroup) return replay(mess.grouponly)
+    if (!AntiNsfw) return reply(mess.nonsfw)
+reply(mess.waiting)
+anu = await hentai()
+result912 = anu[Math.floor(Math.random(), anu.length)]
+Miku.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `Title : ${result912.title}\nCategory : ${result912.category}\n$Mimetype : ${result912.type}\nViews : ${result912.views_count}\nShares : ${result912.share_count}\nSource : ${result912.link}\nMedia Url : ${result912.video_1}` }, { quoted: m })
+}
+break
 
 case 'trap' :
     if (isBan) return reply(mess.banned)	 			
@@ -5496,7 +6132,7 @@ reply(mess.waiting)
                 })
 break
 
-case 'foxgirl' :
+case 'foxgirls' :
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!m.isGroup) return replay(mess.grouponly)
@@ -5553,7 +6189,7 @@ reply(mess.waiting)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await Miku.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
+            awai�t Miku.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -5817,7 +6453,7 @@ console.log(musers)
         const buffer = Buffer.from(response.data, "utf-8")
 		var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 		Miku.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
-    } catch (error) {
+    } ca�tch (error) {
         console.log(error);
     }
 }
@@ -5869,7 +6505,7 @@ break
 
 
 
-/*
+
 
 case 'cry': case 'kill': case 'hug': case 'pat': case 'lick': case 'kiss': case 'bite': case 'yeet':
 case 'bully': case 'bonk': case 'wink': case 'poke': case 'nom': case 'slap': case 'smile':
@@ -5888,7 +6524,7 @@ let resmain = await GIFBufferToVideoBuffer(resffj)
                                   })
 break
 
-*/
+
 
 
 
@@ -6042,7 +6678,7 @@ let srh = await manga.searchManga(q)
       /\[Written by MAL Rewrite]/g,
       ""
     )}`;
-Miku.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.large_image_url},caption:mang},{quoted:m})   
+Miku.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.la�rge_image_url},caption:mang},{quoted:m})   
 break
 
 
@@ -6090,7 +6726,7 @@ reply(mess.waiting)
 break
 
 
-case 'loli' :
+case 'loli1' :
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!m.isGroup) return replay(mess.grouponly)
@@ -6130,7 +6766,8 @@ reply(`
 `.trim())
 }
 break
-
+	
+		
 
 case "zitate" :
     if (isBan) return reply(mess.banned)	 			
@@ -6153,7 +6790,7 @@ teks = "\nDarkjokes"
 Miku.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
 break
 
-case 'leavegc': case 'leavegroup': case 'bye': case 'verlasse': case 'lgr': case 'lgrp': {
+case 'leavegc': case 'leavegroup': case 'bye': case 'verlasse': {
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!m.isGroup) return replay(mess.grouponly)
@@ -6189,14 +6826,361 @@ Miku.send5ButImg(yoi, txt, `${global.BotName}`, BotLogo, btn, Thumb)
 }
 replay('Sendung gesendet !')
 }
-break    
+break  
+		
+  /*case 'beta':
+    case 'hm':{
+        if (isBan) return reply(mess.banned)	 			
+if (isBanChat) return reply(mess.bangc)
+            let sections = []
+            let com = [`self`,`bangroup on`,`h`,`awoo`,`waifu3`,`feed`,`loli1`,`antilinkig `,`antilinkfb `,`neko`,`animenom`,`nsfw on`]
+	    let comm = [`public`,`bangroup off`,`help`,`foxgirls`,`pb`,`tickle`,`waifu`,`antilinkig `,`antilinkfb`,`neko2`,`megumin`,`nsfw off`]
+            let listnya = [`self/public`,`ban gruppe,unban gruppe`,`help`,`foxgirl`,`wauifu,pb`,`feed,tickle`,`loli,waifu`,`nicht drücken`,`nicht drücken`,`neko,neko2`,`animenom,megumin`,`nsfw`]
+	    let suruh = [`1😁`, `2😁`]
+            let fiturname = [`self/public`,`ban gruppe`,`menü`,`foxgirl`,`wauifu,pb`,`feed,tickle`,`loli,waifu`,`nicht drücken`,`nicht drücken`,`neko,neko2`,`animenom,megumin`,`nsfw`,`Auto Revoke`]
+            let startnum = 0; let startnu = 0; let startn = 0;let start = 0
+            let startnumm = 1
+            for (let x of com) {
+                const yy = {title: `${listnya[startnum++]}`,
+            rows: [
+               {
+                title: `${suruh[0]}`,
+                description: ` ${fiturname[startnu++]}`,
+                rowId: `${prefix}${x}`
+              },{
+                title: `${suruh[1]}`,
+                description: ` ${fiturname[startn++]}`,
+                rowId: `${prefix}${comm[start++]}`
+              }
+            ]
+           }
+                sections.push(yy)
+            }
+            const sendm =  Miku.sendMessage(
+from, 
+{
+text: "anime bilder und weiteres",
+footer: BotName,
+title: "hier kannst du anime bilder mit einem klick kriegen",
+buttonText: "Click Button",
+sections
+}, { quoted : m }
+)  
+}
+break
+*/
 
+		
+
+
+/*case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe':{
+    if (isBan) return reply(mess.banned)	 			
+    if (isBanChat) return reply(mess.bangc)
+      
+ const helpmenu = `Konichiwa *${pushname}* Senpai,
+
+Ich bin *Miku Nakano*, ein von *Sebastian* entwickelter Bot.
+
+🔰 Mein Präfix ist:  ${prefix}
+
+Hier ist die Liste meiner Befehle.
+
+*━━━〈  neues Menü  〉━━━*
+
+
+${prefix}beta
+${prefix}hm lol
+
+ 
+ 
+ *━━━〈  🎆 Core 🎆  〉━━━*
+
+${prefix}Afk
+${prefix}speak
+${prefix}miku
+${prefix}stalk
+${prefix}profile
+${prefix}help
+${prefix}delete
+${prefix}deleteall
+${prefix}listgc
+${prefix}listpc
+${prefix}welcome
+${prefix}admin 
+ 
+ *━━━〈  🎀 Owner 🎀  〉━━━*
+
+${prefix}self
+${prefix}public
+${prefix}ban
+${prefix}bangroup
+${prefix}verlasse
+${prefix}join
+${prefix}block
+${prefix}unblock
+${prefix}broadcast 
+
+ *━━━〈  ⭕ Group ⭕  〉━━━*
+ 
+${prefix}promote
+${prefix}demote
+${prefix}revoke
+${prefix}remove
+${prefix}tagall
+${prefix}hidetag
+${prefix}groupsetting
+${prefix}grouplink
+${prefix}setgcpp
+${prefix}setname
+${prefix}setdesc
+${prefix}group
+${prefix}nsfw
+${prefix}remove 
+
+ *━━━〈  ➰ Anti Link ➰  〉━━━*
+ 
+${prefix}antilinkgc
+${prefix}antilinktg
+${prefix}antilinktt
+${prefix}antilinkytch
+${prefix}antilinkytvid
+${prefix}antilinkig
+${prefix}antilinkfb
+${prefix}antilinktwit
+${prefix}antilinkall
+${prefix}antiwame
+
+ *━━━〈  🔍 Search 🔍  〉━━━*
+
+${prefix}play
+${prefix}ytmp3
+${prefix}ytmp4
+${prefix}yts
+${prefix}lyrics
+${prefix}google
+${prefix}gimage
+${prefix}pinterest
+${prefix}image
+${prefix}weather
+${prefix}movie
+${prefix}wallpaper
+${prefix}searchgc
+${prefix}happymod
+${prefix}wikimedia
+${prefix}ringtone
+${prefix}anime
+${prefix}animestory
+${prefix}manga
+${prefix}ringtone  
+
+ *━━━〈   support   〉━━━*
+${prefix}sup
+${prefix}support
+${prefix}frage
+
+ *━━━〈  🔰 Convert 🔰  〉━━━*
+
+${prefix}sticker
+${prefix}toimg
+${prefix}tovideo
+${prefix}togif
+${prefix}steal
+${prefix}stickermeme
+${prefix}emojimix
+${prefix}tourl
+${prefix}tomp3
+${prefix�}toaudio
+
+ *━━━〈  🔉 Audio 🔉  〉━━━*
+
+${prefix}bass
+${prefix}tempo
+${prefix}blown
+${prefix}deep
+${prefix}earrape
+${prefix}fast
+${prefix}fat
+${prefix}nightcore
+${prefix}reverse
+${prefix}robot
+${prefix}slow
+${prefix}squirrel
+
+ *━━━〈  📍 Reactions 📍  〉━━━*
+
+${prefix}bonk
+${prefix}cry
+${prefix}bully
+${prefix}cuddle
+${prefix}hug
+${prefix}kiss
+${prefix}lick
+${prefix}pat
+${prefix}smug
+${prefix}yeet
+${prefix}blush
+${prefix}smile
+${prefix}wave
+${prefix}highfive
+${prefix}handhold
+${prefix}nom
+${prefix}glomp
+${prefix}bite
+${prefix}slap
+${prefix}kill
+${prefix}happy
+${prefix}wink
+${prefix}poke
+${prefix}dance
+${prefix}cringe
+
+ *━━━〈  🌌 Downloader 🌌  〉━━━*
+
+${prefix}play
+${prefix}ytmp3
+${prefix}ytmp4
+${prefix}ytvideo
+${prefix}mediafire
+${prefix}instagram
+${prefix}igtv
+${prefix}facebook
+${prefix}fbmp3
+${prefix}twitter
+${prefix}twittermp3
+${prefix}tiktok
+${prefix}tiktokaudio
+${prefix}tiktoknowm
+${prefix}mediafire  
+
+ *━━━〈  🈴 Weeb 🈴  〉━━━*
+
+${prefix}crosplay
+${prefix}waifu
+${prefix}loli
+${prefix}neko
+${prefix}ppcouple
+${prefix}feed
+${prefix}foxgirl
+${prefix}feed
+${prefix}meow
+${prefix}tickle
+${prefix}wallpaper
+${prefix}coffee
+${prefix}animenom
+${prefix}waifu3
+${prefix}neko2
+${prefix}feed
+${prefix}meow
+${prefix}tickle
+${prefix}migumin
+${prefix}awoo
+${prefix}animewallpaper2
+${prefix}anime
+${prefix}manga
+
+ *━━━〈  ♨️ Informative ♨️  〉━━━*
+
+${prefix}animequote
+${prefix}quote
+${prefix}covid
+${prefix}earthquake
+${prefix}wiki
+
+ *━━━〈  🎗 Others 🎗  〉━━━*
+
+${prefix}stickermeme
+${prefix}quotes
+${prefix}darkjoke 
+
+ *━━━〈  🎐 Fun 🎐  〉━━━*
+
+${prefix}schäm
+${prefix}reaction
+${prefix}truth
+${prefix}dare
+${prefix}couple
+${prefix}soulmate
+${prefix}handsomecheck
+${prefix}beautifulcheck
+${prefix}awesomecheck
+${prefix}greatcheck
+${prefix}gaycheck
+${prefix}cutecheck
+${prefix}lesbiancheck
+${prefix}hornycheck
+${prefix}prettycheck
+${prefix}lovelycheck
+${prefix}uglycheck
+${prefix}charactercheck
+
+ *━━━〈  🪁 Essentials 🪁  〉━━━*
+
+ ${prefix}say
+ ${prefix}translate
+ ${prefix}fliptext
+ ${prefix}toletter
+ ${prefix}Wetter
+
+ *━━━〈  💥 NSFW 💥  〉━━━*
+ 
+Wir haben ne hentai gruppe wenn du da rein willst dan mach ${prefix}sus dan kommt der link bitte beachtet das der bot nicht gekick wird
+
+Geben Sie " *${prefix}nsfw* " ein und aktivieren Sie dann NSFW (nur Administrator!)
+
+
+
+    「 System Info 」
+    
+Speed : ${latensie.toFixed(4)} miliseconds
+
+Up Time : ${runtime(process.uptime())}
+
+Bot Name : ${global.BotName}
+
+Owner Name : ${global.OwnerName}
+
+𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : XAIOMI 12 T Pro 〈Userland〉
+
+𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
+    
+    
+    *「 User Info 」*
+Use Name: : ${pushname} 
+
+User Level: ${levelMenu}
+
+User XP : ${xpMenu} \ ${reqXp}
+
+User Role : ${role}
+
+
+ 『  *${global.BotName}*  』
+Powered by: *Sebastian*
+
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".`
+    
+
+ let buttonshelpm = [
+    {buttonId: `${prefix}owner`, buttonText: {displayText: 'Bot Owner'}, type: 1}
+    ]
+                let buttonMessage = {
+                    video:fs.readFileSync('./system/miku2.mp4'),gifPlayback:false,
+                    caption: helpmenu,
+                    footer: `${BotName}`,
+                    buttons: buttonshelpm,
+                    headerType: 4
+                    
+                }
+            Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                }
+break
+*/
 
 case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe': case 'mu':{
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     reply (` Konichiwa *${pushname}* Senpai,
-
 Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
 
 Ich befinde mich derzeit in der Version 4, Edition 1.
@@ -6206,20 +7190,11 @@ dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
 
 🔰 Mein Präfix ist:  ${prefix}
-
 Hier ist die Liste meiner Befehle.
 
-Eigene Befehle(v5):
+Eigene Befehle(v4):
 
 *━━━〈  Own/New(Beta)  〉━━━*
-
- _Register_:
- ee: ${prefix}register Name|Age
- 
- checkregister 
- registercheck
- 
-
  _Bot_:
  bn , botname
  
@@ -6273,7 +7248,7 @@ Eigene Befehle(v5):
  roleuser , ruser
  
  *━━━〈  😎 Bot 😎 〉━━━*
-
+ 
   a , a2 , a3
   p , p1
   p2 , p3
@@ -6282,7 +7257,7 @@ Eigene Befehle(v5):
   session , sessionid
   sitzung , oz
   onlinezeit , ut
-
+  
 *━━━ 〈 👥️ Gruppen👥️  〉━━━*
 
  grc , grpc
@@ -6321,7 +7296,6 @@ Eigene Befehle(v5):
  bewerbunggrp
  teamanfragegrp
  teambewerbunggrp
-
  _Bot-Test_:
  test1gruppe
  test1grp
@@ -6338,7 +7312,7 @@ Eigene Befehle(v5):
  
  
  *━━━〈  🎆 Core 🎆  〉━━━*
-
+ 
  afk , speak
  miku, stalk
  profile , help
@@ -6356,7 +7330,6 @@ Eigene Befehle(v5):
  setdesc , group
  nsfw , remove 
  
-
  *━━━〈  ➰ Anti Link ➰  〉━━━*
  
  antilinkgc , antilinktg
@@ -6364,9 +7337,9 @@ Eigene Befehle(v5):
  antilinkytvid , antilinkig
  antilinkfb , antilinktwit
  antilinkall , antiwame
-
+ 
  *━━━〈  🔍 Search 🔍  〉━━━*
-
+ 
  play , ytmp3
  tmp4 , yts
  lyrics , google
@@ -6379,7 +7352,7 @@ Eigene Befehle(v5):
  manga , ringtone 
  
  *━━━〈  🔰 Convert 🔰  〉━━━*
-
+ 
 sticker , toimg
 tovideo , togif
 steal , stickermeme 
@@ -6387,7 +7360,7 @@ emojimix , tourl
 tomp3 , toaudio
 
  *━━━〈  🔉 Audio 🔉  〉━━━*
-
+ 
 bass , tempo
 blown , deep
 earrape , fast
@@ -6396,7 +7369,7 @@ reverse , robot
 slow , squirrel
 
  *━━━〈  📍 Reactions 📍  〉━━━*
-
+ 
 bonk , cry
 bully , cuddle
 hug , kiss
@@ -6412,7 +7385,7 @@ poke , dance
 cringe
 
  *━━━〈  🌌 Downloader 🌌  〉━━━*
-
+ 
 play , ytmp3
 ytmp4 , ytvideo
 instagram , igtv
@@ -6422,7 +7395,7 @@ tiktok , tiktokaudio
 tiktoknowm , mediafire
 
  *━━━〈  🈴 Weeb 🈴  〉━━━*
-
+ 
 crosplay , waifu
 loli , neko , ppcouple
 feed , foxgirl , feed
@@ -6434,19 +7407,19 @@ animewallpaper2 , anime
 manga
 
  *━━━〈  ♨️ Informative ♨️  〉━━━*
-
+ 
 animequote , quote
 covid , earthquake
 wiki
 
  *━━━〈  🎗 Others 🎗  〉━━━*
-
+ 
 quotes
 stickermeme
 darkjoke 
 
  *━━━〈  🎐 Fun 🎐  〉━━━*
-
+ 
 reaction , truth
 dare , couple
 soulmate , handsomecheck
@@ -6458,18 +7431,16 @@ lovelycheck , uglycheck
 charactercheck
 
  *━━━〈  🪁 Essentials 🪁  〉━━━*
-
+ 
  say , translate 
  fliptext , toletter
  wetter , wt
-
+ 
  *━━━〈  💥 NSFW 💥  〉━━━*
-
+ 
 🍁 Geben Sie " *${prefix}nsfw* " ein und aktivieren Sie dann NSFW (nur Administrator!)
 
 🍁Geben Sie dann „*${prefix}nsfwmenu*“ ein, um eine vollständige Liste der NSFW-Befehle zu erhalten.
-
-
        「 System Info 」
     
     Speed : ${latensie.toFixed(4)} miliseconds
@@ -6494,17 +7465,13 @@ charactercheck
     Gold : ${getEmas(m.sender)}
     Emarald : ${getEmerald(m.sender)}
     Potion : ${getPotion(m.sender)}
-
-
-
-
+    
  『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
-
+ 
+ Powe�red by: *MkM Inc.*
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
  
-
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
 	
 	
@@ -6523,28 +7490,28 @@ let buttonshelpm = [
             Miku.sendMessage(m.chat, buttonMessage,{ quoted:m })
                 }
 break
-		
+
 case 'mm': case 'mmenu': case 'makerm': case 'makermenu':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
 Du bist im Maker-Menu gelandet.
 All Rights Reserved by *MkM Bot Inc.*
-
 Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
 Ich befinde mich derzeit in der Version 4, Edition 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
 🔰 Mein Präfix ist:  ${prefix}
 
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
-
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
 
-Hier eine Lister der Miku:\Makermenu Befehle,\nbzw. Eine Liste der Befehle:
+Hier eine Lister der Miku:\nMakermenu Befehle,\nbzw. Eine Liste der Befehle:
+
 
 1. ${prefix}mm1
 1. ${prefix}makermenu1
@@ -6567,28 +7534,685 @@ Hier eine Lister der Miku:\Makermenu Befehle,\nbzw. Eine Liste der Befehle:
 7. ${prefix}mm7
 7. ${prefix}makermenu7
 
-『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
 
+8. ${prefix}mm8
+8. ${prefix}makermen8
+
+9. ${prefix}mm9
+9. ${prefix}makermenu9
+
+10. ${prefix}mm10
+10. ${prefix}makermenu10
+
+11. ${prefix}mm11
+11. ${prefix}makermenu11
+
+15. ${prefix}mm15
+15. ${prefix}makermenu15
+
+『  *${global.sitzung}*  』
+
+ Powered by: *MkM Inc.*
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
-
+ 
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
 		
 break
-		
 case 'mm1': case 'mmenu1': case 'makerm1': case 'makermenu1':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
 Du bist im Maker-Menu gelandet.
 All Rights Reserved by *MkM Bot Inc.*
-
 Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
 Ich befinde mich derzeit in der Version 4, Edition 1.
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+1. candy       <text>
+2. 3dneon      <text>
+3. 3dspace     <text>
+4. 3dstone     <text>
+5. christmas   <text>
+6. 3dchristmas <text>
+7. sparklechristmas <text>
+8. deepsea     <text>
+9. scifi       <text>
+10. rainbow2   <text>
+11 . waterpipe <text>
+12. spooky     <text>
+13. pencil     <text>
+14. circuit    <text>
+15. discovery  <text>
+16. metalic    <text>
+17. fiction    <text>
+18. demon      <text>
+19. transformer <text>
+20. berry      <text>
+21. thunder    <text>
+22. 3dstone2   <text>
+23. neonlight  <text>
+24. glitch     <text>
+25. harrypotter  <text>
+26. brokenglass <text>
+27. papercut    <text>
+28. watercolor  <text>
+29. multicolor  <text>
+30. neondevil   <text>
+31. underwater    <text>
+32. graffitibike  <text>
+33. snow          <text>
+34. cloud         <text>
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'mm2': case 'mmenu2': case 'makerm2': case 'makermenu2':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+35. honey         <text>
+36. ice           <text>
+37. fruitjuice    <text>
+38. biscuit       <text>
+39. wood          <text>
+40. chocolate     <text>
+41. strawberry    <text>
+42. matrix        <text>
+43. blood         <text>
+44. dropwater     <text>
+45. toxic         <text>
+46. lava          <text>
+47. rockart       <text>
+48. bloodglas     <text>
+49. alloween      <text>
+50. darkgold      <text>
+51. joker         <text>
+52. wicker        <text>
+53. firework      <text>
+54. skeleton      <text>
+55. blackpinkart  <text>
+56. sand          <text>
+57. glue          <text>
+58. 1917          <text>
+59. leves         <text>
+60. demon         <text>
+61. 3dneon    <text>
+62. 3dspace   <text>
+63. 3dstone   <text>
+64. bookeh    <text>
+65. carbon    <text>
+66. curcuit   <text>
+67. glitch2   <text>
+68. glitch3   <text>
+69. lion      <text>
+70. magma     <text>
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+
+case 'mm3': case 'mmenu3': case 'makerm3': case 'makermenu3':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+71. matrix    <text>
+72. neongreen <text>
+73. scifi     <text>
+74. thunder   <text>
+75. thunder2  <text>
+76. wall      <text>
+77. grunge    <text>
+78. 3dpaint   <text>
+79. pinggold  <text>
+80. liquid    <text>
+81. burger    <text>
+82. cage      <text>
+83. party     <text>
+84. comic     <text>
+85. topography  <text>
+86. orange    <text>
+87. valentine <text>
+88. lightglow <text>
+89. thor      <text>
+90. 3d_deepsea  <text>
+91.  m_black     <text>
+92.  graffititext    <text>
+93.  neonlightgalaxy <text>
+94.  3dmarvel    <text>
+95.  marvelstudiometal <text>
+96.  marvelstudio <text>
+97.  roadwarning  <text>
+98.  advancedglow <text>
+99.  brakewall    <text>
+100. glitch3      <text>
+101. 3dbox        <text>
+102. waterdrop    <text>
+103. lion3        <text>
+104. papercut2    <text>
+105. transformer2 <text>
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+
+case 'mm4': case 'mmenu4': case 'makerm4': case 'makermenu4':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+106. harrypot2    <text>
+107. window2      <text>
+108. blackpinkneon2   <text>
+109. (pornhub3)   <text>
+110. blackpink4   <text�>
+111. glitch4   <text>
+112. glitch5   <text>
+113. glitch6   <text>
+114. 3dspace2  <text>
+115. lion4     <text>
+116. 3dneon3   <text>
+117. neon4     <text>
+118. holographic3  <text>
+119. bear3     <text>
+120. wolf3     <text>
+121. joker3    <text>
+122. dropwater3    <text>
+123. summertime3   <text>
+124. neonlight5    <text>
+125. thewall3  <text>
+126. natural3  <text>
+127. carbon3   <text>
+128. pencil3   <text>
+129. textmaker3    <text>
+130. (textmaker4)  <text>
+131. hooror2    <text>
+132. whitebear3 <text>
+133. thunder4   <text>
+134. neon6      <text>
+135. matrix4    <text>
+136. sky3       <text>
+137. magma4     <text>
+138. sand4      <text>
+139. pencil5    <text>
+140. metallic3  <text>
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'mm5': case 'mmenu5': case 'makerm5': case 'makermenu5':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+141. graffititext5 <text>
+142. steel3     <text>
+143. harrypotter6  <text>
+144. underwater4   <text>
+145. luxury3    <text>
+146. glue5      <text>
+147. fabric3    <text>
+148. neonlight7 <text>
+149. lava5      <text>
+150. toxic3     <text>
+151. ancient3   <text>
+152. chrismas4  <text>
+153. scifi4     <text>
+154. rainbow4   <text>
+155. classic3   <text>
+156. watercolor5   <text>
+157. halloween4 <text>
+158. halloweenfire3 <text>
+159. foggy3     <text>
+160. marvel6    <text>
+161. skeleton4  <text>
+162. sketch3    <text>
+163. wonderful3 <text>
+164. batman3    <text>
+165. juice4     <text>
+166. buisness7  <text>
+167. thor7      <text>
+168. deepsea7   <text>
+169. batman7    <text>
+170. diamond7   <text>
+171. flag_3D-2  <text>
+172. american_3d_flag <text>
+173. scifi_3D-2 <text>
+174. rainbow_3D-2     <text>
+175. pipe_3D-2  <text>
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'mm6': case 'mmenu6': case 'makerm6': case 'makermenu6':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+176. halloween8 <text>
+177. spooky8    <text>
+178. horror8    <text
+179. sketch6    <text>
+180. bluecircuit5     <text>
+181. space5    <text>
+182. metallic5 <text>
+183. glossy7   <text>
+184. captain_america-2 <text>
+185. scifi9    <text>
+186. 8bit-2    <text>
+187. green_horror-2    <text>
+188. transformer4      <text>
+189. berry5    <text>
+190. layered4  <text>
+191. thunder9  <text>
+192. magma8    <text>
+193. stone6    <text>
+194. neon8     <text>
+195. glitch8   <text>
+196. glitch9   <text>
+197. harry_potter-2   <text>
+198. embossed5 <text>
+199. brokenglass5     <text>
+200. artpaper-2 <text>
+201. bw-2       <text>
+202. gradient-3 <text>
+203. 3D_glossy-2      <text>
+204. 3D_beach2  <text>
+205. watercolor5      <text>
+206. 3D-Multicolor    <text>
+207. foggy6     <text>
+208. neon_devil-2     <text>
+209. 3D-Unterwater-2  <text>
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+		
+case 'mm7': case 'mmenu7': case 'makerm7': case 'makermenu7':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+210. mascot-logo-2    <text>
+211. graffiti8   <text>
+212. graffiti-wall-2   <text>
+213. graffiti9   <text>
+214. christmas7  <text>
+215. technology-neon-2 <text>
+216. snow6   <text>
+217. cloud5  <text>
+217. 3D-luxury-2  <text>
+218. 3D-gradient  <text>
+219. blackpink5   <text>
+220. vintage6     <text>
+221. real-cloud-2 <text>
+222. cloud-sky-2  <text>
+223. sand-beach-2 <text>
+224. sand-writing-2  <text>
+225. sand-engraved-2 <text>
+226. summery-sand-2  <text>
+227. bithday5     <text>
+228. 3D-glue-2    <text>
+229. 3D-space-2   <text>
+230. metal-dark-2 
+231. tiktok-stayle-2
+232. a-stone-2
+233. glalxy-style-2
+234. 1917style5
+235. 80s-retro
+236. 3D-Minion3
+237. pornhub8
+238. dexposurw
+239. 3D-holo-2
+240. avengers8
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+
+case 'mm8': case 'mmenu8': case 'makerm8': case 'makermenu8':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+241. metal-purple-2
+242. marvel-metal-2
+243. deluxe-selver-2
+244. luxury_metal-2
+245. glossyblue4
+246. glossycarbon5
+247. fabric7
+248. newyear6
+249. newyeagif3
+250. color-balloon-2
+251. 3D-metal-2
+252. avatargold4
+253. 3D_metalsilver-2
+254. 3D_rosegold-2
+255. 3D_metalgold-2
+256. 3D_metalgalax<-2
+257. 3D-Christmas-2
+258. blood_text-2
+259. halloweenfire7
+260. metaldarkgold7
+261. wolf_logo-6
+262. lion_logo-7
+263. wolf_logo_galaxy-2
+264. ninja7
+265. joker7
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+
+case 'mm9': case 'mmenu9': case 'makerm9': case 'makermenu9':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+266. wicker7
+267. natural_leaves-2
+268. sparkle7
+269. skel�eton7
+270. red_balloon-2
+271. purple_balloon-2
+272. pink_balloon-2
+273. green_balloon-2
+274. cyan_balloon-2
+275. gold_balloon-2
+276. steel7
+277. ultragloss4
+279. denim4
+280. decor_green-2
+281. peridot_stone-2
+282. rock5
+283. lava8
+284. yellow_glass-2
+285. purple_glass-2
+286. orange_glass-2
+287. green_glass-2
+288. cyan_glass-2
+289. blue_glass-2
+290. red_glass-2
+291. shinypurple_glass-2
+292. captain-america-2
+293. r2-d2_2
+294. rainbow_eq-2
+295. toxic7
+296. sparklepink_jewelery-2
+297. sparkleblue_jewelery-2
+298. sparklegreen_jewelery-2
+299. sparklepurple_jewelery-2
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+
+case 'mm10': case 'mmenu10': case 'makerm10': case 'makermenu10':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+300. sparklegold_jewelry-2
+301. sparklered_jewelery-2
+302. sparklecyan_jewelery-2
+303. purple_glass-2
+304. decorative-glass-2
+305. chocolatw_cake-2
+306. strawberry
+307. koi_fish-2
+308. bread6
+309. matrix_style-2
+310. horror_blood-2
+311. neonlight6
+312. thunder6
+313. 3d_box-2
+314. neon6
+315. road_warning-2
+316. 3d_steel-2
+317. bokeh6
+318. green_neon-2
+319. free_advanced_glow-2
+320. break_wall-2
+321. christmax_gift-2
+322. honey6
+323. plastic_bag_drug-2
+324. horror_gift-2
+325. marble_slabs-2
+326. marble6
+327. ice_cold-2
+328. fruit_juice-2
+329. rusty_metal-2
+330. abstra_gold-2
+331. biscuit7
+332. bagel6
+333. wood7
+334. sci--fi_2
+335. metal_rainbow-2
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+
+case 'mm11': case 'mmenu11': case 'makerm11': case 'makermenu11':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+All Rights Reserved by *MkM Bot Inc.*
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich befinde mich derzeit in der Version 4, Edition 1.
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+🔰 Mein Präfix ist:  ${prefix}
+*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+Hier ist die Liste der Maker-Menu Befehle:
+
+*━━━〈  Schrift-Maker  〉━━━*
+
+336. purple_gem-2
+337. shiny_metal-2
+338. yellow_jewelery-2
+339. silver_jewelery-2
+340. red_jewelery-2
+341. purple_jewelery-2
+342. orange_jewelery-2
+343. green_jewelery-2
+344. cyan_jewelery-2
+345. blue_jewelery-2
+346. hot_metal-3
+347. hexa_golden-3
+348. blue_glitter-2
+349. purple_glitter-2
+350. pink_glitter-2
+351. green_glitter-2
+352. silver_glitter-2
+353. gold_glitter-2
+354. bronze_glitter-2
+355. eroded_metal-2
+356. carbon9
+357. pink_candy-2
+358. blue_metal-2
+359. blue_gem-2
+360. black_metal-2
+361. 3d_glowing_metal-2
+362. 3d_chrome-2
+363. marvel-01
+『  *${global.sitzung}*  』
+ Powered by: *MkM Inc.*
+ 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
+ " *${prefix}<Befehlsname>* ".
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
+		
+break
+
+case 'mm15': case 'mmenu15': case 'makerm15': case 'makermenu15':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+reply(` Hi ${pushname} ,
+Du bist im Maker-Menu gelandet.
+
+All Rights Reserved by *MkM Bot Inc.*
+
+Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 4, Edition 1.
+
+Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
+dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+*Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
 
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
@@ -6627,36 +8251,6 @@ Hier ist die Liste der Maker-Menu Befehle:
 28. watercolor  <text>
 29. multicolor  <text>
 30. neondevil   <text>
-
-
-『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
-
- 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
- " *${prefix}<Befehlsname>* ".
-
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
-break
-		
-case 'mm2': case 'mmenu2': case 'makerm2': case 'makermenu2':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hi ${pushname} ,
-Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
-Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
-dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
-*Vielen Dank*
-🔰 Mein Präfix ist:  ${prefix}
-
-*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
-
-Hier ist die Liste der Maker-Menu_2 Befehle:
-
 31. underwater    <text>
 32. graffitibike  <text>
 33. snow          <text>
@@ -6687,38 +8281,6 @@ Hier ist die Liste der Maker-Menu_2 Befehle:
 58. 1917          <text>
 59. leves         <text>
 60. demon         <text>
-
-
-『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
-
- 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
- " *${prefix}<Befehlsname>* ".
-
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
-break
-
-case 'mm3': case 'mmenu3': case 'makerm3': case 'makermenu3':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hi ${pushname} ,
-Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
-Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
-dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
-*Vielen Dank*
-🔰 Mein Präfix ist:  ${prefix}
-
-*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
-
-Hier ist die Liste der Maker-Menu Befehle:
-
-*━━━〈  Schrift-Maker  〉━━━*
-
 61. 3dneon    <text>
 62. 3dspace   <text>
 63. 3dstone   <text>
@@ -6749,38 +8311,6 @@ Hier ist die Liste der Maker-Menu Befehle:
 88. lightglow <text>
 89. thor      <text>
 90. 3d_deepsea  <text>
-
-
-『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
-
- 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
- " *${prefix}<Befehlsname>* ".
-
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
-break
-
-case 'mm4': case 'mmenu4': case 'makerm4': case 'makermenu4':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hi ${pushname} ,
-Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
-Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
-dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
-*Vielen Dank*
-🔰 Mein Präfix ist:  ${prefix}
-
-*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
-
-Hier ist die Liste der Maker-Menu Befehle:
-
-*━━━〈  Schrift-Maker  〉━━━*
-
 91.  m_black     <text>
 92.  graffititext    <text>
 93.  neonlightgalaxy <text>
@@ -6801,37 +8331,6 @@ Hier ist die Liste der Maker-Menu Befehle:
 108. blackpinkneon2   <text>
 109. (pornhub3)   <text>
 110. blackpink4   <text>
-
-『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
-
- 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
- " *${prefix}<Befehlsname>* ".
-
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
-break
-		
-case 'mm5': case 'mmenu5': case 'makerm5': case 'makermenu5':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hi ${pushname} ,
-Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
-Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
-dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
-*Vielen Dank*
-🔰 Mein Präfix ist:  ${prefix}
-
-*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
-
-Hier ist die Liste der Maker-Menu Befehle:
-
-*━━━〈  Schrift-Maker  〉━━━*
-
 111. glitch4   <text>
 112. glitch5   <text>
 113. glitch6   <text>
@@ -6852,39 +8351,6 @@ Hier ist die Liste der Maker-Menu Befehle:
 128. pencil3   <text>
 129. textmaker3    <text>
 130. (textmaker4)  <text>
-
-
-
-『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
-
- 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
- " *${prefix}<Befehlsname>* ".
-
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
-break
-		
-case 'mm6': case 'mmenu6': case 'makerm6': case 'makermenu6':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hi ${pushname} ,
-Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
-Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
-dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
-*Vielen Dank*
-🔰 Mein Präfix ist:  ${prefix}
-
-*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
-
-Hier ist die Liste der Maker-Menu Befehle:
-
-*━━━〈  Schrift-Maker  〉━━━*
-
 131. hooror2    <text>
 132. whitebear3 <text>
 133. thunder4   <text>
@@ -6910,86 +8376,255 @@ Hier ist die Liste der Maker-Menu Befehle:
 153. scifi4     <text>
 154. rainbow4   <text>
 155. classic3   <text>
-156. watercolor5   <text>
+156. watercolor5   <tex�t>
 157. halloween4 <text>
 158. halloweenfire3 <text>
 159. foggy3     <text>
-
-
-
-『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
-
- 🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
- " *${prefix}<Befehlsname>* ".
-
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
-break
-		
-case 'mm7': case 'mmenu7': case 'makerm7': case 'makermenu7':
-if (isBan) return reply(mess.banned)
-if (isBanChat) return reply(mess.bangc)
-reply(` Hi ${pushname} ,
-Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
-Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
-dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
-*Vielen Dank*
-🔰 Mein Präfix ist:  ${prefix}
-
-*Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
-
-Hier ist die Liste der Maker-Menu Befehle:
-
-*━━━〈  Schrift-Maker  〉━━━*
-
 160. marvel6    <text>
 161. skeleton4  <text>
 162. sketch3    <text>
 163. wonderful3 <text>
 164. batman3    <text>
 165. juice4     <text>
-
-
+166. buisness7  <text>
+167. thor7      <text>
+168. deepsea7   <text>
+169. batman7    <text>
+170. diamond7   <text>
+171. flag_3D-2  <text>
+172. american_3d_flag <text>
+173. scifi_3D-2 <text>
+174. rainbow_3D-2     <text>
+175. pipe_3D-2  <text>
+176. halloween8 <text>
+177. spooky8    <text>
+178. horror8    <text
+179. sketch6    <text>
+180. bluecircuit5     <text>
+181. space5    <text>
+182. metallic5 <text>
+183. glossy7   <text>
+184. captain_america-2 <text>
+185. scifi9    <text>
+186. 8bit-2    <text>
+187. green_horror-2    <text>
+188. transformer4      <text>
+189. berry5    <text>
+190. layered4  <text>
+191. thunder9  <text>
+192. magma8    <text>
+193. stone6    <text>
+194. neon8     <text>
+195. glitch8   <text>
+196. glitch9   <text>
+197. harry_potter-2   <text>
+198. embossed5 <text>
+199. brokenglass5     <text>
+200. artpaper-2 <text>
+201. bw-2       <text>
+202. gradient-3 <text>
+203. 3D_glossy-2      <text>
+204. 3D_beach2  <text>
+205. watercolor5      <text>
+206. 3D-Multicolor    <text>
+207. foggy6     <text>
+208. neon_devil-2     <text>
+209. 3D-Unterwater-2  <text>
+210. mascot-logo-2    <text>
+211. graffiti8   <text>
+212. graffiti-wall-2   <text>
+213. graffiti9   <text>
+214. christmas7  <text>
+215. technology-neon-2 <text>
+216. snow6   <text>
+217. cloud5  <text>
+217. 3D-luxury-2  <text>
+218. 3D-gradient  <text>
+219. blackpink5   <text>
+220. vintage6     <text>
+221. real-cloud-2 <text>
+222. cloud-sky-2  <text>
+223. sand-beach-2 <text>
+224. sand-writing-2  <text>
+225. sand-engraved-2 <text>
+226. summery-sand-2  <text>
+227. bithday5     <text>
+228. 3D-glue-2    <text>
+229. 3D-space-2   <text>
+230. metal-dark-2 
+231. tiktok-stayle-2
+232. a-stone-2
+233. glalxy-style-2
+234. 1917style5
+235. 80s-retro
+236. 3D-Minion3
+237. pornhub8
+238. dexposurw
+239. 3D-holo-2
+240. avengers8
+241. metal-purple-2
+242. marvel-metal-2
+243. deluxe-selver-2
+244. luxury_metal-2
+245. glossyblue4
+246. glossycarbon5
+247. fabric7
+248. newyear6
+249. newyeagif3
+250. color-balloon-2
+251. 3D-metal-2
+252. avatargold4
+253. 3D_metalsilver-2
+254. 3D_rosegold-2
+255. 3D_metalgold-2
+256. 3D_metalgalax<-2
+257. 3D-Christmas-2
+258. blood_text-2
+259. halloweenfire7
+260. metaldarkgold7
+261. wolf_logo-6
+262. lion_logo-7
+263. wolf_logo_galaxy-2
+264. ninja7
+265. joker7
+266. wicker7
+267. natural_leaves-2
+268. sparkle7
+269. skeleton7
+270. red_balloon-2
+271. purple_balloon-2
+272. pink_balloon-2
+273. green_balloon-2
+274. cyan_balloon-2
+275. gold_balloon-2
+276. steel7
+277. ultragloss4
+279. denim4
+280. decor_green-2
+281. peridot_stone-2
+282. rock5
+283. lava8
+284. yellow_glass-2
+285. purple_glass-2
+286. orange_glass-2
+287. green_glass-2
+288. cyan_glass-2
+289. blue_glass-2
+290. red_glass-2
+291. shinypurple_glass-2
+292. captain-america-2
+293. r2-d2_2
+294. rainbow_eq-2
+295. toxic7
+296. sparklepink_jewelery-2
+297. sparkleblue_jewelery-2
+298. sparklegreen_jewelery-2
+299. sparklepurple_jewelery-2
+300. sparklegold_jewelry-2
+301. sparklered_jewelery-2
+302. sparklecyan_jewelery-2
+303. purple_glass-2
+304. decorative-glass-2
+305. chocolatw_cake-2
+306. strawberry
+307. koi_fish-2
+308. bread6
+309. matrix_style-2
+310. horror_blood-2
+311. neonlight6
+312. thunder6
+313. 3d_box-2
+314. neon6
+315. road_warning-2
+316. 3d_steel-2
+317. bokeh6
+318. green_neon-2
+319. free_advanced_glow-2
+320. break_wall-2
+321. christmax_gift-2
+322. honey6
+323. plastic_bag_drug-2
+324. horror_gift-2
+325. marble_slabs-2
+326. marble6
+327. ice_cold-2
+328. fruit_juice-2
+329. rusty_metal-2
+330. abstra_gold-2
+331. biscuit7
+332. bagel6
+333. wood7
+334. sci--fi_2
+336. purple_gem-2
+337. shiny_metal-2
+338. yellow_jewelery-2
+339. silver_jewelery-2
+340. red_jewelery-2
+341. purple_jewelery-2
+342. orange_jewelery-2
+343. green_jewelery-2
+344. cyan_jewelery-2
+345. blue_jewelery-2
+346. hot_metal-3
+347. hexa_golden-3
+348. blue_glitter-2
+349. purple_glitter-2
+350. pink_glitter-2
+351. green_glitter-2
+352. silver_glitter-2
+353. gold_glitter-2
+354. bronze_glitter-2
+355. eroded_metal-2
+356. carbon9
+357. pink_candy-2
+358. blue_metal-2
+359. blue_gem-2
+360. black_metal-2
+361. 3d_glowing_metal-2
+362. 3d_chrome-2
+363. marvel-01
 
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
 
+
+ Powered by: *MkM Inc.*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
-
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
 		
 break
-		
+
 case 'oh': case 'omenu': case 'ownermenu': case 'omu':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Hi ${pushname} ,
 Du bist im Ownermenu gelandet.
+
 All Rights Reserved by *MkM Bot Inc.*
 
 Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+
 Ich befinde mich derzeit in der Version 4, Edition 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
 
 Hier ist die Liste der Owner Befehle:
 
 *━━━〈  🎀 Owner 🎀  〉━━━*
 
+
  self , public
  ban , bangroup
  verlasse , join
  block , unblock
  broadcast(...)
+ bctext2 , bc2
  
  _ban_:
  ban add (hinzufügen)
@@ -7005,17 +8640,15 @@ Hier ist die Liste der Owner Befehle:
  allgrpl , agl
  
  gruppenchats
-
+ 
  *━━━〈  Inhaber  〉━━━*
  
  _Websites_:
  Gweb , Gwebsite
  Bweb , Bwebsite
  oweb , owebsite 
-
  GWS , BWS
  ownerwebsite
-
  _Teamliste_:
  team , teamlist
  listt , tlist
@@ -7087,15 +8720,15 @@ Hier ist die Liste der Owner Befehle:
  MkM-Miku Version 4 verfügbar_
  
  『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
 
+ 
+ Powered by: *MkM Inc.*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
-
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
 		
 break
- 
 
 case '':
     if(isCmd){
@@ -7105,7 +8738,7 @@ case '':
       mikupic ='https://wallpapercave.com/wp/wp6299451.jpg'
     
         
- const needhelpmenu = `Brauchst du Hilfe, ${pushname} Senpai? Geben Sie *${prefix}help* ein, um meine vollständige Befehlsliste zu erhalten.`
+ const needhelpmenu = `Brauchst du Hilfe, ${pushname} Senpai? Geben Sie *${prefix}help* ein wenn sie meine befehlsliste sehen wollen .`
      
          let butRun = [
                 {buttonId: `${prefix}help`, buttonText: {displayText: 'Help'}, type: 1}
@@ -7132,7 +8765,7 @@ const mikuarray= [
             "https://c.tenor.com/SOeIW-QVZvoAAAPo/scared-the-quintessential-quintuplets.mp4",
             "https://c.tenor.com/FDe7lTs0xvMAAAPo/miku-nakano-nakano-miku.mp4",
             "https://c.tenor.com/IWKYIP6AMIgAAAPo/miku-nakano-the-quintessential-quintuplets.mp4",
-            "https://c.tenor.com/qE3H_Ae_jTQAAAPo/miku-nakano-nakano.mp4",
+            "https://c.tenor.com/qE3H_Ae_jTQAAAPo/miku-nakano-nakano.mp4"�,
             "https://c.tenor.com/9ijVngbm_ZMAAAPo/itsuki-nakano-the-quintessential-quintuplets.mp4",
             "https://c.tenor.com/Fz9xGVR_FHAAAAPo/miku-nakano-nakano-miku.mp4",
             "https://c.tenor.com/ALV6SZoJZb8AAAPo/gotoubun-corada.mp4",
@@ -7167,6 +8800,43 @@ const mikuarray= [
             const mikuselection = mikuarray[Math.floor(Math.random()*mikuarray.length)]
         
             Miku.sendMessage(from,{video:{url:mikuselection},gifPlayback:true,caption:txt},{quoted:m})
+		
+		
+ case "sayger":  case "sayde": {
+    if (isBan) return reply(mess.banned)	 			
+    if (isBanChat) return reply(mess.bangc)
+
+    if (!args[0]) return reply("Please give me a text so that i can speak it!")
+      
+      let texttosay = text
+        ? text
+        : m.quoted && m.quoted.text
+        ? m.quoted.text
+        : m.text;
+      const SpeakEngine = require("google-tts-api"); 
+      const texttospeechurl = SpeakEngine.getAudioUrl(texttosay, {lang: "de", slow: false, host: "https://translate.google.com",});
+      Miku.sendMessage(m.chat,{audio: {url: texttospeechurl,},mimetype: "audio/mpeg",fileName: `MikuSpeechEngine.mp3`,},{quoted: m,});
+    }
+    break
+		
+		
+ case "sayeng":  case "sayen": {
+    if (isBan) return reply(mess.banned)	 			
+    if (isBanChat) return reply(mess.bangc)
+
+    if (!args[0]) return reply("Please give me a text so that i can speak it!")
+      
+      let texttosay = text
+        ? text
+        : m.quoted && m.quoted.text
+        ? m.quoted.text
+        : m.text;
+      const SpeakEngine = require("google-tts-api"); 
+      const texttospeechurl = SpeakEngine.getAudioUrl(texttosay, {lang: "en", slow: false, host: "https://translate.google.com",});
+      Miku.sendMessage(m.chat,{audio: {url: texttospeechurl,},mimetype: "audio/mpeg",fileName: `MikuSpeechEngine.mp3`,},{quoted: m,});
+    }
+    break
+
 
 
 
@@ -7188,7 +8858,7 @@ const mikuarray= [
     break;
 
 
-		 case 'wetter': case 'wt':
+		 case 'wetter':
         if (isBan) return reply(mess.banned)
         if (!args[0]) return reply("Enter your location to search weather.")
          myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
