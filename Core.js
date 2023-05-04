@@ -7199,18 +7199,20 @@ case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu': case 'hilfe
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     reply (` Konichiwa *${pushname}* Senpai,
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+    
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
 
-Ich befinde mich derzeit in der Version 4, Edition 1.
+Ich befinde mich derzeit in der Version 1.
 
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+
 *Vielen Dank*
 
 🔰 Mein Präfix ist:  ${prefix}
 Hier ist die Liste meiner Befehle.
 
-Eigene Befehle(v4):
+_Commands_:
 
 *━━━〈  Own/New(Beta)  〉━━━*
  _Bot_:
@@ -7486,7 +7488,8 @@ charactercheck
     
  『  *${global.sitzung}*  』
  
- Powe�red by: *MkM Inc.*
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
  
@@ -7513,14 +7516,20 @@ case 'mm': case 'mmenu': case 'makerm': case 'makermenu':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
 
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
 
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
@@ -7565,31 +7574,41 @@ Hier eine Lister der Miku:\nMakermenu Befehle,\nbzw. Eine Liste der Befehle:
 11. ${prefix}mm11
 11. ${prefix}makermenu11
 
-15. ${prefix}mm15
-15. ${prefix}makermenu15
+15. ${prefix}mm00
+15. ${prefix}makermenu00
 
 『  *${global.sitzung}*  』
 
- Powered by: *MkM Inc.*
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
  
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)	
 break
+		
 case 'mm1': case 'mmenu1': case 'makerm1': case 'makermenu1':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
+
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -7628,27 +7647,38 @@ Hier ist die Liste der Maker-Menu Befehle:
 32. graffitibike  <text>
 33. snow          <text>
 34. cloud         <text>
+
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
+ 
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
 break
 		
 case 'mm2': case 'mmenu2': case 'makerm2': case 'makermenu2':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -7689,27 +7719,37 @@ Hier ist die Liste der Maker-Menu Befehle:
 68. glitch3   <text>
 69. lion      <text>
 70. magma     <text>
+
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+
+ Powered by: *${global.botteamname}*
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
+ 
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
 break
 
 case 'mm3': case 'mmenu3': case 'makerm3': case 'makermenu3':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -7749,27 +7789,37 @@ Hier ist die Liste der Maker-Menu Befehle:
 103. lion3        <text>
 104. papercut2    <text>
 105. transformer2 <text>
+
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+
+ Powered by: *${global.botteamname}*
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
+ 
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)		
 break
 
 case 'mm4': case 'mmenu4': case 'makerm4': case 'makermenu4':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -7809,27 +7859,37 @@ Hier ist die Liste der Maker-Menu Befehle:
 138. sand4      <text>
 139. pencil5    <text>
 140. metallic3  <text>
+
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
+ 
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)		
 break
 		
 case 'mm5': case 'mmenu5': case 'makerm5': case 'makermenu5':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
