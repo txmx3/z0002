@@ -93,7 +93,9 @@ let banchat = JSON.parse(fs.readFileSync('./database/banChat.json'));
  let _buruan = JSON.parse(fs.readFileSync('./storage/user/bounty.json'));
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/blood.json'))
 
+ /*
 global.prem = require("./lib/premium.js")
+*/
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
