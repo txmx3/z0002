@@ -1499,6 +1499,7 @@ let buttonspro = [
         	
             break
 
+/*
 case 'register':
                 if (isRegistered) return reply('Du bist bereits registriert')
                 if (!q.includes('|')) return reply('Falsches Format!')
@@ -1529,6 +1530,7 @@ break
   if (isBanChat) return reply(mess.bangc)
   reply(` *Deine Registrierten Daten sind:*\n\n_Name:_ ${namaUser}\n\n_Alter:_ ${umurUser}\n\n_Nummer:_ wa.me/${m.sender.split("@")[0]}\n\n_:?_ ${barat}\n\n_ID :_ ${serialUser}\n\n Das sind alle von dir eingetragenen Daten !`)
 break
+*/
 
     /*
 case 'addprem':
@@ -2100,6 +2102,7 @@ case 'Bug': case 'bugreport': case 'report': case 'bgre': case 'br': case 'bra':
         replay(`Ich habe deine Fehlermeldung an die Gruppe der Besitzer weitergeleitet. Das Team bedankt sich für deine Fehlermeldung `)
 break
 
+/*
 case 'team': case 'listt': case 'tlist': case 'teamlist':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
@@ -2160,6 +2163,7 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply (` Den Link zum Support-Chat findest du hier:\n\n${global.support}\n\nVielen Dank `)	
 break
+*/
 		
 case 'kontakt': case 'contact': case 'kowner': case 'cowber':
 if (isBan) return reply(mess.banned)
@@ -2849,8 +2853,8 @@ break
  }
 break
 
-case 'react': {
-                if (!isCreator) throw mess.admin
+case 'areact': case 'are': case 'aart': {
+if (!isCreator) return replay(mess.botowner)
                 reactionMessage = {
                     react: {
                         text: args[0],
@@ -3372,14 +3376,12 @@ break
 	}
 break
 
-/*
 case 'unblock3': {
 		if (!isCreator) throw mess.owner
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Miku.u�pdateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await Miku.updateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 break
-*/
 
 case 'setname2': case 'setsubject2': {
                 if (!m.isGroup) throw mess.group
@@ -3567,11 +3569,10 @@ case 'bspeedtest': {
             }
 break
 
-/*
 case 'cspeedtest': {
             reply('Testing Speed...')
             let cp = require('child_process')
-            let { promisi�fy } = require('util')
+            let { promisify } = require('util')
             let exec = promisify(cp.exec).bind(cp)
           let o
           try {
@@ -3585,7 +3586,6 @@ case 'cspeedtest': {
             }
             }
 break
-*/
 
 case 'dspeedtest': {
             reply('Testing Speed...')
