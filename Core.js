@@ -5722,7 +5722,7 @@ break
 case 'soulmate': case 'Seelenverwandte': {
     if (isBan) return reply(mess.banned)
     if (isBanChat) return reply(mess.bangc)
-if (!m.isGroup) return replay(`${mess.groupon�ly}`)
+if (!m.isGroup) return replay(`${mess.grouponly}`)
 let member = participants.map(u => u.id)
 let me = m.sender
 let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -5966,7 +5966,7 @@ case 'truth':
                  "Whats the strangest dream you have ever had",
                  "do you play pubg, if you then send ur id number"
              ]
-                           const mikutruthww = truth[Math.f�loor(Math.random() * truth.length)]
+                           const mikutruthww = truth[Math.floor(Math.random() * truth.length)]
                            buffer = await getBuffer(`https://wallpapercave.com/wp/wp10524609.jpg`)
                            Miku.sendMessage(from, { image: buffer, caption: '*You have chosen Truth*\n'+ mikutruthww }, {quoted:m})
                            break
