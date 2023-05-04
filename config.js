@@ -7,9 +7,9 @@ global.autoReadAll = false
 global.antitags = true
 
 
-global.Owner = ['493023180366','4917662927731']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.OwnerNumber = ['493023180366','4917662927731']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.ownertag = ['493023180366','4917662927731']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.Owner = ['493023180366','4917662927731','49491777062822','491777062822']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.OwnerNumber = ['493023180366','4917662927731','49491777062822','491777062822']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.ownertag = ['493023180366','4917662927731','49491777062822','491777062822']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
 global.BotName = "Mika_v1"
 global.packname = "Erstellt für User"
 global.author = "Mika Bot"
