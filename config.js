@@ -26,6 +26,7 @@ global.botname = "Miku-Max_v4-Beta"
 global.owner1 = "Max_2  | +493023180366"
 global.owner3 = "Max_2  | +4917662927731"
 global.owner2 = "Kirito | +491777062822"
+/*
 global.owner4 = "Magic  | +4915212908434"
 global.manage = "Pablo | +491632225167"
 global.chatsup = "Pablo | +491632225167"
@@ -38,9 +39,10 @@ global.support5 = "Lisa | +4915205683981"
 global.dev = "*Undefined* | Error"
 global.devs = "*Undefined* | Error"
 global.host1 = "Kevin | +491777108553"
+*/
 
 
-
+/*
 global.supporter1 = "Jaybee1 | +49 4916093444217"
 global.supporterin1 = "Jaybee1 | +49 4916093444217"
 global.supporter2 = "Kevin | +491777108553"
@@ -53,7 +55,9 @@ global.hoster1 = "Kevin | +491777108553"
 global.hosterin1 = "Kevin | +491777108553"
 global.manager = "Pablo | +491632225167"
 global.managerin = "Pablo | +491632225167"
+*/
 
+/*
 global.chatgrp = "https://chat.whatsapp.com/LPH7g7UTSZO0RH9ZRqBm7D"
 global.ankundigung = "https://chat.whatsapp.com/G0nG2wuUtug4dI12WgXWNt"
 global.werbunggrp = "https://chat.whatsapp.com/GwvXFuOV3MqA5iYyyxZcyx"
@@ -73,9 +77,9 @@ global.ownerchatgrp = "https://chat.whatsapp.com/JjRfd8fIl8aJEZ6EQwANrx"
 global.ideengrp = "https://chat.whatsapp.com/FFPwoiP84xhDiKOCOZ04mv"
 global.animefchatgrp = "https://chat.whatsapp.com/L8FwBr4LUrIJP4GBUOaLu6"
 global.umfragengrp = "https://chat.whatsapp.com/JEmPVdx1ZXILPYk6S2NvCp"
+*/
 
-
-global.prefa = ['!'] // Prefix ---  change it to anythong you want except '@' //
+global.prefa = ['-'] // Prefix ---  change it to anythong you want except '@' //
 
 
 global.location = "West-Berlin"
