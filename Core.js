@@ -4615,7 +4615,7 @@ break;
  mimetype: "image/jpeg",
  text: `${global.OwnerName}`,
  "forwardingScore": 1000000000,
- isForwar�ded: true,
+ isForwarded: true,
  sendEphemeral: true,
  "externalAdReply": {
  "title": `${global.BotName}`,
