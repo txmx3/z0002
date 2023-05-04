@@ -2785,7 +2785,7 @@ case 'ide': case 'i': case 'idee': case 'ideee':
 
 
 		
-		
+
 case 'sup': case 'support': case 'frage': case '!':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
@@ -2850,7 +2850,8 @@ case 'react': {
             }
 break
 
-/*case 'bping': case 'bbotstatus': case 'bstatusbot': case 'batst': {
+/*
+case 'bping': case 'bbotstatus': case 'bstatusbot': case 'batst': {
 				
 
                 let buffimg = await (await fetch(`https://avatars.githubusercontent.com/u/64305844?v=4`)).buffer()
@@ -2890,7 +2891,9 @@ Here is a Bonous Command!!
 m.reply(respon)
             }
 break
+*/
 
+/*
 case 'addmsg': {
                 if (!m.quoted) m.reply(m.chat, 'Reply Message You Want To Save In Database', m)
                 if (!text) m.reply(m.chat, `Example : ${prefix + command} nama file`, m)
@@ -3020,7 +3023,8 @@ break
         }
         reply(`Succes`);
         break 
-  
+
+/*
   case 'bcgrup':
         if (!isOwner) return reply(mess.owner);
         if (!q) return reply(`Teks Nya Bang?`);
@@ -3040,6 +3044,8 @@ break
         }
         reply(`Succes`);
 break
+/*
+*/
 
 case 'addmsg': case 'savemsg': {
             	if (isBan) return reply(mess.ban)
@@ -3987,7 +3993,7 @@ await Miku.sendMessage(m.chat, { delete: key })
    { buttonId: `${prefix}antilinkgc on`, buttonText: { displayText: 'On' }, type: 1 },
    { buttonId: `${prefix}antilinkgc off`, buttonText: { displayText: 'Off' }, type: 1 }
    ]
-   await Miku.se�ndButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+   await Miku.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
    }
    }
    break
