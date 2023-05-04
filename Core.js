@@ -3550,6 +3550,7 @@ case 'bspeedtest': {
             }
 break
 
+/*
 case 'cspeedtest': {
             reply('Testing Speed...')
             let cp = require('child_process')
@@ -3567,7 +3568,7 @@ case 'cspeedtest': {
             }
             }
 break
-
+*/
 
 case 'dspeedtest': {
             reply('Testing Speed...')
