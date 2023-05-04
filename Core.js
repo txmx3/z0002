@@ -3355,12 +3355,14 @@ break
 	}
 break
 
+/*
 case 'unblock3': {
 		if (!isCreator) throw mess.owner
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await Miku.u�pdateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 break
+*/
 
 case 'setname2': case 'setsubject2': {
                 if (!m.isGroup) throw mess.group
