@@ -6689,7 +6689,7 @@ let srh = await manga.searchManga(q)
       /\[Written by MAL Rewrite]/g,
       ""
     )}`;
-Miku.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.la�rge_image_url},caption:mang},{quoted:m})   
+Miku.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.large_image_url},caption:mang},{quoted:m})   
 break
 
 
