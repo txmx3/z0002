@@ -7869,10 +7869,14 @@ Hier ist die Liste der Maker-Menu Befehle:
 173. scifi_3D-2 <text>
 174. rainbow_3D-2     <text>
 175. pipe_3D-2  <text>
+
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
+ 
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
 		
 break
@@ -7881,15 +7885,23 @@ case 'mm6': case 'mmenu6': case 'makerm6': case 'makermenu6':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -7928,27 +7940,38 @@ Hier ist die Liste der Maker-Menu Befehle:
 207. foggy6     <text>
 208. neon_devil-2     <text>
 209. 3D-Unterwater-2  <text>
+
 『  *${global.sitzung}*  』
+
  Powered by: *MkM Inc.*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
+ 
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)	
 break
 		
 case 'mm7': case 'mmenu7': case 'makerm7': case 'makermenu7':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -7985,27 +8008,38 @@ Hier ist die Liste der Maker-Menu Befehle:
 238. dexposurw
 239. 3D-holo-2
 240. avengers8
+
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
+ 
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
 break
 
 case 'mm8': case 'mmenu8': case 'makerm8': case 'makermenu8':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Miku Nakano*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -8036,26 +8070,36 @@ Hier ist die Liste der Maker-Menu Befehle:
 264. ninja7
 265. joker7
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
+ 
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)	
 break
 
 case 'mm9': case 'mmenu9': case 'makerm9': case 'makermenu9':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -8063,7 +8107,7 @@ Hier ist die Liste der Maker-Menu Befehle:
 266. wicker7
 267. natural_leaves-2
 268. sparkle7
-269. skel�eton7
+269. skeleton7
 270. red_balloon-2
 271. purple_balloon-2
 272. pink_balloon-2
@@ -8093,10 +8137,14 @@ Hier ist die Liste der Maker-Menu Befehle:
 297. sparkleblue_jewelery-2
 298. sparklegreen_jewelery-2
 299. sparklepurple_jewelery-2
+
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
+ 
  🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
 		
 break
@@ -8105,15 +8153,22 @@ case 'mm10': case 'mmenu10': case 'makerm10': case 'makermenu10':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
+
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -8154,27 +8209,37 @@ Hier ist die Liste der Maker-Menu Befehle:
 333. wood7
 334. sci--fi_2
 335. metal_rainbow-2
+
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
+ 
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)	
 break
 
 case 'mm11': case 'mmenu11': case 'makerm11': case 'makermenu11':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
+
 Du bist im Maker-Menu gelandet.
-All Rights Reserved by *MkM Bot Inc.*
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
-Ich befinde mich derzeit in der Version 4, Edition 1.
+
+All Rights Reserved by *${global.botteamname}*
+
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
+
+Ich befinde mich derzeit in der Version 1.
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
+
 🔰 Mein Präfix ist:  ${prefix}
+
 *Benutzung: "${prefix} Befehl <text>"\nBeispiel:${prefix}ice Hallo*
+
 Hier ist die Liste der Maker-Menu Befehle:
 
 *━━━〈  Schrift-Maker  〉━━━*
@@ -8207,26 +8272,28 @@ Hier ist die Liste der Maker-Menu Befehle:
 361. 3d_glowing_metal-2
 362. 3d_chrome-2
 363. marvel-01
+
 『  *${global.sitzung}*  』
- Powered by: *MkM Inc.*
+
+ Powered by: *${global.botteamname}*
+ 
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
- 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)
-		
+ 
+ 🔰 Geben Sie " *${prefix}help* " ein, um die vollständige Befehlsliste zu erhalten.`)	
 break
 
-case 'mm15': case 'mmenu15': case 'makerm15': case 'makermenu15':
+case 'mm00': case 'mmenu00': case 'makerm00': case 'makermenu00':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 reply(` Hi ${pushname} ,
 Du bist im Maker-Menu gelandet.
 
-All Rights Reserved by *MkM Bot Inc.*
+All Rights Reserved by *${global.botteamname}*
 
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
 
-Ich befinde mich derzeit in der Version 4, Edition 1.
-
+Ich befinde mich derzeit in der Version 1.
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
 *Vielen Dank*
@@ -8605,7 +8672,7 @@ Hier ist die Liste der Maker-Menu Befehle:
 『  *${global.sitzung}*  』
 
 
- Powered by: *MkM Inc.*
+ Powered by: *${global.botteamname}*
  
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
@@ -8620,11 +8687,11 @@ if (!isCreator) return replay(mess.botowner)
 reply(` Hi ${pushname} ,
 Du bist im Ownermenu gelandet.
 
-All Rights Reserved by *MkM Bot Inc.*
+All Rights Reserved by *${global.botteamname}*
 
-Ich bin *Miku Nakano*, ein von *MkM Inc.* entwickelter Bot.
+Ich bin *Mika*, ein von *${global.botteamname}* entwickelter Bot.
 
-Ich befinde mich derzeit in der Version 4, Edition 1.
+Ich befinde mich derzeit in der Version 1.
 
 Es können daher einige Fehler auftreten, bitte kontaktieren, kontaktiert
 dann die Owner, den Owner oder schreibt eine Nachricht in die Supportgruppe.
@@ -8740,7 +8807,7 @@ Hier ist die Liste der Owner Befehle:
  『  *${global.sitzung}*  』
 
  
- Powered by: *MkM Inc.*
+ Powered by: *${global.botteamname}*
  
  🔰 Um einen dieser Befehle zu verwenden, geben Sie ein
  " *${prefix}<Befehlsname>* ".
