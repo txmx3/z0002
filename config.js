@@ -7,9 +7,9 @@ global.autoReadAll = false
 global.antitags = true
 
 
-global.Owner = ['493023180366','4917662927731','49491777062822','491777062822','4917770628221']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.OwnerNumber = ['493023180366','4917662927731','49491777062822','491777062822','4917770628221']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
-global.ownertag = ['493023180366','4917662927731','49491777062822','491777062822','4917770628221']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.Owner = ['4917770628221','4917662927731','49491777062822','491777062822','493023180366','4917770628222']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.OwnerNumber = ['4917770628221','4917662927731','49491777062822','491777062822','493023180366','4917770628222']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
+global.ownertag = ['4917770628221','4917662927731','49491777062822','491777062822','493023180366','491777062822']  // -- Add multiple numbers like  ['918101967835','919357940276','917896587453']
 global.BotName = "Mika_v1"
 global.packname = "Erstellt für User"
 global.author = "Mika Bot"
@@ -21,14 +21,15 @@ global.sitzung = "Mika-v1"
 global.script = "https://github.com/txmx4/m_m0001"
 global.skript = "https://github.com/txmx4/m_m0001"
 global.botname = "Mika-v1"
-global.botteamname = "Mika Bot-Team"
+global.botteamname = "Mika&Yuuki Bot-Team"
 
 
-global.owner1 = "Max_2  | +493023180366"
-global.owner3 = "Max_2  | +4917662927731"
+global.owner5 = "Max_2  | +493023180366"
+global.owner6 = "Max_2  | +4917662927731"
 global.owner2 = "Kirito | +491777062822"
-global.owner4 = "Max_2  | +4917770628221"
-global.owner5 = "Kirito | +49491777062822"
+global.owner3 = "Max_2  | +4917770628221"
+global.owner4 = "Kirito | +49491777062822"
+global.owner1 = "Max_2  | +4917770628221"
 /*
 global.manage = "Pablo | +491632225167"
 global.chatsup = "Pablo | +491632225167"
