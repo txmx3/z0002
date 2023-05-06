@@ -2109,7 +2109,15 @@ if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
 reply(` Das MkM-Team:\n\n\n Inhaber:\n\n1. ${global.owner1}\n2. ${global.owner2}\n3. ${global.owner3}\n\nStlv.Inhaber/In:\n\n1. ${global.owner4}\n\nManage:\n\n1. ${global.manage}\n\nSupport:\n\n1. ${global.support1}\n2. ${global.support2}\n3. ${global.support3}\n4. ${global.support4}\n5. ${global.support5}\n6. ${global.support6}\n\nHost:\n\n1. ${global.host1}`)
 break
+*/
+case 'team': case 'teamlist': case 'listteam':
+if (isBan) return reply(mess.banned)
+if (isBanChat) return reply(mess.bangc)
+if (!isCreator) return replay(mess.botowner)
+reply(` Teamliste:\n\nOwner1:\n${global.owmer1}\nOwner2:\n${global.owner2}\nOwner3:\n${global.owner3}\nOwner4:\n${global.owner4} `)
+break
 
+/*
 case 'botowner': case 'botowners': case 'ownerlist': case 'listowner':
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
