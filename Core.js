@@ -2659,7 +2659,7 @@ if(/horror8/.test(command)) link = "https://textpro.me/create-a-cinematic-horror
                if(/3d_glowing_metal-2/.test(command)) link = "https://textpro.me/3d-glowing-metal-text-effect-828.html"
                if(/3d_chrome-2/.test(command)) link = "https://textpro.me/3d-chrome-text-effect-827.html"
 let anutexpro = await maker.textpro(link, q)
-                Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by *${global.botname}*\n_Official MkM Bot Inc._` }, { quoted: m })
+                Miku.sendMessage(m.chat, { image: { url: anutexpro }, caption: `Made by *${global.botname}*\n_${global.botteamname}_` }, { quoted: m })
              }
              break
 
